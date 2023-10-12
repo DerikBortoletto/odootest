@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hubspot_instance,access_hubspot_instance,model_hubspot_instance,base.group_user,1,1,1,1
+access_hubspot_logger,access_hubspot_logger,model_hubspot_logger,base.group_user,1,1,1,1
+access_hubspot_message_wizard,access_hubspot_message_wizard,model_hubspot_message_wizard,base.group_user,1,1,1,1
+access_hubspot_contact_fields,access_hubspot_contact_fields,model_hubspot_contact_fields,base.group_user,1,1,1,1
+access_field_mapping_custom,access_field_mapping_custom,model_contact_field_mapping,base.group_user,1,1,1,1
+access_field_mapping_custom_company,access_field_mapping_custom_company,model_company_field_mapping,base.group_user,1,1,1,1
+access_hubspot_company_fields,access_hubspot_company_fields,model_hubspot_company_fields,base.group_user,1,1,1,1
+access_deals_field_mapping,access_deals_field_mapping,model_deals_field_mapping,base.group_user,1,1,1,1
+access_hubspot_deals_fields,access_hubspot_deals_fields,model_hubspot_deals_fields,base.group_user,1,1,1,1
+access_tickets_field_mapping,access_tickets_field_mapping,model_tickets_field_mapping,base.group_user,1,1,1,1
+access_hubspot_tickets_fields,access_hubspot_tickets_fields,model_hubspot_ticket_fields,base.group_user,1,1,1,1

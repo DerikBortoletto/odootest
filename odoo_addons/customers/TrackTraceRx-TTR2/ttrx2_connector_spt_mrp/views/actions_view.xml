@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+        
+        <!-- <record id="action_sync_partner" model="ir.actions.act_window">
+            <field name="name">Sync Trading Partner</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'default_product_template_ids':active_ids}</field>
+            <field name="groups_id" eval="[(4,ref('sales_team.group_sale_salesman'))]"/>
+            TODO: check if we need this
+            <field name="code">
+		        
+            </field>
+            <field name="binding_model_id" ref="base.model_res_partner" />
+        </record> -->
+
+        <record model="ir.actions.server" id="action_sync_partner">
+            <field name="name">Sync Trading Partner</field>
+            <field name="model_id" ref="base.model_res_partner"/>
+            <field name="binding_model_id" ref="base.model_res_partner" />
+            <field name="state">code</field>
+            <field name="code">
+                records.action_sync_partner()
+            </field>
+        </record>
+
+
+
+	</data>
+</odoo>

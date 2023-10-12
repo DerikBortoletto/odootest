@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+		<menuitem name="Scrum" id="scrum_agile_framework.menu_root" parent="project.menu_main_pm"/>
+	    <menuitem name="Team" id="scrum_agile_framework.team_menu" parent="scrum_agile_framework.menu_root" action="scrum_agile_framework.team_action_window"/>
+	    <menuitem name="Meeting" id="scrum_agile_framework.meeting_menu" parent="scrum_agile_framework.menu_root" action="scrum_agile_framework.meeting_action_window"/>
+	    <menuitem name="Sprints" id="scrum_agile_framework.sprint_menu" parent="scrum_agile_framework.menu_root" action="scrum_agile_framework.action_all_sprints"/>
+	</data>
+</odoo>

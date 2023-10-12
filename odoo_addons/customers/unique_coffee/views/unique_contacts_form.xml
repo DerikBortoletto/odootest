@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="contact_form_template" name="Contact Form">
+        <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport"
+                  content="width=device-width, initial-scale=1.0"/>
+            <title>My Page</title>
+            <link rel="stylesheet"
+                  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                  crossorigin="anonymous"/>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+
+
+
+            <style>
+                .backLogin {
+                background-image:
+                url('unique_coffee/static/src/img/imagelg.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                height: 100%;
+                width: 100%;
+                position: fixed;
+                }
+                .flex-div{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction :row;
+
+                }
+                .centered-content {
+                background-color: #E2D1C2;
+
+                font-color: #63411F;
+                padding: 30px;
+                border-radius: 5px;
+                position: relative;
+                top: 45%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                max-width: 80%;
+                }
+                .titlepostmobile{
+                display:none;
+                }
+                .titlepost{
+                display:unset;
+                }
+
+                @media screen and (max-width:660px) {
+                .backLogin {
+                background-image:
+                url('unique_coffee/static/src/img/image-login.png');
+                }
+                .centered-content {
+                max-width: 90%
+                }
+                .titlepostmobile{
+                display:flex
+                }
+                .titlepostmobile{
+                display:revert;
+                }
+                .titlepost{
+                display:none;
+                }}
+                .btn{
+                display:flex;
+                }
+            </style>
+        </head>
+        <t t-call="web.layout">
+            <div class="backLogin">
+                <div class="centered-content ">
+                    <!-- <div class="row">
+                        <div class="col-lg-4 col-md-8 mx-auto">
+                            <div class="card  mt-4">
+                                <div class="card-body"> -->
+                    <h3 class="card-title text-center">
+                        <img style="max-width:52%"
+                             src="unique_coffee/static/src/img/cafelogo.png"
+                             alt="Café Unique Cadastro"/>
+                        <label class="titlepost">Café Unique Cadastro</label>
+
+                    </h3>
+                    <h3 class="card-title text-center titlepostmobile">Café
+                        Unique Cadastro
+                    </h3>
+                    <form class="form-horizontal" role="form"
+                          method="post" action="/create_contact">
+                        <div >
+                            <label class="col-form-label"
+                                   for="name">Nome Completo:
+                            </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-user"></i>
+                                    </span>
+                                </div>
+                                <input type="text"
+                                       class="form-control"
+                                       id="name" name="name"
+                                       placeholder="Escreva seu Nome"
+                                        oninput="this.value = letterMask(this.value)" 
+                                        onblur="clearIfLessThan10(this)"
+
+                                       />
+                            </div>
+
+                        </div>
+                        <div >
+                            <label class="col-form-label"
+                                   for="birthdate">Data de Aniversário:
+                            </label>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-calendar"></i>
+                                    </span>
+                                </div>
+                                                     
+                                <input type="text"
+                                       class="form-control"
+                                       id="birthdate"
+                                       name="birthdate"
+                                       placeholder="DD/MM/YYYY"
+                                     oninput="applyBirthdayMask(event)" onblur="validateBirthday(event)"
+                                     
+                                />
+                            </div>
+
+                        </div>
+                        <div>
+                            <label class="col-form-label"
+                                   for="cellphone">Número de celular:
+                            </label>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-phone"></i>
+                                    </span>
+                                </div>
+                                <input type="text"
+                                       class="form-control"
+                                       id="cellphone"
+                                       name="cellphone"
+                                       placeholder="(XX) XXXXX-XXXX
+                                                   "
+                                      maxlength="15" onkeyup="handlePhone(event)" onblur="clearIfLessThanCellphone(event)"
+
+                                />
+                            </div>
+                        </div>
+                       <t t-set="isDisabled" t-value="not (name and birthdate and cellphone)" />
+                        <div class="d-flex justify-content-between" style="width: 100%; padding-top: 20px;">
+                            <button type="submit" style="background-color: green;" class="btn btn-primary" 
+                            t-attf-disabled="{{ 'disabled' if isDisabled else '' }}"
+                            >Incluir</button>
+                            <a class="btn btn-primary" href="/lg" style="background-color: red; min-width: 90px;">Cancelar</a>
+               </div>
+                           
+                          
+                  <!-- <div class="modal-dialog alert alert-danger mt-2 mb-0"
+                                 role="alert">
+                                <strong>Atenção!</strong>
+                                <ul>
+                                    <t t-foreach="errors" t-as="error">
+                                        <li>
+                                            <t t-esc="error"/>
+                                        </li>
+                                    </t>
+                                </ul>
+                            </div> 
+                     <t t-if="errors">
+                            <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="errorModalLabel">Atenção!</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <t t-foreach="errors" t-as="error">
+                                                <p><t t-esc="error"/></p>
+                                            </t>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
+                   
+                        </t>-->
+                    </form>
+      
+                </div>
+
+            </div>
+             <t t-if="errors">
+                                <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="errorModalLabel">Atenção!</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <ul>
+                                                    <t t-foreach="errors" t-as="error">
+                                                        <li>
+                                                            <t t-esc="error"/>
+                                                        </li>
+                                                    </t>
+                                                </ul>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </t>
+              <div class="modal fade" id="newErrorModal" tabindex="-1" role="dialog" aria-labelledby="newErrorModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="newErrorModalLabel">Atenção!</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <ul></ul>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+        </t>
+      
+        <script>
+        <!-- VALIDAÇÂO DE MODAL -->
+        window.onload = function() {
+    var nameInput = document.getElementById('name');
+    var birthdateInput = document.getElementById('birthdate');
+    var cellphoneInput = document.getElementById('cellphone');
+    const birthday = birthdateInput.value;
+    const segments = birthday.split("/");
+    const day = parseInt(segments[0]);
+    const month = parseInt(segments[1]);
+    const year = parseInt(segments[2]);
+    const maxDay = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
+
+    var submitButton = document.querySelector('button[type="submit"]');
+
+    function checkInputValues() {
+        if ((nameInput.value.length &gt;10) &amp;&amp; (birthdateInput.value.length==10) &amp;&amp; (cellphoneInput.value.replace(/\D/g,'').length==11) &amp;&amp;(!birthday || isNaN(day) || isNaN(month) || isNaN(year) || day &lt; 1 || day &gt;maxDay || month &lt; 1 || month &gt; 12 || year &lt; 1900 || year &gt; (new Date()).getFullYear())) {
+            submitButton.disabled = false;
+        } else {
+            submitButton.disabled = true;
+        }
+    }
+
+    nameInput.addEventListener('input', checkInputValues);
+    birthdateInput.addEventListener('input', checkInputValues);
+    cellphoneInput.addEventListener('input', checkInputValues);
+
+    // Check the input values initially in case they are not empty.
+    checkInputValues();
+}
+        <!-- ERROS MODAL -->
+   $(document).ready(function() {
+    if ($('.modal-body li').length &gt; 0) {
+        $('#errorModal').modal('show');
+    }
+});
+function showNewErrorModal(message) {
+    const errorList = document.querySelector('#newErrorModal .modal-body ul');
+    errorList.innerHTML = '';
+    const li = document.createElement('li');
+    li.textContent = message;
+    errorList.appendChild(li);
+
+    const newErrorModal = new bootstrap.Modal(document.getElementById('newErrorModal'));
+    newErrorModal.show();
+}
+
+        <!-- VALIDAÇÃO E MASCARA DE NOME -->
+        function clearIfLessThan10(input) {
+    if (input.value.length &lt; 10) {
+            input.value = '';
+            showNewErrorModal('Por favor, insira um nome maior que 10 caracteres.');
+    }
+}
+     
+    function letterMask(value) {
+        
+        if (!value) return ""
+        // Remove caracteres não-alfabéticos
+        value = value.replace(/[^a-zA-Z\s]/g,'')
+        // Limita a string para 50 caracteres
+        value = value.slice(0, 50);
+        // Se a string tiver menos que 10 caracteres, limpa a string
+    
+        return value
+    }
+    <!-- VALIDAÇÃO E MASCARA DE DATA DE Aniversário -->
+       function applyBirthdayMask(event) {
+                const input = event.target;
+                const value = input.value;
+                const maskedValue = birthdayMask(value);
+                input.value = maskedValue;
+            }
+
+            const birthdayMask = (value) => {
+                if (!value) return "";
+                value = value.replace(/\D/g, "");
+                value = value.replace(/(\d{2})(\d)/, "$1/$2");
+                value = value.replace(/(\d{2})(\d)/, "$1/$2");
+                value = value.replace(/(\d{4})\d+?$/, "$1");
+                return value;
+                
+            };
+
+            function isLeapYear(year) {
+                return year % 400 === 0 || (year % 100 !== 0 &amp;&amp; year % 4 === 0);
+            }
+
+            function validateBirthday(event) {
+                const birthdayInput = event.target;
+                const birthday = birthdayInput.value;
+                const segments = birthday.split("/");
+                const day = parseInt(segments[0]);
+                const month = parseInt(segments[1]);
+                const year = parseInt(segments[2]);
+
+                const maxDay = [31, isLeapYear(year) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month - 1];
+
+                if (!birthday || isNaN(day) || isNaN(month) || isNaN(year) || day &lt; 1 || day &gt;maxDay || month &lt; 1 || month &gt; 12 || year &lt; 1900 || year &gt; (new Date()).getFullYear()) {
+                    birthdayInput.value = '';
+                    showNewErrorModal('Por favor, insira uma de data válida.');
+                }
+            }
+
+     
+
+        <!-- VALIDAÇÃO E MASCARA DE CELULAR -->
+
+        function handlePhone(event)  {
+   const input = event.target;
+   const value = input.value;
+   const maskedValue = phoneMask(value);
+   
+  input.value = maskedValue;
+} 
+const phoneMask = (value) => {
+  if (!value) return ""
+  value = value.replace(/\D/g,'')
+  value = value.replace(/(\d{2})(\d)/,"($1) $2")
+  value = value.replace(/(\d)(\d{4})$/,"$1-$2")
+
+  return value
+}
+ function clearIfLessThanCellphone(event) {
+    const cellphoneInput= event.target;
+    const cellphone = cellphoneInput.value;
+    let cellphoneString = cellphone.replace(/\D/g,'').length;
+    const segments = cellphone.split("&#41;");
+    const area = parseInt(segments[0]);
+    let numberphone= parseInt(segments[1]);
+    lengthNumberPhone= numberphone.toString().length
+
+    if (cellphoneString &lt;=10)  {
+            cellphoneInput.value = '';
+            showNewErrorModal('Por favor, insira um número de telefone válido.');
+    }
+}
+ 
+function applyBirthdayMask2(event) {
+  const input = event.target;
+  const value = input.value;
+  const maskedValue = validateAndFormatBirthday(value);
+  input.value = maskedValue;
+}
+       
+
+function validatePhoneComplete(event) {
+    const input = event.target;
+    const value = input.value.replace(/\D/g, "");
+    
+    if (value.length === 11) {
+        document.getElementById("phone-validation").textContent = "Validation: true";
+    } else {
+        document.getElementById("phone-validation").textContent = "Validation: false";
+    }
+}
+
+function validateAndFormatBirthday(value) {
+  const parsedDate = moment(value, 'DD/MM/YYYY', true); // Verifica se a data é válida
+
+  if (parsedDate.isValid()) {
+    const formattedValue = parsedDate.format('DD/MM/YYYY');
+    return formattedValue;
+  } else {
+    return '';
+  }
+}
+</script>
+    </template>
+
+</odoo>

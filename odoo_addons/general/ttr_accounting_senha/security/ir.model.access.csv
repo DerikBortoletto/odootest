@@ -1,0 +1,2 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_meu_modulo_senha_password,grupo_meu_modulo_senha_password,ttr_accounting_senha.model_meu_modulo_senha_password,base.group_user,1,1,1,1

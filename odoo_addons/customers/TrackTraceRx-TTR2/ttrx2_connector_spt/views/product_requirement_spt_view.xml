@@ -1,0 +1,142 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+        <record id="product_requirement_spt_form_view" model="ir.ui.view">
+            <field name="name">product.requirement.form.view.spt</field>
+            <field name="model">product.requirement.spt</field>
+            <field name="arch" type="xml">
+                <form>
+					<header>
+						<button name="action_test" string="testar" type="object" groups="base.group_no_one"/>
+						<button name="action_send" string="Send To TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('tt_id','!=',False)]}"/>
+						<button name="action_refresh" string="Refresh From TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('tt_id','=',False)]}"/>
+					</header>
+                    <sheet>
+                    	<group>
+                    		<group>
+                    			<field name="tt_id"/>
+                    			<field name="name" required='1'/>
+                                <field name="product_class" required='1'/>
+                    		</group>
+                    		<group>
+                    			<field name="created_on" readonly="1"/>
+                    			<field name="type" required='1'/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                    		</group>
+                    	</group>
+                        <notebook>
+                            <page string="Ownership Conditions">
+                                <field name="pro_require_owner_conditions_ids">
+                                    <form>
+                                    	<sheet>
+	                                        <group>
+	                                            <group>
+	                                            	<field name="tt_id"/>
+	                                                <field name="name"/>
+	                                                <field name="action"/>
+	                                                <field name="condition_class"/>
+	                                            </group>
+	                                            <group>
+	                                            	<field name="created_on"/>
+	                                                <field name="country_id"/>
+	                                                <field name="license_type"/>
+	                                                <field name="requirement_type"/>
+	                                            </group>
+	                                        </group>
+	                                        <group>
+	                                            <group>
+	                                            	<field name="market"/>
+	                                                <field name="country_id"/>
+	                                                <field name="cond_property"/>
+	                                                <field name="product_requirement_id"/>
+	                                            </group>
+	                                            <group>
+	                                            	<field name="is_validate_trading_partner_license_in_po"/>
+	                                                <field name="is_validate_location_license_in_po"/>
+	                                                <field name="is_validate_trading_partner_license_in_so"/>
+	                                                <field name="is_validate_location_license_in_so"/>
+	                                            </group>
+	                                        </group>
+	                                    </sheet>
+                                    </form>
+                                    <tree>
+                                    	<field name="tt_id"/>
+                                        <field name="name"/>
+                                        <field name="action"/>
+                                        <field name="country_id"/>
+                                        <field name="license_type"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="License Conditions">
+                                <field name="pro_require_lic_conditions_ids">
+                                    <form>
+                                    	<sheet>
+	                                        <group>
+	                                            <group>
+	                                            	<field name="tt_id"/>
+	                                                <field name="name"/>
+	                                                <field name="action"/>
+	                                                <field name="condition_class"/>
+	                                            </group>
+	                                            <group>
+	                                            	<field name="created_on"/>
+	                                                <field name="country_id"/>
+	                                                <field name="license_type"/>
+	                                                <field name="requirement_type"/>
+	                                            </group>
+	                                        </group>
+	                                        <group>
+	                                            <group>
+	                                            	<field name="market"/>
+	                                                <field name="country_id"/>
+	                                                <field name="cond_property"/>
+	                                                <field name="product_requirement_id"/>
+	                                            </group>
+	                                            <group>
+	                                            	<field name="is_validate_trading_partner_license_in_po"/>
+	                                                <field name="is_validate_location_license_in_po"/>
+	                                                <field name="is_validate_trading_partner_license_in_so"/>
+	                                                <field name="is_validate_location_license_in_so"/>
+	                                            </group>
+	                                        </group>
+	                                    </sheet>
+                                    </form>
+                                    <tree>
+                                    	<field name="tt_id"/>
+                                        <field name="name"/>
+                                        <field name="action"/>
+                                        <field name="country_id"/>
+                                        <field name="license_type"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_requirement_spt_tree_view" model="ir.ui.view">
+            <field name="name">product.requirement.tree.view.spt</field>
+            <!-- <field name="groups_id" eval="[(4,ref('easy_redmine_spt.group_redmine_access'))]"/>  -->
+            <field name="model">product.requirement.spt</field>
+            <field name="arch" type="xml">
+                <tree>
+                	<field name="tt_id"/>
+                    <field name="name"/>
+                    <field name="type"/>
+                    <field name="product_class" required='1'/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_product_requirement_spt" model="ir.actions.act_window">
+            <field name="name">Product Requirement</field>
+            <field name="res_model">product.requirement.spt</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

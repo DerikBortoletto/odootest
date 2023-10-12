@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="import_export_form_view_spt" model="ir.ui.view">
+            <field name="name">import_export.form.view.spt</field>
+            <field name="model">import.export.spt</field>
+            <field name="arch" type="xml">
+                <form string="Import Export">
+                    <notebook>
+                        <page string="TrackTraceRx2 to ERP">
+                            <group>
+                                <group string='Import Partner'>
+                                    <field name="import_trading_partners"/>
+                                    <field name="import_license"/>
+                                </group>
+                                <group string='Import Products'>
+                                    <field name="import_product"/>
+                                    <field name="import_pack_size_type"/>
+                                    <field name="import_categories"/>
+                                    <!-- field name="import_identifier"/-->
+                                </group>
+                                <group string='Import Company Management'>
+                                    <field name="license_type"/>
+                                    <field name="import_manufacturer"/>
+                                    <field name="product_requirement"/>
+                                    <field name="location_management"/>
+                                </group>
+                                <group string='Import Shipments'>
+                                    <field name="import_shipment"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                    <footer>
+                        <button name="import_export" string="Process" type="object" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

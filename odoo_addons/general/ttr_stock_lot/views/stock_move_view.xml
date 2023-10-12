@@ -1,0 +1,41 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+		<record id="view_op_stock_move_operations_form" model="ir.ui.view">
+			<field name="name">op.stock.move.operations.form</field>
+			<field name="model">stock.move</field>
+			<field name="inherit_id" ref="stock.view_stock_move_operations"/>
+			<field name="arch" type="xml">
+				<field name="display_assign_serial" position="after">
+					<field name="display_assign_lot" invisible="1"/>
+				</field>
+				<field name="next_serial" position="before">
+					<field name="lot_name" attrs="{'invisible': [('display_assign_serial','!=',True)]}"/>
+				</field>
+			</field>
+		</record>
+
+	    <record id="view_op_stock_move_line_operation_tree" model="ir.ui.view">
+	        <field name="name">op.stock.move.line.operation.tree</field>
+	        <field name="model">stock.move.line</field>
+	        <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+	        <field name="arch" type="xml">
+	        	<field name="product_id" position="after">
+	        		<field name="id"/>
+	        		<field name="tracking"/>
+	        	</field>
+	        	<field name="lot_name" position="attributes">
+	        		<attribute name="placeholder">Write your Lot Name one by one or copy paste a list.</attribute>
+	        		<attribute name="string">Lot Number</attribute>
+	        	</field>
+	        	<field name="lot_name" position="after">
+                    <field name="serial_name" widget="text" groups="stock.group_production_lot"
+                        placeholder="Write your Serial Number one by one or copy paste a list."
+                        attrs="{'invisible': [('tracking','!=','serial')],'readonly': ['&amp;', ('package_level_id', '!=', False), ('parent.picking_type_entire_packs', '=', True)]}"/>
+	        	</field>	
+	        </field>
+	    </record>
+
+    </data>
+</odoo>

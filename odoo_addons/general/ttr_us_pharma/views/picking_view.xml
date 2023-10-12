@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+	    <record id="pharma_picking_form_inherit" model="ir.ui.view">
+	        <field name="name">pharma.purchase.form</field>
+	        <field name="model">stock.picking</field>
+	        <field name="inherit_id" ref="stock.view_picking_form" />
+	        <field name="priority" eval="5"/>
+	        <field name="arch" type="xml">
+				<xpath expr="//label[@for='scheduled_date']" position="replace">
+					<div class="o_td_label">
+					    <label for="scheduled_date" string="Scheduled Date of Delivery" attrs="{'invisible': [('picking_type_code', '!=', 'outgoing')]}"/>
+					    <label for="scheduled_date" string="Scheduled Date of Receive" attrs="{'invisible': [('picking_type_code', '!=', 'incoming')]}"/>
+					</div>
+				</xpath>
+				<field name="date_deadline" position="replace">
+					<div class="o_td_label">
+					    <label for="date_deadline" string="Deadline Date of Delivery" attrs="{'invisible': [('picking_type_code', '!=', 'outgoing')]}"/>
+					    <label for="date_deadline" string="Deadline Date of Receive" attrs="{'invisible': [('picking_type_code', '!=', 'incoming')]}"/>
+					</div>
+                    <field name="date_deadline" nolabel="1"
+                        attrs="{'invisible': ['|', ('state', 'in', ('done', 'cancel')), ('date_deadline', '=', False)]}"
+                        decoration-danger="date_deadline and date_deadline &lt; current_date"
+                        decoration-bf="date_deadline and date_deadline &lt; current_date"/>
+				</field>
+				<field name="origin" position="replace">
+					<div class="o_td_label">
+					    <label for="origin" string="Purchase Order number" attrs="{'invisible': [('picking_type_code', '!=', 'incoming')]}"/>
+					    <label for="origin" string="Sale Order number" attrs="{'invisible': [('picking_type_code', '!=', 'outgoing')]}"/>
+					</div>
+					<field name="origin" nolabel="1" placeholder="e.g. PO0032"/>
+				</field>
+				<xpath expr="//page[@name='extra']" position="attributes">
+					<attribute name="groups">stock.group_stock_user</attribute>
+				</xpath>
+				<xpath expr="//page[@name='operations']/field[@name='move_ids_without_package']/tree/field[@name='date_deadline']" position="attributes">
+					<attribute name="string">Date Deadline</attribute>
+				</xpath>
+				<xpath expr="//page[@name='operations']/field[@name='move_ids_without_package']/tree/field[@name='product_id']" position="attributes">
+					<attribute name="string">Product Name</attribute>
+				</xpath>
+				<xpath expr="//page[@name='operations']/field[@name='move_ids_without_package']/tree/field[@name='description_picking']" position="after">
+					<field name="generic_name" optional="show"/>
+					<field name="manufacture_id" optional="show"/>
+					<field name="item_class" optional="show"/>
+					<field name="control_substance" optional="show"/>
+					<field name="control_substance_type" optional="show"/>
+					<field name="storage_temperature" optional="show"/>
+					<field name="size" optional="show"/>
+				</xpath>
+				<xpath expr="//page[@name='operations']/field[@name='move_ids_without_package']/tree/field[@name='product_uom_qty']" position="attributes">
+					<attribute name="string">Quantity Order</attribute>
+				</xpath>
+				<xpath expr="//page[@name='operations']/field[@name='move_ids_without_package']/tree/field[@name='quantity_done']" position="attributes">
+					<attribute name="string">Quantity Recevied</attribute>
+				</xpath>
+	        </field>
+	    </record>
+
+	</data>
+</odoo>

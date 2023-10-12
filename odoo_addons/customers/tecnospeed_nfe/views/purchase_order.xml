@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+  <record id="tecnospeed_purchase_order_form_2" model="ir.ui.view">
+    <field name="name">tecnospeed.order.form_2</field>
+    <field name="model">purchase.order</field>
+    <field name="inherit_id" ref="purchase.purchase_order_form" />
+    <field name="arch" type="xml">
+
+
+      <xpath expr="//field[@name='partner_ref']" position="after">
+        <field name = 'is_importa'/>
+      </xpath>
+      <xpath expr="//page[@name='products']" position="after">
+        <page name="DI" string="Declaração de Importação" attrs="{'invisible':[('is_importa','=', False)]}">
+          <form>
+            <group col="4">
+              <field name="nDI"/>
+              <field name="dDI"/>
+              <field name="xLocDesemb"/>
+              <field name="UFDesemb"/>
+              <field name="dDesemb"/>
+              <field name="tpViaTransp"/>
+              <field name="cExportador"/>
+              <field name="tpIntermedio"/>
+              
+            </group >
+            <group col="4"  string = "Intermedio" attrs="{'invisible':['|', ('tpIntermedio','=', '1'), ('tpIntermedio','=', False)], 'required':['|', ('tpIntermedio','!=','1'), ('tpIntermedio','!=', False)]}">
+              <field name="nfe40_CNPJ" />
+              <field name="name_intermed"/>
+            </group>
+            <group col="4" string="Adições">
+              <field name="nAdicao"/>
+              <field name="nSeqAdic"/>
+            </group>
+          </form>
+        </page>
+      </xpath>
+    </field>
+  </record>
+</odoo>
+
+
+

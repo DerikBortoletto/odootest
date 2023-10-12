@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="view_sync_partner_spt_wizard_form" model="ir.ui.view">
+            <field name="name">sync.partner.spt.wizard.form</field>
+            <field name="model">sync.partner.spt.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Sync Trading Partner">
+                	<sheet>
+                		<field name="state" invisible="1"/>
+						<group>
+						    <group string="Import Partner">
+						    	<field name="connector_id" readonly="1" groups="base.group_no_one"/>
+						        <field name="sync_type"/>
+						        <field name="from_type"/>
+						        <field name="from_date" attrs="{'invisible': [('from_type','=','all')]}"/>
+						    </group>
+						    <group string="Include Imports">
+						        <field name="license_type"/>
+						        <field name="partners"/>
+						    </group>
+						    <group string="Processing Result" attrs="{'invisible': [('state','=','draft')]}">
+						        <field name="total_imported"/>
+						        <field name="notes_process" nolabel="1"/>
+						    </group>
+						</group>
+					</sheet>
+                    <footer>
+                        <button name="action_process" string="Process" type="object" class="oe_highlight" attrs="{'invisible': [('state','=','done')]}"/>
+                        <button string="Close" special="cancel" class="btn-default" attrs="{'invisible': [('state','=','draft')]}"/>
+                        <button string="Cancel" class="btn-default  oe_highlight" special="cancel" attrs="{'invisible': [('state','=','done')]}"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

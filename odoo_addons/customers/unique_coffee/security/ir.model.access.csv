@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_all_unique_contacts,Access All Unique Contacts,unique_coffee.model_unique_contacts,,1,1,1,1

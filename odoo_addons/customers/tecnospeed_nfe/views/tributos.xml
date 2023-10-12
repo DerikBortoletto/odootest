@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="tecnospeed_tributos_order_line" model="ir.ui.view">
+        <field name="name">tecnospeed.tributos.order.line</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="arch" type="xml">
+
+            <xpath expr="//page[@name='invoices_incoming_shiptments']" position="after">
+            <page name = "Outros Custos" string = "Outros Custos">
+                <group col="3">
+                    <field name = "itens_valorFrete"/>
+                    <field name = "itens_valorSeguro"/>
+                    <field name = "itens_valorOutros"/>
+                </group>
+            </page>
+            <page name ="Imposto" string = "Imposto">
+                <group>
+                <field name = 'is_importa'/>
+                </group>
+                <notebook>
+                <page name = 'ICMS' string = 'ICMS'>
+                    
+                        <group col="4" string = "ICMS">
+                            <field name = "icms_origem"/>
+                            <field name ="icms_cst"/>
+                            <field name ="icms_aliquota"/>
+                            <field name ="icms_valor"/>
+                        </group>
+
+                        <group col="4" string = "Base Calculo">
+                            <field name ="icms_BC_modalidadeDeterminacao"/>
+                            <field name ="icms_BC_valor"/>
+                        </group>
+
+                        <group col="4" string = "Substituicao Tributaria">
+                            <field name ="icms_ST_aliq"/>
+                            <field name ="icms_ST_valor"/>
+                            <field name ="icms_ST_percentualReducao"/>
+                            <field name ="icms_ST_margemValorAdicionado_percent"/>
+                            <field name ="icms_ST_FCP_aliq"/>
+                            <field name ="icms_ST_FCP_BC_valor"/>
+                        </group>
+                    
+                    
+                </page>
+                <page name = 'IPI' string = 'IPI'>
+                    <form>
+                        <group col="4" string = "IPI">
+                            <field name = "ipi_cnpjProdutor"/>
+                            <field name ="ipi_seloControle_code"/>
+                            <field name ="ipi_seloControle_quantidade"/>
+
+                        </group>
+
+                        <group col="4" string = "Código Enquadramento Legal">
+                            <field name ="ipi_codEnquadramento"/>
+
+                        </group>
+
+                        <group col="4" string = "CST">
+                            <field name ="ipi_cst_entrada"/>
+                            <field name ="ipi_cst_saida"/>
+                            <field name = "ipi_baseCalculo" attrs="{'invisible': ['|', '|', '|','|', '|', ('ipi_cst_saida','=','51'), ('ipi_cst_saida', '=', '52'), ('ipi_cst_saida', '=', '53'), ('ipi_cst_saida', '=', '54'), ('ipi_cst_saida', '=', '55'), ('ipi_cst_entrada', '=', '00')]}"/>
+                            <field name = "ipi_baseCalculo" attrs="{'invisible': [('ipi_cst_entrada', '!=', '00')]}"/>
+                            <field name = "ipi_aliquota" attrs="{'invisible': ['|', '|', '|','|', '|', ('ipi_cst_saida','=','51'), ('ipi_cst_saida', '=', '52'), ('ipi_cst_saida', '=', '53'), ('ipi_cst_saida', '=', '54'), ('ipi_cst_saida', '=', '55'), ('ipi_cst_entrada', '=', '00')]}"/>
+                            <field name = "ipi_aliquota" attrs="{'invisible': [('ipi_cst_entrada', '!=', '00')]}"/>
+                            <field name = "ipi_valor" attrs="{'invisible': ['|', '|', '|','|', '|', ('ipi_cst_saida','=','51'), ('ipi_cst_saida', '=', '52'), ('ipi_cst_saida', '=', '53'), ('ipi_cst_saida', '=', '54'), ('ipi_cst_saida', '=', '55'), ('ipi_cst_entrada', '=', '00')]}"/>
+                            <field name = "ipi_valor" attrs="{'invisible': [('ipi_cst_entrada', '!=', '00')]}"/>
+
+                        </group>
+
+                        <group col="4" string = "Unidade - Apenas produtos tributados por unidade">
+                            <field name ="ipi_unidade_qty"/>
+                            <field name ="ipi_unidade_valor"/>
+
+                        </group>
+
+
+                    </form>
+                </page>
+
+                <page name = 'PIS' string = 'PIS'>
+                    <form>
+                        <group col="4" string = "PIS">
+                            <field name = "pis_cst"/>
+                            <field name = "pis_aliq"/>
+                            <field name = "pis_valor"/>
+                        </group>
+
+                        <group col="4" string = "Base Calculo PIS">
+                            <field name = "pis_BC_valor"/>
+                            <field name = "pis_BC_quantidade"/>
+
+                        </group>
+
+                        <group col="4" string = "Substituicao Tributaria PIS">
+                            <field name = "pis_ST_BC"/>
+                            <field name = "pis_ST_aliquota"/>
+                            <field name = "pis_ST_valor"/>
+                        </group>
+
+                    </form>
+                </page>
+                <page name = 'COFINS' string = 'COFINS'>
+                    <form>
+                        <group col="4" string = "COFINS">
+                            <field name = "cofins_cst"/>
+                            <field name = "cofins_aliq"/>
+                            <field name = "cofins_valor"/>
+                        </group>
+
+                        <group col="4" string = "Base Calculo COFINS">
+                            <field name = "cofins_BC_valor"/>
+                        </group>
+
+                         <group col="4" string = "Substituicao Tributaria COFINS">
+                            <field name = "cofins_ST_BC"/>
+                            <field name = "cofins_ST_aliquota"/>
+                            <field name = "cofins_ST_valor"/>
+
+                        </group>
+                    </form>
+                </page>
+                <page name = 'ISSQN' string = 'ISSQN'>
+                    <form>
+                        <group col="4">
+                            <field name = "issqn_valor"/>
+                            <field name = "issqn_aliquota"/>
+                            <field name = "issqn_baseCalculo"/>
+                            <field name = "issqn_codigoServico"/>
+                            <field name = "issqn_valorDeducao"/>
+                            <field name = "issqn_valorOutros"/>
+                            <field name = "issqn_descontoIncondicionado"/>
+                            <field name = "issqn_descontoCondicionado"/>
+                            <field name = "issqn_codMunicipalServico"/>
+                            <field name = "issqn_codMunicipioIncidencia"/>
+                            <field name = "issqn_codMunicipioFatoGerador"/>
+                            <field name = "issqn_codigoExigibilidade"/>
+                        </group>
+                    </form>
+                </page>
+                <page name = 'II' string = 'Imposto de Importação'  attrs="{'invisible': [('is_importa', '=', False)]}">
+                    <form>
+                        <group col="4">
+                            <field name ="II_BC"/>
+                            <field name ="II_vDA"/>
+                            <field name ="II_valor"/>
+                            <field name ="II_vOP"/>
+                        </group>
+                    </form>
+                </page>
+                </notebook>
+                </page>
+                </xpath>
+            </field>
+        </record>
+    </odoo>
+

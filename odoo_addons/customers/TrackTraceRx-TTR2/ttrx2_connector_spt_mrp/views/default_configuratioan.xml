@@ -1,0 +1,12 @@
+<openerp>
+    <data>
+    <record id="base.group_user" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('stock.group_production_lot')),
+                                        (4, ref('stock.group_stock_multi_locations')),
+                                        (4, ref('stock.group_stock_multi_warehouses')),
+                                        (4, ref('stock.group_lot_on_delivery_slip')),
+                                        (4, ref('base.group_multi_company')),
+                                        (4, ref('tracktrace2_odoo_connector_spt.group_ttr2_access'))]"/>
+    </record>
+</data>
+</openerp>

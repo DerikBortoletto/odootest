@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="view_pharma_dosage_forms_spt_form" model="ir.ui.view">
+			<field name="name">pharma.dosage.forms.spt.form</field>
+			<field name="model">pharma.dosage.forms.spt</field>
+			<field name="arch" type="xml">
+				<form >
+					<header>
+						<button name="action_test" string="testar" type="object" groups="base.group_no_one"/>
+						<button name="action_send" string="Send To TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('tt_id','!=',False)]}"/>
+						<button name="action_refresh" string="Refresh From TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('tt_id','=',False)]}"/>
+					</header>
+					<sheet>
+						<group>
+							<field name="tt_id"/>
+							<field name="name" required='1'/>
+							<field name="code" required='1'/>
+							<field name="created_on"/>
+							<field name="last_update"/>
+                            <field name="is_internal" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_pharma_dosage_forms_spt_tree" model="ir.ui.view">
+			<field name="name">pharma.dosage.forms.spt.form</field>
+			<field name="model">pharma.dosage.forms.spt</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="tt_id"/>
+					<field name="name" />
+                    <field name="code" />
+					<field name="created_on"/>
+					<field name="last_update"/>
+                    <field name="is_internal" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="action_pharma_dosage_forms_spt" model="ir.actions.act_window">
+			<field name="name">Dosage Forms</field>
+            <field name="type">ir.actions.act_window</field>
+			<field name="res_model">pharma.dosage.forms.spt</field>
+			<field name="view_mode">tree,form</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_pharma_dosage_forms_spt_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('view_pharma_dosage_forms_spt_form')})]"/>
+			<field name="view_id" ref="view_pharma_dosage_forms_spt_tree"/>
+		</record>
+
+	</data>
+</odoo>

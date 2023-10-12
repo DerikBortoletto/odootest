@@ -1,0 +1,97 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="view_license_spt_tree" model="ir.ui.view">
+			<field name="name">license.tree.view.spt</field>
+			<field name="model">license.spt</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="tt_id"/>
+					<field name="created_on" />
+					<field name="last_update" />
+					<field name="primary_model"/>
+                    <field name="license_type"/>
+					<field name="value"/>
+					<field name="active" invisible="1"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_license_spt_form" model="ir.ui.view">
+			<field name="name">license.form.view</field>
+			<field name="model">license.spt</field>
+			<field name="arch" type="xml">
+				<form string="License">
+					<header>
+						<button name="action_test" string="testar" type="object" groups="base.group_no_one"/>
+						<button name="action_send" string="Send To TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('tt_id','!=',False)]}"/>
+						<button name="action_refresh" string="Refresh From TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('tt_id','=',False)]}"/>
+					</header>
+					<sheet>
+						<widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+						<group>
+							<group>
+								<field name="tt_id"/>
+								<field name="license_type" required="1" />
+								<field name="value" required="1"/>
+								<field name="created_on" />
+								<field name="last_update" />
+								<field name="valid_from" />
+								<field name="valid_to" />
+							</group>
+							<group>
+								<field name="primary_model"/>
+								<field name="is_notify_client" required="1"/>
+								<field name="active" invisible="1"/>
+								<field name="res_partner_id"/>
+								<field name="partner_uuid"/>
+								<field name="locations_management_id"/>
+								<field name="location_uuid"/>
+								<field name="address_id"/>
+								<field name="address_uuid"/>
+							</group>
+						</group>
+						<notebook>
+							<page string="Attachments">
+								<field name="license_attachments_spt_ids" />
+							</page>
+							<page string="Notes">
+								<group>
+									<field name="notes" />
+								</group>
+							</page>
+						</notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_license_spt" model="ir.actions.act_window">
+			<field name="name">License</field>
+			<field name="res_model">license.spt</field>
+			<field name="view_mode">tree,form</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_license_spt_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('view_license_spt_form')})]"/>
+			<field name="view_id" ref="view_license_spt_tree"/>			
+		</record>
+		<record id="view_license_spt_search" model="ir.ui.view">
+            <field name="name">license.spt.tree</field>
+            <field name="model">license.spt</field>
+            <field name="arch" type="xml">
+                <search string="">
+                    <field name="tt_id" />
+                    <field name="primary_model" />
+                    <filter name="active" string="Is Active" domain="[('active', '=', 'is true')]" />
+                    <filter name="active" string="Is not Active" domain="[('active', '=', 'is false')]" />
+                    <filter name="primary_model" string="Partner Licenses" domain="[('primary_model', '=', 'Partner')]" />
+                    <filter name="primary_model" string="Location Licenses" domain="[('primary_model', '=', 'Location')]" />
+                    <filter name="primary_model" string="Address Licenses" domain="[('primary_model', '=', 'Adress')]" />
+
+                </search>
+            </field>
+        </record>
+	</data>
+</odoo>

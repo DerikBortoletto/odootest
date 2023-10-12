@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="account_reports_br_statements_menu" name="Brazil" 
+              parent="account.menu_finance_reports" sequence="0" groups="account.group_account_readonly"/>
+
+    <record id="br_pharmedic_chart_template" model="account.chart.template">
+        <field name="name">Plano de Contas Pharmedic</field>
+        <field name="code_digits">12</field>
+        <field name="bank_account_code_prefix">1.1.1.02.</field>
+        <field name="cash_account_code_prefix">1.1.1.01.</field>
+        <field name="transfer_account_code_prefix">1.1.1.02.9</field>
+        <field name="currency_id" ref="base.BRL"/>
+    </record>
+
+</odoo>

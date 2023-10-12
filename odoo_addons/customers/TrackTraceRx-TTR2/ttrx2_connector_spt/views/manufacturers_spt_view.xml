@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+       <record id="view_manufacturers_filter_spt" model="ir.ui.view">
+            <field name="name">manufacturers.filter.spt</field>
+            <field name="model">manufacturers.spt</field>
+            <field name="arch" type="xml">
+                <search string="Search License Types">
+                    <field name="name" filter_domain="[('name', 'ilike', self)]"/>
+                    <separator/>
+                    <filter string="Is delegated serial generation" name="delegated_serial_generation" domain="[('is_delegated_serial_generation', '=', True)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="manufacturers_spt_form_view" model="ir.ui.view">
+            <field name="name">manufacturers.spt.form.view.spt</field>
+            <field name="model">manufacturers.spt</field>
+            <field name="arch" type="xml">
+                <form>
+					<header>
+						<button name="action_test" string="testar" type="object" groups="base.group_no_one"/>
+						<button name="action_send" string="Send To TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('tt_id','!=',False)]}"/>
+						<button name="action_refresh" string="Refresh From TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('tt_id','=',False)]}"/>
+					</header>
+                    <sheet>
+                    	<group>
+							<field name="name"/>
+                    	</group>
+                        <group>
+                            <group>
+                            	<field name="tt_id" readonly="1" groups="base.group_no_one"/>
+                            	<field name="created_on" readonly="1"/>
+                            	<field name="last_update" readonly="1"/>
+                                <field name="gs1_id"/>
+                                <field name="gs1_company_id"/>
+                                <field name="gs1_sgln"/>
+                                <field name="is_delegated_serial_generation"/>
+                                <field name="res_partner_id"/>
+                                <field name="address_partner_id"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                            </group>
+                            <group>
+                            	<field name="trading_partner_uuid" readonly="1"/>
+                            	<field name="sender_id"/>
+                            	<field name="receiver_id"/>
+                            	<field name="as2_id"/>
+                            	<field name="remote_serial_source_uuid"/>
+                            	<field name="remote_serial_source_name"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="manufacturers_spt_tree_view" model="ir.ui.view">
+            <field name="name">manufacturers.spt.tree.view.spt</field>
+            <field name="model">manufacturers.spt</field>
+            <field name="arch" type="xml">
+                <tree>
+                   	<field name="tt_id" groups="base.group_no_one"/>
+                   	<field name="created_on"/>
+                    <field name="name"/>
+                    <field name="gs1_id"/>
+                    <field name="trading_partner_uuid" />
+                    <field name="res_partner_id"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_manufacturers_spt" model="ir.actions.act_window">
+            <field name="name">Manufacturer Management</field>
+            <field name="res_model">manufacturers.spt</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_manufacturers_filter_spt"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new TrackTraceRx Manufacturer in your list of Manufacturers
+              </p><p>
+                We helps you easily create Manufacturer.
+              </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

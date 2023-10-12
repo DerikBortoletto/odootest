@@ -1,0 +1,112 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+	
+		<!-- Menu Principal -->
+		<menuitem id="menu_tracktrace_spt" name="TrackTraceRx2" groups="tracktrace2_odoo_connector_spt.group_ttr2_access" 
+		          web_icon="tracktrace2_odoo_connector_spt,static/description/icon.png"/>
+
+		<!-- Sub Menus 1 floor -->
+		<!-- 
+        <menuitem id="menu_ttr2_dashboard_spt" name="Dashboard" action="board.open_board_my_dash_action"
+                  parent="menu_tracktrace_spt" sequence="5"/>  -->
+
+        <menuitem id="menu_ttr2_connector_spt" name="Dashboard" action="action_connector_spt"
+                  parent="menu_tracktrace_spt" sequence="8"/>
+
+        <menuitem id="menu_ttr2_contacts_spt" name="Contacts" parent="menu_tracktrace_spt" 
+                  groups="tracktrace2_odoo_connector_spt.group_ttr2_access" sequence="10"/>
+
+        <menuitem id="menu_ttr2_products_spt" name="Products" parent="menu_tracktrace_spt" 
+                  sequence="15"/>
+
+        <menuitem id="menu_ttr2_licences_spt" name="Licences" parent="menu_tracktrace_spt" 
+                  sequence="20"/>
+
+        <menuitem id="menu_ttr2_configuration_spt" name="Configuration" parent="menu_tracktrace_spt" 
+                  groups="tracktrace2_odoo_connector_spt.group_ttr2_access" sequence="100"/>
+
+		<!-- Sub Menus 2 floor -->
+		<!-- Contacts -->
+		
+        <menuitem id="menu_ttr2_partners" name="Partners" parent="menu_ttr2_contacts_spt"
+            sequence="0" action="action_res_partner_spt"/>
+
+        <menuitem id="menu_ttr2_manufacturer" name="Manufacturer" parent="menu_ttr2_contacts_spt" 
+            sequence="10" action="action_manufacturers_spt" />
+
+		<!-- Products -->
+        <menuitem id="menu_product_spt" name="Product" action="action_product_spt" 
+                  parent="menu_ttr2_products_spt" sequence="5"/>
+
+        <menuitem id="menu_container_spt" name="Containers" parent="menu_ttr2_products_spt" action="action_container_spt" 
+                  sequence="10"/>  
+
+
+		<!-- config -->
+        <menuitem id="menu_account_config" name="Settings" parent="menu_ttr2_configuration_spt"
+            sequence="0" action="action_tractrace_config" groups="base.group_system"/>
+
+		<menuitem id="menu_ttr2_license_config" name="License"
+				  parent="menu_ttr2_configuration_spt" sequence="5"/>
+
+		<menuitem id="menu_ttr2_stock_config" name="Stock"
+				  parent="menu_ttr2_configuration_spt" sequence="5"/>
+
+        <menuitem id="menu_ttr2_config_products_spt" name="Products" parent="menu_ttr2_configuration_spt" 
+                  groups="tracktrace2_odoo_connector_spt.group_ttr2_access" sequence="25"/>
+
+        <menuitem id="menu_ttr2_config_logs_spt" name="Logs" parent="menu_ttr2_configuration_spt" 
+                  groups="tracktrace2_odoo_connector_spt.group_ttr2_access" sequence="100"/> 
+
+		<!-- Menus Actions -->
+
+		<menuitem id="menu_addressbook_spt" name="Address Book" groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+				  parent="menu_ttr2_contacts_spt" action="action_trading_partner_address_spt" sequence="35"/>
+
+		<menuitem id="menu_users_spt" name="Trading Partner Users" groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+				  parent="menu_ttr2_contacts_spt" action="action_trading_partner_users_spt" sequence="37"/>
+
+		<menuitem id="menu_license_types_spt" name="License Types" groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+				  parent="menu_ttr2_license_config" action="action_license_types_spt" sequence="5"/>
+
+        <menuitem id="menu_product_category_spt" name="Products Category" parent="menu_ttr2_config_products_spt" 
+                  action="action_product_category_spt" sequence="10"/>
+
+        <menuitem id="menu_product_identifier_spt" name="Product Identifier" groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+                  parent="menu_ttr2_config_products_spt" action="action_product_identifier_spt" sequence="15"/>
+
+        <menuitem id="menu_product_requirement_spt" name="Product Requirement" groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+                  parent="menu_ttr2_config_products_spt" action="action_product_requirement_spt" sequence="20"/>
+                  
+		<menuitem id="menu_pack_size_type_spt" name="Pack Size Type" groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+		          parent="menu_ttr2_config_products_spt" action="action_pack_size_type_spt" sequence="25"/>
+
+		<menuitem id="menu_dosage_form_spt" name="Dosage Form"
+		          parent="menu_ttr2_config_products_spt" action="action_pharma_dosage_forms_spt" sequence="35"/>
+
+		<menuitem id="menu_tracktrace_log_spt" name="Connection Log" groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+				  parent="menu_ttr2_config_logs_spt" action="action_tracktrace_log_spt" sequence="5"/>
+				  
+		<menuitem id="menu_main_locations_management_spt" name="Main Locations Management" 
+		          groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+		          parent="menu_ttr2_stock_config" action="action_main_locations_management_spt" sequence="15"/>
+
+		<menuitem id="menu_sub_locations_management_spt" name="Sub Locations Management" 
+		          groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+		          parent="menu_ttr2_stock_config" action="action_sub_locations_management_spt" sequence="18"/>
+
+		<menuitem id="menu_thrid_party_logistic_provide_spt" name="Third Party Logistic" groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+				  parent="menu_ttr2_stock_config" action="action_thrid_party_logistic_provide_spt" sequence="20"/>
+
+		<menuitem id="menu_storage_spt" name="Storage Area" groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+				  parent="menu_ttr2_stock_config" action="action_storage_areas_spt" sequence="23"/>
+
+ 		<menuitem id="menu_shelf_spt" name="Storage Shelfs" groups="tracktrace2_odoo_connector_spt.group_ttr2_access"
+				  parent="menu_ttr2_stock_config" action="action_shelf_spt" sequence="25"/>
+
+		<menuitem id="menu_license_spt" name="License" parent="menu_ttr2_licences_spt" action="action_license_spt" sequence="5"/>
+
+
+	</data>
+</odoo>

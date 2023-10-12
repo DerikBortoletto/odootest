@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="view_trading_partner_users_spt_tree" model="ir.ui.view">
+			<field name="name">trading.partner.users.spt.tree</field>
+			<field name="model">trading.partner.users.spt</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="uuid"/>
+					<field name="created_on" />
+					<field name="last_update" />
+					<field name="username"/>
+                    <field name="parent_name"/>
+					<field name="active" invisible="1"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_trading_partner_users_spt_form" model="ir.ui.view">
+			<field name="name">trading.partner.users.spt.view</field>
+			<field name="model">trading.partner.users.spt</field>
+			<field name="arch" type="xml">
+				<form string="License">
+					<header>
+						<button name="action_test" string="testar" type="object"/>
+						<button name="action_send" string="Send To TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('uuid','!=',False)]}"/>
+						<button name="action_refresh" string="Refresh From TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('uuid','=',False)]}"/>
+					</header>
+					<sheet>
+						<widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+						<group>
+							<group>
+								<field name="uuid"/>
+								<field name="name" required="1"/>
+								<field name="username"/>
+								<field name="created_on" />
+								<field name="last_update" />
+								<field name="parent_id" required="1"/>
+								<field name="partner_uuid" />
+							</group>
+							<group>
+								<field name="title"/>
+								<field name="email"/>
+								<field name="active" invisible="1"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_trading_partner_users_spt" model="ir.actions.act_window">
+			<field name="name">Users of Trading Partners</field>
+			<field name="res_model">trading.partner.users.spt</field>
+			<field name="view_mode">tree,form</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_trading_partner_users_spt_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('view_trading_partner_users_spt_form')})]"/>
+			<field name="view_id" ref="view_trading_partner_users_spt_tree"/>			
+		</record>
+
+	</data>
+</odoo>

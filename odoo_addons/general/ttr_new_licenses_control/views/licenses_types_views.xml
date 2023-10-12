@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+     <record id='licenses_types_action' model='ir.actions.act_window'>
+        <field name="name">License Types</field>
+        <field name="res_model">licenses.types</field>
+    </record>
+
+    <menuitem
+        id="licenses_types_menu"
+        name="Licenses Types"
+        parent="licenses_base_menu"
+        action="licenses_types_action"
+    />
+
+     <record id="view_types_licenses_form" model="ir.ui.view">
+        <field name="name">All Types</field>
+        <field name="model">licenses.types</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="observation"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="licences_types_view_tree" model="ir.ui.view">
+        <field name="name">Licenses Types List</field>
+        <field name="model">licenses.types</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>

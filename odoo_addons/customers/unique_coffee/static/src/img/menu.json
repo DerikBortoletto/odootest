@@ -1,0 +1,490 @@
+{
+    "Cafés": [
+      {
+        "nome": "Espresso",
+        "descrição": "Espresso\n50ml de café do nosso blend exclusivo.",
+        "preço": "R$ 6,50"
+      },
+      {
+        "nome": "Coado",
+        "descrição": "Café coado na hora e servido na xícara esmaltada.",
+        "preço": "R$ 7,50"
+      },
+      {
+        "nome": "Latte",
+        "descrição": "Espresso com leite vaporizado e espuma.",
+        "preço": "R$ 7,50"
+      },
+      {
+        "nome": "Macchiato",
+        "descrição": "Nosso espresso com um toque de espuma.",
+        "preço": "R$ 7,50"
+      },
+      {
+        "nome": "Mocaccino",
+        "descrição": "Espresso, chocolate europeu, leite e espuma de leite.",
+        "preço": "R$ 8,60"
+      },
+      {
+        "nome": "Cappuccino",
+        "descrição": "Cappuccino tradicional bem cremoso. * Foto do cappuccino com chantilly e marshmallow",
+        "preço": "R$ 8,00"
+      },
+      {
+        "nome": "Chocolate Quente",
+        "descrição": "Chocolate cremoso, creme de leite batido e marshmallow tostado.*foto do *Foto do chocolate quente com chantilly e marshmallow",
+        "preço": "R$ 10,00"
+      },
+      {
+        "nome": "Iced Coffee",
+        "descrição": "Café gelado feito com 2 shots de espresso, adoçado com xarope de caramelo e um toque de creme de leite por cima.",
+        "preço": "R$ 12,00"
+      },
+      {
+        "nome": "Cappuccino Gelado",
+        "descrição": "Cappuccino tradicional batido com gelo e creme de leite",
+        "preço": "R$ 12,00"
+      },
+      {
+        "nome": "Chá Twinnings",
+        "descrição": "Marca tradicional inglesa com mais de 300 anos de existência.",
+        "preço": "R$ 5,00"
+      }
+    ],
+    "lanches_matinais": [
+      {
+        "nome": "Pão Com Mateiga",
+        "descrição": "",
+        "preço": "R$ 5,00"
+      },
+      {
+        "nome": "Pão com requeijão",
+        "descrição": "Pão na chapa com manteiga e adicional de requeijão.",
+        "preço": "R$ 6,50"
+      },
+      {
+        "nome": "Misto",
+        "descrição": "Misto tradicional com presunto e queijo.",
+        "preço": "R$ 13,00"
+      },
+      {
+        "nome": "Misto Light",
+        "descrição": "Misto feito com peito de peru e queijo branco temperado com azeite e orégano no pão integral.",
+        "preço": "R$ 16,00"
+      },
+      {
+        "nome" : "Bauru",
+        "descrição": "Pão, presunto, queijo e tomate picado.",
+        "preço": "R$ 15,00"
+        },
+        {
+        "nome": "Queijo Quente",
+        "descrição": "Lanche de queijo mussarela tostado.",
+        "preço": "R$ 12,00"
+        },
+        {
+        "nome": "Omelete",
+        "descrição": "Omelete de 3 ovos. * Escolha entre os opcionais a seguir.",
+        "preço": "R$ 6,50"
+        },
+        {
+        "nome": "Salada De Frutas",
+        "descrição": "Salada de frutas da estação com granola light e iogurte.",
+        "preço": "R$ 14,00"
+        },
+        {
+        "nome": "Ovos mexidos",
+        "descrição": "3 ovos mexidos feitos com manteiga",
+        "preço": "R$ 8,00"
+        },
+        {
+        "nome": "Iogurte com granola",
+        "descrição": "Iogurte com granola",
+        "preço": "R$ 8,00"
+        },
+        {
+        "nome": "Crepioca",
+        "descrição": "",
+        "preço": ""
+        },
+        {
+        "nome": "American Breakfast",
+        "descrição": "",
+        "preço": ""
+        },
+        {
+        "nome": "Panquecas Americanas",
+        "descrição": "",
+        "preço": ""
+        },
+        {
+        "nome": "Double Sized Brunch",
+        "descrição": "",
+        "preço": ""
+        }
+        ],
+        "Bebidas": [
+          {
+            "nome": "Sucos",
+            "preço": "R$ 7,50",
+            "descrição": "Vitamina Mista - Banana, maçã e mamão, batido com leite."
+          },
+          {
+            "nome": "Água",
+            "preço": "R$ 5,00",
+            "descrição": ""
+          },
+          {
+            "nome": "Refrigerante 350 ml",
+            "preço": "R$ 6,50",
+            "descrição": ""
+          },
+          {
+            "nome": "Toddynho",
+            "preço": "R$ 4,50",
+            "descrição": ""
+          },
+          {
+            "nome": "Suco Del Vale",
+            "preço": "R$ 6,50",
+            "descrição": "Suco lata Del Vale 290mls"
+          },
+          {
+            "nome": "Smoothie 500 mls",
+            "preço": "R$ 15,00",
+            "descrição": "Fruta batida com iogurte natural e leite."
+          },
+          {
+            "nome": "Sucos detox 300mls",
+            "preço": "R$ 7,50",
+            "descrição": ""
+          },
+          {
+            "nome": "Água de coco 330mls",
+            "preço": "R$ 6,50",
+            "descrição": "Agua de coco Sococo"
+          }
+        ],
+        "lanches_especiais": [
+        {
+        "nome": "Cheeseburguer Unique",
+        "descrição": "Hambúrguer de 180g de carnes Angus Black, molho a sua escolha, cheddar inglês maçaricado, molho de tomate natural e pão brioche amanteigado",
+        "preço": "R$ 32,00"
+        },
+        {
+        "nome": "Pãoliça",
+        "descrição": "Linguiça toscana com molho vinagrete e queijo mussarela maçaricado no pão francês.",
+        "preço": "R$ 24,00"
+        },
+        {
+        "nome": "mortaNdela",
+        "descrição": "300g de mortadela na chapa com queijo no pão francês.",
+        "preço": "R$ 29,00"
+        },
+        {
+        "nome": "Burrito",
+        "descrição": "Cream cheese, frango desfiado ou atum com maionese, cebola roxa, cenoura, tomate, alface no pão de forma integral.",
+        "preço": "R$ 24,00"
+        }
+        ],
+        "salgados": [
+        {
+        "nome": "Esfihas",
+        "preço": "R$ 7,50",
+        "descrição": ""
+        
+        },
+        {
+        "nome": "Empada",
+        "descrição": "Palmito",
+        "preço": "R$ 12,00"
+        },
+        {
+        "nome": "Pão De Batata",
+        "descrição": "",
+        "preço": ""
+        },
+        {
+        "nome": "Empanadas Argentinas",
+        "descrição": "",
+       
+        "preço": "R$ 10,00"
+        },
+        {
+        "nome": "Chipa",
+        "descrição": "Massa do pão de queijo feita com 3 queijjos diferentes",
+        "preço": "R$ 4,50"
+        },
+        {
+        "nome": "Pão de Queijo Grande",
+        "descrição": "Pao de queijo de 70g",
+        "preço": "R$ 4,00"
+        },
+        {
+        "nome": "Pão de Queijo Coquetel",
+        "descrição": "Pao de queijo de 20g",
+        "preço": "R$ 2,00"
+        },
+        {
+        "nome": "Coxinha G",
+        "descrição": "Coxinha feita com massa de batata, frango temperado e catupiry pesando aproximadamente 220g.",
+        "preço": "R$ 12,00"
+        },
+        {
+        "nome": "Croissant",
+        "descrição": "",
+        "preço": "R$ 10,00"
+        }
+        ],
+        "almoço": [
+        {
+        "nome": "Filé de Frango",
+        "descrição": "Prato comercial de peito de frango, escolha entre as opções de acompanhamentos.",
+        "preço": "R$ 21,00"
+        },
+        {
+        "nome": "Linguiça Toscana",
+        "descrição": "Prato comercial de linguiça toscana, escolha entre as opções de acompanhamentos.",
+        "preço": "R$ 22,00"
+        },
+        {
+        "nome": "Contra filé (Ancho)",
+        "descrição": "Prato comercial de bife Ancho, escolha entre as opções de acompanhamentos.",
+        "preço": "R$ 28,00"
+        },
+        {
+        "nome": "Parmegiana",
+        "preço": "R$ 25,00",
+        "descrição": ""
+        
+        },
+        {
+        "nome": "File de Tilápia",
+        "descrição": "Prato comercial de tilápia, escolha entre as opções de acompanhamentos.",
+        "preço": "R$ 28,00"
+        },
+        {
+        "nome": "Monte seu prato",
+        "descrição": "Personaliza seu prato com as opções a seguir",
+        "preço": "R$ 9,50"
+        },
+        {
+        "nome": "Feijoada (quartas feiras)",
+        "descrição": "Carne Seca, Costelinha de Porco, Paio, Calabresa, Couve, Farofa e Arroz Acompanha um Espremidinho 🍋",
+        "preço": "R$ 27,00"
+        },
+        {
+        "nome": "Spaghetti com Frango Assado",
+        "descrição": "Spaghetti com sobrecoxa de frango assado. Escolha entre os 2 molhos disponiveis. Molho pomodoro: molho a base de tomates naturais e manjericão. Molho gorgonzola: molho a base de queijo gorgonzola e leite.",
+        "preço": "R$ 23,50"
+        },
+        {
+        "nome": "COSTELA SUINA",
+        "descrição": "Costela Suína ao forno com Molho Barbecue",
+        "preço": "R$ 22,00"
+        },
+        {
+        "nome": "Cupim",
+        "descrição": "Nosso Cupim com pure de Batata, ovo frito e molho de cerveja preta por cima.",
+        "preço": "R$ 32,00"
+        },
+        {
+        "nome": "Strogonoff de Frango",
+        "descrição": "Strogonoff de frango",
+        "preço": "R$ 18,00"
+        },
+        {
+        "nome": "Steak ribs",
+        "descrição": "Carne de corte da costela, grelhada com manteiga de ervas e azeite, acompanha batatinha rustica e espinafre refogado com shoyu",
+        "preço": "R$ 45,00"
+        },
+        {
+        "nome": "Moqueca de Forno",
+        "descrição": "Moqueca de abadejo feita no forno, temperado com leite de coco, cheiro verde, azeite de dendê, pimentão vermelho e amarelo e pimenta de cheiro.",
+        "preço": "R$ 38,00"
+        },
+        {
+        "nome": "Filet Mignon Suíno",
+        "descrição": "Filet mignon suino com molho de mostarda a l'ancienne e vinho branco, acompanhado de tomate confitado e salada",
+        "preço": "R$ 28,00"
+        },
+        {
+        "nome": "Macarrão Tropical",
+        "descrição": "Macarrao parafuso, tomate cereja, salaminho, manjericão, rúcula e mussarela de búfala, temperado com bastante limão, azeite e lemon pepper",
+        "preço": "R$ 24,00"
+        },
+        {
+        "nome": "Salmao grelhado com manteiga",
+        "descrição": "Posta de salmão grelhado com manteiga e alcaparras, acompanha tomate confitado e arroz com brócolis.",
+        "preço": "R$ 38,00"
+        },
+        {
+        "nome": "Picanha Suina",
+        "descrição": "Picanha suína com molho de rapadura e cachaça.",
+        "preço": "R$ 33,00"
+        },
+        {
+        "nome": "Frango a Milanesa",
+        "descrição": "Peito de frango empanado com mussarela e fariiha panko",
+        "preço": "R$ 26,50"
+        }
+        ],
+        "doces": [
+        {
+        "nome": "Chocolates",
+        "descrição": "Chocolates Lacta vários sabores",
+        "preço": "R$ 4,00"
+        },
+        {
+        "nome": "Chiclete Trident",
+        "descrição": "Vários sabores.",
+        "preço": "R$ 3,00"
+        },
+        {
+        "nome": "Cheesecake",
+        "descrição": "Cheesecake artesanal com calda de framboesa.",
+        "preço": "R$ 17,50"
+        },
+        {
+        "nome": "Bolo De Cenoura Com Ganache",
+        "preço": "R$ 8,00",
+        "descrição": ""
+        
+        },
+        {
+        "nome": "Brownie",
+        "preço": "R$8,50",
+        "descrição": ""
+    },
+    {
+    "nome": "Bolo de Pote",
+    "descrição": "Bolo de pote caseiro.",
+    "preço": "R$ 12,00"
+    },
+    {
+    "nome": "Mini Pudim",
+    "descrição": "Pudim de leite caseiro",
+    "preço": "R$ 7,50"
+    }
+    ],
+    "happy_hour": [
+    {
+    "nome": "Long Neck Heineken 330ml Zero",
+    "preço": "R$ 12,00",
+    "descrição": ""
+    },
+    {
+    "nome": "Chopp Brahma 300ml",
+    "preço": "R$ 8,50",
+    "descrição": ""
+    },
+    {
+    "nome": "Chopp Brahma 500ml",
+    "preço": "R$ 13,00",
+    "descrição": ""
+    },
+    {
+    "nome": "Vinho Tinto Taça",
+    "preço": "R$ 20,00",
+    "descrição": ""
+
+    },
+    {
+    "nome": "Vinho Tinto Garrafa",
+    "preço": "R$ 120,00",
+    "descrição": ""
+    },
+    {
+    "nome": "Vinho Branco Taça",
+    "preço": "R$ 20,00",
+    "descrição": ""
+    },
+    {
+    "nome": "Vinho Branco Garrafa",
+    "preço": "R$ 120,00",
+    "descrição": ""
+    },
+    {
+    "nome": "Vinho Espumante Taça",
+    "preço": "R$ 20,00"
+    ,
+    "descrição": ""
+    },
+    {
+    "nome": "Vinho Espumante Garrafa",
+    "preço": "R$ 120,00",
+    "descrição": ""
+    }
+    ],
+    "happy_food": [
+    {
+    "nome": "Porção de Frios",
+    "preço": "R$ 45,00",
+    "descrição": ""
+    },
+    {
+    "nome": "Bolinho 10 unidades",
+    "preço": "R$ 45,00",
+    "descrição": ""
+    },
+    {
+    "nome": "Calabresa Acebolada",
+    "descrição": "Calabresa frita na chapa com cebola.",
+    "preço": "R$ 24,00"
+    },
+    {
+    "nome": "Pimenta dedo de moça recheada",
+    "descrição": "6 unidades",
+    "preço": "R$ 45,00"
+    }
+    ],
+    "cocktails_café": [
+    {
+    "nome": "Espresso Martini",
+    "descrição": "Cocktail gelado a base de café, vodka e licor de café.",
+    "preço": "R$ 33,00"
+    },
+    {
+    "nome": "Irish Coffee",
+    "descrição": "Cocktail quente a base de whisky, café e creme de leite batido.",
+    "preço": "R$ 33,00"
+    },
+    {
+    "nome": "Carajillo",
+    "descrição": "Licor 43 bem gelado com duplo shot de café.",
+    "preço": "R$ 33,00"
+    }
+    ],
+    "cocktails_casa": [
+    {
+    "nome": "Lemon Merengue Martini",
+    "descrição": "Limoncello, licor de nozes, limão e vodka.",
+    "preço": "R$ 33,00"
+    },
+    {
+    "nome": "Gin&T",
+    "descrição": "Gin tônica feito com especiarias, limão, purê de morango e hortelã.",
+    "preço": "R$ 33,00"
+    },
+    {
+    "nome": "Caipirinha Unique",
+    "descrição": "Nossa caipirinha feita com vodka, limão, maracujá, hortelã, açúcar e um toque de licor 43.",
+    "preço": "R$ 33,00"
+    },
+    {
+    "nome": "Jezz Pink Gin",
+    "descrição": "Drink refrescante feito com pink gin, soda e frutas vermelhas.",
+    "preço": "R$ 33,00"
+    },
+    {
+    "nome": "Tropical Gin&T",
+    "descrição": "Redbull tropical com gin & tônica feito com especiarias e maracujá.",
+    "preço": "R$ 33,00"
+    }
+    ]
+    }
+        
+        
+        
+        
+        

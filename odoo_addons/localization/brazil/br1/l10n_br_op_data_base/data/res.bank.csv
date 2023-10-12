@@ -1,0 +1,241 @@
+id,code_bc,name,short_name,bic,country:id,ispb_number,compe_member,acc_number_format
+res_bank_1,001,Banco do Brasil S.A.,BCO DO BRASIL S.A.,BRASBRRJ,base.br,0,1,%(acc_number)s-%(acc_number_dig)s
+res_bank_2,003,BANCO DA AMAZONIA S.A.,BCO DA AMAZONIA S.A.,AMABBRAB,base.br,4902979,1,%(acc_number)s
+res_bank_3,004,Banco do Nordeste do Brasil S.A.,BCO DO NORDESTE DO BRASIL S.A.,BNBRBRCF,base.br,7237373,1,%(acc_number)s
+res_bank_4,007,BANCO NACIONAL DE DESENVOLVIMENTO ECONOMICO E SOCIAL,BNDES,,base.br,33657248,0,%(acc_number)s
+res_bank_5,010,CREDICOAMO CREDITO RURAL COOPERATIVA,CREDICOAMO,,base.br,81723108,1,%(acc_number)s
+res_bank_6,011,CREDIT SUISSE HEDGING-GRIFFO CORRETORA DE VALORES S.A,C.SUISSE HEDGING-GRIFFO CV S/A,,base.br,61809182,0,%(acc_number)s
+res_bank_7,012,Banco Inbursa S.A.,BANCO INBURSA,SBLLBRSP,base.br,4866275,0,%(acc_number)s
+res_bank_8,014,STATE STREET BRASIL S.A. ? BANCO COMERCIAL,STATE STREET BR S.A. BCO COMERCIAL,,base.br,9274232,0,%(acc_number)s
+res_bank_9,015,"UBS Brasil Corretora de Câmbio, Títulos e Valores Mobiliários S.A.",UBS BRASIL CCTVM S.A.,,base.br,2819125,0,%(acc_number)s
+res_bank_10,016,COOPERATIVA DE CRÉDITO MÚTUO DOS DESPACHANTES DE TRÂNSITO DE SANTA CATARINA E RI,SICOOB CREDITRAN,,base.br,4715685,0,%(acc_number)s
+res_bank_11,017,BNY Mellon Banco S.A.,BNY MELLON BCO S.A.,,base.br,42272526,1,%(acc_number)s
+res_bank_12,018,Banco Tricury S.A.,BCO TRICURY S.A.,,base.br,57839805,1,%(acc_number)s
+res_bank_13,021,BANESTES S.A. BANCO DO ESTADO DO ESPIRITO SANTO,BCO BANESTES S.A.,BEESBRRJ,base.br,28127603,1,%(acc_number)s
+res_bank_14,024,Banco Bandepe S.A.,BCO BANDEPE S.A.,,base.br,10866788,0,%(acc_number)s
+res_bank_15,025,Banco Alfa S.A.,BCO ALFA S.A.,AUFABRSP,base.br,3323840,1,%(acc_number)s
+res_bank_16,029,Banco Itaú Consignado S.A.,BANCO ITAÚ CONSIGNADO S.A.,BERJBRRJ,base.br,33885724,0,%(acc_number)s
+res_bank_17,033,BANCO SANTANDER (BRASIL) S.A.,BCO SANTANDER (BRASIL) S.A.,ABNABRSP,base.br,90400888,1,%(bra_number)s%(acc_number)s%(acc_number_dig)s
+res_bank_18,036,Banco Bradesco BBI S.A.,BCO BBI S.A.,,base.br,6271464,1,%(acc_number)s
+res_bank_19,037,Banco do Estado do Pará S.A.,BCO DO EST. DO PA S.A.,BEPABRAB,base.br,4913711,1,%(acc_number)s
+res_bank_20,040,Banco Cargill S.A.,BCO CARGILL S.A.,BCBZBRSP,base.br,3609817,0,%(acc_number)s
+res_bank_21,041,Banco do Estado do Rio Grande do Sul S.A.,BCO DO ESTADO DO RS S.A.,BRGSBRRS,base.br,92702067,1,%(acc_number)s
+res_bank_22,047,Banco do Estado de Sergipe S.A.,BCO DO EST. DE SE S.A.,SEEBBRR1,base.br,13009717,1,%(acc_number)s
+res_bank_23,060,Confidence Corretora de Câmbio S.A.,CONFIDENCE CC S.A.,,base.br,4913129,0,%(acc_number)s
+res_bank_24,062,Hipercard Banco Múltiplo S.A.,HIPERCARD BM S.A.,,base.br,3012230,1,%(acc_number)s
+res_bank_25,063,Banco Bradescard S.A.,BANCO BRADESCARD,,base.br,4184779,1,%(acc_number)s
+res_bank_26,064,GOLDMAN SACHS DO BRASIL BANCO MULTIPLO S.A.,GOLDMAN SACHS DO BRASIL BM S.A,,base.br,4332281,0,%(acc_number)s
+res_bank_27,065,Banco AndBank (Brasil) S.A.,BCO ANDBANK S.A.,,base.br,48795256,1,%(acc_number)s
+res_bank_28,066,BANCO MORGAN STANLEY S.A.,BCO MORGAN STANLEY S.A.,MSDWBRSP,base.br,2801938,0,%(acc_number)s
+res_bank_29,069,Banco Crefisa S.A.,BCO CREFISA S.A.,BPBMBRSP,base.br,61033106,1,%(acc_number)s
+res_bank_30,070,BRB - BANCO DE BRASILIA S.A.,BRB - BCO DE BRASILIA S.A.,BRBSBRDF,base.br,208,1,%(acc_number)s
+res_bank_31,074,Banco J. Safra S.A.,BCO. J.SAFRA S.A.,SAFRBRSP,base.br,3017677,1,%(acc_number)s
+res_bank_32,075,Banco ABN Amro S.A.,BCO ABN AMRO S.A.,,base.br,3532415,0,%(acc_number)s
+res_bank_33,076,Banco KDB do Brasil S.A.,BCO KDB BRASIL S.A.,KODBBRSP,base.br,7656500,0,%(acc_number)s
+res_bank_34,077,Banco Inter S.A.,BANCO INTER,ITEMBRSP,base.br,416968,1,%(acc_number)s
+res_bank_35,078,Haitong Banco de Investimento do Brasil S.A.,HAITONG BI DO BRASIL S.A.,BESBBRSP,base.br,34111187,0,%(acc_number)s
+res_bank_36,079,Banco Original do Agronegócio S.A.,BCO ORIGINAL DO AGRO S/A,,base.br,9516419,0,%(acc_number)s
+res_bank_37,080,B&T CORRETORA DE CAMBIO LTDA.,B&T CC LTDA.,,base.br,73622748,0,%(acc_number)s
+res_bank_38,081,BancoSeguro S.A.,BANCOSEGURO S.A.,CNCVBRR1,base.br,10264663,0,%(acc_number)s
+res_bank_39,082,BANCO TOPÁZIO S.A.,BANCO TOPÁZIO S.A.,TOPZBRRS,base.br,7679404,0,%(acc_number)s
+res_bank_40,083,Banco da China Brasil S.A.,BCO DA CHINA BRASIL S.A.,BKCHBRSP,base.br,10690848,1,%(acc_number)s
+res_bank_41,084,UNIPRIME NORTE DO PARANÁ - COOPERATIVA DE CRÉDITO LTDA,UNIPRIME NORTE DO PARANÁ - CC,,base.br,2398976,1,%(acc_number)s
+res_bank_42,085,Cooperativa Central de Crédito - Ailos,COOP CENTRAL AILOS,,base.br,5463212,1,%(acc_number)s
+res_bank_43,089,CREDISAN COOPERATIVA DE CRÉDITO,CREDISAN CC,,base.br,62109566,1,%(acc_number)s
+res_bank_44,091,CENTRAL DE COOPERATIVAS DE ECONOMIA E CRÉDITO MÚTUO DO ESTADO DO RIO GRANDE DO S,CCCM UNICRED CENTRAL RS,,base.br,1634601,0,%(acc_number)s
+res_bank_45,092,"BRK S.A. Crédito, Financiamento e Investimento",BRK S.A. CFI,,base.br,12865507,0,%(acc_number)s
+res_bank_46,093,PÓLOCRED SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E À EMPRESA DE PEQUENO PORT,POLOCRED SCMEPP LTDA.,,base.br,7945233,0,%(acc_number)s
+res_bank_47,094,Banco Finaxis S.A.,BANCO FINAXIS,,base.br,11758741,1,%(acc_number)s
+res_bank_48,095,Travelex Banco de Câmbio S.A.,TRAVELEX BANCO DE CÂMBIO S.A.,,base.br,11703662,0,%(acc_number)s
+res_bank_49,096,Banco B3 S.A.,BCO B3 S.A.,BBMFBRSP,base.br,997185,0,%(acc_number)s
+res_bank_50,097,Credisis - Central de Cooperativas de Crédito Ltda.,CREDISIS CENTRAL DE COOPERATIVAS DE CRÉDITO LTDA.,,base.br,4632856,1,%(acc_number)s
+res_bank_51,098,Credialiança Cooperativa de Crédito Rural,CREDIALIANÇA CCR,,base.br,78157146,1,%(acc_number)s
+res_bank_52,099,UNIPRIME CENTRAL - CENTRAL INTERESTADUAL DE COOPERATIVAS DE CREDITO LTDA.,UNIPRIME CENTRAL CCC LTDA.,,base.br,3046391,1,%(acc_number)s
+res_bank_53,100,Planner Corretora de Valores S.A.,PLANNER CV S.A.,,base.br,806535,0,%(acc_number)s
+res_bank_54,101,RENASCENCA DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA,RENASCENCA DTVM LTDA,,base.br,62287735,0,%(acc_number)s
+res_bank_55,102,"XP INVESTIMENTOS CORRETORA DE CÂMBIO,TÍTULOS E VALORES MOBILIÁRIOS S/A",XP INVESTIMENTOS CCTVM S/A,,base.br,2332886,0,%(acc_number)s
+res_bank_56,104,CAIXA ECONOMICA FEDERAL,CAIXA ECONOMICA FEDERAL,CEFXBRSP,base.br,360305,1,%(acc_number)s
+res_bank_57,105,"Lecca Crédito, Financiamento e Investimento S/A",LECCA CFI S.A.,,base.br,7652226,0,%(acc_number)s
+res_bank_58,107,Banco Bocom BBM S.A.,BCO BOCOM BBM S.A.,BBINBRRJ,base.br,15114366,1,%(acc_number)s
+res_bank_59,108,"PORTOCRED S.A. - CREDITO, FINANCIAMENTO E INVESTIMENTO",PORTOCRED S.A. - CFI,,base.br,1800019,0,%(acc_number)s
+res_bank_60,111,OLIVEIRA TRUST DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIARIOS S.A.,OLIVEIRA TRUST DTVM S.A.,,base.br,36113876,0,%(acc_number)s
+res_bank_61,113,Magliano S.A. Corretora de Cambio e Valores Mobiliarios,MAGLIANO S.A. CCVM,,base.br,61723847,0,%(acc_number)s
+res_bank_62,114,Central Cooperativa de Crédito no Estado do Espírito Santo - CECOOP,CENTRAL COOPERATIVA DE CRÉDITO NO ESTADO DO ESPÍRITO SANTO,,base.br,5790149,1,%(acc_number)s
+res_bank_63,117,ADVANCED CORRETORA DE CÂMBIO LTDA,ADVANCED CC LTDA,,base.br,92856905,0,%(acc_number)s
+res_bank_64,119,Banco Western Union do Brasil S.A.,BCO WESTERN UNION,,base.br,13720915,0,%(acc_number)s
+res_bank_65,120,BANCO RODOBENS S.A.,BCO RODOBENS S.A.,,base.br,33603457,1,%(acc_number)s
+res_bank_66,121,Banco Agibank S.A.,BCO AGIBANK S.A.,,base.br,10664513,1,%(acc_number)s
+res_bank_67,122,Banco Bradesco BERJ S.A.,BCO BRADESCO BERJ S.A.,,base.br,33147315,1,%(acc_number)s
+res_bank_68,124,Banco Woori Bank do Brasil S.A.,BCO WOORI BANK DO BRASIL S.A.,,base.br,15357060,1,%(acc_number)s
+res_bank_69,125,Plural S.A. Banco Múltiplo,PLURAL BCO BM,,base.br,45246410,1,%(acc_number)s
+res_bank_70,126,BR Partners Banco de Investimento S.A.,BR PARTNERS BI,,base.br,13220493,0,%(acc_number)s
+res_bank_71,127,Codepe Corretora de Valores e Câmbio S.A.,CODEPE CVC S.A.,,base.br,9512542,0,%(acc_number)s
+res_bank_72,128,MS Bank S.A. Banco de Câmbio,MS BANK S.A. BCO DE CÂMBIO,,base.br,19307785,0,%(acc_number)s
+res_bank_73,129,UBS Brasil Banco de Investimento S.A.,UBS BRASIL BI S.A.,,base.br,18520834,0,%(acc_number)s
+res_bank_74,130,"CARUANA S.A. - SOCIEDADE DE CRÉDITO, FINANCIAMENTO E INVESTIMENTO",CARUANA SCFI,,base.br,9313766,0,%(acc_number)s
+res_bank_75,131,TULLETT PREBON BRASIL CORRETORA DE VALORES E CÂMBIO LTDA,TULLETT PREBON BRASIL CVC LTDA,,base.br,61747085,0,%(acc_number)s
+res_bank_76,132,ICBC do Brasil Banco Múltiplo S.A.,ICBC DO BRASIL BM S.A.,,base.br,17453575,0,%(acc_number)s
+res_bank_77,133,CONFEDERAÇÃO NACIONAL DAS COOPERATIVAS CENTRAIS DE CRÉDITO E ECONOMIA FAMILIAR E,CRESOL CONFEDERAÇÃO,,base.br,10398952,1,%(acc_number)s
+res_bank_78,134,BGC LIQUIDEZ DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA,BGC LIQUIDEZ DTVM LTDA,,base.br,33862244,0,%(acc_number)s
+res_bank_79,136,CONFEDERAÇÃO NACIONAL DAS COOPERATIVAS CENTRAIS UNICRED LTDA. - UNICRED DO BRASI,UNICRED,,base.br,315557,1,%(acc_number)s
+res_bank_80,138,Get Money Corretora de Câmbio S.A.,GET MONEY CC LTDA,,base.br,10853017,0,%(acc_number)s
+res_bank_81,139,Intesa Sanpaolo Brasil S.A. - Banco Múltiplo,INTESA SANPAOLO BRASIL S.A. BM,,base.br,55230916,0,%(acc_number)s
+res_bank_82,140,Easynvest - Título Corretora de Valores SA,EASYNVEST - TÍTULO CV SA,,base.br,62169875,0,%(acc_number)s
+res_bank_83,142,Broker Brasil Corretora de Câmbio Ltda.,BROKER BRASIL CC LTDA.,,base.br,16944141,0,%(acc_number)s
+res_bank_84,143,Treviso Corretora de Câmbio S.A.,TREVISO CC S.A.,,base.br,2992317,0,%(acc_number)s
+res_bank_85,144,BEXS BANCO DE CÂMBIO S/A,BEXS BCO DE CAMBIO S.A.,,base.br,13059145,0,%(acc_number)s
+res_bank_86,145,LEVYCAM - CORRETORA DE CAMBIO E VALORES LTDA.,LEVYCAM CCV LTDA,,base.br,50579044,0,%(acc_number)s
+res_bank_87,146,GUITTA CORRETORA DE CAMBIO LTDA.,GUITTA CC LTDA,,base.br,24074692,0,%(acc_number)s
+res_bank_88,149,Facta Financeira S.A. - Crédito Financiamento e Investimento,FACTA S.A. CFI,,base.br,15581638,0,%(acc_number)s
+res_bank_89,157,ICAP do Brasil Corretora de Títulos e Valores Mobiliários Ltda.,ICAP DO BRASIL CTVM LTDA.,,base.br,9105360,0,%(acc_number)s
+res_bank_90,159,Casa do Crédito S.A. Sociedade de Crédito ao Microempreendedor,CASA CREDITO S.A. SCM,,base.br,5442029,0,%(acc_number)s
+res_bank_91,163,Commerzbank Brasil S.A. - Banco Múltiplo,COMMERZBANK BRASIL S.A. - BCO MÚLTIPLO,,base.br,23522214,0,%(acc_number)s
+res_bank_92,169,Banco Olé Bonsucesso Consignado S.A.,BCO OLÉ BONSUCESSO CONSIGNADO S.A.,,base.br,71371686,0,%(acc_number)s
+res_bank_93,173,BRL Trust Distribuidora de Títulos e Valores Mobiliários S.A.,BRL TRUST DTVM SA,,base.br,13486793,0,%(acc_number)s
+res_bank_94,174,"PERNAMBUCANAS FINANCIADORA S.A. - CRÉDITO, FINANCIAMENTO E INVESTIMENTO",PERNAMBUCANAS FINANC S.A. CFI,,base.br,43180355,0,%(acc_number)s
+res_bank_95,177,Guide Investimentos S.A. Corretora de Valores,GUIDE,,base.br,65913436,0,%(acc_number)s
+res_bank_96,180,"CM CAPITAL MARKETS CORRETORA DE CÂMBIO, TÍTULOS E VALORES MOBILIÁRIOS LTDA",CM CAPITAL MARKETS CCTVM LTDA,,base.br,2685483,0,%(acc_number)s
+res_bank_97,183,SOCRED S.A. - SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E À EMPRESA DE PEQUENO P,SOCRED SA - SCMEPP,,base.br,9210106,0,%(acc_number)s
+res_bank_98,184,Banco Itaú BBA S.A.,BCO ITAÚ BBA S.A.,CBBABRSP,base.br,17298092,0,%(acc_number)s
+res_bank_99,188,"ATIVA INVESTIMENTOS S.A. CORRETORA DE TÍTULOS, CÂMBIO E VALORES",ATIVA S.A. INVESTIMENTOS CCTVM,,base.br,33775974,0,%(acc_number)s
+res_bank_100,189,"HS FINANCEIRA S/A CREDITO, FINANCIAMENTO E INVESTIMENTOS",HS FINANCEIRA,,base.br,7512441,0,%(acc_number)s
+res_bank_101,190,SERVICOOP - COOPERATIVA DE CRÉDITO DOS SERVIDORES PÚBLICOS ESTADUAIS DO RIO GRAN,SERVICOOP,,base.br,3973814,0,%(acc_number)s
+res_bank_102,191,Nova Futura Corretora de Títulos e Valores Mobiliários Ltda.,NOVA FUTURA CTVM LTDA.,,base.br,4257795,0,%(acc_number)s
+res_bank_103,194,PARMETAL DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA,PARMETAL DTVM LTDA,,base.br,20155248,0,%(acc_number)s
+res_bank_104,196,FAIR CORRETORA DE CAMBIO S.A.,FAIR CC S.A.,,base.br,32648370,0,%(acc_number)s
+res_bank_105,197,Stone Pagamentos S.A.,STONE PAGAMENTOS S.A.,,base.br,16501555,0,%(acc_number)s
+res_bank_106,208,Banco BTG Pactual S.A.,BANCO BTG PACTUAL S.A.,BOMGBRS1,base.br,30306294,1,%(acc_number)s
+res_bank_107,212,Banco Original S.A.,BANCO ORIGINAL,,base.br,92894922,1,%(acc_number)s
+res_bank_108,213,Banco Arbi S.A.,BCO ARBI S.A.,ARBBBRS1,base.br,54403563,1,%(acc_number)s
+res_bank_109,217,Banco John Deere S.A.,BANCO JOHN DEERE S.A.,,base.br,91884981,1,%(acc_number)s
+res_bank_110,218,Banco BS2 S.A.,BCO BS2 S.A.,BBONBRSP,base.br,71027866,1,%(acc_number)s
+res_bank_111,222,BANCO CRÉDIT AGRICOLE BRASIL S.A.,BCO CRÉDIT AGRICOLE BR S.A.,,base.br,75647891,1,%(acc_number)s
+res_bank_112,224,Banco Fibra S.A.,BCO FIBRA S.A.,FIBIBRSP,base.br,58616418,1,%(acc_number)s
+res_bank_113,233,Banco Cifra S.A.,BANCO CIFRA,,base.br,62421979,0,%(acc_number)s
+res_bank_114,237,Banco Bradesco S.A.,BCO BRADESCO S.A.,BBDEBRSP,base.br,60746948,1,%(acc_number)s
+res_bank_115,241,BANCO CLASSICO S.A.,BCO CLASSICO S.A.,,base.br,31597552,1,%(acc_number)s
+res_bank_116,243,Banco Máxima S.A.,BCO MÁXIMA S.A.,BMAXBRRJ,base.br,33923798,1,%(acc_number)s
+res_bank_117,246,Banco ABC Brasil S.A.,BCO ABC BRASIL S.A.,ABCBBRSP,base.br,28195667,1,%(acc_number)s
+res_bank_118,249,Banco Investcred Unibanco S.A.,BANCO INVESTCRED UNIBANCO S.A.,,base.br,61182408,1,%(acc_number)s
+res_bank_119,250,BCV - BANCO DE CRÉDITO E VAREJO S.A.,BCV,SCHABRSP,base.br,50585090,0,%(acc_number)s
+res_bank_120,253,Bexs Corretora de Câmbio S/A,BEXS CC S.A.,,base.br,52937216,0,%(acc_number)s
+res_bank_121,254,PARANÁ BANCO S.A.,PARANA BCO S.A.,,base.br,14388334,1,%(acc_number)s
+res_bank_122,259,MONEYCORP BANCO DE CÂMBIO S.A.,MONEYCORP BCO DE CÂMBIO S.A.,,base.br,8609934,0,%(acc_number)s
+res_bank_123,260,Nu Pagamentos S.A.,NU PAGAMENTOS S.A.,,base.br,18236120,0,%(acc_number)s
+res_bank_124,265,Banco Fator S.A.,BCO FATOR S.A.,,base.br,33644196,1,%(acc_number)s
+res_bank_125,266,BANCO CEDULA S.A.,BCO CEDULA S.A.,,base.br,33132044,1,%(acc_number)s
+res_bank_126,268,BARI COMPANHIA HIPOTECÁRIA,BARI CIA HIPOTECÁRIA,,base.br,14511781,0,%(acc_number)s
+res_bank_127,269,BANCO HSBC S.A.,BCO HSBC S.A.,,base.br,53518684,0,%(acc_number)s
+res_bank_128,270,Sagitur Corretora de Câmbio Ltda.,SAGITUR CC LTDA,,base.br,61444949,0,%(acc_number)s
+res_bank_129,271,"IB Corretora de Câmbio, Títulos e Valores Mobiliários S.A.",IB CCTVM S.A.,,base.br,27842177,0,%(acc_number)s
+res_bank_130,272,AGK CORRETORA DE CAMBIO S.A.,AGK CC S.A.,,base.br,250699,0,%(acc_number)s
+res_bank_131,273,Cooperativa de Crédito Rural de São Miguel do Oeste - Sulcredi/São Miguel,CCR DE SÃO MIGUEL DO OESTE,,base.br,8253539,0,%(acc_number)s
+res_bank_132,274,MONEY PLUS SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E A EMPRESA DE PEQUENO PORT,MONEY PLUS SCMEPP LTDA,,base.br,11581339,0,%(acc_number)s
+res_bank_133,276,"Senff S.A. - Crédito, Financiamento e Investimento",SENFF S.A. - CFI,,base.br,11970623,0,%(acc_number)s
+res_bank_134,278,Genial Investimentos Corretora de Valores Mobiliários S.A.,GENIAL INVESTIMENTOS CVM S.A.,,base.br,27652684,0,%(acc_number)s
+res_bank_135,279,COOPERATIVA DE CREDITO RURAL DE PRIMAVERA DO LESTE,CCR DE PRIMAVERA DO LESTE,,base.br,26563270,1,%(acc_number)s
+res_bank_136,280,"Avista S.A. Crédito, Financiamento e Investimento",AVISTA S.A. CFI,,base.br,23862762,0,%(acc_number)s
+res_bank_137,281,Cooperativa de Crédito Rural Coopavel,CCR COOPAVEL,,base.br,76461557,1,%(acc_number)s
+res_bank_138,283,RB CAPITAL INVESTIMENTOS DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LIMITADA,RB CAPITAL INVESTIMENTOS DTVM LTDA.,,base.br,89960090,0,%(acc_number)s
+res_bank_139,285,Frente Corretora de Câmbio Ltda.,FRENTE CC LTDA.,,base.br,71677850,0,%(acc_number)s
+res_bank_140,286,COOPERATIVA DE CRÉDITO RURAL DE OURO SULCREDI/OURO,CCR DE OURO,,base.br,7853842,0,%(acc_number)s
+res_bank_141,288,CAROL DISTRIBUIDORA DE TITULOS E VALORES MOBILIARIOS LTDA.,CAROL DTVM LTDA.,,base.br,62237649,0,%(acc_number)s
+res_bank_142,289,DECYSEO CORRETORA DE CAMBIO LTDA.,DECYSEO CC LTDA.,,base.br,94968518,0,%(acc_number)s
+res_bank_143,290,Pagseguro Internet S.A.,PAGSEGURO,,base.br,8561701,0,%(acc_number)s
+res_bank_144,292,BS2 Distribuidora de Títulos e Valores Mobiliários S.A.,BS2 DTVM S.A.,,base.br,28650236,0,%(acc_number)s
+res_bank_145,293,Lastro RDV Distribuidora de Títulos e Valores Mobiliários Ltda.,LASTRO RDV DTVM LTDA,,base.br,71590442,0,%(acc_number)s
+res_bank_146,296,VISION S.A. CORRETORA DE CAMBIO,VISION S.A. CC,,base.br,4062902,0,%(acc_number)s
+res_bank_147,298,Vip's Corretora de Câmbio Ltda.,VIPS CC LTDA.,,base.br,17772370,0,%(acc_number)s
+res_bank_148,299,"SOROCRED CRÉDITO, FINANCIAMENTO E INVESTIMENTO S.A.",SOROCRED CFI S.A.,,base.br,4814563,0,%(acc_number)s
+res_bank_149,300,Banco de la Nacion Argentina,BCO LA NACION ARGENTINA,NACNBRSP,base.br,33042151,1,%(acc_number)s
+res_bank_150,301,BPP Instituição de Pagamento S.A.,BPP IP S.A.,,base.br,13370835,0,%(acc_number)s
+res_bank_151,306,PORTOPAR DISTRIBUIDORA DE TITULOS E VALORES MOBILIARIOS LTDA.,PORTOPAR DTVM LTDA,,base.br,40303299,0,%(acc_number)s
+res_bank_152,307,Terra Investimentos Distribuidora de Títulos e Valores Mobiliários Ltda.,TERRA INVESTIMENTOS DTVM,,base.br,3751794,0,%(acc_number)s
+res_bank_153,309,CAMBIONET CORRETORA DE CÂMBIO LTDA.,CAMBIONET CC LTDA,,base.br,14190547,0,%(acc_number)s
+res_bank_154,310,VORTX DISTRIBUIDORA DE TITULOS E VALORES MOBILIARIOS LTDA.,VORTX DTVM LTDA.,,base.br,22610500,0,%(acc_number)s
+res_bank_155,315,PI Distribuidora de Títulos e Valores Mobiliários S.A.,PI DTVM S.A.,,base.br,3502968,0,%(acc_number)s
+res_bank_156,318,Banco BMG S.A.,BCO BMG S.A.,BMBCBRSP,base.br,61186680,1,%(acc_number)s
+res_bank_157,319,OM DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA,OM DTVM LTDA,,base.br,11495073,0,%(acc_number)s
+res_bank_158,320,China Construction Bank (Brasil) Banco Múltiplo S/A,BCO CCB BRASIL S.A.,BICBBRSP,base.br,7450604,1,%(acc_number)s
+res_bank_159,321,CREFAZ SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E A EMPRESA DE PEQUENO PORTE LT,CREFAZ SCMEPP LTDA,,base.br,18188384,0,%(acc_number)s
+res_bank_160,322,Cooperativa de Crédito Rural de Abelardo Luz - Sulcredi/Crediluz,CCR DE ABELARDO LUZ,,base.br,1073966,0,%(acc_number)s
+res_bank_161,323,MERCADOPAGO.COM REPRESENTACOES LTDA.,MERCADO PAGO,,base.br,10573521,0,%(acc_number)s
+res_bank_162,325,Órama Distribuidora de Títulos e Valores Mobiliários S.A.,ÓRAMA DTVM S.A.,,base.br,13293225,0,%(acc_number)s
+res_bank_163,326,"PARATI - CREDITO, FINANCIAMENTO E INVESTIMENTO S.A.",PARATI - CFI S.A.,,base.br,3311443,0,%(acc_number)s
+res_bank_164,329,QI Sociedade de Crédito Direto S.A.,QI SCD S.A.,,base.br,32402502,0,%(acc_number)s
+res_bank_165,330,BANCO BARI DE INVESTIMENTOS E FINANCIAMENTOS S.A.,BANCO BARI S.A.,,base.br,556603,0,%(acc_number)s
+res_bank_166,331,Fram Capital Distribuidora de Títulos e Valores Mobiliários S.A.,FRAM CAPITAL DTVM S.A.,,base.br,13673855,0,%(acc_number)s
+res_bank_167,332,Acesso Soluções de Pagamento S.A.,ACESSO SOLUCOES PAGAMENTO SA,,base.br,13140088,0,%(acc_number)s
+res_bank_168,335,Banco Digio S.A.,BANCO DIGIO,,base.br,27098060,0,%(acc_number)s
+res_bank_169,336,Banco C6 S.A.,BCO C6 S.A.,,base.br,31872495,0,%(acc_number)s
+res_bank_170,340,Super Pagamentos e Administração de Meios Eletrônicos S.A.,SUPER PAGAMENTOS E ADMINISTRACAO DE MEIOS ELETRONICOS S.A.,,base.br,9554480,0,%(acc_number)s
+res_bank_171,341,ITAÚ UNIBANCO S.A.,ITAÚ UNIBANCO S.A.,ITAUBRSP,base.br,60701190,1,%(acc_number)s
+res_bank_172,342,Creditas Sociedade de Crédito Direto S.A.,CREDITAS SCD,,base.br,32997490,0,%(acc_number)s
+res_bank_173,343,FFA SOCIEDADE DE CRÉDITO AO MICROEMPREENDEDOR E À EMPRESA DE PEQUENO PORTE LTDA.,FFA SCMEPP LTDA.,,base.br,24537861,0,%(acc_number)s
+res_bank_174,348,Banco XP S.A.,BCO XP S.A.,,base.br,33264668,0,%(acc_number)s
+res_bank_175,349,"AMAGGI S.A. - CRÉDITO, FINANCIAMENTO E INVESTIMENTO",AMAGGI S.A. CFI,,base.br,27214112,0,%(acc_number)s
+res_bank_176,350,COOPERATIVA DE CRÉDITO RURAL DE PEQUENOS AGRICULTORES E DA REFORMA AGRÁRIA DO CE,CREHNOR LARANJEIRAS,,base.br,1330387,0,%(acc_number)s
+res_bank_177,352,TORO CORRETORA DE TÍTULOS E VALORES MOBILIÁRIOS LTDA,TORO CTVM LTDA,,base.br,29162769,0,%(acc_number)s
+res_bank_178,354,NECTON INVESTIMENTOSS.A. CORRETORA DE VALORES MOBILIÁRIOS E COMMODITIES,NECTON INVESTIMENTOS S.A CVM,,base.br,52904364,0,%(acc_number)s
+res_bank_179,355,ÓTIMO SOCIEDADE DE CRÉDITO DIRETO S.A.,ÓTIMO SCD S.A.,,base.br,34335592,0,%(acc_number)s
+res_bank_180,359,"ZEMA CRÉDITO, FINANCIAMENTO E INVESTIMENTO S/A",ZEMA CFI S/A,,base.br,5351887,0,%(acc_number)s
+res_bank_181,363,SOCOPA SOCIEDADE CORRETORA PAULISTA S.A.,SOCOPA SC PAULISTA S.A.,,base.br,62285390,0,%(acc_number)s
+res_bank_182,364,GERENCIANET PAGAMENTOS DO BRASIL LTDA,GERENCIANET PAGTOS BRASIL LTDA,,base.br,9089356,0,%(acc_number)s
+res_bank_183,365,SOLIDUS S.A. CORRETORA DE CAMBIO E VALORES MOBILIARIOS,SOLIDUS S.A. CCVM,,base.br,68757681,0,%(acc_number)s
+res_bank_184,366,BANCO SOCIETE GENERALE BRASIL S.A.,BCO SOCIETE GENERALE BRASIL,BSOGBRSP,base.br,61533584,1,%(acc_number)s
+res_bank_185,367,VITREO DISTRIBUIDORA DE TÍTULOS E VALORES MOBILIÁRIOS S.A.,VITREO DTVM S.A.,,base.br,34711571,0,%(acc_number)s
+res_bank_186,368,Banco CSF S.A.,BCO CSF S.A.,,base.br,8357240,0,%(acc_number)s
+res_bank_187,370,Banco Mizuho do Brasil S.A.,BCO MIZUHO S.A.,WELABRSP,base.br,61088183,0,%(acc_number)s
+res_bank_188,371,WARREN CORRETORA DE VALORES MOBILIÁRIOS E CÂMBIO LTDA.,WARREN CVMC LTDA,,base.br,92875780,0,%(acc_number)s
+res_bank_189,373,UP.P SOCIEDADE DE EMPRÉSTIMO ENTRE PESSOAS S.A.,UP.P SEP S.A.,,base.br,35977097,0,%(acc_number)s
+res_bank_190,376,BANCO J.P. MORGAN S.A.,BCO J.P. MORGAN S.A.,CHASBRSP,base.br,33172537,1,%(acc_number)s
+res_bank_191,381,BANCO MERCEDES-BENZ DO BRASIL S.A.,BCO MERCEDES-BENZ S.A.,,base.br,60814191,0,%(acc_number)s
+res_bank_192,389,Banco Mercantil do Brasil S.A.,BCO MERCANTIL DO BRASIL S.A.,BMBRBRRB,base.br,17184037,1,%(acc_number)s
+res_bank_193,394,Banco Bradesco Financiamentos S.A.,BCO BRADESCO FINANC. S.A.,,base.br,7207996,1,%(acc_number)s
+res_bank_194,399,Kirton Bank S.A. - Banco Múltiplo,KIRTON BANK,BCBBBRPR,base.br,1701201,0,%(acc_number)s
+res_bank_195,412,BANCO CAPITAL S.A.,BCO CAPITAL S.A.,,base.br,15173776,1,%(acc_number)s
+res_bank_196,422,Banco Safra S.A.,BCO SAFRA S.A.,SAFRBRSP,base.br,58160789,1,%(acc_number)s
+res_bank_197,456,Banco MUFG Brasil S.A.,BCO MUFG BRASIL S.A.,BOTKBRSX,base.br,60498557,1,%(acc_number)s
+res_bank_198,464,Banco Sumitomo Mitsui Brasileiro S.A.,BCO SUMITOMO MITSUI BRASIL S.A.,SUBRBRSP,base.br,60518222,1,%(acc_number)s
+res_bank_199,473,Banco Caixa Geral - Brasil S.A.,BCO CAIXA GERAL BRASIL S.A.,CGDIBRSP,base.br,33466988,1,%(acc_number)s
+res_bank_200,477,Citibank N.A.,CITIBANK N.A.,CITIBRSP,base.br,33042953,1,%(acc_number)s
+res_bank_201,479,Banco ItauBank S.A.,BCO ITAUBANK S.A.,FNBBBRB1,base.br,60394079,0,%(acc_number)s
+res_bank_202,487,DEUTSCHE BANK S.A. - BANCO ALEMAO,DEUTSCHE BANK S.A.BCO ALEMAO,DEUTBRSP,base.br,62331228,1,%(acc_number)s
+res_bank_203,488,"JPMorgan Chase Bank, National Association",JPMORGAN CHASE BANK,,base.br,46518205,0,%(acc_number)s
+res_bank_204,492,ING Bank N.V.,ING BANK N.V.,INGBBRSP,base.br,49336860,0,%(acc_number)s
+res_bank_205,495,Banco de La Provincia de Buenos Aires,BCO LA PROVINCIA B AIRES BCE,PRBAARBA,base.br,44189447,0,%(acc_number)s
+res_bank_206,505,Banco Credit Suisse (Brasil) S.A.,BCO CREDIT SUISSE S.A.,BIGABRRJ,base.br,32062580,1,%(acc_number)s
+res_bank_207,545,SENSO CORRETORA DE CAMBIO E VALORES MOBILIARIOS S.A,SENSO CCVM S.A.,,base.br,17352220,0,%(acc_number)s
+res_bank_208,600,Banco Luso Brasileiro S.A.,BCO LUSO BRASILEIRO S.A.,BLBCBRSP,base.br,59118133,1,%(acc_number)s
+res_bank_209,604,Banco Industrial do Brasil S.A.,BCO INDUSTRIAL DO BRASIL S.A.,BIBRBRSP,base.br,31895683,1,%(acc_number)s
+res_bank_210,610,Banco VR S.A.,BCO VR S.A.,,base.br,78626983,1,%(acc_number)s
+res_bank_211,611,Banco Paulista S.A.,BCO PAULISTA S.A.,PAULBRSP,base.br,61820817,1,%(acc_number)s
+res_bank_212,612,Banco Guanabara S.A.,BCO GUANABARA S.A.,,base.br,31880826,1,%(acc_number)s
+res_bank_213,613,Omni Banco S.A.,OMNI BANCO S.A.,,base.br,60850229,1,%(acc_number)s
+res_bank_214,623,Banco Pan S.A.,BANCO PAN,,base.br,59285411,1,%(acc_number)s
+res_bank_215,626,BANCO FICSA S.A.,BCO FICSA S.A.,,base.br,61348538,1,%(acc_number)s
+res_bank_216,630,Banco Smartbank S.A.,SMARTBANK,ICAPBRSP,base.br,58497702,0,%(acc_number)s
+res_bank_217,633,Banco Rendimento S.A.,BCO RENDIMENTO S.A.,RENDBRSP,base.br,68900810,1,%(acc_number)s
+res_bank_218,634,BANCO TRIANGULO S.A.,BCO TRIANGULO S.A.,,base.br,17351180,1,%(acc_number)s
+res_bank_219,637,BANCO SOFISA S.A.,BCO SOFISA S.A.,BSBSBRSP,base.br,60889128,1,%(acc_number)s
+res_bank_220,643,Banco Pine S.A.,BCO PINE S.A.,PBBRBRSP,base.br,62144175,1,%(acc_number)s
+res_bank_221,652,Itaú Unibanco Holding S.A.,ITAÚ UNIBANCO HOLDING S.A.,,base.br,60872504,1,%(acc_number)s
+res_bank_222,653,BANCO INDUSVAL S.A.,BCO INDUSVAL S.A.,IDVLBRSP,base.br,61024352,1,%(acc_number)s
+res_bank_223,654,BANCO A.J. RENNER S.A.,BCO A.J. RENNER S.A.,,base.br,92874270,1,%(acc_number)s
+res_bank_224,655,Banco Votorantim S.A.,BCO VOTORANTIM S.A.,BAVOBRSP,base.br,59588111,1,%(acc_number)s
+res_bank_225,707,Banco Daycoval S.A.,BCO DAYCOVAL S.A,DAYCBRSP,base.br,62232889,1,%(acc_number)s
+res_bank_226,712,Banco Ourinvest S.A.,BCO OURINVEST S.A.,,base.br,78632767,0,%(acc_number)s
+res_bank_227,739,Banco Cetelem S.A.,BCO CETELEM S.A.,,base.br,558456,1,%(acc_number)s
+res_bank_228,741,BANCO RIBEIRAO PRETO S.A.,BCO RIBEIRAO PRETO S.A.,,base.br,517645,1,%(acc_number)s
+res_bank_229,743,Banco Semear S.A.,BANCO SEMEAR,,base.br,795423,1,%(acc_number)s
+res_bank_230,745,Banco Citibank S.A.,BCO CITIBANK S.A.,,base.br,33479023,1,%(acc_number)s
+res_bank_231,746,Banco Modal S.A.,BCO MODAL S.A.,,base.br,30723886,1,%(acc_number)s
+res_bank_232,747,Banco Rabobank International Brasil S.A.,BCO RABOBANK INTL BRASIL S.A.,,base.br,1023570,1,%(acc_number)s
+res_bank_233,748,BANCO COOPERATIVO SICREDI S.A.,BCO COOPERATIVO SICREDI S.A.,BCSIBRRS,base.br,1181521,1,%(acc_number)s
+res_bank_234,751,Scotiabank Brasil S.A. Banco Múltiplo,SCOTIABANK BRASIL,,base.br,29030467,0,%(acc_number)s
+res_bank_235,752,Banco BNP Paribas Brasil S.A.,BCO BNP PARIBAS BRASIL S A,,base.br,1522368,1,%(acc_number)s
+res_bank_236,753,Novo Banco Continental S.A. - Banco Múltiplo,NOVO BCO CONTINENTAL S.A. - BM,,base.br,74828799,1,%(acc_number)s
+res_bank_237,754,Banco Sistema S.A.,BANCO SISTEMA,,base.br,76543115,0,%(acc_number)s
+res_bank_238,755,Bank of America Merrill Lynch Banco Múltiplo S.A.,BOFA MERRILL LYNCH BM S.A.,,base.br,62073200,1,%(acc_number)s
+res_bank_239,756,BANCO COOPERATIVO DO BRASIL S.A. - BANCOOB,BANCOOB,,base.br,2038232,1,%(acc_number)s
+res_bank_240,757,BANCO KEB HANA DO BRASIL S.A.,BCO KEB HANA DO BRASIL S.A.,,base.br,2318507,1,%(acc_number)s

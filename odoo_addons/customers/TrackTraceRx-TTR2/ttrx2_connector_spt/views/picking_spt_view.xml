@@ -1,0 +1,174 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="view_picking_spt_tree" model="ir.ui.view">
+			<field name="name">picking.tree.view.spt</field>
+			<field name="model">picking.spt</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="uuid"/>
+					<field name="created_on" />
+					<field name="stock_picking_id" />
+					<field name="partner_id"/>
+                    <field name="location_spt_id"/>
+                    <field name="storage_area_id"/>
+                    <field name="shelf_id"/>
+					<field name="is_session_closed"/>
+					<field name="status"/>
+					<field name="active" invisible="1"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_picking_spt_form" model="ir.ui.view">
+			<field name="name">picking_spt.form.view</field>
+			<field name="model">picking.spt</field>
+			<field name="arch" type="xml">
+				<form string="Picking">
+					<header>
+						<button name="action_test" string="testar" type="object" groups="base.group_no_one"/>
+						<button name="action_send" string="Send To TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('uuid','!=',False)]}"/>
+						<button name="action_refresh" string="Refresh From TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('uuid','=',False)]}"/>
+					</header>
+					<sheet>
+						<widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+						<field name="uuid"/>
+						<group>
+							<group>
+								<field name="active" invisible="1"/>
+								<field name="created_on"/>
+								<field name="shipment_uuid"/>
+								<field name="stock_picking_id"/>
+								<field name="trading_partner_uuid" />
+								<field name="partner_id" />
+								<field name="location_uuid" />
+								<field name="location_spt_id" />
+								<field name="storage_area_uuid" />
+								<field name="storage_area_id" />
+								<field name="shelf_uuid" />
+								<field name="shelf_id" />
+							</group>
+							<group>
+								<field name="participant_uuid"/>
+								<field name="participant_name"/>
+								<field name="is_session_closed"/>
+								<field name="session_closed"/>
+								<field name="products_count_picked"/>
+								<field name="items_count_picked"/>
+								<field name="status"/>
+							</group>
+						</group>
+						<group string="Items">
+							<field name="items" nolabel="1">
+								<tree editable="bottom">
+								    <field name="uuid"/>
+								    <field name="picking_type"/>
+								    <field name="shipment_line_item_uuid" optional="hide"/>
+								    <field name="shipment_line_item_id"/>
+								    <field name="product_uuid" optional="hide"/>
+								    <field name="product_spt_id"/>
+								    <field name="lots" widget="many2many_tags"/>
+								    <field name="serials" widget="many2many_tags"/>
+								    <field name="quantity"/>
+								    <field name="storage_area_uuid" optional="hide"/>
+								    <field name="storage_area_id"/>
+								    <field name="storage_shelf_uuid" optional="hide"/>
+								    <field name="storage_shelf_id"/>
+								</tree>
+							</field>
+						</group>
+						<group string="Note">
+							<field name="shipment_notes" nolabel="1"/>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_picking_spt" model="ir.actions.act_window">
+			<field name="name">Picking</field>
+			<field name="res_model">picking.spt</field>
+			<field name="view_mode">tree,form</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_picking_spt_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('view_picking_spt_form')})]"/>
+			<field name="view_id" ref="view_picking_spt_tree"/>			
+		</record>
+
+		<record id="view_picking_item_lot_view_tree" model="ir.ui.view">
+			<field name="name">view.picking.item.lot.view</field>
+			<field name="model">picking.item.lot.view</field>
+			<field name="arch" type="xml">
+				<tree create="false" import="false" delete="false">
+					<field name="uuid"/>
+					<field name="stock_picking_id"/>
+					<field name="picking_id" />
+					<field name="lot_id" />
+					<field name="name" optional="hide"/>
+					<field name="picking_type"/>
+                    <field name="shipment_line_item_uuid" optional="hide"/>
+                    <field name="shipment_line_item_id"/>
+                    <field name="product_uuid" optional="hide"/>
+					<field name="product_spt_id" optional="hide"/>
+					<field name="product_id"/>
+					<field name="quantity" />
+					<field name="storage_area_uuid" optional="hide"/>
+					<field name="storage_area_id" />
+					<field name="storage_shelf_uuid" optional="hide"/>
+					<field name="storage_shelf_id" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_picking_item_lot_view_spt" model="ir.actions.act_window">
+			<field name="name">Lot Picking</field>
+			<field name="res_model">picking.item.lot.view</field>
+			<field name="view_mode">tree</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_picking_item_lot_view_tree')})]"/>
+			<field name="view_id" ref="view_picking_item_lot_view_tree"/>			
+		</record>
+
+		<record id="view_picking_item_serial_view_tree" model="ir.ui.view">
+			<field name="name">view.picking.item.serial.view</field>
+			<field name="model">picking.item.serial.view</field>
+			<field name="arch" type="xml">
+				<tree create="false" import="false" delete="false">
+					<field name="uuid"/>
+					<field name="stock_picking_id"/>
+					<field name="picking_id" />
+					<field name="lot_id" />
+					<field name="lot_name" optional="hide"/>
+					<field name="serial_id" />
+					<field name="serial_name" optional="hide"/>
+					<field name="name" optional="hide"/>
+					<field name="picking_type"/>
+                    <field name="shipment_line_item_uuid" optional="hide"/>
+                    <field name="shipment_line_item_id"/>
+                    <field name="product_uuid" optional="hide"/>
+					<field name="product_spt_id" optional="hide"/>
+					<field name="product_id"/>
+					<field name="quantity" />
+					<field name="storage_area_uuid" optional="hide"/>
+					<field name="storage_area_id" />
+					<field name="storage_shelf_uuid" optional="hide"/>
+					<field name="storage_shelf_id" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_picking_item_serial_view_spt" model="ir.actions.act_window">
+			<field name="name">Lot/Serial Picking</field>
+			<field name="res_model">picking.item.serial.view</field>
+			<field name="view_mode">tree</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_picking_item_serial_view_tree')})]"/>
+			<field name="view_id" ref="view_picking_item_serial_view_tree"/>			
+		</record>
+
+	</data>
+</odoo>

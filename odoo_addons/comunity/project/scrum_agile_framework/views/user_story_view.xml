@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+
+		<record id="user_story_list_view" model="ir.ui.view">
+			<field name="name">user_story.view.tree</field>
+			<field name="model">scrum_agile_framework.user_story</field>
+			<field name="arch" type="xml">
+				<tree string="User stories" delete="0" multi_edit="1" sample="1">
+					<field name="sequence" optional="show" widget="handle"/>
+					<field name="name"/>
+					<field name="priority"/>
+					<field name="planned_hours"/>
+					<field name="effective_hours"/>
+					<field name="state"/>
+					<field name="sprint_id"/>
+					<field name="notes"/>
+				</tree>
+			</field>
+		</record>
+
+		<!-- Form View -->
+		<record model="ir.ui.view" id="scrum_agile_framework.user_story_form_view">
+			<field name="name">scrum_agile_framework.user_story.view.form</field>
+			<field name="model">scrum_agile_framework.user_story</field>
+			<field name="arch" type="xml">
+				<form string="Task information">
+					<sheet>
+						<field name="project_id" invisible="1"/>
+						<field name="sprint_id" invisible="1"/>
+						<div class="oe_title">
+							<h1>
+								<field name="name" placeholder="User Story name"  attrs="{'readonly':[('editable','!=',True)]}"/>
+							</h1>
+							<div name="options_active">
+								<div attrs="{'invisible':[('editable','=',True)]}">
+									<p>The User Story cannot be edited because it belongs to a finished Sprint</p>
+								</div>
+							</div>
+							<div>
+								<label for="priority" class="oe_inline" string="Priority: "/>
+								<field name="priority" class="oe_inline oe_input_align"
+							           attrs="{'readonly':[('editable','!=',True)]}"/>
+							</div>
+							<div>
+								<label for="planned_hours" class="oe_inline" string="Estimated hours: "/>
+								<field name="planned_hours" class="oe_inline oe_input_align"/>
+							</div>
+							<div attrs="{'invisible': 1}">
+								<label for="editable" class="oe_inline" string="Editable: "/>
+								<field name="editable" class="oe_inline oe_input_align"
+								       attrs="{'readonly':[('editable','!=',True)]}"/>
+							</div>
+							<div>
+								<label for="effective_hours" class="oe_inline" string="Effective hours: "/>
+								<field name="effective_hours" class="oe_inline oe_input_align"/>
+							</div>
+							<div>
+								<label for="state" class="oe_inline" string="State : "/>
+								<field name="state" class="oe_inline oe_input_align" attrs="{'readonly':[('editable','!=',True)]}"/>
+							</div>
+							<div>
+								<label for="notes" class="oe_inline" string="Notes : "/>
+								<field name="notes" class="oe_inline oe_input_align" attrs="{'readonly':[('editable','!=',True)]}"/>
+							</div>
+							<div>
+								<label for="sprint_id" class="oe_inline" string="Sprint : "/>
+								<field name="sprint_id" class="oe_inline oe_input_align"
+								       domain="[('project_id', '=', project_id)]"
+								       options="{'no_quick_create': True, 'no_create_edit' : True}"/>
+							</div>
+						</div>
+						<div name="options_active">
+							<field name="task_ids"  class="oe_inline oe_input_align"  attrs="{'readonly':[('editable','!=',True)]}"
+							       context="{'default_user_story_id': id, 'default_project_id': project_id}">
+								<tree>
+									<field name="name"/>
+									<field name="planned_hours"/>
+									<field name="sprint_id"/>
+								</tree>
+								<form>
+									<div class="oe_title">
+										<field name="project_id" class="oe_inline oe_input_align" invisible="1"/>
+										<field name="company_id" class="oe_inline oe_input_align" invisible="1"/>
+										<field name="sprint_id"  invisible="1" class="oe_inline oe_input_align"/>
+										<h1>
+											<field name="name" placeholder="New Task name"/>
+										</h1>
+										<div name="options_active">
+											<div>
+												<label for="planned_hours" class="oe_inline" string="Planned hours : "/>
+												<field name="planned_hours" required="1" class="oe_inline oe_input_align"/>
+											</div>
+											<div>
+												<label for="scrum_stage" class="oe_inline" string="Stage : "/>
+												<field name="scrum_stage" required="1" class="oe_inline oe_input_align"/>
+											</div>
+										</div>
+									</div>
+								</form>
+							</field>
+						</div>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id='action_project_user_story' model='ir.actions.act_window'>
+			  <field name="name">Product Backlog</field>
+			  <field name="res_model">scrum_agile_framework.user_story</field>
+			  <field name="view_mode">tree,form</field>
+			  <field name="domain">[('project_id', '=', active_id)]</field>
+			  <field name="context">{'default_project_id': active_id}</field>
+		</record>
+		
+	</data>
+</odoo>	

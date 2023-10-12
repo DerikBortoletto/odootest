@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="br_op_crm_leads_form_inherit" model="ir.ui.view">
+        <field name="name">br.op.crm.leads.form.inherit</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form" />
+        <field name="arch" type="xml">
+        	<field name="partner_id" position="after">
+        		<field name="ibge_code" invisible="1"/>
+        	</field>
+        	<field name="city" position="replace"/>
+        	<field name="state_id" position="replace"/>
+        	<field name="zip" position="replace"/>
+            <field name="street" position="replace">
+                <field name="zip" placeholder="Zip Code" class="o_address_zip oe_inline" />
+                <field name="street" class="o_address_street" placeholder="Street" />
+                <field name="number" class="o_address_city" placeholder="Number" />
+                <field name="district" class="o_address_state" placeholder="District" />
+            </field>
+            <field name="street2" position="replace">
+                <field name="street2" placeholder="Complement" class="o_address_street" />
+            </field>
+            <xpath expr="//group[@name='lead_info']/div" position="after">
+                <field name="cpf" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="rg" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+            </xpath>
+            <xpath expr="//group[@name='lead_partner']/field[@name='partner_name']" position="after">
+                <field name="legal_name" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="cnpj" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="inscr_est" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="inscr_mun" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="suframa" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="rntrc" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+            </xpath>
+            <xpath expr="//page[@name='lead']//group/field[@name='partner_name']" position='after'>
+                <field name="legal_name" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="cnpj" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="inscr_est" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+            </xpath>
+            <xpath expr="//page[@name='lead']//group/field[@name='website']" position='before'>
+                <field name="inscr_mun" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="suframa" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+            </xpath>
+            <xpath expr="//page[@name='lead']//group/field[@name='function']" position='before'>
+                <field name="cpf" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="rg" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+            </xpath>
+            <field name="country_id" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_create_edit': True}</attribute>
+            </field>
+            <field name="country_id" position="after">
+				<field name="state_id" class="o_address_state" placeholder="State" domain="[('country_id','=',country_id)]" options="{'no_create': True, 'no_create_edit': True}"/>
+                <field name="city_id" class="o_address_city" placeholder="City" domain="[('state_id','=',state_id)]" options="{'no_create': True, 'no_create_edit': True}" attrs="{'invisible': [('ibge_code','!=','1058')]}"/>
+                <field name="city" class="o_address_city" placeholder="City" attrs="{'invisible': [('ibge_code','=','1058')]}"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

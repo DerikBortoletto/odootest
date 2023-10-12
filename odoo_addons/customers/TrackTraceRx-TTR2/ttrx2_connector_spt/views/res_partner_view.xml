@@ -1,0 +1,348 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+       <record id="view_res_partner_filter_spt" model="ir.ui.view">
+            <field name="name">res.partner.select.spt</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Search Partner">
+                    <field name="name" filter_domain="['|', '|', '|', '|',('display_name', 'ilike', self), ('ref', '=', self), ('email', 'ilike', self), ('uuid', 'ilike', self)]"/>
+                    <field name="parent_id" domain="[('is_company', '=', True)]" operator="child_of"/>
+                    <field name="email" filter_domain="[('email', 'ilike', self)]"/>
+                    <field name="phone" filter_domain="['|', ('phone', 'ilike', self), ('mobile', 'ilike', self)]"/>
+                    <field name="category_id" string="Tag" filter_domain="[('category_id', 'child_of', self)]"/>
+                    <field name="user_id"/>
+					<field name="status_delete_portal"/>
+                    <separator/>
+                    <filter string="Individuals" name="type_person" domain="[('is_company', '=', False)]"/>
+					<filter string="DELETED FROM THE PORTAL" name="status_delete_portal" domain="[('status_delete_portal', '=', True)]"/>
+                    <filter string="Companies" name="type_company" domain="[('is_company', '=', True)]"/>
+                    <filter string="Auto Create Shipment" name="create_shipment" domain="[('auto_create_picking', '=', 'auto')]"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <separator/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="salesperson" string="Salesperson" domain="[]" context="{'group_by' : 'user_id'}" />
+                        <filter name="group_company" string="Company" context="{'group_by': 'parent_id'}"/>
+                        <filter name="group_country" string="Country" context="{'group_by': 'country_id'}"/>
+                        <filter name="group_type" string="Type" context="{'group_by': 'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+		<record id="view_partner_simple_form_inherit_spt" model="ir.ui.view">
+            <field name="name">res.partner.simple.form.inherit.spt</field>
+            <field name="model">res.partner</field>
+			<field name="groups_id" eval="[(4,ref('ttrx2_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="base.view_partner_simple_form"/>
+            <field name="arch" type="xml">
+            	<field name="parent_id" position="after">
+					<field name="tracktrace_is" readonly='1'/>            		
+            	</field>
+            	<field name="user_ids" position="after">
+            		<field name="type_ttr"/>
+            		<field name="uuid" readonly='1'/>
+            		<field name="auto_create_picking"/>
+            	</field>
+            </field>
+        </record>
+
+		<record id="view_partner_address_form_inherit_spt" model="ir.ui.view">
+            <field name="name">res.partner.address.form.inherit.spt</field>
+            <field name="model">res.partner</field>
+			<field name="groups_id" eval="[(4,ref('ttrx2_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="base.view_partner_address_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//div/h1" position="after">
+            		<field name="tracktrace_is" readonly='1'/>
+            	</xpath>	
+            </field>
+        </record>
+
+		<record id="res_partner_form_view_inherit_spt" model="ir.ui.view">
+            <field name="name">res.partner.form.view.inherit.spt</field>
+            <field name="model">res.partner</field>
+			<field name="groups_id" eval="[(4,ref('ttrx2_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+				<xpath expr="//field[@name='name']" position="after">
+                     <widget name="web_ribbon" title="DELETED FROM THE PORTAL" bg_color="bg-danger" attrs="{'invisible': [('status_delete_portal', '!=', True)]}"/>
+                </xpath>
+                <xpath expr="//notebook/page[1]/field[@name='child_ids']/form/sheet/field[@name='parent_id']" position="after">
+				    <field name="tracktrace_is" readonly="1"/>
+                </xpath>
+                <xpath expr="//notebook/page[1]/field[@name='child_ids']/form/sheet/group/group[2]/field[@name='company_id']" position="after">
+                	<field name="uuid" readonly='1' attrs="{'invisible': [('tracktrace_is','=', False)]}"/>
+                	<field name="friendly_name" />
+                </xpath>
+                <xpath expr="//notebook/page[5]" position="after">
+                    <page string="Connector TTrx2">
+                        <notebook>
+							<page string="General">
+								<group>
+									<group string="General">
+			                            <label for="tracktrace_is" string="Is tracktrace partner?"/>
+			                            <div>
+			                                <field name="tracktrace_is" class="oe_inline" style="margin-right: 8px;"/>
+			                                <button name="action_send_to_ttrx" string="Send to TTRx" 
+			                                        class="oe_inline oe_highlight" type="object" attrs="{'invisible': [('tracktrace_is','!=',False)]}"/>
+			                                <button name="action_refresh_from_ttrx" string="Refresh from TTRx" 
+			                                        class="oe_inline oe_highlight" type="object" attrs="{'invisible': [('tracktrace_is','=',False)]}"/>
+			                            </div>
+										<field name="uuid" readonly='1'/>
+										<field name="status_delete_portal" readonly='1'/>
+										<field name="created_on"/>
+										<field name="last_update"/>
+										<field name="friendly_name" />
+										<field name="external_reference"/>
+										<field name="type_ttr" required='1'/>
+										<field name="gs1_id"/>
+										<field name="url_config" invisible="1"/>
+										<field name="connector_id" readonly="1"/>
+										<field name="auto_create_picking"/>
+									</group>
+								</group>
+							</page>
+							<page string="Contacts">
+								<group>
+									<group string="Notifications for New Outbound Transaction Available">
+										<field name="set_bool" invisible="1"/>
+										<field name="email" attrs="{'required': [('set_bool', '!=', False)],
+																	'invisible': [('set_bool','!=', True)]}"/>
+										<field name="new_trx_notification_type" required='1'/>
+										<field name="phone"/>
+										<field name="phone_ext" />
+									</group>
+									<group string="Flag Notification" attrs="{'invisible': [('set_bool','!=', True)]}">
+										<field name="flag_notification_name" attrs="{'invisible': [('set_bool','!=', True)]}"/>
+										<field name="flag_notification_email" attrs="{'invisible': [('set_bool','!=', True)]}"/>
+										<field name="flag_notification_phone" attrs="{'invisible': [('set_bool','!=', True)]}"/>
+										<field name="flag_notification_phone_ext" attrs="{'invisible': [('set_bool','!=', True)]}"/>
+									</group>
+								</group>
+							</page>
+							<page string="Address">
+								<group>
+									<field name="trading_partner_address_dft_id" domain="[('res_partner_id','=',active_id)]"/>
+								</group>
+								<group>
+									<field name="trading_partner_address_spt_ids"  context="{'default_parent_id': active_id, 'default_line1': street, 'default_line2': street2, 'default_city': city, 'default_res_country_state_id': state_id, 'default_zip': zip, 'default_res_country_id': country_id, 'default_recipient_name':name, 'default_phone':phone, 'default_email':email,}" />
+								</group>
+							</page>
+							<page string="Licenses">
+								<field name="license_spt_ids"/>
+							</page>
+							<page string="User" invisible="1">
+							</page>
+							<page string="Misc">
+								<group>
+									<group string="Shipment Verification">
+										<p>Specify how much items in a shipment must be verified to make sure it’s accurate with the data received/sent.</p>
+										<field name="inbound_shipping_check_percentage" />
+										<field name="outbound_shipping_check_percentage" />
+									</group>
+									<group string="X12 EDI">
+										<field name="sender_id"/>
+										<field name="receiver_id"/>
+									</group>
+								</group>
+							</page>
+						</notebook>
+                    </page>
+				</xpath>
+				<xpath expr="//field[@name='name']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+					<xpath expr="//field[@name='street']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='state_id']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='country_id']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='zip']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='city']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+            </field>
+        </record>
+
+        <record id="action_res_partner_spt" model="ir.actions.act_window">
+            <field name="name">Partners</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('uuid','!=', False)]</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="view_res_partner_filter_spt"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new partner of TrackTraceRx in your address book
+              </p><p>
+                We helps you easily track all activities related to a partner.
+              </p>
+            </field>
+        </record>
+
+
+		<record id="view_res_partner_filter_hr" model="ir.ui.view">
+            <field name="name">res.partner.select</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Search Partner">
+                    <field name="name"
+                        filter_domain="['|', '|', ('display_name', 'ilike', self), ('ref', '=', self), ('email', 'ilike', self)]"/>
+                    <field name="parent_id" domain="[('is_company', '=', True)]" operator="child_of"/>
+                    <field name="email" filter_domain="[('email', 'ilike', self)]"/>
+                    <field name="phone" filter_domain="['|', ('phone', 'ilike', self), ('mobile', 'ilike', self)]"/>
+                    <field name="category_id" string="Tag" filter_domain="[('category_id', 'child_of', self)]"/>
+                    <field name="user_id"/>
+<!--					<field name="status_delete_portal"/>-->
+					<separator/>
+					<filter string="Contact" name="status_delete_portal"
+							domain="[('status_delete_portal', '!=', True)]"/>
+                    <filter string="Individuals" name="type_person" domain="[('is_company', '=', False)]"/>
+                    <filter string="Companies" name="type_company" domain="[('is_company', '=', True)]"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <separator/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="salesperson" string="Salesperson" domain="[]" context="{'group_by' : 'user_id'}" />
+                        <filter name="group_company" string="Company" context="{'group_by': 'parent_id'}"/>
+                        <filter name="group_country" string="Country" context="{'group_by': 'country_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+		<record id="contacts.action_contacts" model="ir.actions.act_window">
+			<field name="name">Contacts</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">res.partner</field>
+			<field name="view_mode">kanban,tree,form,activity</field>
+			<field name="search_view_id" ref="ttrx2_connector_spt.view_res_partner_filter_hr"/>
+			<field name="context">{'default_is_company': True, 'search_default_status_delete_portal': True}</field>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					Create a contact in your address book
+				</p>
+				<p>
+					Odoo helps you to easily track all activities related to a customer.
+				</p>
+			</field>
+		</record>
+
+
+        <record id="product_template_search_vie_ttrx" model="ir.ui.view">
+            <field name="name">product.template.ttrx.search</field>
+            <field name="model">product.template</field>
+            <field name="arch" type="xml">
+                <search string="Product">
+                    <field name="name" string="Product"
+                           filter_domain="['|', '|', '|', ('default_code', 'ilike', self), ('product_variant_ids.default_code', 'ilike', self),('name', 'ilike', self), ('barcode', 'ilike', self)]"/>
+                    <field name="categ_id" filter_domain="[('categ_id', 'child_of', raw_value)]"/>
+
+					<separator/>
+                    <filter string="Services" name="services" domain="[('type','=','service')]"/>
+                    <filter string="Products" name="consumable" domain="[('type', 'in', ['consu', 'product'])]"/>
+                    <separator/>
+                    <filter string="Can be Sold" name="filter_to_sell" domain="[('sale_ok','=',True)]"/>
+                    <filter string="Can be Purchased" name="filter_to_purchase" domain="[('purchase_ok', '=', True)]"/>
+                    <separator/>
+                    <field string="Attributes" name="attribute_line_ids" groups="product.group_product_variant"/>
+                    <field name="pricelist_id" context="{'pricelist': self}" filter_domain="[]"
+                           groups="product.group_product_pricelist"/>
+                    <filter invisible="1" string="Late Activities" name="activities_overdue"
+                            domain="[('my_activity_date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                            help="Show all records which has next action date is before today"/>
+                    <filter invisible="1" string="Today Activities" name="activities_today"
+                            domain="[('my_activity_date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter invisible="1" string="Future Activities" name="activities_upcoming_all"
+                            domain="[('my_activity_date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))
+                    ]"/>
+                    <separator/>
+                    <filter string="Warnings" name="activities_exception"
+                            domain="[('activity_exception_decoration', '!=', False)]"/>
+					                    <filter string="Active" name="status_delete_portal"
+                            domain="[('status_delete_portal', '!=', True)]"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active','=',False)]"/>
+                    <group expand="1" string="Group By">
+                        <filter string="Product Type" name="type" context="{'group_by':'type'}"/>
+                        <filter string="Product Category" name="categ_id" context="{'group_by':'categ_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+
+		<record id="stock.product_template_action_product" model="ir.actions.act_window">
+			<field name="name">Products</field>
+			<field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.template</field>
+			<field name="view_mode">kanban,tree,form</field>
+			<field name="search_view_id" ref="ttrx2_connector_spt.product_template_search_vie_ttrx"/>
+			<field name="context">{"search_default_consumable": 1, 'default_type': 'product',
+				'search_default_status_delete_portal': True}
+			</field>
+			<field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+					No product found. Let's create one!
+				</p>
+				<p>
+					Track your stock quantities by creating storable products.
+				</p>
+			</field>
+		</record>
+
+		<record id="automatic_contatos_ttrxe" model="ir.cron">
+            <field name="name">Partners Connector ttrx</field>
+            <field name="model_id" ref="model_stock_location"/>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">model.automatic_contatos_ttrx()</field>
+            <field name="interval_number">360</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+
+		<record id="automatic_produtos_ttrx" model="ir.cron">
+			<field name="name">Products Connector ttrx</field>
+			<field name="model_id" ref="model_stock_location"/>
+			<field name="type">ir.actions.server</field>
+			<field name="state">code</field>
+			<field name="code">model.automatic_produtos_ttrx()</field>
+			<field name="interval_number">360</field>
+			<field name="interval_type">minutes</field>
+			<field name="numbercall">-1</field>
+		</record>
+
+		<record id="automatic_so_ttrxe" model="ir.cron">
+            <field name="name">SO Connector ttrx</field>
+            <field name="model_id" ref="model_stock_location"/>
+            <field name="type">ir.actions.server</field>
+            <field name="state">code</field>
+            <field name="code">model.automatic_so_ttrx()</field>
+            <field name="interval_number">360</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+        </record>
+	</data>
+
+	<record id="automatic_lo_ttrxe" model="ir.cron">
+		<field name="name">LOCATIONS Connector ttrx</field>
+		<field name="model_id" ref="model_stock_location"/>
+		<field name="type">ir.actions.server</field>
+		<field name="state">code</field>
+		<field name="code">model.automatic_locations_ttrx()</field>
+		<field name="interval_number">360</field>
+		<field name="interval_type">minutes</field>
+		<field name="numbercall">-1</field>
+	</record>
+</odoo>

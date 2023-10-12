@@ -1,0 +1,18 @@
+<odoo>
+    <record id="tecnospeed_product_template" model="ir.ui.view">
+        <field name="name">tecnospeed.product.template</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+             <xpath expr="//page[@name='general_information']" position="after">
+                <page name ="Fiscal" string = "Fiscal">
+                    <group>
+                    <field name = "ncm"/>
+                    <field name = "cest"/>
+                    </group>
+                </page>
+
+             </xpath>
+        </field>
+    </record>
+</odoo>

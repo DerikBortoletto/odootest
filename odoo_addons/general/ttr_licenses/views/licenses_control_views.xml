@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='licenses_control_action' model='ir.actions.act_window'>
+        <field name="name">License Control</field>
+        <field name="res_model">licenses.control</field>
+        <field name="view_mode">tree,calendar,form</field>
+    </record>
+
+    <menuitem
+        id="licenses_base_menu"
+        name="Licenses Control"
+    />s
+
+    <menuitem
+        id="all_licenses_menu"
+        name="Licenses"
+        parent="licenses_base_menu"
+        action="licenses_control_action"
+    />
+
+     <record id="view_all_licenses_form" model="ir.ui.view">
+        <field name="name">All Licenses</field>
+        <field name="model">licenses.control</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="responsible_ids"/>
+                        <field name="name"/>
+                        <field name="type_ids"/>
+                        <field name="validity_start"/>
+                        <field name="expiration_date"/>
+                        <field name="renewal_date"/>
+                        <field name="license_state"/>
+                    </group>
+                </group>
+                <group>
+                    <field name="observation"/>
+                    <field name="attachment_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+     <record id="licences_view_calendar" model="ir.ui.view">
+        <field name="name">licenses.control.calendar</field>
+        <field name="model">licenses.control</field>
+        <field name="arch" type="xml">
+            <calendar string="Licenses Calendar" date_start="renewal_date"
+                event_open_popup="true"
+                color="responsible_ids">
+                <field name="name"/>
+                <field name="responsible_ids"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="licences_view_tree" model="ir.ui.view">
+        <field name="name">Licenses List</field>
+        <field name="model">licenses.control</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="responsible_ids"/>
+                <field name="name"/>
+                <field name="validity_start"/>
+                <field name="expiration_date"/>
+                <field name="renewal_date" />
+                <field name="license_state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="licenses_view_search" model="ir.ui.view">
+        <field name="name">Licenses Search</field>
+        <field name="model">licenses.control</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+                <field name="type_ids"/>
+                <field name="responsible_ids"/>
+                <filter string="Expired Licenses" name="expired_license" domain="[('license_state','=','done')]"/>
+            </search>
+        </field>
+    </record>
+
+</odoo>
+

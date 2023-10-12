@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="acquirer_form_zift" model="ir.ui.view">
+            <field name="name">acquirer.form.zift</field>
+            <field name="model">payment.acquirer</field>
+            <field name="inherit_id" ref="payment.acquirer_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//group[@name="acquirer"]' position='inside'>
+                    <group attrs="{'invisible': [('provider', '!=', 'zift')]}">
+                        <field name="user" attrs="{'required':[ ('provider', '=', 'zift'), ('state', '!=', 'disabled')]}"/>
+                        <field name="client_pass" password="True" attrs="{'required':[ ('provider', '=', 'zift'), ('state', '!=', 'disabled')]}"/>
+                        <field name="url_base" password="True" attrs="{'required':[ ('provider', '=', 'zift'), ('state', '!=', 'disabled')]}"/>
+                        <div>
+                            <field name="zift_client_key" password="True"/>
+                            <button class="oe_link" icon="fa-refresh" type="object" name="action_client_secret" string="Generate Client Key" />
+                        </div>
+                        <a colspan="2" href="https://www.odoo.com/documentation/14.0/applications/general/payment_acquirers/zift.html" target="_blank">How to get paid with Zift</a>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="token_form_zift_net" model="ir.ui.view">
+            <field name='name'>payment.token.form</field>
+            <field name='model'>payment.token</field>
+            <field name="inherit_id" ref="payment.payment_token_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr='//field[@name="acquirer_ref"]' position='after'>
+                    <field name="zift_profile" attrs="{'invisible':['|', ('provider', '!=', 'zift'), ('save_token', '=', 'none')]}"/>
+                    <field name="provider" invisible='1'/>
+                    <field name="save_token" invisible='1'/>
+                </xpath>
+            </field>
+        </record>
+</odoo>

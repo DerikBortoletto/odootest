@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_inherit_account_product_category_form">
+        <field name="name">inherit.product.category.form</field>
+        <field name="model">product.category</field>
+        <field name="inherit_id" ref="account.view_category_property_form" />
+        <field name="arch" type="xml">
+        	<field name="property_account_income_categ_id" position="attributes">
+        		<attribute name="domain">['&amp;', '&amp;', '&amp;', ('deprecated', '=', False), ('internal_type','=','other'), ('company_id', '=', current_company_id), ('is_off_balance', '=', False)]</attribute>	
+        	</field>
+        	<field name="property_account_expense_categ_id" position="attributes">
+        		<attribute name="domain">['&amp;', '&amp;', '&amp;', ('deprecated', '=', False), ('internal_type','=','other'), ('company_id', '=', current_company_id), ('is_off_balance', '=', False)]</attribute>	
+        	</field>
+        </field>
+    </record>
+        
+	
+</odoo>

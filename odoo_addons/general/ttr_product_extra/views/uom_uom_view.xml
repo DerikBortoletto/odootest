@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record model="ir.ui.view" id="view_op_uom_uom_form">
+        <field name="name">op.uom.uom.form</field>
+        <field name="model">uom.uom</field>
+        <field name="inherit_id" ref="uom.product_uom_form_view" />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="code" required="1" />
+            </field>
+            <field name="rounding" position="after">
+                <field
+                    name="alternative_ids"
+                    widget="many2many_tags"
+                    context="{'default_uom_id': active_id}"
+                />
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_op_uom_uom_tree">
+        <field name="name">op.uom.uom.tree</field>
+        <field name="model">uom.uom</field>
+        <field name="inherit_id" ref="uom.product_uom_tree_view" />
+        <field name="arch" type="xml">
+            <field name="name" position="before">
+                <field name="code" required="1" />
+            </field>
+            <field name="uom_type" position="after">
+                <field name="alternative_ids" widget="many2many_tags" />
+            </field>
+        </field>
+    </record>
+
+</odoo>

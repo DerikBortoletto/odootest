@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="act_zift_board" model="ir.actions.act_window">
+            <field name="name">Teste Invoices</field>
+            <field name="res_model">aged.partner.balance.report.wizard</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="ttr_accounting_zift"/>
+        </record>
+        <record id="act_zift_board_2" model="ir.actions.act_window">
+            <field name="name">Teste Invoices 2</field>
+            <field name="res_model">aged.partner.balance.report.wizard</field>
+            <field name="view_mode">calendar</field>
+            <field name="view_id" ref="ttr_accounting_zift"/>
+        </record>
+        <record id="act_zift_board_3" model="ir.actions.act_window">
+            <field name="name">Teste Invoices 3</field>
+            <field name="res_model">aged.partner.balance.report.wizard</field>
+            <field name="view_mode">tree, form</field>
+            <field name="view_id" ref="ttr_accounting_zift"/>
+        </record>
+
+
+
+        <record id="dashboard_form_view_zift" model="ir.ui.view">
+            <field name="name">dashboard_zift</field>
+            <field name="model">board.board</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Dashboard">
+                    <board style="1-2">
+                        <column>
+                            <action string="Teste Invoices" name="%(ttr_accounting_zift.act_zift_board)d"/>
+                            <action string="Teste Invoices 2" name="%(ttr_accounting_zift.act_zift_board_2)d"/>
+                        </column>
+                        <column>
+                            <action string="Teste Invoices 3" name="%(ttr_accounting_zift.act_zift_board_3)d"/>
+                        </column>
+                    </board>
+                </form>
+            </field>
+        </record>
+
+        <record id="accounting_zift_dash" model="ir.actions.act_window">
+            <field name="name">Dashboard</field>
+            <field name="res_model">board.board</field>
+            <field name="view_mode">form</field>
+            <field name="usage">menu</field>
+            <field name="view_id" ref="dashboard_form_view_zift"/>
+        </record>
+
+
+        <menuitem
+                id="menu_dashboard"
+                name="Dashboard"
+                action="accounting_zift_dash"
+                parent="ttr_accounting_zift.dash_root"
+                sequence="1"
+        />
+
+   </data>
+</openerp>

@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <menuitem id="unique_coffee_menu" name="Unique Coffee" sequence="10"/>
+        <menuitem id="unique_contacts_menu" name="Unique Contacts"
+                  parent="unique_coffee_menu" action="unique_contacts_action"
+                  sequence="10"/>
+                    <template id="menu_cafe_unique" name="Menu Café Unique">
+        <head>
+            <meta charset="utf-8"/>
+            <meta name="viewport"
+                  content="width=device-width, initial-scale=1.0"/>
+            <title>My Page</title>
+            <link rel="stylesheet"
+                  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+                  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+                  crossorigin="anonymous"/>
+            <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+                    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+                    crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+                    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+                    crossorigin="anonymous"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+                    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+                    crossorigin="anonymous"></script>
+            
+                                                         	<style>
+        .cabecalho{
+            width: 100%;
+            height: 80px;
+            border: 1px solid black;
+            font-size: 30px;
+            text-align: center;
+            display: flex;
+            
+            text-align: center;
+            align-items: center;
+            overflow-x: auto;
+            overflow-y: hidden;
+            
+        }
+        .dispNone {
+            display: unset ;
+        }
+        .flex-div{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction :row;
+
+            
+            
+        }
+        .card{
+            display: inline-flex;
+        }
+        .noticiaTitle{
+            font-size: 20px;
+        }
+        .noticiaText{
+            max-width: unset;
+
+        }
+        .bord{
+            border: 1px solid black;
+            display: flex;
+            
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px    
+            
+
+
+        }
+        
+        
+        .card-container {
+                width: 50%;
+                max-width: 49%;
+                padding: 10px;
+                box-sizing: border-box;
+                margin-bottom: 10px;
+                border: 1px solid black;
+                display: flex;
+                padding:3px;
+                margin:2px
+
+            }
+            .navbar-nav {
+    flex-direction: row !important;
+}
+        
+        
+        .bordMax{
+            flex: 1;
+            border: 1px solid black;  
+            padding: 10px;
+            width:100%;
+            margin: 10px   ;
+            display:contents;
+
+        }
+        .lastBoard{
+            border: 1px solid black;
+            
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px    
+        }
+        @media screen and (min-width: 1921px){
+            .lastBoard{
+                flex: unset;
+                max-width: 20% !important;
+                
+
+            }
+        
+            t-att-href
+        }
+        @media screen and (min-width:961px){
+            .bord{
+            flex-wrap: wrap;
+            max-width: 20%;
+        }
+          
+        
+        .lastBoard{
+            flex-wrap: wrap;
+            flex:1;
+
+        }
+    }
+    @media screen and (max-width:961px){
+        .card-container {
+                    width: 100%;
+                    max-width: 100%;
+                }
+    }
+    @media screen and (min-width:481px){
+            .bord{
+            flex-wrap: wrap;
+            max-width: 20%;
+
+        }
+
+        .Lastbord{
+            flex-wrap: wrap;
+            flex:1;
+            
+
+        }
+        
+        
+    }
+    @media screen and (max-width:481px)
+    {
+        .cabecalho{
+            font-size: 15px;
+            height: 60px;
+            background-color: #63411F;
+        }
+        .bordMax{
+            flex: unset;
+            width: calc(100% - 3px);
+            text-align: center;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+            
+                }
+        .bord
+        {
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100% - 20px);
+        text-align: center;
+        }
+        .lastBoard{
+            margin-left: auto;
+        margin-right: auto;
+        width: calc(100% - 20px);    
+        text-align: center;
+        }
+
+    .noticiaText{
+        max-width: 50px;
+    }
+    .dispNone{
+        display: none;
+    }
+}
+
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+        
+		/* Estilos CSS aqui */
+	</style>
+<script>
+$(document).ready(function() {
+    $('.add-to-cart').click(function() {
+        var item_name = $(this).data('nome');
+        var item_description = $(this).data('descricao');
+        var item_price = $(this).data('preco');
+
+        $.ajax({
+            url: '/add_to_cart',
+            type: 'POST',
+            data: {
+                'nome': item_name,
+                'descrição': item_description,
+                'preço': item_price,
+            },
+            success: function(response) {
+                alert('Item adicionado ao carrinho: ' + item_name);
+            },
+            error: function(error) {
+                alert('Ocorreu um erro ao adicionar o item ao carrinho');
+            },
+        });
+    });
+});
+</script>
+</head>
+        <body style=" background-color:#E2D1C2;" >
+            <div class="cabecalho"  style="background-color:#63411F; color:white !important;">    
+               <nav class="navbar navbar-expand-sm navbar-light" >
+                    <div class="container">
+                        <div class="navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav">
+                                <t t-foreach="data" t-as="data_item">
+                                    <li style="padding:10px" class="nav-item">
+                                        <a class="nav-link"   t-esc="data_item['topico']"  t-att-href="'#' + data_item['topico']"/>
+                                    </li>
+                                </t>
+                            </ul>
+                        </div>  
+                    </div>
+                </nav>
+
+            </div>
+            <div class="flex-div">
+                <t t-foreach="data" t-as="data_item">
+                    <div class="bordMax" style="margin-top:">
+                        <h1 t-att-id="data_item['topico']" t-esc="data_item['topico']" style="margin-top:20px"/>
+                        <div class="flex-div">
+                            <t t-foreach="data_item['cards']" t-as="card">
+                                <div class="card-container"  style="background-color: #63411F ;" >
+                                    <div>
+                                        <t t-if="card['nome'] == 'Espresso'">
+                                            <img src="unique_coffee/static/src/img/images/image1.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Latte'">
+                                            <img src="unique_coffee/static/src/img/images/image2.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Macchiato'">
+                                            <img src="unique_coffee/static/src/img/images/image3.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Cappuccino'">
+                                            <img src="unique_coffee/static/src/img/images/image4.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Chocolate Quente'">
+                                            <img src="unique_coffee/static/src/img/images/image5.webp" style="margin-top:17%;"/>
+                                        </t>
+                                
+                                        
+                                        <t t-elif="card['nome'] == 'Iced Coffee'">
+                                            <img src="unique_coffee/static/src/img/images/image6.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Chá Twinnings'">
+                                            <img     src="unique_coffee/static/src/img/images/image7.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Refrigerante 350 ml'">
+                                            <img src="unique_coffee/static/src/img/images/image8.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Smoothie 500 mls'">
+                                            <img src="unique_coffee/static/src/img/images/image9.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Sucos detox 300mls'">
+                                            <img src="unique_coffee/static/src/img/images/image10.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Pão Com Mateiga'">
+                                            <img url="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/68c64791-fcec-417d-9a6d-540173233e18.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Omelete'">
+                                            <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/fa41a811-6cb8-4bd4-8048-bce6ee68e057.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Salada De Frutas'">
+                                            <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/555c4512-fbb4-4712-ae90-00f2be853ec0.webp" style="margin-top:17%;"/>
+                                        </t>
+                                                                                
+                                          <t t-elif="card['nome'] == 'Salada De Frutas'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/555c4512-fbb4-4712-ae90-00f2be853ec0.webp" style="margin-top:17%;"/>
+                                        </t>
+                                      <t t-elif="card['nome'] == 'Cheeseburguer Unique'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/fbf304ba-ff53-4c71-ae87-00f16edc3383.webp" style="margin-top:17%;"/>
+                                        </t>
+                                             <t t-elif="card['nome'] == 'Pãoliça'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/aa491d3f-3f40-49dd-969c-206b59fbaa3a.webp" style="margin-top:17%;"/>
+                                        </t>
+                                            <t t-elif="card['nome'] == 'mortaNdela'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/3d7943c3-16c3-41d7-b795-84f8c98201f6.webp" style="margin-top:17%;"/>
+                                        </t>
+                                      <t t-elif="card['nome'] == 'Coxinha G'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/68204284-7526-4853-a251-2657435b0b63.webp" style="margin-top:17%;"/>
+                                        </t>
+                                         <t t-elif="card['nome'] == 'Filet Mignon Suíno'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/4bc4b97c-7454-4be5-8a14-aa8b3a1ce98a.webp" style="margin-top:17%;"/>
+                                        </t>
+                                          <t t-elif="card['nome'] == 'Cheesecake'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/ec4e4f9c-782b-4fed-a4e5-d5da92dd9f25.webp" style="margin-top:17%;"/>
+                                        </t>
+                                          <t t-elif="card['nome'] == 'Brownie'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/de48aea5-45c2-41f0-a6f7-201c30129c2f.webp" style="margin-top:17%;"/>
+                                        </t>
+                                             <t t-elif="card['nome'] == 'Brownie'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/de48aea5-45c2-41f0-a6f7-201c30129c2f.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Bolo de Pote'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/2dc619f7-6e81-48c7-9eff-a9c45c3f0655.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        <t t-elif="card['nome'] == 'Espresso Martini'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/1ce0b207-0723-4d5e-9010-3435c8893200.webp" style="margin-top:17%;"/>
+                                        </t>
+                                         <t t-elif="card['nome'] == 'Irish Coffee'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/7dd2954a-ae1a-4522-93be-9775b6d6c0ab.webp" style="margin-top:17%;"/>
+                                        </t>
+                                         <t t-elif="card['nome'] == 'Lemon Merengue Martini'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/ce507ebc-ce0e-47f1-94dc-ceaee2808b4e.webp" style="margin-top:17%;"/>
+                                        </t>
+                                        
+                                        <t t-elif="card['nome'] == 'Jezz Pink Gin'">
+                                        <img src="https://d3lryrecr523dy.cloudfront.net/companies/products/images/150/57925c2a-b185-4426-b71e-b72c0374c0b9.webp" style="margin-top:17%;"/>
+                                        </t>
+
+                                    
+
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        
+                                    </div>
+                                    <div class="card-body" style="flex-direction:column; color:white;">
+                                        <h5 class="card-title" t-esc="card['nome']"/>
+                                        <p class="card-text" t-esc="card['descrição']"/>
+                                        <p class="card-text" t-esc="card['preço']"/>
+                                        <button type="button" class="btn btn-dark"   t-att-data-nome="card['nome']">Adicionar</button>
+                                    </div>
+                                </div>
+                                
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </div>
+            
+        </body>
+    </template>
+                                                          
+
+    </data>
+</odoo>

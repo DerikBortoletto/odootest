@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+
+	    <!-- Kanban View -->
+	    <record id="project_task_kanban_view_scrum" model="ir.ui.view">
+	      <field name="name">project.task.view.kanban_scrum</field>
+	      <field name="model">project.task</field>
+	      <field name="inherit_id" ref="project.view_task_kanban"/>
+	      <!-- <field name="mode">primary</field> -->
+	      <field name="arch" type="xml">
+	        <field name="color" position="after">
+	          <field name="scrum_is"/>
+	          <field name="sprint_id"/>
+	        </field>
+	        <!-- 
+	        <xpath expr="//kanban" position="attributes">
+	          <attribute name="quick_create_view">scrum_agile_framework.quick_create_task_form</attribute>
+	          <attribute name="default_group_by">scrum_stage</attribute>
+	        </xpath>
+	        <field name="project_id" position="attributes">
+	            <attribute name="attrs">{'invisible': 1}</attribute>
+	        </field>
+	         -->
+	      </field>
+	    </record>
+
+		<!-- Form View -->
+		<record model="ir.ui.view" id="project_task_form_view_scrum">
+		  <field name="name">project.task.view.form_scrum</field>
+		  <field name="model">project.task</field>
+		  <field name="inherit_id" ref="hr_timesheet.view_task_form2_inherited"/>
+		  <field name="arch" type="xml">
+		    <field name="project_id" position="after">
+		    	<field name="scrum_is" string="Is a scrum project"/>
+		      <field name="user_story_id" class="ml-auto" attrs="{'invisible':[('scrum_is','=',False)]}"/>
+		      <field name="scrum_stage" class="ml-auto" attrs="{'invisible':[('scrum_is','=',False)]}"/>
+		    </field>
+		    <field name="stage_id">
+		      <attribute name="attrs">{'invisible': [('scrum_is','=',True)]}</attribute>
+		    </field>
+		    <field name="timesheet_ids" position="attributes">
+		      <attribute name="attrs">{'readonly': [('scrum_stage','!=', 'doing')]}</attribute>
+		    </field>
+		    <field name="kanban_state" position="attributes">
+		      <attribute name="attrs">{'readonly': [('scrum_is','=',True)]}</attribute>
+		    </field>
+		    <field name="timesheet_ids" position="before">
+		      <div attrs="{'invisible':[('scrum_is','=',False)]}">
+		        <p attrs="{'invisible': [('scrum_stage', '=', 'doing')]}">
+		          To add records to the timesheet, change the status of the task to Doing</p>
+		        <p attrs="{'invisible': ['|', ('scrum_stage','=', 'doing'), ('scrum_stage', '=', 'done')]}">
+		          Records from this timesheet will not be used for the Burndown chart while the task
+		          is in the To do state</p>
+		      </div>
+		    </field>
+		    <field name="allow_subtasks" position="after">
+		      <field name="sprint_id" attrs="{'invisible':[('scrum_is','=',False)]}" />
+		    </field>
+		    <!-- 
+		    <field name="unit_amount" position="attributes">
+		      <attribute name="string">Effective hours</attribute>
+		    </field>
+		    <field name="unit_amount" position="after">
+		      <field name="remaining_amount" string="Remaining hours" widget="timesheet_uom"
+		             decoration-danger="unit_amount &gt; 24"/>
+		      <field name="sprint_id" />
+		    </field>
+		    <xpath expr="//form" position="attributes">
+		      <attribute name="create">false</attribute>
+		    </xpath>
+		     -->
+		  </field>
+		</record>
+
+	    <record id="project_task_search_view_scrum" model="ir.ui.view">
+	      <field name="name">project.task.search_scrum</field>
+	      <field name="model">project.task</field>
+	      <field name="arch" type="xml">
+	        <search string="User Stories">
+	          <searchpanel>
+	            <field name="user_story_id" string="User Stories" icon="fa-users"/>
+	          </searchpanel>
+	        </search>
+	      </field>
+	    </record>
+		
+	</data>
+</odoo>

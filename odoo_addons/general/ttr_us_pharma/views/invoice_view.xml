@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="pharma_move_form_inherit" model="ir.ui.view">
+			<field name="name">pharma.move.form</field>
+			<field name="model">account.move</field>
+			<field name="inherit_id" ref="account.view_move_form" />
+			<field name="priority" eval="5" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@id='invoice_tab']/field[@name='invoice_line_ids']/tree/field[@name='name']" position="after">
+					<field name="generic_name" optional="hide" />
+					<field name="manufacture_id" optional="hide" />
+					<field name="item_class" optional="hide" />
+					<field name="control_substance" optional="hide" />
+					<field name="control_substance_type" optional="hide" />
+					<field name="storage_temperature" optional="hide" />
+					<field name="size" optional="hide" />
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</odoo>

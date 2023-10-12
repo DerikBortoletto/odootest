@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+        <record id="product_identifier_spt_form_view" model="ir.ui.view">
+            <field name="name">product.identifier.spt.form.view.spt</field>
+            <field name="model">product.identifier.spt</field>
+            <field name="arch" type="xml">
+                <form string="Product Identifier">
+                    <sheet>
+                        <group>
+                        	<field name="tt_id" readonly="1"/>
+                            <field name="name" options="{'no_create': True}"/>
+                            <field name="identifier_value"/>
+                            <field name="product_spt_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_identifier_spt_tree_view" model="ir.ui.view">
+            <field name="name">product.identifier.spt.tree.view.spt</field>
+            <field name="model">product.identifier.spt</field>
+            <field name="arch" type="xml">
+                <tree string="Product Identifier">
+					<field name="tt_id" readonly="1"/>
+					<field name="name" options="{'no_create': True}"/>
+					<field name="identifier_value"/>
+					<field name="product_spt_id"/>
+					<field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+        
+        <!-- Menu on TT2 Module -->
+        <record id="action_product_identifier_spt" model="ir.actions.act_window">
+            <field name="name">Product Identifier</field>
+            <field name="res_model">product.identifier.spt</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

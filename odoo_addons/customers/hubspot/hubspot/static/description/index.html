@@ -1,0 +1,1847 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<link href="css/bootstrap.css" type="text/css" rel="stylesheet" />
+<link href="css/font-awesome.min.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<style>
+
+/* /loempia/static/src/css/description.css defined in bundle 'web.assets_frontend' */
+ .oe_styling_v8{font-family: "Open Sans", "Helvetica", Sans; font-weight: 300; color: #646464; background: white; font-size: 16px;} .oe_styling_v8 .oe_website_contents{background: whitesmoke; padding-bottom: 1px;} .oe_styling_v8 b{font-weight: 600;} .oe_styling_v8 a{color: #21B799; text-decoration: none;} .oe_styling_v8 a.btn{color: white;} .oe_styling_v8 .oe_title_font{font-family: "Lato", "Open Sans", "Helvetica", Sans;} .oe_styling_v8 .oe_page{background: white; overflow: hidden; -webkit-border-radius: 1px; -moz-border-radius: 1px; -ms-border-radius: 1px; -o-border-radius: 1px; border-radius: 1px; -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35); -moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35); box-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);} .oe_styling_v8 .oe_emph{font-weight: 400;} .oe_styling_v8 .oe_dark{overflow: hidden; background: #efefef; box-shadow: none;} .oe_page{margin: 0px auto 64px auto; max-width: 992px;} .oe_row{width: 928px; margin-top: 16px; margin-bottom: 16px; margin-left: auto; margin-right: auto;} .oe_row.oe_fit{width: auto;} .oe_clearfix:after, .oe_row:after{content: "."; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;} [class*='oe_span']{float: left; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 16px;} .oe_span12{width: 928px;} .oe_span10{width: 773px;} .oe_span9{width: 696px;} .oe_span8{width: 618px;} .oe_span6{width: 464px;} .oe_span4{width: 309px;} .oe_span3{width: 232px;} .oe_span2{width: 154px;} [class*='oe_span'].oe_fit{padding-left: 0px !important; padding-right: 0px !important;} [class*='oe_span'].oe_right{float: right;} .oe_row.oe_flex [class*='oe_span']{display: inline-block; float: none; vertical-align: top; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; padding: 0 16px; width: auto;} .oe_row.oe_flex .oe_span12{max-width: 928px;} .oe_row.oe_flex .oe_span10{max-width: 769px;} .oe_row.oe_flex .oe_span9{max-width: 692px;} .oe_row.oe_flex .oe_span8{max-width: 614px;} .oe_row.oe_flex .oe_span6{max-width: 460px;} .oe_row.oe_flex .oe_span4{max-width: 305px;} .oe_row.oe_flex .oe_span3{max-width: 228px;} .oe_row.oe_flex .oe_span2{max-width: 150px;} .oe_mb0{margin-bottom: 0px !important;} .oe_mb4{margin-bottom: 4px !important;} .oe_mb8{margin-bottom: 8px !important;} .oe_mb16{margin-bottom: 16px !important;} .oe_mb32{margin-bottom: 32px !important;} .oe_mb48{margin-bottom: 48px !important;} .oe_mb64{margin-bottom: 64px !important;} .oe_mt0{margin-top: 0px !important;} .oe_mt4{margin-top: 4px !important;} .oe_mt8{margin-top: 8px !important;} .oe_mt16{margin-top: 16px !important;} .oe_mt32{margin-top: 32px !important;} .oe_mt48{margin-top: 48px !important;} .oe_mt64{margin-top: 64px !important;} .oe_mb0{margin-bottom: 0px !important;} .oe_mb4{margin-bottom: 4px !important;} .oe_mb8{margin-bottom: 8px !important;} .oe_mb16{margin-bottom: 16px !important;} .oe_mb32{margin-bottom: 32px !important;} .oe_mb64{margin-bottom: 64px !important;} .oe_rightfit{padding-right: 0px !important;} .oe_leftfit{padding-left: 0px !important;} .oe_leftalign{text-align: left;} .oe_rightalign{text-align: right;} .oe_centeralign{text-align: center;} .oe_centered{margin-left: auto; margin-right: auto;} .oe_hidden{display: none !important; opacity: 0 !important;} .oe_invisible{visibility: hidden !important;} .oe_transparent{opacity: 0 !important;} .oe_spaced{margin-top: 32px; margin-bottom: 32px;} .oe_more_spaced{margin-top: 64px; margin-bottom: 64px;} .oe_padded{padding-top: 16px; padding-bottom: 16px;} .oe_more_padded{padding-top: 32px; padding-bottom: 32px;} .oe_button{position: relative; bottom: 0; display: inline-block; cursor: pointer; color: white; -webkit-user-select: none; -moz-user-select: none; user-select: none;} .oe_styling_v8 .oe_button, .oe_styling_v8 a.oe_button{padding: 8px 14px; background: #21B799; color: white; -webkit-transition-property: bottom, background; -moz-transition-property: bottom, background; -o-transition-property: bottom, background; transition-property: bottom, background; -webkit-transition-duration: 250ms; -moz-transition-duration: 250ms; -o-transition-duration: 250ms; transition-duration: 250ms;} .oe_styling_v8 .oe_button:hover, .oe_styling_v8 a.oe_button:hover, .oe_styling_v8 .oe_button:active, .oe_styling_v8 a.oe_button:active{background: #1b9f85;} .oe_styling_v8 .oe_button.oe_big, .oe_styling_v8 a.oe_button.oe_big{font-size: 24px;} .oe_styling_v8 .oe_button.oe_bigger, .oe_styling_v8 a.oe_button.oe_bigger{font-size: 32px;} .oe_styling_v8 .oe_button.oe_small, .oe_styling_v8 a.oe_button.oe_small{font-size: 13px; padding: 2px 4px;} .oe_styling_v8 .oe_button.oe_medium, .oe_styling_v8 a.oe_button.oe_medium{padding: 5px 12px; font-size: 16px;} .oe_styling_v8 .oe_button.oe_tacky, .oe_styling_v8 a.oe_button.oe_tacky{background: #34495E;} .oe_styling_v8 .oe_button.oe_tacky:hover, .oe_styling_v8 a.oe_button.oe_tacky:hover, .oe_styling_v8 .oe_button.oe_tacky:active, .oe_styling_v8 a.oe_button.oe_tacky:active{background: #253544;} .oe_styling_v8 .oe_button.oe_disabled, .oe_styling_v8 a.oe_button.oe_disabled{background: #c8c8c8; cursor: default;} .oe_styling_v8 .oe_button.oe_disabled:hover, .oe_styling_v8 a.oe_button.oe_disabled:hover, .oe_styling_v8 .oe_button.oe_disabled:active, .oe_styling_v8 a.oe_button.oe_disabled:active{background: #c8c8c8;} .oe_styling_v8.oe_styling_black .oe_button{-webkit-box-shadow: 0px 2px 0px #463555; -moz-box-shadow: 0px 2px 0px #463555; box-shadow: 0px 2px 0px #463555;} .oe_styling_v8{} .oe_styling_v8 .oe_input{padding: 4px 7px; border-radius: 3px; border: solid 1px #d6d6d6; box-shadow: 0px 2px #e6e6e6; background: #fafafa; font-weight: 300; outline: none; -webkit-transition: all 150ms linear; -moz-transition: all 150ms linear; -o-transition: all 150ms linear; transition: all 150ms linear;} .oe_styling_v8 .oe_input:focus{border: solid 1px #969696; box-shadow: 0px 2px #d2d2d2;} .oe_styling_v8 .oe_input.oe_valid{background: #f2ffec; border-color: #b1ebb6; box-shadow: 0px 2px #e1f8e1; color: #0f610f;} .oe_styling_v8 .oe_input.oe_invalid{background: #fff2f2; border-color: #ebb1b1; box-shadow: 0px 2px #f8e1e1; color: #610f0f;} .oe_styling_v8 .oe_input.oe_big{padding: 8px 14px;} .oe_styling_v8 .oe_input_label{font-weight: 300; font-size: 16px;} .oe_styling_v8 .oe_input_label.oe_big{font-size: 20px;} .oe_styling_v8 .oe_textarea{width: 300px; height: 80px;} .oe_styling_v8 .oe_form_layout_table{width: 100%;} .oe_styling_v8 .oe_form_layout_table td{padding-bottom: 16px;} .oe_styling_v8 .oe_form_layout_table td:first-child{text-align: right; padding-right: 16px;} .text-alpha{color: #A24689 !important;} .oe_styling_v8 .oe_slogan{color: #333333; font-family: "Lato", "Open Sans", "Helvetica", Sans; margin-top: 32px; margin-bottom: 32px; text-align: center;} .oe_styling_v8 h1.oe_slogan{font-size: 64px; font-weight: 900; margin-top: 48px; margin-bottom: 48px;} .oe_styling_v8 h2.oe_slogan{font-size: 40px; font-weight: 300;} .oe_styling_v8 h3.oe_slogan{font-size: 26px; font-weight: 300; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5;} .oe_styling_v8 h4.oe_slogan{font-size: 24px; font-weight: 300;} .oe_styling_v8 h4.oe_slogan:before, .oe_styling_v8 h4.oe_slogan:after{margin: 0 20px; content: ""; display: inline-block; width: 100px; height: 0px; border-top: solid 1px; vertical-align: middle; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=30); opacity: 0.3;} .oe_styling_v8 h5.oe_slogan{font-weight: 300;} .oe_styling_v8 h2.oe_slogan + h3.oe_slogan{margin-top: -28px;} .oe_quote{margin: 8px; padding: 16px; background: rgba(0, 0, 0, 0.02); border: solid 1px rgba(0, 0, 0, 0.06); -webkit-border-radius: 2px; -moz-border-radius: 2px; -ms-border-radius: 2px; -o-border-radius: 2px; border-radius: 2px;} .oe_quote .oe_q, .oe_quote q{margin: 10px; display: block; font-style: italic; text-align: center; font-size: 20px;} .oe_quote .oe_q:before, .oe_quote .oe_q:after, .oe_quote q:before, .oe_quote q:after{content: '"'; font-weight: 900; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20); opacity: 0.2;} .oe_quote cite{display: block; font-style: normal; margin-top: 16px;} .oe_quote .oe_photo{float: left; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; margin-right: 16px;} .oe_quote .oe_author{font-size: 20px; padding-top: 6px;} .oe_dark .oe_quote{background: white; border: 1px solid #f0f0ff;} .oe_picture{display: block; max-width: 84%; max-height: 400px; margin: 16px 8%;} .oe_screenshot{padding: 8px; background-color: white; -webkit-border-radius: 3px; -moz-border-radius: 3px; -ms-border-radius: 3px; -o-border-radius: 3px; border-radius: 3px; -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2); -moz-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2); box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);} .oe_pic_ctr{position: relative;} .oe_pic_ctr > img.oe_picture{width: 100%; max-width: none; max-height: none; margin: 0;} .oe_pic_ctr > .oe_title{position: absolute; top: 15px; right: 38px;} .oe_styling_v8 .oe_pic_ctr > .oe_title{font-size: 64px; color: white; font-weight: 600; margin: 0; text-shadow: 0px 2px 0px #494949, 0px 2px 5px rgba(0, 0, 0, 0.33), 0px 0px 60px rgba(0, 0, 0, 0.22);} div.oe_demo{position: relative; border: 1px solid #dedede;} div.oe_demo span.oe_demo_play{top: 50%; left: 50%; width: 80px; height: 60px; margin-top: -30px; margin-left: -40px; display: block; position: absolute; background: url("/loempia/static/src/css/../img/layout/play-button.png") no-repeat left top transparent; pointer-events: none;} div.oe_demo img{max-width: 100%; width: 100%;} div.oe_demo div.oe_demo_footer{position: absolute; left: 0; background-color: rgba(162, 70, 137, 0.7); opacity: 0.85; bottom: -1px; width: 100%; padding-top: 7px; padding-bottom: 7px; color: white; font-size: 14px; font-weight: bold; border-bottom-left-radius: 3px; border-bottom-right-radius: 3px; pointer-events: none;} div.oe_demo:hover span.oe_demo_play{background: url("/loempia/static/src/css/../img/layout/play-button-over.png") no-repeat left top transparent;} .oe_styling_v8 .oe_container.oe_separator{height: 64px; margin-bottom: 16px; background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.02))); background: -webkit-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02)); background: -moz-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02)); background: -o-linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02)); background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02)); -webkit-box-shadow: 0px -3px 10px -5px rgba(0, 0, 0, 0.1) inset; -moz-box-shadow: 0px -3px 10px -5px rgba(0, 0, 0, 0.1) inset; box-shadow: 0px -3px 10px -5px rgba(0, 0, 0, 0.1) inset; overflow-y: hidden;} .oe_row_tabs{text-align: center; margin-top: 0px; margin-bottom: 0px; padding-top: 21px;} .oe_row_tab{position: relative; min-width: 120px; padding: 8px; font-size: 20px; display: inline-block; margin: 0px -2px; border-top-left-radius: 4px; border-top-right-radius: 4px; border: solid 1px rgba(0, 0, 0, 0.1); border-bottom: none; background: #fafafa; background-image: +linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.02)); box-shadow: 0px -3px 10px -5px rgba(0, 0, 0, 0.1) inset; cursor: pointer; -webkit-transition: all 250ms linear; -moz-transition: all 250ms linear; -o-transition: all 250ms linear; transition: all 250ms linear;} .oe_row_tab:hover{padding-bottom: 12px; top: -4px; background-color: white;} .oe_row_tab.oe_active{background-color: white; background-image: none; box-shadow: none; border-top-color: #8272b6; border-top-width: 2px; cursor: default;} .oe_row_tab.oe_active:hover{padding-bottom: 8px; top: 0asx;} .oe_calltoaction{height: 32px; margin-top: -32px; position: relative;}
+
+
+
+	.oe_styling_v8 .oe_slogan {
+    color: #333333;
+    font-family: "Lato", "Open Sans", "Helvetica", Sans;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+	.oe_slogan{text-align: center}
+
+ .oe_dark {
+    overflow: hidden;
+    background: #efefef;
+    box-shadow: none;
+}
+
+.oe_styling_v8 .oe_dark {
+    overflow: hidden;
+    background: #efefef;
+    box-shadow: none;
+}
+
+
+
+
+</style>
+
+
+</head>
+
+ <body>
+
+  <!--Gif Section Start-->
+<section id="learn_more" class="oe_container oe_dark" style=" padding-bottom:20px; ">
+  <div class="col-md-12 col-sm-12 col-xs-12 padding-none text-center mb32" style="padding:0px;">
+    <div> <img class="img img-responsive" style="max-width:100%; width:100%" src="Design-gif-for-Appstore.gif"> </div>
+  </div>
+</section>
+<!--Gif Section End-->
+
+
+
+
+
+
+
+
+
+ <!--Banner Section Start-->
+<section class="oe_container oe_dark">
+  <div class="xero_bg pt80 pb64" style="background-color:rgb(34, 194, 115); background-size: cover; background-position: center center; height:auto; padding-top:60px; padding-bottom:60px;">
+    <div class="col-sm-6 col-md-6 col-xs-12 offset-md-3 offset-sm-3" style="background-color: rgba(0, 0, 0, 0.6);
+    padding: 21px;
+    text-align: center;">
+      <h3 style="color:#fff; font-size: 35px;font-weight: 500;">Odoo Hubspot Integration</h3>
+
+      <!--<p>Business organizations uses different software specifically to different department activities eg : XERO Accounting system is used to keep online records of Invoices and its payment.</p>-->
+
+      <p style="color: #fff; font-size: 25px;">Our Pricing includes User Manual, 90 Days Support <span style="
+    color: #ff0;"><b>(Monday-Friday 10am to 7pm IST)</b></span> and One time Setup</p>
+    <p>
+        <a class="btn m-2" href="mailto:support@pragtech.co.in" style="background-color:#22c273; padding:9px; color:#fff; font-size:20px;"><i class="fa fa-envelope" style="padding-right:9px"></i>support@pragtech.co.in</a>
+
+        <a class="btn m-2" href="skype:pragtech?call" style="background-color:#22c273; padding:9px; color:#fff; font-size:20px;"><i class="fa fa-skype" style="padding-right:9px"></i>pragtech</a>
+    </p>
+      <h3 style="color: #fff; margin-top:5px; ">We support for <b>English / French / Spanish at an additional cost</b></h3>
+      <!--<h4 style="color: #fff; font-weight:900;">works for community and enterprise editions </h4>-->
+
+
+ <div class="row">
+
+<!-- START For Desktop Purpose Only -->
+    <div class="col-md-12 mt-3 hidden-xs" style="margin:auto; padding-left: 5px; padding-right: 5px;">
+        <table class="table-sm" width="100%" border="1" background="#fff" style="background-color:#fff;">
+            <thead style="    background-color: #22c273; color: #FFF;">
+                <tr>
+                    <td colspan="10" style="padding: 15px; font-size: 23px;"><b>Supported Odoo versions & platforms</b></td>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr style="background-color: #f8f8f8; font-size: 14px;">
+                    <td style="padding:10px;"><b>Odoo.sh</b></td>
+
+                    <td style="padding: 10px;"><b>Self Hosted</b></td>
+
+                    <td style="padding: 10px;"><b>Enterprise</b></td>
+
+                    <td style="padding: 10px;"><b>Community</b></td>
+
+                    <td style="padding: 10px;"><b>Odoo Online</b></td>
+
+                </tr>
+
+                <tr>
+                     <!--<td style="text-align:center; padding:10px;"><img src="img/yes_icon.svg" width="28"></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"></td>
+                   <td style="text-align:center"><img src="img/yes_icon.svg" width="28"></td>
+                   <td style="text-align:center"><img src="img/no_icon.svg" width="28"></td>-->
+
+
+               <td style="text-align:center; padding:10px;"><img src="img/yes_icon.svg" width="28"></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"></td>
+                   <td style="text-align:center"><img src="img/yes_icon.svg" width="28"></td>
+                   <td style="text-align:center"><img src="img/no_icon.svg" width="28"></td>
+
+
+
+
+
+                </tr>
+            </tbody>
+</table>
+</div>
+       <!-- END For Desktop Purpose Only -->
+
+      <!-- START For Mobile Purpose Only -->
+
+  <div class="col-md-8 mt-3 visible-xs" style="margin:auto; padding-left: 5px; padding-right: 5px;">
+        <table class="table-sm" width="100%" border="1" background="#fff" style="background-color:#fff;">
+            <thead style="    background-color: #22c273; color: #FFF;">
+                <tr>
+                    <td colspan="2" style="padding: 15px; font-size: 23px;"><b>Supported Odoo versions & platforms</b></td>
+
+
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td style="padding: 10px;"><b>Odoo.sh</b></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"></td>
+
+                </tr>
+
+
+                <tr>
+                    <td style="padding: 10px;"><b>Self Hosted</b></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"></td>
+
+                </tr>
+
+                <tr style="background-color: #f8f8f8;">
+                    <td style="padding: 10px;"><b>Enterprise</b></td>
+                   <td style="text-align:center"><img src="img/yes_icon.svg" width="28"></td>
+
+                </tr>
+
+                <tr>
+                    <td style="padding: 10px;"><b>Community</b></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"></td>
+
+                </tr>
+
+                <tr style="background-color: #f8f8f8;">
+                    <td style="padding: 10px;"><b>Odoo Online</b></td>
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"></td>
+
+                </tr>
+
+
+            </tbody>
+</table>
+</div>
+
+
+   <!-- END For Mobile Purpose Only -->
+
+
+
+
+
+
+
+   <div style="text-align: left; color:#fff; margin-top:20px; list-style: none!important; line-height: 37px; padding-left: 14px; font-weight: 600; font-size:14px; ">
+
+    <p style=" margin-bottom: 15px; line-height: 21px;"><i class="fa fa-check-circle" style="margin-right: 10px; color: #fff; font-size: 22px; line-height: 15px;"></i>Works & tested on standard installations of Odoo with no third party apps</p>
+
+    <p style=" margin-bottom: 15px; line-height: 21px;"><i class="fa fa-check-circle" style="margin-right: 10px; color: #fff; font-size: 22px; line-height: 15px;"></i>Free support only for odoo installations with no third party apps</p>
+
+    <p style=" margin-bottom: 15px; line-height: 21px;"><i class="fa fa-check-circle" style="margin-right: 10px; color: #fff; font-size: 22px; line-height: 15px;"></i>Paid support availaible for Odoo installations with third party apps.</p>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+      <!--<a class="btn  red-btn btn-lg" target="_blank"
+               href="http://www.blog.pragtech.co.in/odoo-quickbooks-desktop-connector/" style="background-color: #ff0000;
+    border-radius: 0px;
+    color: #000; text-transform:uppercase; font-size:18px; margin-bottom:15px;">Learn More</a>
+            <a class="btn yellow-btn btn-lg" style="background-color:#ffff00;
+    border-radius: 0px;
+    color: #000; text-transform:uppercase; font-size:18px; margin-bottom:15px;" target="_blank"
+               href="http://www.pragtech.co.in/company/proposal-form.html?id=103&name=quickbook-connector">View Demo </a>
+
+
+            <a class="btn yellow-btn btn-lg"
+               style="background-color:#22c273; border-radius: 0px; color: #000;  font-size:18px; margin-bottom: 15px; width:150px;"
+               target="_blank" href="https://www.pragtech.co.in/company/proposal-form.html?id=310&name=support-odoo-quickbooks-desktop-connector">Support</a>-->
+
+      <!--<div style="background-color: #fff; color: red; font-weight: 800; padding: 10px; max-width: 500px; margin: auto;">Note:Extensively Tested on Odoo Vanilla with Ubuntu OS</div>-->
+		
+		<div class="row mt-3 mb-3">
+  <div class="col-12">
+        <h3 class="text-center text-white">Our Service Offerings</h3>
+      </div>
+  <div class="col-md-4 mt-4"> <img class="img-fluid" src="img/resources.png" style="margin: auto; width: 60%;">
+        <h5 class="text-center text-white mt-2">Odoo Dedicated Resources</h5>
+      </div>
+  <div class="col-md-4 mt-4"> <img class="img-fluid" src="img/succes-pack.png" style="margin: auto; width: 60%;">
+        <h5 class="text-center text-white mt-2">Odoo Success Packs</h5>
+      </div>
+  <div class="col-md-4 mt-4"> <img class="img-fluid" src="img/project.png" style="margin: auto; width: 60%;">
+        <h5 class="text-center text-white mt-2">Odoo Turnkey Projects</h5>
+      </div>
+  <div class="col-12 mt-4">
+        <h5 class="text-center text-white">To connect with us: <a href="mailto:support@pragtech.co.in" style="color: #ff0">support@pragtech.co.in</a></h5>
+      </div>
+</div>
+		
+		
+
+    </div>
+  </div>
+</section>
+<!--Banner Section End-->
+     
+     
+     
+
+<!--Sale Section Start-->
+<section class="oe_container oe_dark" style=" padding-bottom:20px;">
+  <div class="col-md-12 col-sm-12 col-xs-12 padding-none text-center mb8">
+    <div> <img class="img-fluid p-1 shadow-lg mt-2" src="https://www.pragtech.co.in/appstore-img/sale.jpg"/> </div>
+  </div>
+</section>
+<!--Sale Section End-->
+     
+     
+     
+    <!--Gif Section Start-->
+<!--<section id="learn_more" class="oe_container oe_dark" style=" padding-bottom:20px;">
+  <div class="col-md-12 col-sm-12 col-xs-12 padding-none text-center mb8">
+    <div> <img class="img-fluid p-1 shadow-lg mt-2" src="img/hubspot-offer-banner.gif"/>  </div>
+  </div>
+</section>-->
+<!--Gif Section End-->        
+     
+     
+     
+     
+     
+     
+     
+<section>
+
+<div class="row">
+    <div class="container">
+
+<div class="featueres_comparison p-5 shadow-lg mt-5">
+<div class="col-md-12 mb-4">
+          <h2 class="text-center">Features Comparison with </br/><b>Other Connectors</b></h2>
+      </div>
+
+      <div class="col-md-12" style="margin-bottom: 30px;">
+        <table width="100%" border="1" background="#fff" style="background-color:#fff;">
+            <thead style="background-color: #000000; color: #FFF;">
+                <tr>
+                    <td style="padding:30px;"><b>Features</b></td>
+                    <td style="text-align:center"><b>Pragmatic Techsoft Pvt.Ltd.</b></td>
+
+                   
+                    <td style="text-align:center"><b>FreelancerApps</b></td>
+                     <td style="text-align:center"><b>Techloyce</b></td>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <!--<tr style="background-color: #f8f8f8;">
+                    <td style="padding: 10px;"><b>Odoo Build</b></td>
+                    <td style="text-align:center"><b>Community/ Enterprise</b></td>
+
+                    
+                    <td style="text-align:center"><b>Community/ Enterprise</b></td>
+                    <td style="text-align:center"><b>Enterprise</b></td>
+                </tr>-->
+
+
+
+                <!--<tr style="background-color: #f8f8f8;">
+                    <td style="padding: 10px;">Odoo Version</td>
+                    <td style="text-align:center">10,11,12,13,14</td>
+
+                   
+                    <td style="text-align:center">11,12,13,14</td>
+                     <td style="text-align:center">12,13,14</td>
+                </tr>-->
+                
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Log Meeting</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                </tr>
+                
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Log Email</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                </tr>
+                
+                
+                
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Activity Notes Export</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+                
+                
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Activity Notes Export</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Activity Tasks Import</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Activity Tasks Export</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Emails Import</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Emails Export</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+                
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Activity Notes Import</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+                
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Odoo Community Edition</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                    
+                </tr>
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Multiple Instance</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/no_icon.svg" width="28"/></td>
+                </tr>
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Contact Import</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Contact Export</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Company Import</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Company Export</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Deal Import</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Deal Export</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                   
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                     <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+                
+
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Scheduler</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+
+                <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Record Sync Log</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+                
+                
+                 <tr style="background-color: #fff;">
+                    <td style="padding: 10px;">Odoo Enterprise Edition</td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+
+                    
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                    <td style="text-align:center"><img src="img/yes_icon.svg" width="28"/></td>
+                </tr>
+
+
+
+
+            </tbody>
+</table>
+</div>
+
+     </div>
+
+     </div>
+</div>
+
+</section>     
+
+
+
+
+
+<section class="Diagram_class">
+    <div class="container">
+
+    <div class="p-5 shadow-lg mt-5">
+
+          <img class="img-fluid" src="img/import-funcnaliy.jpg"/>
+    </div>
+
+    <div class="p-5 shadow-lg mt-5">
+
+          <img class="img-fluid" src="img/export-funcnaliy.jpg"/>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="oe_container oe_dark">
+<div class="oe_row oe_spaced" style="max-width:100%;">
+<div class="col-md-8 col-sm-8 col-xs-12 offset-md-2 offset-sm-2 padding-none text-center mt32 mb32">
+	<!--<a href="https://www.pragtech.co.in/company/proposal-form.html?id=309&name=v13-odoo-hubspot-integration" target="_blank"> <img class="img-responsive" src="Odoo13-Launch-Advertising.gif" style="width:80%;"> </a>-->
+
+<h2 class="oe_slogan"><b>Odoo Hubspot Integration</b></h2>
+<p class="oe_mt32 text-center">Leverage the capabilities of industry leading Marketing Tool Hubspot and Odoo business suite of apps by utilizing the Pragmatic Hubspot Odoo Bridge</p>
+</div>
+
+<!--<div class="col-xs-12 col-sm-6 col-md-6 about-img mt40 padding-none">
+<a href="https://www.youtube.com/watch?v=ZiAlOv4TpzM" target="_blank" type="video/youtube" class="jcepopup" data-mediabox="width[700];height[400]">
+<img src="images/Verticals_videoslide/xero_accounting.jpg" alt="" width="100%" /></a>
+</div>-->
+
+
+
+<div class="row">
+<div class="col-sm-7 col-md-7 col-xs-12 about-us padding-none">
+<p>
+Hubspot is the leader in developing products for inbound marketing and sales. It has integrated solution stack for CRM, marketing, and sales. Its vast feature packed offering makes it the heart and soul of any business across any scale, size, or industry. Its practical value extends beyond simple contact management. This way you gain incredible insight into your customers, prospects, and leads. With this insight you can craft deeper relationships with your customers at scale.
+</p>
+
+<ol>
+<li>The Hubspot Sales hub gives you a full suite of tools to boost your productivity, shorten deal cycles, and make your sales process more human-friendly — without adding to your workload. Your sales team can now book more meetings, engage better and close more deals, the smart way.</li>
+<li>The Hubspot Marketing hub provides all the resources, tools, and skills needed to manage and execute successful inbound marketing campaigns. This way you can provide an enhanced experience to your customers and make them interested in your business.</li>
+</ol>
+</div>
+
+<div class="col-md-5 col-sm-5 col-xs-12">
+                <a target="_blank" href="https://www.youtube.com/watch?v=qg1AQeZ6JzU"><img class="img-responsive oe_screenshot" src="hubspot-screencast.jpg"
+                                                                           style="width:100%;"></a>
+            </div>
+
+
+</div>
+
+
+    <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 pl-5 pr-5 mt-2 mb-2" style="margin: auto;">
+    <p style="text-align: center;"> <a class="btn m-2" href="mailto:support@pragtech.co.in" style="background-color:#000000;padding: 19px;color: #fff;font-size: 20px;border-radius: 4px;"><i class="fa fa-envelope" style="padding-right: 9px;"></i>REQUEST A FREE DEMO VIDEO</a> <a class="btn m-2" href="skype:pragtech?call" style="background-color:#22c273; padding:19px; border-radius:4px; color:#fff; font-size:20px;"><i class="fa fa-skype" style="padding-right:9px"></i>pragtech</a></p>
+  </div>
+</div>
+
+	<br/><br/>
+
+				 <div class="row pl-2 pr-2">
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/sales.svg">
+					</div>
+					<div class="col-md-9">
+					  <h4>Sales automation</h4>
+					</div>
+				</div>
+			</div>
+
+
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/dashboard.svg">
+					</div>
+					<div class="col-md-9">
+						<h4>Lead analytics dashboard</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			 <div class="row pl-2 pr-2">
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/form.svg">
+					</div>
+					<div class="col-md-9">
+					  <h4>Collected forms</h4>
+					</div>
+				</div>
+			</div>
+
+
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/contact.svg">
+					</div>
+					<div class="col-md-9">
+						<h4>Contact management</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			 <div class="row pl-2 pr-2">
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/blog.svg">
+					</div>
+					<div class="col-md-9">
+					  <h4>Blog &amp; content creation tools</h4>
+					</div>
+				</div>
+			</div>
+
+
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/mobile-optimize.svg">
+					</div>
+					<div class="col-md-9">
+						<h4>Mobile optimization</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			 <div class="row pl-2 pr-2">
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/email-marketing.svg">
+					</div>
+					<div class="col-md-9">
+					  <h4>Email marketing</h4>
+					</div>
+				</div>
+			</div>
+
+
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/call-to-action.svg">
+					</div>
+					<div class="col-md-9">
+						<h4>Calls-to-action</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			 <div class="row pl-2 pr-2">
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/landing-page.svg">
+					</div>
+					<div class="col-md-9">
+					  <h4>Landing pages</h4>
+					</div>
+				</div>
+			</div>
+
+
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/ab-testing.svg">
+					</div>
+					<div class="col-md-9">
+						<h4>A/B testing</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			 <div class="row pl-2 pr-2">
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/integration.svg">
+					</div>
+					<div class="col-md-9">
+					  <h4>Gmail and Outlook integration</h4>
+					</div>
+				</div>
+			</div>
+
+
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/attachment.svg">
+					</div>
+					<div class="col-md-9">
+						<h4>Documents</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			 <div class="row pl-2 pr-2">
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/message.svg">
+					</div>
+					<div class="col-md-9">
+					  <h4>Live chat</h4>
+					</div>
+				</div>
+			</div>
+
+
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/notification.svg">
+					</div>
+					<div class="col-md-9">
+						<h4>Smart notifications</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	         <div class="row pl-2 pr-2">
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/analytics.svg">
+					</div>
+					<div class="col-md-9">
+					  <h4>Analytics dashboards</h4>
+					</div>
+				</div>
+			</div>
+
+
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/marketing-automation.svg">
+					</div>
+					<div class="col-md-9">
+						<h4>Marketing automation</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+			 <div class="row pl-2 pr-2">
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+						<img class="img img-responsive" style="max-width:85%;" src="img/task.svg">
+					</div>
+					<div class="col-md-9">
+					  <h4>Tasks</h4>
+					</div>
+				</div>
+			</div>
+
+
+<div class="col" style="margin: 10px; padding-top: 15px; padding-bottom: 15px;">
+				<div class="row">
+					<div class="col-md-3 text-center">
+
+					</div>
+					<div class="col-md-9">
+						<h4></h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+</div>
+</section>
+
+
+
+
+
+
+<!------------------------------------------------------  Features Start               ----------------------------->
+
+<section class="oe_container">
+<div class="oe_row oe_spaced" style="max-width:100%;">
+<div class="col-md-12 col-sm-12 col-xs-12 padding-none">
+<h2 class="oe_slogan"><b>Marketing</b> Hub Benefits</h2>
+</div>
+
+
+<div class="row">
+
+<div class="col-xs-12 col-sm-12 col-md-7 about-img mt20 padding-none">
+<img class="img-responsive" src="img/Odoo-Hubspot1.jpg" alt="" width="100%"  />
+</div>
+
+<div class="col-sm-12 col-md-5 about-us mt20 padding-none">
+<ul class="custom-bullet">
+<li>Build and Modify Your Website Without IT</li>
+<li>Get Your Content in Front of the Right People</li>
+<li>Drive More Traffic to Key Landing Pages</li>
+<li>Convert More Visitors Into Qualified Leads</li>
+<li>Turn Leads Into Customers With Less Effort</li>
+<li>Track Customers and Report Your Impact on the Bottom Line</li>
+<li>Attract more targeted traffic to your pages</li>
+<li>Convert more visitors into qualified leads.</li>
+<li>Close more deals with less effort.</li>
+<li>Delight customers to maximize value.</li>
+</ul>
+</div>
+
+</div>
+
+
+
+
+<div class="col-md-8 col-md-offset-2 padding-none">
+
+<div class="hubspot_table">
+<table class="table table-responsive table-bordered table-stripe table-dark" style="border: 1px solid #fff;     display: inline-table; border-spacing: 10px; margin-top: 20px; font-weight:700;  " width="100%" cellspacing="15" cellpadding="15">
+<tbody>
+<tr>
+<th style="text-align: center; background-color: #6c7377;color: #fff;" colspan="2" scope="col" align="center" valign="middle" height="40">
+<span><b>Marketing</b> Hub Features</span></th>
+</tr>
+<tr>
+<td align="left" width="50%" height="40"><span>Lead analytics dashboard</span></td>
+<td  align="left" width="50%" height="40"><span> Lead flows</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Collected forms</span></td>
+<td align="left" height="40"><span>Contact activity</span></td>
+</tr>
+<tr>
+<td  align="left" height="40">Contact management</td>
+<td  align="left" height="40"><span>Contact &amp; company insights</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Custom form fields</span></td>
+<td  align="left" height="40"><span>Blog &amp; content creation tools</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>SEO &amp; content strategy</span></td>
+<td  align="left" height="40"><span>Mobile optimization</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Social media</span></td>
+<td  align="left" height="40"><span>Email marketing</span></td>
+</tr>
+<tr>
+<td align="left" height="40"><span>Calls-to-action</span></td>
+<td  align="left" height="40"><span>Landing pages</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Analytics dashboards</span></td>
+<td  align="left" height="40"><span>Standard SSL certificate</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Goal-based nurturing</span></td>
+<td align="left" height="40"><span>Marketing automation</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Salesforce integration</span></td>
+<td  align="left" height="40"><span>Smart content</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Attribution reporting</span></td>
+<td  align="left" height="40"><span>User roles</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>A/B testing</span></td>
+<td  align="left" height="40"><span>Custom revenue reporting</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Custom event reporting</span></td>
+<td  align="left" height="40"><span>Custom event triggers</span></td>
+</tr>
+<tr>
+<td align="left" height="40"><span>Predictive lead scoring</span></td>
+<td  align="left" height="40"><span>Contacts reporting</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Company reporting</span></td>
+<td  align="left" height="40"><span>Event-based segmentation</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+</div>
+
+
+
+</div>
+</section>
+<!----------------------------------------------------------------------------------->
+
+
+<!--  Start Section For center slider -->
+
+<section class="oe_container">
+  <div class="oe_container">
+   <div class="oe_row oe_spaced" style="max-width:100%;">
+	<h2 style="color: #091E42;font-family: &quot;Montserrat&quot;;text-align: center;margin: 25px auto;text-transform: uppercase;" class="oe_slogan">
+         <b>Related Products</b>
+      </h2>
+
+<div id="slide-top" class="row carousel slide mt64 mb32" data-ride="carousel">
+   <!-- The slideshow -->
+   <div class="carousel-inner">
+      <div class="carousel-item active">
+         <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+            <a href="https://apps.odoo.com/apps/modules/13.0/pragmatic_pipedrive_connector/" target="_blank">
+               <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;">
+                  <img class="img img-fluid center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="related-products/pragmatic_pipedrive_connector.gif">
+                  <h4 class="mt0" style="padding:6% 4%;text-align: center; width: 100%;overflow: hidden;text-overflow: ellipsis;font-family: Roboto-medium;">
+                     Odoo Pipedrive Connector
+                  </h4>
+               </div>
+            </a>
+         </div>
+
+
+		 <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+            <a href="https://apps.odoo.com/apps/modules/13.0/pragmatic_salesforce_connector/" target="_blank">
+               <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;">
+                  <img class="img img-fluid center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="related-products/pragmatic_salesforce_connector.gif">
+                  <h4 class="mt0" style="padding:6% 4%;text-align: center; width: 100%;overflow: hidden;text-overflow: ellipsis;font-family: Roboto-medium;">
+                     Odoo SalesForce Connector
+                  </h4>
+               </div>
+            </a>
+         </div>
+
+		  <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+            <a href="https://apps.odoo.com/apps/modules/13.0/https://apps.odoo.com/apps/modules/13.0/pragtech_odoo_zoho_crm_connector/" target="_blank">
+               <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;">
+                  <img class="img img-fluid center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="related-products/pragtech_odoo_zoho_crm_connector.gif">
+                  <h4 class="mt0" style="padding:6% 4%;text-align: center;width: 100%;overflow: hidden;text-overflow: ellipsis;font-family: Roboto-medium;">
+                     Odoo ZOHO CRM Connector App
+                  </h4>
+               </div>
+            </a>
+         </div>
+
+
+
+
+	   </div>
+
+	   <div class="carousel-item">
+
+		 <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+            <a href="https://apps.odoo.com/apps/modules/13.0/pragtech_vtiger_connector/" target="_blank">
+               <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;">
+                  <img class="img img-fluid center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="related-products/pragtech_vtiger_connector.gif">
+                  <h4 class="mt0" style="padding:6% 4%;text-align: center;width: 100%;overflow: hidden;text-overflow: ellipsis;font-family: Roboto-medium;">
+                     Vtiger integration with Odoo
+                  </h4>
+               </div>
+            </a>
+         </div>
+
+
+
+		   </div>
+      </div>
+
+   <!-- Left and right controls -->
+   <a class="carousel-control-prev" href="#slide-top" data-slide="prev" style="left:-25px;width: 35px;color: #000;">
+   <span class="carousel-control-prev-icon"><i class="fa fa-chevron-left" style="font-size:24px"></i></span>
+   </a>
+   <a class="carousel-control-next" href="#slide-top" data-slide="next" style="right:-25px;width: 35px;color: #000;">
+   <span class="carousel-control-next-icon"><i class="fa fa-chevron-right" style="font-size:24px"></i></span>
+   </a>
+</div>
+ </div>
+</div>
+</section>
+<!--  END Section For center slider -->
+
+
+<section class="oe_container oe_dark">
+<div class="oe_row oe_spaced" style="max-width:100%;">
+<div class="col-md-12 col-sm-12 col-xs-12 padding-none">
+<h2 class="oe_slogan"><b>Sales and CRM</b> Hub Benefits</h2>
+</div>
+
+
+<div class="row">
+<div class="col-xs-12 col-sm-12 col-md-7 about-img mt20 padding-none">
+     <img class="img-responsive" src="img/Odoo-Hubspot2.jpg" alt="" width="100%"  />
+</div>
+
+<div class="col-sm-12 col-md-5 about-us mt20 padding-none">
+<ul class="custom-bullet">
+<li>Manage your pipeline with total visibility.</li>
+<li>Log sales activity automatically</li>
+<li>See everything about a lead in one place.</li>
+<li>Send Personalized Sequences</li>
+<li>Create and Measure Email Templates</li>
+<li>Get Real-Time Notifications</li>
+<li>Enrich Contact Records Automatically</li>
+<li>Place Calls From Inside the CRM</li>
+<li>Book More Meetings</li>
+</ul>
+</div>
+</div>
+
+
+
+<div class="col-md-8 col-md-offset-2 padding-none">
+
+<div class="hubspot_table">
+<table class="table table-responsive table-bordered table-stripe table-dark" style="border: 1px solid #fff; font-weight: 700; display: inline-table; border-spacing: 10px; margin-top: 20px;" width="100%" cellspacing="15" cellpadding="15">
+<tbody>
+<tr>
+<th style="text-align: center; background-color:#666c70; color: #fff;" colspan="2" scope="col" align="center" valign="middle" height="40">
+<span>Sales and CRM Hub Features</span></th>
+</tr>
+<tr>
+<td align="left" width="50%" height="40"><span>Gmail and Outlook integration</span></td>
+<td align="left" width="50%" height="40"><span> Contact management</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Contact & company insights</span></td>
+<td  align="left" height="40"><span>Companies</span></td>
+</tr>
+<tr>
+<td  align="left" height="40">Deals</td>
+<td  align="left" height="40"><span>	Tasks</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Email scheduling</span></td>
+<td align="left" height="40"><span>Email tracking & notifications</span></td>
+</tr>
+<tr>
+<td align="left" height="40"><span>Email templates</span></td>
+<td  align="left" height="40"><span>Documents</span></td>
+</tr>
+<tr>
+<td align="left" height="40"><span>Calling</span></td>
+<td  align="left" height="40"><span>Meetings</span></td>
+</tr>
+<tr>
+<td align="left" height="40"><span>Canned snippets</span></td>
+<td align="left" height="40"><span>Reporting</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Prospects</span></td>
+<td  align="left" height="40"><span>Live chat</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Email sequences</span></td>
+<td  align="left" height="40"><span>Teams</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Multiple deal pipelines</span></td>
+<td  align="left" height="40"><span>Sales automation</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Predictive lead scoring</span></td>
+<td  align="left" height="40"><span>Required fields</span></td>
+</tr>
+<tr>
+<td  align="left" height="40"><span>Products</span></td>
+<td  align="left" height="40"><span>Smart send times</span></td>
+</tr>
+<tr>
+<td align="left" height="40"><span>Smart notifications</span></td>
+<td align="left" height="40"><span>	Salesforce integration</span></td>
+</tr>
+
+</tbody>
+</table>
+</div>
+
+</div>
+
+    <div style="margin: auto; margin-top: 40px;">
+<p style="text-align: center;">
+    <a href="mailto:support@pragtech.co.in" style="
+    background-color: #000000;
+    padding: 19px;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 4px;
+"><i class="fa fa-envelope" style="
+    padding-right: 9px;
+"></i>REQUEST A FREE DEMO VIDEO</a>
+             </p></div>
+
+
+	</div>
+
+</section>
+
+
+
+
+<section class="oe_container">
+<div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h2 class="text-center">Configuration </h2>
+
+
+<h4>1. Set Access Right:</h4>
+<p class="oe_mt8 text-left">First goto settings &#10230; Users &#10230; Users &#10230; Select any user &#10230; click on the Hubspot Manager</p>
+
+<img class="img-responsive" src="img/1_access_right.png" alt="" width="100%"  />
+</div>
+
+</div>
+
+
+<div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h4>Generate App Id In Hubspot</h4>
+<p class="oe_mt8 text-left">For getting a token at hubspot
+Click the gear icon &#10230; Integrations &#10230; Private apps &#10230; Create a private app.
+Provide the name, scopes, and click Create Application.
+</p>
+<img class="img-responsive" src="img/1_hubspot_private_app.png" alt="" width="100%"  />
+<img class="img-responsive pt-2" src="img/2_hubspot_private_app.png" alt="" width="100%"  />
+</div>
+
+</div>	
+	
+	
+
+<div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h4>2. Setup Hubspot Instance Into the Odoo</h4>
+<p class="oe_mt8 text-left">In Odoo Create Hubspot instance record add any instance name paste hubspot app. In case of multiple instance if you want to use current instance as a default instance then click on <b>Default Instance</b> checkbox
+</p>
+<img class="img-responsive" src="img/2_hubspot_instance_setup.png" alt="" width="100%"  />
+</div>
+
+</div>
+
+
+
+ <div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h4>3. Contact Synchronization settings</h4>
+<p class="oe_mt8 text-left">If sync contact checkbox is enabled then only the user can import/export contact between odoo and hubspot.
+</p>
+
+<ul>
+    <li>If user wants to only import contact click on import contact checkbox</li>
+    <li>If user wants to only export contact click on export contact checkbox</li>
+    <li>Provided buttons to manually import or export contacts</li>
+</ul>
+
+
+<img class="img-responsive" src="img/3_contact_sync_settings.png" alt="" width="100%"  />
+</div>
+
+</div>
+
+
+
+ <div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h4>4. Company Synchronization settings</h4>
+<p class="oe_mt8 text-left">If sync company checkbox is enabled then only the user can import/export company between odoo and hubspot.
+</p>
+
+<ul>
+    <li>If user wants to only import company click on import company checkbox</li>
+    <li>If user wants to only export company click on export company checkbox</li>
+    <li>Provided buttons to manually import or export company</li>
+</ul>
+
+
+<img class="img-responsive" src="img/4_company_sync_settings.png" alt="" width="100%"  />
+</div>
+
+</div>
+
+
+
+
+ <div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h4>5. Deal Synchronization settings</h4>
+<p class="oe_mt8 text-left">If sync deal checkbox is enabled then only the user can import/export deals between odoo and hubspot.
+</p>
+
+<ul>
+    <li>If user wants to only import deal click on import deal checkbox</li>
+    <li>If user wants to only export deal click on export deal checkbox</li>
+    <li>Provided buttons to manually import or export deal</li>
+</ul>
+
+
+<img class="img-responsive" src="img/5_deal_sync_settings.png" alt="" width="100%"  />
+</div>
+
+</div>
+
+
+
+
+
+
+ <div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h4>6.Task Synchronization settings</h4>
+<p class="oe_mt8 text-left">If sync task checkbox is enabled then only the user can import/export tasks between odoo and hubspot.
+</p>
+
+<ul>
+    <li>If user wants to only import task click on import task checkbox</li>
+    <li>If user wants to only export task click on export task checkbox</li>
+    <li>Provided buttons to manually import or export task</li>
+</ul>
+
+
+<img class="img-responsive" src="img/6_task_sync_settings.png" alt="" width="100%"  />
+</div>
+
+</div>
+
+
+
+
+
+
+
+  <div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h4>7. Note Synchronization settings</h4>
+<p class="oe_mt8 text-left">If the sync note checkbox is enabled then only the user can import/export notes between odoo and hubspot.
+</p>
+
+<ul>
+    <li>If user wants to only import note click on import note checkbox</li>
+    <li>If user wants to only export note click on export note checkbox</li>
+    <li>Provided buttons to manually import or export note</li>
+</ul>
+
+
+<img class="img-responsive" src="img/7_note_settings.png" alt="" width="100%"  />
+</div>
+
+</div>
+
+
+
+
+
+   <div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h4>8.Email Synchronization settings</h4>
+<p class="oe_mt8 text-left">If the sync email checkbox is enabled then only the user can import/export email between odoo and hubspot.
+</p>
+
+<ul>
+    <li>If user wants to only import email click on import email checkbox</li>
+    <li>If user wants to only export email click on export email checkbox</li>
+    <li>Provided buttons to manually import or export email</li>
+</ul>
+
+
+<img class="img-responsive" src="img/8_email_settings.png" alt="" width="100%"  />
+</div>
+
+</div>
+    
+    
+    
+    
+<div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h4>9. Log Meeting Synchronization settings</h4>
+<p class="oe_mt8 text-left">If the sync log meeting checkbox is enabled then only the user can import/export log meetings between odoo and hubspot.
+</p>
+
+<ul>
+    <li>If user wants to only import log meeting click on import log meeting checkbox</li>
+    <li>If user wants to only export log meeting click on export log meeting checkbox</li>
+    <li>Provided buttons to manually import or export log meeting</li>
+</ul>
+
+
+<img class="img-responsive" src="img/log_meeting_settings.png" alt="" width="100%"  />
+</div>
+
+</div>
+    
+    
+    
+    
+<div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h4>10. Log Email Synchronization settings</h4>
+<p class="oe_mt8 text-left">If the sync log email checkbox is enabled then only the user can import/export log email between odoo and hubspot. 
+</p>
+
+<ul>
+    <li>If user wants to only import log email click on import log email checkbox</li>
+    <li>If user wants to only export log email click on export log email checkbox</li>
+    <li>Provided buttons to manually import or export log email</li>
+</ul>
+
+
+<img class="img-responsive" src="img/log_email_settings.png" alt="" width="100%"  />
+</div>
+
+</div>    
+    
+    
+
+
+</section>
+
+
+    <div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 pl-5 pr-5 mt-2 mb-2" style="margin: auto;">
+    <p style="text-align: center;"> <a class="btn m-2" href="mailto:support@pragtech.co.in" style="background-color:#000000;padding: 19px;color: #fff;font-size: 20px;border-radius: 4px;"><i class="fa fa-envelope" style="padding-right: 9px;"></i>REQUEST A FREE DEMO VIDEO</a> <a class="btn m-2" href="skype:pragtech?call" style="background-color:#22c273; padding:19px; border-radius:4px; color:#fff; font-size:20px;"><i class="fa fa-skype" style="padding-right:9px"></i>pragtech</a></p>
+  </div>
+</div>
+
+
+ <section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced" style="max-width:100%;">
+
+    <div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+    <h2 class="text-center">C. Hubspot synchronization Log</h2>
+    <p class="oe_mt8 text-left">Maintain every synchronization log success/fail so user can check exact reason if fail</p>
+
+
+    <img class="img-responsive" src="img/9_hubspot_sync_log.png" alt="" width="100%"  />
+    </div>
+
+    </div>
+</section>
+
+
+ <section class="oe_container">
+
+    <div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h2 class="text-center">D. Maintain automation by using scheduler</h2>
+<p class="oe_mt8 text-left">Added scheduler for every activity so all import export functionally will automatically execute.
+</p>
+
+
+<img class="img-responsive" src="img/10_automation_using_schedular.png" alt="" width="100%"  />
+</div>
+
+</div>
+
+ </section>
+
+
+
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h2 class="text-center">E. Import/Export Contact</h2>
+<p class="oe_mt8 text-left">Added hubspot Id and Instance name so users can understand the current record is connected to which instance. Also we have maintained company and contact association(that is if any company is assigned then that company will also download)
+</p>
+
+<p>After synchronization if any change in contact records either in odoo or hubspot that change will reflect to other system by using scheduler or user can manually import/export contacts between two systems</p>
+
+
+<img class="img-responsive mb-4" src="img/11_odoo_contact.png" alt="" width="100%"  />
+
+<img class="img-responsive" src="img/12_hubspot_contact.png" alt="" width="100%"  />
+
+
+</div>
+
+</div>
+     </section>
+
+
+
+
+
+
+<section class="oe_container">
+
+  <div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h2 class="text-center">F. Imported Company Sample</h2>
+<p class="oe_mt8 text-left">Added hubspot Id and Instance name so users can understand the current record is connected to which instance. Also we have maintained company and contact association(that is if any contact is assigned then that contact will also download)
+</p>
+
+<p>After synchronization if any change in company records either in Odoo or hubspot that change will reflect to other system by using scheduler or user can manually import/export contacts between two systems</p>
+
+
+<img class="img-responsive mb-4" src="img/13_odoo_company.png" alt="" width="100%"  />
+
+<img class="img-responsive" src="img/14_hubspot_company.png" alt="" width="100%"  />
+
+
+</div>
+
+</div>
+     </section>
+
+
+
+
+
+ <section class="oe_container oe_dark">
+   <div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h2 class="text-center">G. Import/Export Deal</h2>
+<p class="oe_mt8 text-left">Added hubspot Id and Instance name so users can understand the current record is connected to which instance.
+</p>
+
+<p>After synchronization if any change like changes in amount, name or other fields either in Odoo or hubspot that change will reflect to other systems. If any company is set to the deal then we pick that company as a contact  for deal creation in odoo.  If any contact is set to the deal then we pick that contact as a contact  for deal creation in odoo. If  both company and contacts are set then we select first contact.
+</p>
+
+
+<img class="img-responsive mb-4" src="img/15_odoo_deal.png" alt="" width="100%"  />
+
+<img class="img-responsive" src="img/16_hubspot_deal.png" alt="" width="100%"  />
+
+
+</div>
+
+</div>
+     </section>
+
+
+
+
+<section class="oe_container">
+<div class="oe_row oe_spaced" style="max-width:100%;">
+
+<div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+<h2 class="text-center">H. Import/Export Task Activity</h2>
+<p class="oe_mt8 text-left">Added hubspot Id and Instance name so users can understand the current record is connected to which instance.
+</p>
+
+<p>After synchronization if any change in Task Activity records either in Odoo or hubspot that change will reflect to other system
+</p>
+
+
+<img class="img-responsive mb-4" src="img/17_odoo_task_activity.png" alt="" width="100%"  />
+
+<img class="img-responsive" src="img/18_hubspot_task.png" alt="" width="100%"  />
+
+
+</div>
+
+</div>
+</section>
+
+
+
+
+
+<section class="oe_container oe_dark">
+        <div class="oe_row oe_spaced" style="max-width:100%;">
+
+        <div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+        <h2 class="text-center">I. Imported Notes Sample</h2>
+        <p class="oe_mt8 text-left">Added hubspot Id and Instance name so users can understand the current record is connected to which instance.
+        </p>
+
+        <p>After synchronization if any change in Notes records either in Odoo or hubspot that change will reflect to other system
+        </p>
+
+
+        <img class="img-responsive mb-4" src="img/19_odoo_notes.png" alt="" width="100%"  />
+
+        <img class="img-responsive" src="img/20_hubspot_notes.png" alt="" width="100%"  />
+
+
+        </div>
+
+        </div>
+</section>
+
+
+
+
+
+
+
+
+<section class="oe_container">
+        <div class="oe_row oe_spaced" style="max-width:100%;">
+
+        <div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+        <h2 class="text-center">J. Imported Email Sample</h2>
+        <p class="oe_mt8 text-left">Added hubspot Id and Instance name so users can understand the current record is connected to which instance.
+        </p>
+
+        <p>After synchronization if any change in Notes records either in Odoo or hubspot that change will reflect to other system
+        </p>
+
+
+        <img class="img-responsive mb-4" src="img/21_odoo_email.png" alt="" width="100%"  />
+
+        <img class="img-responsive" src="img/22_odoo_email.png" alt="" width="100%"  />
+
+
+        </div>
+
+        </div>
+    </section>
+
+
+
+
+
+<section class="oe_container">
+        <div class="oe_row oe_spaced" style="max-width:100%;">
+
+        <div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+        <h2 class="text-center">K. Imported Log Meeting Sample</h2>
+        <p class="oe_mt8 text-left">Added hubspot Id and Instance name so users can understand the current record is connected to which instance.
+        </p>
+
+        <p>After synchronization if any change in Log meeting records either in Odoo or hubspot that change will reflect to other system
+        </p>
+
+
+        <img class="img-responsive mb-4" src="img/imported-log-meeting-sample1.png" alt="" width="100%"  />
+
+        <img class="img-responsive" src="img/imported-log-meeting-sample2.png" alt="" width="100%"  />
+
+
+        </div>
+
+        </div>
+    </section>
+
+
+
+
+<section class="oe_container">
+        <div class="oe_row oe_spaced" style="max-width:100%;">
+
+        <div class="col-md-12 col-sm-12 col-xs-12 about-img mt20 padding-none">
+        <h2 class="text-center">L. Imported Log EMail Sample</h2>
+        <p class="oe_mt8 text-left">Added hubspot Id and Instance name so users can understand the current record is connected to which instance.
+        </p>
+
+        <p>After synchronization if any change in Log email records either in Odoo or hubspot that change will reflect to other system
+        </p>
+
+
+        <img class="img-responsive mb-4" src="img/imported-log-email1.png" alt="" width="100%"  />
+
+        <img class="img-responsive" src="img/imported-log-email2.png" alt="" width="100%"  />
+
+
+        </div>
+
+        </div>
+    </section>
+
+
+
+
+
+<!--  Start Section For Bottom slider -->
+
+<section class="oe_container">
+  <div class="oe_container">
+   <div class="oe_row oe_spaced" style="max-width:100%;">
+	<h2 style="color: #091E42;font-family: &quot;Montserrat&quot;;text-align: center;margin: 25px auto;text-transform: uppercase;" class="oe_slogan">
+         <b>Related Products</b>
+      </h2>
+
+<div id="slide-bottom" class="row carousel slide mt64 mb32" data-ride="carousel">
+   <!-- The slideshow -->
+   <div class="carousel-inner">
+      <div class="carousel-item active">
+         <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+            <a href="https://apps.odoo.com/apps/modules/13.0/pragmatic_pipedrive_connector/" target="_blank">
+               <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;">
+                  <img class="img img-fluid center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="related-products/pragmatic_pipedrive_connector.gif">
+                  <h4 class="mt0" style="padding:6% 4%;text-align: center; width: 100%;overflow: hidden;text-overflow: ellipsis;font-family: Roboto-medium;">
+                     Odoo Pipedrive Connector
+                  </h4>
+               </div>
+            </a>
+         </div>
+
+
+		 <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+            <a href="https://apps.odoo.com/apps/modules/13.0/pragmatic_salesforce_connector/" target="_blank">
+               <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;">
+                  <img class="img img-fluid center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="related-products/pragmatic_salesforce_connector.gif">
+                  <h4 class="mt0" style="padding:6% 4%;text-align: center; width: 100%;overflow: hidden;text-overflow: ellipsis;font-family: Roboto-medium;">
+                     Odoo SalesForce Connector
+                  </h4>
+               </div>
+            </a>
+         </div>
+
+		  <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+            <a href="https://apps.odoo.com/apps/modules/13.0/https://apps.odoo.com/apps/modules/13.0/pragtech_odoo_zoho_crm_connector/" target="_blank">
+               <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;">
+                  <img class="img img-fluid center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="related-products/pragtech_odoo_zoho_crm_connector.gif">
+                  <h4 class="mt0" style="padding:6% 4%;text-align: center;width: 100%;overflow: hidden;text-overflow: ellipsis;font-family: Roboto-medium;">
+                     Odoo ZOHO CRM Connector App
+                  </h4>
+               </div>
+            </a>
+         </div>
+
+
+
+
+	   </div>
+
+	   <div class="carousel-item">
+
+		 <div class="col-xs-12 col-sm-4 col-md-4 mb16 mt16" style="float: left;">
+            <a href="https://apps.odoo.com/apps/modules/13.0/pragtech_vtiger_connector/" target="_blank">
+               <div style="box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);border-radius: 10px;">
+                  <img class="img img-fluid center-block" style="border-top-left-radius: 10px;border-top-right-radius: 10px;" src="related-products/pragtech_vtiger_connector.gif">
+                  <h4 class="mt0" style="padding:6% 4%;text-align: center;width: 100%;overflow: hidden;text-overflow: ellipsis;font-family: Roboto-medium;">
+                     Vtiger integration with Odoo
+                  </h4>
+               </div>
+            </a>
+         </div>
+
+
+
+		   </div>
+      </div>
+
+   <!-- Left and right controls -->
+   <a class="carousel-control-prev" href="#slide-bottom" data-slide="prev" style="left:-25px;width: 35px;color: #000;">
+   <span class="carousel-control-prev-icon"><i class="fa fa-chevron-left" style="font-size:24px"></i></span>
+   </a>
+   <a class="carousel-control-next" href="#slide-bottom" data-slide="next" style="right:-25px;width: 35px;color: #000;">
+   <span class="carousel-control-next-icon"><i class="fa fa-chevron-right" style="font-size:24px"></i></span>
+   </a>
+</div>
+ </div>
+</div>
+</section>
+<!--  END Section For center slider -->
+
+
+
+
+
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced" style="max-width: 100%; margin-bottom:0px; ">
+        <!--<h2 class="oe_slogan">Help support COVID Relief</h2>-->
+
+        
+        <div class="col-md-12 col-sm-12 col-xs-12" style="width: 100%;
+    background-color: #fff;
+    padding-top:20px!important;
+    padding-bottom: 0px!important; 
+    padding-left: 0px;
+    padding-right: 0px;">
+            
+        
+            <div class="text-center mb-3">
+                <h2 class="text-center mb-3">Help Support <b>Covid Relief</b></h2>
+                <p style="padding-left:20px; padding-right: 20px; padding-bottom: 0px;"><b>Pragmatic</b> has always been contributing itswarsa social causes by exercising its Corporate Social Responsibility. We are pledged to COVID relief and have been donating a major share of our profits to COVID Pandemic Relief. By purchasing our apps and services you are becoming a part of helping the needy in these critical times. If you want to help further please connect with us  and we will help you find NGOs whom you can donate directly.
+                </p>
+                
+                <p><a class="btn m-2" href="mailto:support@pragtech.co.in" style="background-color:#ff8000; padding:9px; color:#fff; font-size:20px; font-weight:600;     border-radius: 0px;"><i class="fa fa-envelope" style="padding-right:9px"></i>support@pragtech.co.in</a></p>
+            </div>
+            
+            
+            <div class="oe_row_img oe_centered">
+                <img class="img-fluid oe_screenshot" src="img/Help_support.jpg" style="margin: 0 auto">
+            </div>
+            
+            
+            
+        </div>
+       
+    </div>
+</section>
+
+
+
+
+
+
+<!--Footer Section Start-->
+
+<section class="oe_container oe_dark" style="padding-left:15px!important; padding-right:15px!important;">
+    <div class="oe_row" style="max-width:100%;">
+        <div class="col-md-8 col-sm-8 col-xs-12 offset-md-2 offset-sm-2 padding-none text-center">
+           <h2 class="oe_slogan" style="font-size: 35px; margin-bottom: 10px;"><b>Contact / Support</b></h2>
+			<span><b>(Monday-Friday 10am to 7pm IST)</b></span>
+            <h2 style="margin-top:10px; color:#0aab77; font-weight: 600;">Pragmatic Techsoft Pvt. Ltd.</h2>
+			<a class="btn yellow-btn btn-lg"
+               style="background-color:#22c273; border-radius: 0px; color: #fff; width: 150px; font-size:18px;"
+               target="_blank" href="mailto:support@pragtech.co.in">Support </a>
+
+            <hr style="border-top: 1px solid #e4e4e4; margin-bottom: 5px;">
+        </div>
+
+       <div class="row">
+        <div class="col-md-7 col-sm-7 col-xs-12 mt32" style="display: table-cell;">
+
+              <p style="font-size:16px;"><b>Pragmatic</b> is a global open source enterprise software development,
+            consulting and products company. Our philosophy is to use Open Source
+             tools and technologies to provide cost effective and green solutions for our customers.</p>
+
+           <p style="font-size:16px;">We are a dynamic and fast growing company committed towards creating
+            value for our customers. Located in Pune, India the educational and IT
+            hub of western India, we take pride in delivering rapid, customized open
+             source enterprise applications following agile and lean software methods.
+              Whether you are developing an application from scratch, working on an existing
+               application or porting your application to a new platform or framework, we can meet your business needs.</p>
+
+
+             <p class="oe_mt32" style="font-size:16px;">If you need any help or want more additional features, you may contact us through:</p>
+              <div style="text-align: center;"><a href="http://www.pragtech.co.in"><img src="logo.png"></a></div>
+             <div class="row">
+
+             	<div class="col-md-6 col-sm-6 col-xs-12" style="text-align: center;">
+
+            	<a style="color:#ed143d; font-size: 17px;" href="mailto:sales@pragtech.co.in"> <i class="fa fa-envelope" style="font-size:19px;" aria-hidden="true"></i> sales@pragtech.co.in</a><br/>
+            	</div>
+
+               <div class="col-md-6 col-sm-6 col-xs-12" style="text-align: center;">
+
+                <a style="color:#ed143d; font-size: 17px;" href="https://www.pragtech.co.in/"><i class="fa fa-globe" style="font-size:19px;" aria-hidden="true"></i> www.pragtech.co.in</a><br/>
+				 </div>
+             </div>
+		</div>
+
+        <div class="col-md-5 col-sm-5 col-xs-12 mt32 pull-right pt32" style="display:table-cell; background-color:rgb(34, 194, 115); padding:20px">
+  <h3 style="text-align:center"><b>Our solutions focus on your problems</b></h3>
+  <ul style="line-height:30px; font-size:15px; padding-left:20px; text-decoration:none; color:#fff; text-transform:uppercase">
+    <li list-style-type:=""> <span style="color:#fff" target="_blank" href="http://www.pragtech.co.in/services/customization-implementation-service/odoo-openerp/odoo-openerp-implementation-methodology.html">Odoo Implementation</span></li>
+    <!--<li list-style-type:> <a style="color:#fff;" href="http://www.pragtech.co.in/contact.html" target="_blank">Odoo Support</a></li>-->
+    <li list-style-type:=""> <span style="color:#fff" target="_blank" href="http://www.pragtech.co.in/services/customization-implementation-service/odoo-openerp.html">Odoo Customization</span></li>
+    <li> <span style="color:#fff" href="http://www.pragtech.co.in/technologies/odoo-openerp/odoo-11-features.html">ERP Development and Implementation</span></li>
+    <li> <span style="color:#fff" href="https://ipaas.pragtech.co.in/">Odoo Ipass Cloud</span></li>
+    <li> <span style="color:#fff" href="http://www.pragtech.co.in/products/other-products/odoo-voice-bring-artificial-intelligence-ai-to-odoo-platform.html">AI for Odoo</span></li>
+    <li> <span style="color:#fff" href="https://store.pragtech.co.in/shop">Odoo Apps</span></li>
+    <li> <span style="color:#fff" href="https://aws.amazon.com/marketplace/seller-profile?id=6559afc1-9219-494e-b8d0-831be5da3b1e">Aws Marketplace Products</span></li>
+    <li> <span style="color:#fff" href="https://businessengines.co.in/">Business Engines</span></li>
+  </ul>
+  <h3 style="text-align:center; margin-bottom:25px"><b>Get In Touch</b></h3>
+  <h2 style="text-align:center; margin-top:12px"> <span style="color:#fff; margin-right:10px" href="https://www.facebook.com/pragmatic.co.in" target="new"> <i class="fa fa-facebook-square" style="font-size:28px"></i> </span> <span style="color:#fff; margin-right:10px" href="https://twitter.com/Pragmatic_Tech" target="new"> <i class="fa fa-twitter" style="font-size:28px"></i> </span> <span style="color:#fff; margin-right:10px" href="https://www.linkedin.com/company/228353" target="new"> <i class="fa fa-linkedin" style="font-size:28px"></i> </span> <a style="color:#fff; margin-right:10px" href="https://www.youtube.com/user/PragmaticVideos" target="new"> <i class="fa fa-youtube-play" style="font-size:28px"></i> </a> <span style="color:#fff; margin-right:10px" href="https://plus.google.com/u/0/104748260070453259356" target="new" rel="publisher"> <i class="fa fa-google-plus-square" style="font-size:28px"></i> </span> <span style="color:#fff; margin-right:10px" href="http://blog.pragtech.co.in/" target="new" rel="publisher"> <i class="fab fa-blogger" style="font-size:28px"></i> </span> </h2>
+</div>
+
+
+	</div>
+    </div>
+</section>
+<!--Footer Section End-->
+</body>
+</html>

@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="inherit_sale_order_view_tree" model="ir.ui.view">
+            <field name="name">inherit.sale.order.view.tree</field>
+            <field name="model">sale.order</field>
+			<field name="groups_id" eval="[(4,ref('ttrx2_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+            	<field name="state" position="after">
+            		<field name="uuid" optional="show"/>
+            	</field>
+            </field>
+        </record>
+
+		<record id="inherit_sale_order_view_form" model="ir.ui.view">
+            <field name="name">inherit.sale.order.view.form</field>
+            <field name="model">sale.order</field>
+			<field name="groups_id" eval="[(4,ref('ttrx2_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="status_delete_portal" readonly='1' invisible="1"/>
+                    <widget name="web_ribbon" title="DELETED FROM THE PORTAL" bg_color="bg-danger" attrs="{'invisible': [('status_delete_portal', '!=', True)]}"/>
+                </xpath>
+            	<xpath expr="/form" position="inside">
+            		<field name="can_send_to_ttr2" invisible="1"/>
+            		<field name="has_connector" invisible="1"/>
+            	</xpath>
+            	<xpath expr="//header" position='after'>
+	                <div attrs="{'invisible': ['|','|',('has_connector','=',False),('can_send_to_ttr2', '=', True),('no_send_to_ttr2', '=', True)]}">
+	                  <div class="alert alert-warning" role="alert">
+	                    <p><strong>Ooops</strong> This S.O. will not be sent to TTRx. You have not indicated a location that is contained in the TTRx portal.</p>
+	                  </div>
+	                </div>
+            	</xpath>
+            	<xpath expr="//button[@name='action_cancel']" position="after">
+            		<button name="action_refresh" type="object" string="Refresh From TTRx" attrs="{'invisible':['|',('uuid','=',False),('state','in',('done','cancel'))]}"/>
+            	</xpath>
+            	<xpath expr="//group[@name='sale_shipping']" position="inside">
+            		<field name="location_spt_id"/>
+            		<field name="storage_spt_id" attrs="{'invisible': [('location_spt_id', '=', False)]}"/>
+            		<field name="shelf_spt_id"  attrs="{'invisible': ['|',('location_spt_id', '=', False),('storage_spt_id', '=', False)]}"/>
+            	</xpath>
+                 <xpath expr="//page[@name='other_information']" position="after">
+                    <page string="TrackTrace2">
+                    	<group>
+							<field name="no_send_to_ttr2"/>
+                    	</group>
+                        <group attrs="{'invisible': [('no_send_to_ttr2', '=', True)]}">
+                            <field name="uuid"/>
+                            <field name="outbound_tran_sub_type"/>
+                            <field name="approved_ttr2" readonly="1"/>
+                            <field name="is_editable" readonly="1"/>
+	                        <field name="connector_id" readonly="1"/>
+                        </group>
+                    </page>
+                 </xpath>
+	            <xpath expr="//field[@name='order_line']/form//field[@name='analytic_tag_ids']" position="after">
+	                <field name="uuid"/>
+                    <field name="status_delete_portal" readonly='1'/>
+	            </xpath>
+            </field>
+        </record>
+
+        <record id="view_action_orders_ttrx" model="ir.actions.act_window">
+            <field name="name">Sales Orders TTRx</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="context">{}</field>
+            <field name="domain">[('uuid','!=',False)]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new quotation, the first step of a new sale!
+                </p><p>
+                    Once the quotation is confirmed, it becomes a sales order.<br/> You will be able to create an invoice and collect the payment.
+                </p>
+            </field>
+        </record>
+
+
+
+        
+    </data>
+</odoo>

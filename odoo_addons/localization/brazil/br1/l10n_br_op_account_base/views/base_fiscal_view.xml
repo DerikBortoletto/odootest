@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+	
+		<!-- CFOP -->
+	    <record id="view_br_cfop_search" model="ir.ui.view">
+	        <field name="name">br.cfop.search</field>
+	        <field name="model">br.cfop</field>
+	        <field name="arch" type="xml">
+	            <search string="CFOP">
+	                <filter name="in" string="Entrada" domain="[('type', '=', 'input')]" />
+	                <filter name="out" string="Saída" domain="[('type','=','output')]"/>
+	                <separator orientation="vertical"/>
+	                <field name="code"/>
+	                <field name="name"/>
+	                <field name="small_name"/>
+	                <newline/>
+	                <group  expand='0' string='Agrupar Por...'>
+	                    <filter name="type" string='Tipo' domain="[]" context="{'group_by' : 'type'}" />
+	                </group>
+	            </search>
+	        </field>
+	    </record>
+	
+	    <record id="view_br_cfop_form" model="ir.ui.view">
+	        <field name="name">br.cfop.form</field>
+	        <field name="model">br.cfop</field>
+	        <field name="arch" type="xml">
+	            <form string="CFOP">
+	                <sheet>
+	                    <group>
+	                        <field name="code" select="1" />
+	                        <field name="name" select="1" />
+	                        <field name="small_name" select="2" />
+	                        <field name="type" select="2" />
+	                        <field name="internal_type" select="2"/>
+	                        <field name="parent_id"/>
+	                    </group>
+	                    <group string="Descrição do CFOP" colspan="4">
+	                        <field name="description" nolabel="1" colspan="4" select="2"/>
+	                    </group>
+	                </sheet>
+	            </form>
+	        </field>
+	    </record>
+	
+	    <record id="view_br_cfop_tree" model="ir.ui.view">
+	        <field name="name">br.cfop.tree</field>
+	        <field name="model">br.cfop</field>
+	        <field name="arch" type="xml">
+	            <tree string="CFOP">
+	                <field name="code" select="1"/>
+	                <field name="name" select="1" />
+	                <field name="type" select="2"/>
+	            </tree>
+	        </field>
+	    </record>
+
+		<record id="view_br_cfop_structure_tree" model="ir.ui.view">
+		    <field name="name">br.cfop.structure.tree</field>
+		    <field name="model">br.cfop</field>
+		    <field name="field_parent">child_ids</field>
+		    <field name="arch" type="xml">
+		        <tree string="Estrutura do CFOP">
+		            <field name="code"/>
+		            <field name="name"/>
+		            <field name="internal_type"/>
+		        </tree>
+		    </field>
+		</record>
+
+		<record id="action_br_cfop" model="ir.actions.act_window">
+		    <field name="name">CFOP</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.cfop</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="view_br_cfop_tree"/>
+		</record>
+
+		<record id="action_br_cfop_structure" model="ir.actions.act_window">
+		    <field name="name">Estrutura do CFOP</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.cfop</field>
+		    <field name="view_mode">tree</field>
+		    <field name="domain">[('parent_id','=',False)]</field>
+		    <field name="view_id" ref="view_br_cfop_structure_tree"/>
+		</record>
+
+		<!-- Service Type -->
+	    <record id="view_br_service_type_search" model="ir.ui.view">
+	        <field name="name">br.service.type.search</field>
+	        <field name="model">br.service.type</field>
+	        <field name="arch" type="xml">
+	            <search string="Srvice Type">
+	                <filter name="in" string="Nomal" domain="[('internal_type', '=', 'normal')]" />
+	                <separator orientation="vertical"/>
+	                <field name="code"/>
+	                <field name="name"/>
+	                <newline/>
+	                <group  expand='0' string='Agrupar Por...'>
+	                    <filter name="parent" string='Pai' domain="[]" context="{'group_by' : 'parent_id'}" />
+	                </group>
+	            </search>
+	        </field>
+	    </record>
+	
+	    <record id="view_br_service_type_form" model="ir.ui.view">
+	        <field name="name">br.service.type.form</field>
+	        <field name="model">br.service.type</field>
+	        <field name="arch" type="xml">
+	            <form string="Service Type">
+	                <sheet>
+	                    <group>
+	                    	<group>
+								<field name="code"/>
+								<field name="name"/>
+								<field name="internal_type"/>
+								<field name="parent_id"/>
+							</group>
+	                    	<group>
+	                            <field name="federal_nacional" />
+	                            <field name="federal_importado" />
+	                            <field name="estadual_imposto" />
+	                            <field name="municipal_imposto" />
+	                            <field name="fonte_impostos" />
+	                            <field name="sincronizado_ibpt" readonly="1"/>
+							</group>
+	                    </group>
+	                </sheet>
+	            </form>
+	        </field>
+	    </record>
+	
+	    <record id="view_br_service_type_tree" model="ir.ui.view">
+	        <field name="name">br.service.type.tree</field>
+	        <field name="model">br.service.type</field>
+	        <field name="arch" type="xml">
+	            <tree string="Tipo Servico">
+	                <field name="code" select="1"/>
+	                <field name="name" select="1" />
+	                <field name="internal_type" select="2"/>
+	            </tree>
+	        </field>
+	    </record>
+
+		<record id="view_br_service_type_structure_tree" model="ir.ui.view">
+		    <field name="name">br.service.type.structure.tree</field>
+		    <field name="model">br.service.type</field>
+		    <field name="field_parent">child_ids</field>
+		    <field name="arch" type="xml">
+		        <tree string="Tipo do Servico">
+		            <field name="code"/>
+		            <field name="name"/>
+		            <field name="internal_type"/>
+		        </tree>
+		    </field>
+		</record>
+
+		<record id="action_br_service_type" model="ir.actions.act_window">
+		    <field name="name">Tipo Serviço</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.service.type</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="view_br_service_type_tree"/>
+		</record>
+
+		<record id="action_br_service_type_structure" model="ir.actions.act_window">
+		    <field name="name">Estrutura do Tipo Serviço</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.cfop</field>
+		    <field name="view_mode">tree</field>
+		    <field name="domain">[('parent_id','=',False)]</field>
+		    <field name="view_id" ref="view_br_cfop_structure_tree"/>
+		</record>
+
+		<!-- NCM - Class. Fiscal -->
+		<record id="view_br_ncm_search" model="ir.ui.view">
+		    <field name="model">br.ncm</field>
+		    <field name="arch" type="xml">
+		        <search string="NCM">
+		            <field name="code"/>
+		            <field name="name"/>
+		        </search>
+		    </field>
+		</record>
+
+		<record id="view_br_ncm_form" model="ir.ui.view">
+		    <field name="model">br.ncm</field>
+		    <field name="arch" type="xml">
+		        <form string="Classificações Fiscais (NCM)">
+		            <sheet>
+		                <group name="general">
+		                    <group>
+		                        <field name="code"/>
+		                        <field name="category"/>
+		                        <field name="name"/>
+		                        <field name="unidade_tributacao"/>
+		                        <field name="descricao_unidade"/>
+		                        <field name="company_id" groups="base.group_multi_company"/>
+		                        <field name="active" readonly="1"/>
+		                    </group>
+		                    <group>
+		                        <field name="federal_nacional" />
+		                        <field name="federal_importado" />
+		                        <field name="estadual_imposto" />
+		                        <field name="municipal_imposto" />
+		                        <field name="fonte_impostos" />
+		                    </group>
+		                </group>
+		                <group>
+		                    <group name="ipi" string="IPI">
+		                        <field name="classe_enquadramento_id" />
+		                    </group>
+		                    <group name="ipi" string="IPI">
+		                        <field name="cest_id" />
+		                    </group>
+		                </group>
+		            </sheet>
+		        </form>
+		    </field>
+		</record>
+
+		<record id="view_br_ncm_tree" model="ir.ui.view">
+		    <field name="model">br.ncm</field>
+		    <field name="arch" type="xml">
+		        <tree string="Classificações Fiscais (NCM)">
+		            <field name="code"/>
+		            <field name="category"/>
+		            <field name="name"/>
+		            <field name="federal_nacional" />
+		            <field name="federal_importado" />
+		            <field name="estadual_imposto" />
+		            <field name="municipal_imposto" />
+		        </tree>
+		    </field>
+		</record>
+
+		<record id="action_br_ncm" model="ir.actions.act_window">
+		    <field name="name">Classificações Fiscais (NCM)</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.ncm</field>
+		    <field name="view_id" ref="view_br_ncm_tree"/>
+		</record>
+
+		<!-- CNAE -->
+	    <record id="view_br_cnae_search" model="ir.ui.view">
+	        <field name="name">br.cnae.search</field>
+	        <field name="model">br.cnae</field>
+	        <field name="arch" type="xml">
+	            <search string="CNAE">
+	                <field name="code"/>
+	                <field name="name"/>
+	            </search>
+	        </field>
+	    </record>
+	
+	    <record id="view_br_cnae_form" model="ir.ui.view">
+	        <field name="name">br.cnae.form</field>
+	        <field name="model">br.cnae</field>
+	        <field name="arch" type="xml">
+	            <form string="CNAE">
+	                <sheet>
+	                    <group>
+	                        <field name="code" select="1" />
+	                        <field name="name" select="1" />
+	                        <field name="version" select="2" />
+	                        <field name="internal_type" select="2"/>
+	                        <field name="parent_id"/>
+	                    </group>
+	                </sheet>
+	            </form>
+	        </field>
+	    </record>
+	
+	    <record id="view_br_cnae_tree" model="ir.ui.view">
+	        <field name="name">br.cnae.tree</field>
+	        <field name="model">br.cnae</field>
+	        <field name="arch" type="xml">
+	            <tree string="CNAE">
+	                <field name="code" select="1"/>
+	                <field name="name" select="1" />
+	                <field name="version" select="2"/>
+	            </tree>
+	        </field>
+	    </record>
+
+		<record id="view_br_cnae_structure_tree" model="ir.ui.view">
+		    <field name="name">br.cnae.structure.tree</field>
+		    <field name="model">br.cnae</field>
+		    <field name="field_parent">child_ids</field>
+		    <field name="arch" type="xml">
+		        <tree string="Estrutura do CNAE">
+		            <field name="code"/>
+		            <field name="name"/>
+		            <field name="internal_type"/>
+		        </tree>
+		    </field>
+		</record>
+
+		<record id="action_br_cnae" model="ir.actions.act_window">
+		    <field name="name">CNAE</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.cnae</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="view_br_cnae_tree"/>
+		</record>
+
+		<record id="action_br_cnae_structure" model="ir.actions.act_window">
+		    <field name="name">Estrutura do CNAE</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.cnae</field>
+		    <field name="view_mode">tree</field>
+		    <field name="domain">[('parent_id','=',False)]</field>
+		    <field name="view_id" ref="view_br_cnae_structure_tree"/>
+		</record>
+
+		<!-- Benefício fiscal -->
+	    <record id="view_br_beneficio_fiscal_search" model="ir.ui.view">
+	        <field name="name">br.beneficio.fiscal.search</field>
+	        <field name="model">br.beneficio.fiscal</field>
+	        <field name="arch" type="xml">
+	            <search string="Benefício Fiscal">
+	                <field name="code"/>
+	                <field name="name"/>
+	            </search>
+	        </field>
+	    </record>
+	
+	    <record id="view_br_beneficio_fiscal_form" model="ir.ui.view">
+	        <field name="name">br.beneficio.fiscal.form</field>
+	        <field name="model">br.beneficio.fiscal</field>
+	        <field name="arch" type="xml">
+	            <form string="Benifício Fiscal">
+	                <sheet>
+	                    <group>
+	                        <field name="code" select="1" />
+	                        <field name="name" select="1" />
+	                        <field name="state_id" select="2" />
+	                        <field name="dt_start" select="2"/>
+	                        <field name="dt_end"/>
+	                    </group>
+	                    <group string="Descrição do Benef. Fiscal" colspan="4">
+	                        <field name="memo" nolabel="1" colspan="4" select="2"/>
+	                    </group>
+	                </sheet>
+	            </form>
+	        </field>
+	    </record>
+	
+	    <record id="view_br_beneficio_fiscal_tree" model="ir.ui.view">
+	        <field name="name">br.beneficio.fiscal.tree</field>
+	        <field name="model">br.beneficio.fiscal</field>
+	        <field name="arch" type="xml">
+	            <tree string="Benefício Fiscal">
+	                <field name="code" select="1"/>
+	                <field name="name" select="1" />
+	                <field name="dt_start" select="2"/>
+	                <field name="dt_end" select="2"/>
+	            </tree>
+	        </field>
+	    </record>
+
+		<record id="action_br_beneficio_fiscal" model="ir.actions.act_window">
+		    <field name="name">Benefício Fiscal</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.beneficio.fiscal</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="view_br_beneficio_fiscal_tree"/>
+		</record>
+
+		<!-- Enq. do IPI -->
+	    <record id="view_br_enquadramento_ipi_search" model="ir.ui.view">
+	        <field name="name">br.enquadramento.ipi.search</field>
+	        <field name="model">br.enquadramento.ipi</field>
+	        <field name="arch" type="xml">
+	            <search string="Enquadramento IPI">
+	                <field name="code"/>
+	                <field name="name"/>
+	            </search>
+	        </field>
+	    </record>
+
+		<record id="view_br_enquadramento_ipi_tree" model="ir.ui.view">
+		    <field name="name">br.enquadramento.ipi.tree</field>
+		    <field name="model">br.enquadramento.ipi</field>
+		    <field name="arch" type="xml">
+		        <tree string="Enquadramento IPI">
+		     	<field name="code"/>
+		         <field name="grupo"/>
+		         <field name="name"/>
+		        </tree>
+		    </field>
+		</record>
+
+		<record id="view_br_enquadramento_ipi_form" model="ir.ui.view">
+		    <field name="name">br.enquadramento.ipi.form</field>
+		    <field name="model">br.enquadramento.ipi</field>
+		    <field name="arch" type="xml">
+		        <form string="Enquadramento IPI">
+					<sheet>
+						<group colspan="4">
+							<field name="code"/>
+							<field name="grupo"/>
+							<field name="name"/>
+						</group>
+					</sheet>
+		        </form>
+		    </field>
+		</record>
+
+		<record id="br_enquadramento_ipi_action" model="ir.actions.act_window">
+		    <field name="name">Enquadramento IPI</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.enquadramento.ipi</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="view_br_enquadramento_ipi_tree"/>
+		</record>
+
+		<!-- Incidência do IPI -->
+	    <record id="view_br_tipi_search" model="ir.ui.view">
+	        <field name="name">br.tipi.search</field>
+	        <field name="model">br.tipi</field>
+	        <field name="arch" type="xml">
+	            <search string="Incidência do IPI">
+	                <field name="name" filter_domain="[('name', 'ilike', self)]"/>
+	                <field name="dt_start"/>
+	                <field name="dt_end"/>
+                    <separator/>
+                    <filter string="Is Excepion" name="is_exception_name" domain="[('is_exception', '=', True)]"/>
+	            </search>
+	        </field>
+	    </record>
+
+		<record id="view_br_tipi_tree" model="ir.ui.view">
+		    <field name="name">br.tipi.tree</field>
+		    <field name="model">br.tipi</field>
+		    <field name="arch" type="xml">
+		        <tree string="Incidência do IPI">
+					<field name="name"/>
+					<field name="ncm_id"/>
+					<field name="is_exception"/>
+					<field name="nivel"/>
+					<field name="tax_id"/>
+					<field name="dt_start"/>
+					<field name="dt_end"/>
+		        </tree>
+		    </field>
+		</record>
+
+		<record id="view_br_tipi_form" model="ir.ui.view">
+		    <field name="name">br.tipi.form</field>
+		    <field name="model">br.tipi</field>
+		    <field name="arch" type="xml">
+		        <form string="Incidência do IPI">
+					<sheet>
+						<group colspan="4">
+							<field name="name"/>
+							<field name="ncm_id"/>
+							<field name="is_exception"/>
+							<field name="nivel"/>
+							<field name="tax_id"/>
+							<field name="dt_start"/>
+							<field name="dt_end"/>
+						</group>
+					</sheet>
+		        </form>
+		    </field>
+		</record>
+
+		<record id="action_br_tipi" model="ir.actions.act_window">
+		    <field name="name">Incidência do IPI</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.tipi</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="view_br_tipi_tree"/>
+		</record>
+
+		<!-- Incidência do CEST -->
+	    <record id="view_br_cest_search" model="ir.ui.view">
+	        <field name="name">br.cest.search</field>
+	        <field name="model">br.cest</field>
+	        <field name="arch" type="xml">
+	            <search string="CEST">
+	                <field name="name" filter_domain="['|',('name', 'ilike', self),('code', 'ilike', self)]"/>
+	            </search>
+	        </field>
+	    </record>
+
+		<record id="view_br_cest_tree" model="ir.ui.view">
+		    <field name="name">br.cest.tree</field>
+		    <field name="model">br.cest</field>
+		    <field name="arch" type="xml">
+		        <tree string="CEST">
+					<field name="code"/>
+					<field name="name"/>
+					<field name="segment"/>
+					<field name="anexo"/>
+		        </tree>
+		    </field>
+		</record>
+
+		<record id="view_br_cest_form" model="ir.ui.view">
+		    <field name="name">br.cest.form</field>
+		    <field name="model">br.cest</field>
+		    <field name="arch" type="xml">
+		        <form string="CEST">
+					<sheet>
+						<group colspan="4">
+							<field name="code"/>
+							<field name="name"/>
+							<field name="segment"/>
+							<field name="anexo"/>
+						</group>
+	                    <group string="NCMs" colspan="4">
+	                        <field name="ncm_ids" nolabel="1" colspan="4" select="2"/>
+	                    </group>
+					</sheet>
+		        </form>
+		    </field>
+		</record>
+
+		<record id="action_br_cest" model="ir.actions.act_window">
+		    <field name="name">CEST</field>
+		    <field name="type">ir.actions.act_window</field>
+		    <field name="res_model">br.cest</field>
+		    <field name="view_mode">tree,form</field>
+		    <field name="view_id" ref="view_br_cest_tree"/>
+		</record>
+
+		<!-- Menus -->
+    	<menuitem id="menu_br_fiscal" 
+    	          name="Fiscal" 
+    	          parent="account.menu_finance_configuration" 
+    	          sequence="0"/>
+
+    	<menuitem id="br_cfop_menu" 
+    	          name="CFOP" 
+    	          parent="l10n_br_op_account_base.menu_br_fiscal" 
+    	          action="l10n_br_op_account_base.action_br_cfop"
+    	          sequence="10"/>
+
+    	<menuitem id="br_cfop_structure_menu" 
+    	          name="Estrutura do CFOP" 
+    	          parent="l10n_br_op_account_base.menu_br_fiscal" 
+    	          action="l10n_br_op_account_base.action_br_cfop_structure" 
+    	          sequence="15"/>
+
+    	<menuitem id="br_service_type_menu" 
+    	          name="Tipo de Serviço" 
+    	          parent="l10n_br_op_account_base.menu_br_fiscal" 
+    	          action="l10n_br_op_account_base.action_br_service_type"
+    	          sequence="20"/>
+
+    	<menuitem id="br_service_type_structure_menu" 
+    	          name="Estrutura do Tipo Serviço" 
+    	          parent="l10n_br_op_account_base.menu_br_fiscal" 
+    	          action="l10n_br_op_account_base.action_br_cfop_structure" 
+    	          sequence="25"/>
+
+    	<menuitem id="br_ncm_menu" 
+    	          name="Classificações Fiscais (NCM)" 
+    	          parent="l10n_br_op_account_base.menu_br_fiscal" 
+    	          action="l10n_br_op_account_base.action_br_ncm" 
+    	          sequence="20"/>
+	
+    	<menuitem id="br_cnae_menu" 
+    	          name="CNAE" 
+    	          parent="l10n_br_op_account_base.menu_br_fiscal" 
+    	          action="l10n_br_op_account_base.action_br_cnae"
+    	          sequence="25"/>
+
+    	<menuitem id="br_cnae_structure_menu" 
+    	          name="Estrutura do CNAE" 
+    	          parent="l10n_br_op_account_base.menu_br_fiscal" 
+    	          action="l10n_br_op_account_base.action_br_cnae_structure" 
+    	          sequence="30"/>
+	
+    	<menuitem id="br_beneficio_fiscal_menu" 
+    	          name="Benefício Fiscal" 
+    	          parent="l10n_br_op_account_base.menu_br_fiscal" 
+    	          action="l10n_br_op_account_base.action_br_beneficio_fiscal" 
+    	          sequence="35"/>
+
+    	<menuitem id="br_tipi_menu" 
+    	          name="Incidencia do IPI" 
+    	          parent="l10n_br_op_account_base.menu_br_fiscal" 
+    	          action="l10n_br_op_account_base.action_br_tipi" 
+    	          sequence="40"/>
+
+    	<menuitem id="br_cest_menu" 
+    	          name="CEST" 
+    	          parent="l10n_br_op_account_base.menu_br_fiscal" 
+    	          action="l10n_br_op_account_base.action_br_cest" 
+    	          sequence="45"/>
+
+	
+	</data>
+</odoo>

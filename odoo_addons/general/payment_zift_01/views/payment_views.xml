@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+<!--        <record id="website_menu_service_request" model="website.menu">-->
+<!--            <field name="name">Requests</field>-->
+<!--            <field name="url">/request</field>-->
+<!--            <field name="parent_id" ref="website.main_menu"/>-->
+<!--            <field name="sequence" type="int">50</field>-->
+<!--        </record>-->
+
+        <record id="acquirer_form_zift" model="ir.ui.view">
+            <field name="name">acquirer.form.zift</field>
+            <field name="model">payment.acquirer</field>
+            <field name="inherit_id" ref="payment.acquirer_form"/>
+            <field name="arch" type="xml">
+                <xpath expr='//group[@name="acquirer"]' position='inside'>
+                    <group attrs="{'invisible': [('provider', '!=', 'zift')]}">
+                        <field name="brq_websitekey" attrs="{'required':[ ('provider', '=', 'zift'), ('state', '!=', 'disabled')]}"/>
+                        <field name="brq_secretkey" attrs="{'required':[ ('provider', '=', 'zift'), ('state', '!=', 'disabled')]}"/>
+                        <field name="brq_url" attrs="{'required':[ ('provider', '=', 'zift'), ('state', '!=', 'disabled')]}"/>
+                        <field name="account_id" attrs="{'required':[ ('provider', '=', 'zift'), ('state', '!=', 'disabled')]}"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

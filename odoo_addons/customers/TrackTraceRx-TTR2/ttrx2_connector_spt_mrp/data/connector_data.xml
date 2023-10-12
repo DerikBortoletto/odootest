@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+	<!-- Add API URL prod default configuration parameter -->
+	<record id="default_tracktracerx_endpoint_prod" model="ir.config_parameter">
+	    <field name="key">tracktrace.endpoint.prod</field>
+	    <field name="value">https://api.tracktraceweb.com/2.0</field>
+	</record>
+
+		<!-- Add API URL test default configuration parameter -->
+	<record id="default_tracktracerx_endpoint_test" model="ir.config_parameter">
+	    <field name="key">tracktrace.endpoint.test</field>
+	    <field name="value">https://api.test.tracktraceweb.com/2.0</field>
+	</record>
+
+	<record id="connector_tracktracerx" model="connector.spt">
+		<field name="name">Connector</field>
+	</record>
+	
+</odoo>

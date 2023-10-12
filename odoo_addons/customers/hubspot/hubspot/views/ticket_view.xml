@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+		<!-- HelpDesk Stage -->
+		<record id="hubspot_helpdesk_stage_view_tree" model="ir.ui.view">
+		    <field name="name">hubspot.helpdesk.stages.tree</field>
+		    <field name="model">helpdesk.stage</field>
+		    <field name="inherit_id" ref="helpdesk.helpdesk_stage_view_tree"/>
+		    <field name="arch" type="xml">
+	            <field name="is_close" position="after">
+					<field name="hubspot_id" optional="hide" readonly="1"/>
+					<field name="hubspot_instance_id" optional="hide" readonly="1"/>
+	            </field>
+		    </field>
+		</record>
+
+		<record id="hubspot_helpdesk_stage_view_form" model="ir.ui.view">
+		    <field name="name">hubspot.helpdesk.stage.form</field>
+		    <field name="model">helpdesk.stage</field>
+		    <field name="inherit_id" ref="helpdesk.helpdesk_stage_view_form"/>
+		    <field name="arch" type="xml">
+	            <field name="fold" position="after">
+					<field name="hubspot_id" optional="hide" readonly="1"/>
+					<field name="hubspot_instance_id" optional="hide" readonly="1"/>
+	            </field>
+		    </field>
+		</record>
+
+		<!-- HelpDesk Team -->
+	    <record id="hubspot_helpdesk_team_view_tree" model="ir.ui.view">
+	        <field name="name">hubspot.helpdesk.team.tree</field>
+	        <field name="model">helpdesk.team</field>
+	        <field name="inherit_id" ref="helpdesk.helpdesk_team_view_tree"/>
+	        <field name="arch" type="xml">
+	            <field name="company_id" position="after">
+					<field name="hubspot_id" optional="hide" readonly="1"/>
+					<field name="hubspot_instance_id" optional="hide" readonly="1"/>
+	            </field>
+	        </field>
+	    </record>
+
+		<record id="hubspot_helpdesk_team_view_form" model="ir.ui.view">
+		    <field name="name">hubspot.helpdesk.team.form</field>
+		    <field name="model">helpdesk.team</field>
+	        <field name="inherit_id" ref="helpdesk.helpdesk_team_view_form"/>
+		    <field name="arch" type="xml">
+		    	<xpath expr="//div[@id='after-sales']" position="after">
+                    <h2 attrs="{'invisible': [('hubspot_instance_id', '=', False)]}">Hubspot Connector</h2>
+                    <div class="row mt32 o_settings_container" id="hubspot" attrs="{'invisible': [('hubspot_instance_id', '=', False)]}">
+                        <div class="col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="hubspot_id"/>
+                                <div>
+                                    <field name="hubspot_id" class="mt16"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 o_setting_box">
+                            <div class="o_setting_right_pane">
+                                <label for="hubspot_instance_id"/>
+                                <div>
+                                    <field name="hubspot_instance_id" class="mt16"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            	</xpath>
+		    </field>
+		</record>
+		
+
+		<!-- HelpDesk Ticket -->
+        <record id="hubspot_helpdesk_tickets_view_tree" model="ir.ui.view">
+            <field name="name">hubspot.helpdesk.tickets.view.tree.inherit</field>
+            <field name="model">helpdesk.ticket</field>
+            <field name="inherit_id" ref="helpdesk.helpdesk_tickets_view_tree"/>
+            <field name="arch" type="xml">
+            	<field name="stage_id" position="after">
+					<field name="hubspot_id" optional="hide" readonly="1"/>
+					<field name="hubspot_instance_id" optional="hide" readonly="1"/>
+            	</field>
+            </field>
+        </record>
+
+	    <record id="hubspot_helpdesk_ticket_view_form" model="ir.ui.view">
+	        <field name="name">helpdesk.ticket.form</field>
+	        <field name="model">helpdesk.ticket</field>
+	        <field name="inherit_id" ref="helpdesk.helpdesk_ticket_view_form"/>
+	        <field name="arch" type="xml">
+	        	<xpath expr="//button[@name='assign_ticket_to_self']" position="after">
+                    <button name="action_engagement" string="Import Engagements" type="object" class="oe_highlight" groups="helpdesk.group_helpdesk_user"/>
+	        	</xpath>
+	        	<field name="email_cc" position="after">
+					<field name="hubspot_id" readonly="1"/>
+					<field name="hubspot_instance_id" readonly="1"/>
+	        	</field>
+	        </field>
+	    </record>
+
+    </data>
+</odoo>

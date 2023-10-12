@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>Título da página</title>
+	<style>
+        .cabecalho{
+            width: 100%;
+            height: 120px;
+            border: 1px solid black;
+            font-size: 30px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dispNone {
+            display: unset ;
+        }
+        .flex-div{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction :row;
+
+            
+            
+        }
+        .noticiaTitle{
+            font-size: 20px;
+        }
+        .noticiaText{
+            max-width: unset;
+
+        }
+        .bord{
+            border: 1px solid black;
+            
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px    
+            
+
+
+        }
+        
+        .bordMax{
+            flex: 1;
+            border: 1px solid black;  
+            padding: 10px;
+            margin: 10px   ;
+
+        }
+        .lastBoard{
+            border: 1px solid black;
+            
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px    
+        }
+        @media screen and (min-width: 1921px){
+            .lastBoard{
+                flex: unset;
+                max-width: 20% !important;
+                
+
+            }
+        
+            
+        }
+        @media screen and (min-width:961px){
+            .bord{
+            flex-wrap: wrap;
+            max-width: 20%;
+        }
+        
+        .lastBoard{
+            flex-wrap: wrap;
+            flex:1;
+
+        }
+    }
+    @media screen and (min-width:481px){
+            .bord{
+            flex-wrap: wrap;
+            max-width: 20%;
+
+        }
+
+        .Lastbord{
+            flex-wrap: wrap;
+            flex:1;
+            
+
+        }
+        
+        
+    }
+    @media screen and (max-width:481px)
+    {
+        .cabecalho{
+            font-size: 15px;
+            height: 60px;
+        }
+        .bordMax{
+            flex: unset;
+            width: calc(100% - 20px);
+            text-align: center;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+                }
+        .bord
+        {
+        margin-left: auto;
+        margin-right: auto;
+        width: calc(100% - 20px);
+        text-align: center;
+        }
+        .lastBoard{
+            margin-left: auto;
+        margin-right: auto;
+        width: calc(100% - 20px);    text-align: center;
+        }
+
+    .noticiaText{
+        max-width: 50px;
+    }
+    .dispNone{
+        display: none;
+    }
+}
+
+        
+		/* Estilos CSS aqui */
+	</style>
+	
+    
+    </head>
+<body >
+    <div class="cabecalho" > <label style="margin-top: 50%;margin-bottom: 50%;">Cabeçalho</label>  </div>
+
+    <div class="flex-div">
+        <div class="bord" >
+        <card>
+            <label class="noticiaTitle">Noticia</label>
+            <p></p>    
+            <label >Lorem ipsum dolor, <label class="dispNone"> sit amet consectetur adipisicing elit. 
+                A accusantium at ipsum delectus incidunt vel laudantium tempore esse illo quo sunt voluptatum laborum ad, 
+                rerum id architecto. Suscipit, quos quo. </label></label>
+                </card>
+
+
+        </div>
+        <div  class="bordMax">
+            <label class="noticiaTitle" >Noticia</label>    
+            <p></p>
+            <label >Lorem ipsum dolor, <label class="dispNone">  sit amet consectetur adipisicing elit. 
+                A accusantium at ipsum delectus incidunt vel laudantium tempore esse illo quo sunt voluptatum laborum ad, 
+            rerum id architecto. Suscipit, quos quo.Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                A accusantium at ipsum delectus incidunt vel laudantium tempore esse illo quo sunt voluptatum laborum ad, 
+            rerum id architecto. Suscipit, quos quo.Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                A accusantium at ipsum delectus incidunt vel laudantium tempore esse illo quo sunt voluptatum laborum ad, 
+            rerum id architecto. Suscipit, quos quo.Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                A accusantium at ipsum delectus incidunt vel laudantium tempore esse illo quo sunt voluptatum laborum ad, 
+            rerum id architecto. Suscipit, quos quo.Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                A accusantium at ipsum delectus incidunt vel laudantium tempore esse illo quo sunt voluptatum laborum ad, 
+            rerum id architecto. Suscipit, quos quo.</label> </label>
+    
+    
+        </div>
+        <div class="bord" >
+            <label class="noticiaTitle" >Noticia</label>    
+            <p></p>
+            <label > Lorem ipsum dolor, <label class="dispNone">  sit amet consectetur adipisicing elit. 
+                A accusantium at ipsum delectus incidunt vel laudantium tempore esse illo quo sunt voluptatum laborum ad, 
+                rerum id architecto. Suscipit, quos quo.</label></label>
+        
+        
+        </div>
+        
+       
+        <div class="lastBoard" >
+            <label  class="noticiaTitle" >Noticia</label>    
+            <p></p>
+            <label >Lorem ipsum dolor,<label class="dispNone">  sit amet consectetur adipisicing elit. 
+                A accusantium at ipsum delectus incidunt vel laudantium tempore esse illo quo sunt voluptatum laborum ad, 
+            rerum id architecto. Suscipit, quos quo.</label></label>
+    
+    
+        </div>
+    </div>
+    
+</body>
+</html>

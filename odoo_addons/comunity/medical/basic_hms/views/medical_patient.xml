@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="medical_patients_form_view" model="ir.ui.view">
+            <field name="name">medical.patients.form.view</field>
+            <field name="model">medical.patient</field>
+            <field name="arch" type="xml">
+                <form string="Patient">
+                    <header>
+                        <button name="print_report" type="object"
+                            string="Print Patient Card" class="oe_highlight" />
+                    </header>
+                    <sheet>
+                        <field name="photo" nolabel="1"
+                            class="oe_left oe_avatar" img_width="120"
+                            img_height="120" width="120" height="120"
+                            widget="image" />
+                        <div class="oe_title">
+                            <div class="oe_edit_only">
+                                <label for="patient_id" />
+                            </div>
+                            <h1>
+                                <field style="width: 30%%" name="patient_id"
+                                    default_focus="1" placeholder="Patient Name"
+                                    context="{'default_is_patient': 1,'default_is_person': 1}"
+                                     />
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="name" />
+                                <field name="date_of_birth" />
+                                <field name="marital_status" />
+                            </group>
+                            <group>
+                                <field name="sex" />
+                                <field name="age" readonly="1" />
+                                <field name="partner_address_id" />
+                            </group>
+                        </group>
+                        <group>
+                            <separator colspan="4"
+                                string="Patient Critical Information" />
+                            <newline />
+                            <field colspan="6" name="critical_info"
+                                nolabel="1" />
+                        </group>
+                        <notebook>
+                            <page string="General Information">
+                                <group string="Patient General Information">
+                                    <group>
+                                        <field name="blood_type" />
+                                        <field name="current_insurance_id" />
+                                    </group>
+                                    <group>
+                                        <field name="rh" />
+                                        <field name="receivable" />
+                                        <field
+                                            name="primary_care_physician_id" />
+                                    </group>
+                                </group>
+
+                            </page>
+
+                            <page string="Medication">
+                                <group>
+                                    <field name="medication_ids"
+                                        string="Medication History"
+                                        colspan="4" widget="one2many_list" >
+                                        <tree>
+                                            <field name="medical_medicament_id" />
+                                            <field name="indication_pathology_id" />
+                                            <field name="start_treatment" />
+                                            <field name="end_treatment" />
+                                            <field name="is_active" />
+                                            <field name="doctor_physician_id" />
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            
+
+
+                        </notebook>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+        <record id="medical_patients_tree_view" model="ir.ui.view">
+            <field name="name">medical.patients.tree.view</field>
+            <field name="model">medical.patient</field>
+            <field name="arch" type="xml">
+                <tree string="Patient Information">
+                    <field name="name" />
+                    <field name="patient_id" />
+                    <field name="sex" />
+                    <field name="date_of_birth" />
+                    <field name="primary_care_physician_id" />
+                    
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_medical_patient" model="ir.actions.act_window">
+            <field name="name">Patients</field>
+            <field name="res_model">medical.patient</field>
+            <field name="binding_view_types">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_medical_patient_code" action="action_medical_patient"
+            parent="menu_patients" sequence="0" />
+
+        <act_window id="action_view_priscription_id2" name="Prescription Orders"
+            res_model="medical.prescription.order" binding_model="medical.patient"
+            view_mode="tree" domain="[('patient_id', '=', active_id)]" />
+
+        <act_window id="action_view_lab_id" name="Lab Reports"
+            res_model="medical.lab" binding_model="medical.patient"
+            view_mode="tree,form" domain="[('patient_id', '=', active_id)]" />
+
+        <act_window id="action_psc_id" name="PSC"
+            res_model="medical.patient.psc" binding_model="medical.patient"
+            view_mode="tree,form" domain="[('patient_id', '=', active_id)]" />
+
+</odoo>

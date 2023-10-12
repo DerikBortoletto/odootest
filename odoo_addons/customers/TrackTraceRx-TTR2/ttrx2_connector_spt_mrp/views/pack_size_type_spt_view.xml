@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="pack_size_type_form_view_spt"
+			model="ir.ui.view">
+			<field name="name">pack.size.type.form.view.spt</field>
+			<field name="model">pack.size.type.spt</field>
+			<field name="arch" type="xml">
+				<form >
+					<sheet>
+						<group>
+							<field name="name" required='1'/>
+							<field name="code" required='1'/>
+                            <field name="is_internal" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="pack_size_type_tree_view_spt" model="ir.ui.view">
+			<field name="name">pack.size.type.tree.view.spt</field>
+			<!-- <field name="groups_id" eval="[(4,ref('easy_redmine_spt.group_redmine_access'))]"/> -->
+			<field name="model">pack.size.type.spt</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name" />
+                    <field name="code" />
+                    <field name="is_internal" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_pack_size_type_spt"
+			model="ir.actions.act_window">
+			<field name="name">Pack Size Type</field>
+			<field name="res_model">pack.size.type.spt</field>
+<!--			<field name="view_type">form</field>-->
+			<field name="view_mode">tree,form</field>
+		</record>
+
+	</data>
+</odoo>

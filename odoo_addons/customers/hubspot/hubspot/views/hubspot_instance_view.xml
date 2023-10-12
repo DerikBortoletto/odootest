@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_hubspot_instance_form" model="ir.ui.view">
+            <field name="name">hubspot.instance.form</field>
+            <field name="model">hubspot.instance</field>
+            <field name="arch" type="xml">
+                <form string="Hubspot Instance">
+                    <sheet>
+                    	<field name="can_play" invisible="1"/>
+                        <group>
+                            <div class="oe_button_box" name="button_box" icon="fa-users">
+                                <button class="oe_stat_button" name="action_active_inactive" type="object" attrs="{'invisible': [('active','=',True)]}"
+                                        icon="fa-check-circle" help="Set as Inactive" string="Active">
+                                    <field string="Active1" name="active" invisible="1"/>
+                                </button>
+                                <button class="oe_stat_button" name="action_active_inactive" type="object" attrs="{'invisible': [('active','=',False)]}"
+                                        icon="fa-check-circle" help="Set as Inactive" string="Inactive">
+                                    <field string="InActive1" icon="fa-users"  name="active" invisible="1" />
+                                </button>
+                                <button name="action_start_crow" type="object" icon="fa-play" class="oe_stat_button" string="Start Play" attrs="{'invisible': [('can_play','!=',True)]}"/>
+                                <button name="action_test_connection" type="object" icon="fa-plug" class="oe_stat_button" string="Test Connection"/>
+                            </div>
+                        </group>
+                        <div class="oe_title">
+                            <h1><field name="name"/></h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="hubspot_app_key" password="True"/>
+								<button name="action_import_users" class="oe_highlight" attrs="{'invisible': ['|',('hubspot_app_key','=',False),('hubspot_sync_companies','=',False)]}" string="Import Users"
+								        type="object" icon="fa-cloud-upload"/>
+                            </group>
+                            <group>
+                                <field name="default_instance"/>
+                                <field name="force_rewrite"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page name='hubspot_companies' string="Companies" attrs="{'invisible': [('active','=',False)]}">
+                                <group col="4">
+                                    <field name="hubspot_sync_companies"/>
+                                    <field name="modifiedDateForCompany"/>
+                                    <field name="hubspot_is_import_company" attrs="{'invisible': [('hubspot_sync_companies','=',False)]}"/>
+                                    <field name="hubspot_is_import_skip_company" attrs="{'invisible': [('hubspot_sync_contacts','=',False)]}"/>
+                                    <field name="all_companies"/>
+                                    <field name="hubspot_is_export_company" attrs="{'invisible': [('hubspot_sync_companies','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <button name="action_import_companies" class="oe_highlight" attrs="{'invisible': [('hubspot_sync_companies','=',False)]}" string="Import Companies"
+                                            type="object" icon="fa-cloud-download"/>
+                                    <button name="action_export_companies" class="oe_highlight" attrs="{'invisible': [('hubspot_sync_companies','=',False)]}" string="Export Companies"
+                                            type="object" icon="fa-cloud-upload"/>
+                                    <button name="action_import_skip_companies" class="oe_highlight" attrs="{'invisible': [('hubspot_sync_companies','=',False)]}"
+                                            string="Import Skippped Companies" type="object" icon="fa-cloud-download"/>
+                                </group>
+                                <group attrs="{'invisible': [('hubspot_app_key','=',False)]}">
+                                    <field name="company_field_mapping" context="{'hubspot_instance_id': active_id}">
+                                        <tree editable="bottom">
+                                            <field name="odoo_fields" required="1"/>
+                                            <field name="hubspot_fields" domain="[('hubspot_instance_id','=',parent.id),('hubspot_compute', '=', False),('hubspot_readonly', '=', False),('field_type', '!=', 'calculation_equation')]" required="1"/>
+                                            <field name="hubspot_field_description"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group attrs="{'invisible': [('hubspot_app_key','=',False)]}">
+                                    <button name="action_import_company_fields" type="object" icon="fa-cloud-download" class="oe_highlight" string="Import Company Fields"/>
+                                </group>
+                            </page>
+                            <page name='hubspot_contacts' string="Contacts" attrs="{'invisible': [('active','=',False)]}">
+                                <group col="4">
+                                    <field name="hubspot_sync_contacts"/>
+                                    <field name="modifiedDateForContact"/>
+                                    <field name="hubspot_is_import_contacts" attrs="{'invisible': [('hubspot_sync_contacts','=',False)]}"/>
+                                    <field name="hubspot_is_import_skip_contacts" attrs="{'invisible': [('hubspot_sync_contacts','=',False)]}"/>
+                                    <field name="all_contact"/>
+                                    <field name="hubspot_is_export_contacts" attrs="{'invisible': [('hubspot_sync_contacts','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <button name="action_import_contacts" attrs="{'invisible': [('hubspot_sync_contacts','=',False)]}" class="oe_highlight" string="Import Contacts"
+                                            type="object" icon="fa-cloud-download"/>
+                                    <button name="action_export_contacts" attrs="{'invisible': [('hubspot_sync_contacts','=',False)]}" class="oe_highlight" string="Export Contacts"
+                                            type="object" icon="fa-cloud-upload"/>
+                                    <button name="action_import_skip_contacts" attrs="{'invisible': [('hubspot_sync_contacts','=',False)]}" class="oe_highlight"
+                                            string="Import Skipped Contacts" type="object" icon="fa-cloud-download"/>
+                                </group>
+                                <group attrs="{'invisible': [('hubspot_app_key','=',False)]}">
+                                    <field name="contact_field_mapping" context="{'hubspot_instance_id': active_id}">
+                                        <tree editable="bottom">
+                                            <field name="odoo_fields" required="1"/>
+                                            <field name="hubspot_fields" domain="[('hubspot_instance_id','=',parent.id),('hubspot_compute', '=', False),('hubspot_readonly', '=', False),('field_type', '!=', 'calculation_equation')]" required="1"/>
+                                            <field name="hubspot_field_description"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group attrs="{'invisible': [('hubspot_app_key','=',False)]}">
+                                    <button name="action_import_contact_fields" type="object" icon="fa-cloud-download" class="oe_highlight" string="Import Contact Fields"/>
+
+                                </group>
+                            </page>
+                            <page name='hubspot_deals' string="Deals" attrs="{'invisible': [('active','=',False)]}">
+                                <group col="4">
+                                    <field name="hubspot_sync_deals"/>
+                                    <field name="modifiedDateForDeals"/>
+                                    <field name="hubspot_is_import_deals" attrs="{'invisible': [('hubspot_sync_deals','=',False)]}"/>
+                                    <field name="all_deals"/>
+                                    <field name="hubspot_is_export_deals" attrs="{'invisible': [('hubspot_sync_deals','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <button name="action_import_deals" attrs="{'invisible': [('hubspot_sync_deals','=',False)]}" class="oe_highlight" string="Import Deals"
+                                            type="object" icon="fa-cloud-download"/>
+                                    <button name="action_export_deals" attrs="{'invisible': [('hubspot_sync_deals','=',False)]}" class="oe_highlight" string="Export Deals"
+                                            type="object" icon="fa-cloud-upload"/>
+                                </group>
+                                <group attrs="{'invisible': [('hubspot_app_key','=',False)]}">
+                                    <field name="deals_field_mapping" context="{'hubspot_instance_id': active_id}">
+                                        <tree editable="bottom">
+                                            <field name="odoo_fields" required="1"/>
+                                            <field name="hubspot_fields" domain="[('hubspot_instance_id','=',parent.id),('hubspot_compute', '=', False),('hubspot_readonly', '=', False),('field_type', '!=', 'calculation_equation')]" required="1"/>
+                                            <field name="hubspot_field_description"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group attrs="{'invisible': [('hubspot_app_key','=',False)]}">
+                                    <button name="action_import_deals_fields" type="object" icon="fa-cloud-download" class="oe_highlight" string="Import Deals Fields"/>
+                                </group>
+                            </page>
+                            <page name='hubspot_ticket_pipeline' string="Ticket Pipeline" attrs="{'invisible': [('active','=',False)]}">
+                                <group col="4">
+                                    <field name="hubspot_sync_ticket_pipeline"/>
+                                    <field name="modifiedDateForTicketPipeline"/>
+                                    <field name="hubspot_is_import_ticket_pipeline" attrs="{'invisible': [('hubspot_sync_ticket_pipeline','=',False)]}"/>
+                                    <field name="all_ticket_pipelines"/>
+                                    <field name="hubspot_is_export_ticket_pipeline" attrs="{'invisible': [('hubspot_sync_ticket_pipeline','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <button name="action_import_ticket_pipeline" attrs="{'invisible': [('hubspot_sync_ticket_pipeline','=',False)]}" class="oe_highlight" string="Import Pipelines"
+                                            type="object" icon="fa-cloud-download"/>
+                                    <button name="action_export_ticket_pipeline" attrs="{'invisible': [('hubspot_sync_ticket_pipeline','=',False)]}" class="oe_highlight" string="Export Pipelines"
+                                            type="object" icon="fa-cloud-upload"/>
+                                </group>
+                            </page>
+                            <page name='hubspot_ticket' string="Tickets" attrs="{'invisible': [('active','=',False)]}">
+                                <group col="4">
+                                    <field name="hubspot_sync_ticket"/>
+                                    <field name="modifiedDateForTicket"/>
+                                    <field name="hubspot_is_import_ticket" attrs="{'invisible': [('hubspot_sync_ticket','=',False)]}"/>
+                                    <field name="all_ticket"/>
+                                    <field name="ticket_id"/>
+                                    <field name="hubspot_is_export_ticket" attrs="{'invisible': [('hubspot_sync_ticket','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <button name="action_import_ticket" attrs="{'invisible': [('hubspot_sync_ticket','=',False)]}" class="oe_highlight" string="Import Tickets"
+                                            type="object" icon="fa-cloud-download"/>
+                                    <button name="action_export_ticket" attrs="{'invisible': [('hubspot_sync_ticket','=',False)]}" class="oe_highlight" string="Export Tickets"
+                                            type="object" icon="fa-cloud-upload"/>
+                                    <button name="action_import_my_ticket" attrs="{'invisible': ['|',('hubspot_sync_ticket','=',False),('ticket_id','=',False)]}" class="oe_highlight" string="Import Ticket ID"
+                                            type="object" icon="fa-cloud-upload"/>
+                                </group>
+                                <group attrs="{'invisible': [('hubspot_app_key','=',False)]}">
+                                    <field name="tickets_field_mapping" context="{'hubspot_instance_id': active_id}">
+                                        <tree editable="bottom">
+                                            <field name="odoo_fields" required="1"/>
+                                            <field name="hubspot_fields" domain="[('hubspot_instance_id','=',parent.id),('hubspot_compute', '=', False),('hubspot_readonly', '=', False),('field_type', '!=', 'calculation_equation')]" required="1"/>
+                                            <field name="hubspot_field_description"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group attrs="{'invisible': [('hubspot_app_key','=',False)]}">
+                                    <button name="action_import_tickets_fields" type="object" icon="fa-cloud-download" class="oe_highlight" string="Import Deals Fields"/>
+                                </group>
+                            </page>
+                            <page name='hubspot_task' string="Task" attrs="{'invisible': [('active','=',False)]}">
+                                <group col="4">
+                                    <field name="hubspot_sync_task"/>
+                                    <field name="modifiedDateForTask" />
+                                    <field name="hubspot_is_import_task" attrs="{'invisible': [('hubspot_sync_task','=',False)]}"/>
+                                    <field name="all_task"/>
+                                    <field name="hubspot_is_export_task" attrs="{'invisible': [('hubspot_sync_task','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <button name="action_import_task" attrs="{'invisible': [('hubspot_sync_task','=',False)]}" class="oe_highlight" string="Import Task"
+                                            type="object" icon="fa-cloud-download"/>
+                                    <button name="action_export_task" attrs="{'invisible': [('hubspot_sync_task','=',False)]}" class="oe_highlight" string="Export Task"
+                                            type="object" icon="fa-cloud-upload"/>
+                                </group>
+                            </page>
+                            <page name='hubspot_note' string="Note" attrs="{'invisible': [('active','=',False)]}">
+                                <group col="4">
+                                    <field name="hubspot_sync_notes"/>
+                                    <field name="modifiedDateForNotes"/>
+                                    <field name="hubspot_is_import_notes" attrs="{'invisible': [('hubspot_sync_notes','=',False)]}"/>
+                                    <field name="all_notes"/>
+                                    <field name="hubspot_is_export_notes" attrs="{'invisible': [('hubspot_sync_notes','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <button name="action_import_notes" attrs="{'invisible': [('hubspot_sync_notes','=',False)]}" class="oe_highlight" string="Import Note"
+                                            type="object" icon="fa-cloud-download"/>
+                                    <button name="action_export_notes" attrs="{'invisible': [('hubspot_sync_notes','=',False)]}" class="oe_highlight" string="Export Note"
+                                            type="object" icon="fa-cloud-upload"/>
+                                    <button name="action_import_skip_notes" attrs="{'invisible': [('hubspot_sync_notes','=',False)]}" class="oe_highlight" string="Import Skipped Note"
+                                            type="object" icon="fa-cloud-download"/>
+                                </group>
+                            </page>
+                            <page name='hubspot_emails' string="Emails" attrs="{'invisible': [('active','=',False)]}">
+                                <group col="4">
+                                    <field name="hubspot_sync_email"/>
+                                    <field name="modifiedDateForEmail"/>
+                                    <field name="hubspot_is_import_email" attrs="{'invisible': [('hubspot_sync_email','=',False)]}"/>
+                                    <field name="all_email"/>
+                                    <field name="hubspot_is_export_email" attrs="{'invisible': [('hubspot_sync_email','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <button name="action_import_email" attrs="{'invisible': [('hubspot_sync_email','=',False)]}" class="oe_highlight" string="Import Email"
+                                            type="object" icon="fa-cloud-download"/>
+                                    <button name="action_export_email" attrs="{'invisible': [('hubspot_sync_email','=',False)]}" class="oe_highlight" string="Export Email"
+                                            type="object" icon="fa-cloud-upload"/>
+                                </group>
+                            </page>
+
+                            <page name='hubspot_logger_meeting' string="Log meeting" attrs="{'invisible': [('active','=',False)]}">
+                                <group col="4">
+                                    <field name="hubspot_sync_log_meeting"/>
+                                    <field name="modifiedDateForlogmeeting"/>
+                                    <field name="hubspot_is_import_log_meeting" attrs="{'invisible': [('hubspot_sync_log_meeting','=',False)]}"/>
+                                    <field name="all_log_meeting"/>
+                                    <field name="hubspot_is_export_log_meeting" attrs="{'invisible': [('hubspot_sync_log_meeting','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <button name="action_import_log_meeting" attrs="{'invisible': [('hubspot_sync_log_meeting','=',False)]}" class="oe_highlight" string="Import Log Meeting"
+                                            type="object" icon="fa-cloud-download"/>
+                                    <button name="action_export_log_meeting" attrs="{'invisible': [('hubspot_sync_log_meeting','=',False)]}" class="oe_highlight" string="Export Log Meeting"
+                                            type="object" icon="fa-cloud-upload"/>
+                                </group>
+                            </page>
+
+                            <page name='hubspot_log_email' string="Log Email" attrs="{'invisible': [('active','=',False)]}">
+                                <group col="4">
+                                    <field name="hubspot_sync_log_email"/>
+                                    <field name="modifiedDateForLogEmail"/>
+                                    <field name="hubspot_is_import_log_email" attrs="{'invisible': [('hubspot_sync_log_email','=',False)]}"/>
+                                    <field name="all_log_email"/>
+                                    <field name="hubspot_is_export_log_email" attrs="{'invisible': [('hubspot_sync_log_email','=',False)]}"/>
+                                </group>
+                                <group>
+                                    <button name="action_import_log_email" attrs="{'invisible': [('hubspot_sync_log_email','=',False)]}" class="oe_highlight" string="Import Log Email"
+                                            type="object" icon="fa-cloud-download"/>
+                                    <button name="action_export_log_email" attrs="{'invisible': [('hubspot_sync_log_email','=',False)]}" class="oe_highlight" string="Export Log Email"
+                                            type="object" icon="fa-cloud-upload"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_tree_hubspot_instance_tree" model="ir.ui.view">
+            <field name="name">view.hubspot.instance.tree11</field>
+            <field name="model">hubspot.instance</field>
+            <field name="arch" type="xml">
+                <tree string="Hubspot Instance">
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_hubspot_instance" model="ir.actions.act_window">
+            <field name="name">Hubspot Instance</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hubspot.instance</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        
+        <menuitem name="Hubspot Instance" id="hubspot_instance_menu" groups="group_hubspot_manager" web_icon="hubspot,static/description/icon.png"/>
+        <menuitem id="menu_hubspot_instance" name="Hubspot Instance" sequence="1" parent="hubspot_instance_menu" action="action_hubspot_instance"/>
+        <menuitem id="hubspot_field_mapping" name="Hubspot Fields" sequence="3" parent="hubspot_instance_menu"/>
+        
+    </data>
+</odoo>

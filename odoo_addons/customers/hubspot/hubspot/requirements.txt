@@ -1,0 +1,4 @@
+pyrecord==1.0.1
+tzlocal
+hubspot-conn==1.0rc8
+hubspot-contacts==1.0rc1

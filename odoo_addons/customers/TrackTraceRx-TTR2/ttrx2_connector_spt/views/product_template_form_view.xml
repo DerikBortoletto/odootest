@@ -1,0 +1,60 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="inherit_product_template_product_form" model="ir.ui.view">
+            <field name="name">product.template.product.form.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <widget name="web_ribbon" title="DELETED FROM THE PORTAL" bg_color="bg-danger" attrs="{'invisible': [('status_delete_portal', '!=', True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='barcode']" position="replace">
+                    <field name="upc"/>
+                    <field name="status_delete_portal"/>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="required">True</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_template_tree_r_view" model="ir.ui.view">
+            <field name="name">product.template.product.r.tree</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_tree_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="replace">
+                    <tree string="Product" multi_edit="1" sample="1" delete="0">
+                        <field name="product_variant_count" invisible="1"/>
+                        <field name="sale_ok" invisible="1"/>
+                        <field name="currency_id" invisible="1"/>
+                        <field name="cost_currency_id" invisible="1"/>
+
+                        <field name="sequence" widget="handle" readonly="1"/>
+                        <field name="name" string="Product Name"/>
+                        <field name="default_code" optional="show"/>
+                        <field name="barcode" optional="hide"
+                               attrs="{'readonly': [('product_variant_count', '>', 1)]}"/>
+                        <field name="company_id" options="{'no_create': True}"
+                               groups="base.group_multi_company" optional="hide"/>
+                        <field name="list_price" string="Sales Price" widget='monetary'
+                               options="{'currency_field': 'currency_id'}" optional="show"
+                               decoration-muted="not sale_ok"/>
+                        <field name="standard_price" widget='monetary' options="{'currency_field': 'cost_currency_id'}"
+                               optional="show" readonly="1"/>
+                        <field name="categ_id" optional="hide"/>
+                        <field name="type" optional="hide" readonly="1"/>
+                        <field name="uom_id" readonly="1" optional="show" groups="uom.group_uom"/>
+                        <field name="active" invisible="1"/>
+                        <field name="activity_exception_decoration" widget="activity_exception"/>
+                    </tree>
+                </xpath>
+            </field>
+        </record>
+
+
+
+
+    </data>
+</odoo>

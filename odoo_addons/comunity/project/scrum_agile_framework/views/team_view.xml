@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+
+	    <record id="scrum_agile_framework.team_list_view" model="ir.ui.view">
+	      <field name="name">scrum_agile_framework.team.view.tree</field>
+	      <field name="model">scrum_agile_framework.team</field>
+	      <field name="arch" type="xml">
+	        <tree>
+	          <field name="name"/>
+	        </tree>
+	      </field>
+	    </record>
+	
+	    <!-- Form View -->
+	    <record model="ir.ui.view" id="scrum_agile_framework.team_form_view">
+	      <field name="name">scrum_agile_framework.team.view.form</field>
+	      <field name="model">scrum_agile_framework.team</field>
+	      <field name="arch" type="xml">
+	        <form string="Team Information">
+	          <sheet>
+	            <separator string="Team Information"/>
+	            <group>
+	              <field name="name"/>
+	            </group>
+	            <group>
+	             <div>
+	              <field name="employee_ids"  class="oe_inline oe_input_align" widget="many2many" >
+	                <tree editable="bottom">
+	                  <field name="name" string="Name"/>
+	                  <field name="role" string="Role" required="True" />
+	                  <field name="responsibility" string = "Responsibility"/>
+	                </tree>
+	                <form>
+	                  <h1>
+	                    <field name="name" placeholder="Employee Name"/>
+	                  </h1>
+	                  <div name="options_active">
+	                    <div>
+	                      <label for="role" class="oe_inline" string="Role : "/>
+	                      <field name="role" class="oe_inline oe_input_align" required="True"/>
+	                    </div>
+	                    <div>
+	                      <label for="responsibility" class="oe_inline" string="Responsibility : "/>
+	                      <field name="responsibility" class="oe_inline oe_input_align"/>
+	                    </div>
+	                    <div>
+	                    </div>
+	                  </div>
+	                </form>
+	              </field>
+	              </div>
+	            </group>
+	          </sheet>
+	        </form>
+	      </field>
+	    </record>
+
+	    <record model="ir.actions.act_window" id="scrum_agile_framework.team_action_window">
+	      <field name="name">Scrum Team</field>
+	      <field name="res_model">scrum_agile_framework.team</field>
+	      <field name="view_mode">tree,form</field>
+	    </record>
+
+	</data>
+</odoo>

@@ -1,0 +1,64 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+        <record id="product_description_spt_form_view" model="ir.ui.view">
+            <field name="name">product.description.form.view.spt</field>
+            <field name="model">product.description.spt</field>
+            <field name="arch" type="xml">
+                <form>
+					<header>
+						<button name="action_test" string="testar" type="object" groups="base.group_no_one"/>
+						<button name="action_send" string="Send To TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('code','!=',False)]}"/>
+						<button name="action_refresh" string="Refresh From TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('code','=',False)]}"/>
+					</header>
+                    <sheet>
+                    	<group>
+                    		<group>
+                    			<field name="code" required='1'/>
+                                <field name="product_spt_id" required="1"/>
+                    			<field name="product_long_name"/>
+                    		</group>
+                    		<group>
+                    			<field name="name"/>
+                    			<field name="created_on" readonly="1"/>
+                    			<field name="last_update" readonly="1"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                    		</group>
+                    	</group>
+                    	<group>
+							<field name="description"/>
+                    	</group>
+                    	<group>
+                    		<field name="composition"/>
+                    	</group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="product_description_spt_tree_view" model="ir.ui.view">
+            <field name="name">product.description.tree.view.spt</field>
+            <!-- <field name="groups_id" eval="[(4,ref('easy_redmine_spt.group_redmine_access'))]"/>  -->
+            <field name="model">product.description.spt</field>
+            <field name="arch" type="xml">
+                <tree>
+					<field name="created_on" readonly="1"/>
+					<field name="last_update" readonly="1"/>
+					<field name="code" required='1'/>
+					<field name="name"/>
+					<field name="product_long_name"/>
+					<field name="product_spt_id"/>
+					<field name="company_id" groups="base.group_multi_company"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_product_description_spt" model="ir.actions.act_window">
+            <field name="name">Product Description</field>
+            <field name="res_model">product.description.spt</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

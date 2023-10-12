@@ -1,0 +1,178 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+       <record id="view_res_partner_filter_spt" model="ir.ui.view">
+            <field name="name">res.partner.select.spt</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search string="Search Partner">
+                    <field name="name" filter_domain="['|', '|', '|', '|',('display_name', 'ilike', self), ('ref', '=', self), ('email', 'ilike', self), ('uuid', 'ilike', self)]"/>
+                    <field name="parent_id" domain="[('is_company', '=', True)]" operator="child_of"/>
+                    <field name="email" filter_domain="[('email', 'ilike', self)]"/>
+                    <field name="phone" filter_domain="['|', ('phone', 'ilike', self), ('mobile', 'ilike', self)]"/>
+                    <field name="category_id" string="Tag" filter_domain="[('category_id', 'child_of', self)]"/>
+                    <field name="user_id"/>
+                    <separator/>
+                    <filter string="Individuals" name="type_person" domain="[('is_company', '=', False)]"/>
+                    <filter string="Companies" name="type_company" domain="[('is_company', '=', True)]"/>
+                    <separator/>
+                    <filter string="Archived" name="inactive" domain="[('active', '=', False)]"/>
+                    <separator/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="salesperson" string="Salesperson" domain="[]" context="{'group_by' : 'user_id'}" />
+                        <filter name="group_company" string="Company" context="{'group_by': 'parent_id'}"/>
+                        <filter name="group_country" string="Country" context="{'group_by': 'country_id'}"/>
+                        <filter name="group_type" string="Type" context="{'group_by': 'type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+		<record id="view_partner_simple_form_inherit_spt" model="ir.ui.view">
+            <field name="name">res.partner.simple.form.inherit.spt</field>
+            <field name="model">res.partner</field>
+			<field name="groups_id" eval="[(4,ref('tracktrace2_odoo_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="base.view_partner_simple_form"/>
+            <field name="arch" type="xml">
+            	<field name="parent_id" position="after">
+					<field name="tracktrace_is" readonly='1'/>            		
+            	</field>
+            	<field name="user_ids" position="after">
+            		<field name="type_ttr"/>
+            		<field name="uuid" readonly='1'/>
+            	</field>
+            </field>
+        </record>
+
+		<record id="view_partner_address_form_inherit_spt" model="ir.ui.view">
+            <field name="name">res.partner.address.form.inherit.spt</field>
+            <field name="model">res.partner</field>
+			<field name="groups_id" eval="[(4,ref('tracktrace2_odoo_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="base.view_partner_address_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//div/h1" position="after">
+            		<field name="tracktrace_is" readonly='1'/>
+            	</xpath>	
+            </field>
+        </record>
+
+		<record id="res_partner_form_view_inherit_spt" model="ir.ui.view">
+            <field name="name">res.partner.form.view.inherit.spt</field>
+            <field name="model">res.partner</field>
+			<field name="groups_id" eval="[(4,ref('tracktrace2_odoo_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page[1]/field[@name='child_ids']/form/sheet/field[@name='parent_id']" position="after">
+                	<field name="tracktrace_is" readonly='1'/>
+                </xpath>
+                <xpath expr="//notebook/page[1]/field[@name='child_ids']/form/sheet/group/group[2]/field[@name='company_id']" position="after">
+                	<field name="uuid" readonly='1' attrs="{'invisible': [('tracktrace_is','=', False)]}"/>
+                	<field name="friendly_name" />
+                </xpath>
+                <xpath expr="//notebook/page[5]" position="after">
+                    <page string="Connector TTrx2">
+                        <notebook>
+							<page string="General">
+								<group>
+									<group string="General">
+										<field name="tracktrace_is" readonly='1'/>
+										<field name="uuid" readonly='1'/>
+										<field name="created_on"/>
+										<field name="last_update"/>
+										<field name="friendly_name" />
+										<field name="external_reference"/>
+										<field name="type_ttr" required='1'/>
+										<field name="gs1_id"/>
+										<field name="url_config" invisible="1"/>
+										<field name="connector_id" readonly="1"/>
+									</group>
+								</group>
+							</page>
+							<page string="Contacts">
+								<group>
+									<group string="Notifications for New Outbound Transaction Available">
+										<field name="set_bool" invisible="1"/>
+										<field name="email" attrs="{'required': [('set_bool', '!=', False)],
+																	'invisible': [('set_bool','!=', True)]}"/>
+										<field name="new_trx_notification_type" required='1'/>
+										<field name="phone"/>
+										<field name="phone_ext" />
+									</group>
+									<group string="Flag Notification" attrs="{'invisible': [('set_bool','!=', True)]}">
+										<field name="flag_notification_name" attrs="{'invisible': [('set_bool','!=', True)]}"/>
+										<field name="flag_notification_email" attrs="{'invisible': [('set_bool','!=', True)]}"/>
+										<field name="flag_notification_phone" attrs="{'invisible': [('set_bool','!=', True)]}"/>
+										<field name="flag_notification_phone_ext" attrs="{'invisible': [('set_bool','!=', True)]}"/>
+									</group>
+								</group>
+							</page>
+							<page string="Address">
+								<group>
+									<field name="trading_partner_address_dft_id" domain="[('res_partner_id','=',active_id)]"/>
+								</group>
+								<group>
+									<field name="trading_partner_address_spt_ids"  context="{'default_parent_id': active_id, 'default_line1': street, 'default_line2': street2, 'default_city': city, 'default_res_country_state_id': state_id, 'default_zip': zip, 'default_res_country_id': country_id, 'default_recipient_name':name, 'default_phone':phone, 'default_email':email,}" />
+								</group>
+							</page>
+							<page string="Licenses">
+								<field name="license_spt_ids"/>
+							</page>
+							<page string="User" invisible="1">
+							</page>
+							<page string="Misc">
+								<group>
+									<group string="Shipment Verification">
+										<p>Specify how much items in a shipment must be verified to make sure it’s accurate with the data received/sent.</p>
+										<field name="inbound_shipping_check_percentage" />
+										<field name="outbound_shipping_check_percentage" />
+									</group>
+									<group string="X12 EDI">
+										<field name="sender_id"/>
+										<field name="receiver_id"/>
+									</group>
+								</group>
+							</page>
+						</notebook>
+                    </page>
+				</xpath>
+				<xpath expr="//field[@name='name']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+					<xpath expr="//field[@name='street']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='state_id']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='country_id']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='zip']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+				<xpath expr="//field[@name='city']" position="attributes">
+					<attribute name="attrs">{'required': [('url_config','=',True)]}</attribute>
+				</xpath>
+            </field>
+        </record>
+
+        <record id="action_res_partner_spt" model="ir.actions.act_window">
+            <field name="name">Partners</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('uuid','!=', False)]</field>
+            <field name="context">{}</field>
+            <field name="search_view_id" ref="view_res_partner_filter_spt"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new partner of TrackTraceRx in your address book
+              </p><p>
+                We helps you easily track all activities related to a partner.
+              </p>
+            </field>
+        </record>
+
+	</data>
+</odoo>

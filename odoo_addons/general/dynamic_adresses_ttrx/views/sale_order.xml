@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="sale_order_bi_form_inherit_2" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='patient_name']" position='before'>
+                <field name="different_adress"/>
+                <field name ="search_address_id" invisible="1"/>
+                <button name="next_address" string="Next Address" type="object" class="btn-secondary" attrs="{'invisible':[('different_adress', '=', False)]}"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

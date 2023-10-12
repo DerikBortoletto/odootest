@@ -1,0 +1,120 @@
+<odoo>
+  <data>
+    <!-- REFERENCED VIEWS -->
+    <!-- Search panel for the tasks en assigned to their User stories -->
+
+    <!-- ACTIONS -->
+    <!-- Shows the Product Backlog -->
+
+    <!-- Shows all the Sprints assigned to a project-->
+
+    <!-- VIEWS -->
+    <!-- PROJECT VIEWS -->
+    <!-- Edited View of the module project.project -->
+
+
+    <!-- SPRINT VIEWS -->
+    <!-- List View -->
+
+    <!-- Burndown chart View  -->
+
+
+    <!-- USER STORY VIEWS -->
+    <!-- List View -->
+
+
+    <!-- TASK VIEWS -->
+
+    <!-- Quick create task-->
+    <record id="quick_create_task_form" model="ir.ui.view">
+      <field name="name">scrum_agile_framework.task.form.quick_create</field>
+      <field name="model">project.task</field>
+      <field name="priority">1000</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name" string = "Task Title"/>
+            <field name="planned_hours" required="1" string="Planned hours"/>
+            <field name="user_id" options="{'no_open': True,'no_create': True}"
+                   domain="[('share', '=', False)]"/>
+            <field name="project_id" required="1" invisible="1"/>
+            <field name="sprint_id" required="1" invisible="1"/>
+            <field name="user_story_id" required="1"  domain="[('sprint_id', '=', active_id)]"
+                   options="{'no_create': True,'no_create_edit': True, 'no_open': True}"/>
+            <field name="company_id" invisible="1"/>
+            <field name="parent_id" invisible="1"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- Kanban View -->
+    <record id="project_task_kanban_view_scrum" model="ir.ui.view">
+      <field name="name">project.task.view.kanban_scrum</field>
+      <field name="model">project.task</field>
+      <field name="inherit_id" ref="project.view_task_kanban"/>
+      <field name="mode">primary</field>
+      <field name="arch" type="xml">
+        <field name="color" position="after">
+          <field name="sprint_id"/>
+        </field>
+        <xpath expr="//kanban" position="attributes">
+          <attribute name="quick_create_view">scrum_agile_framework.quick_create_task_form</attribute>
+          <attribute name="default_group_by">scrum_stage</attribute>
+        </xpath>
+        <field name="project_id" position="attributes">
+            <attribute name="attrs">{'invisible': 1}</attribute>
+        </field>
+      </field>
+    </record>
+
+
+
+    <!-- SCRUM TEAM VIEWS -->
+    <!-- List View -->
+
+
+    <!-- MEETING VIEWS -->
+    <!-- List View -->
+    <!-- Calendar View -->
+
+
+    <!-- MENU DEFINITION -->
+
+    <!-- Project Model-->
+    <record model="ir.actions.act_window" id="project_project_action_window">
+      <field name="name">Project</field>
+      <field name="res_model">project.project</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'kanban', 'view_id': ref('scrum_agile_framework.project_project_kanban_view_scrum')}),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('scrum_agile_framework.project_project_form_view_scrum')})]"/>
+    </record>
+
+    <!-- Team Model -->
+
+    <!-- Meeting Model -->
+
+    <!-- Top menu item -->
+
+    <!-- Categories Menu -->
+
+    <!-- Action to show the tasks of a sprint ordered by User Story -->
+    <record id='action_sprint_kanban_tasks' model='ir.actions.act_window'>
+      <field name="name">sprint.kanban.tasks</field>
+      <field name="res_model">project.task</field>
+      <field name="view_mode">kanban,form</field>
+      <field name="view_ids" eval="[(5, 0, 0),
+        (0, 0, {'view_mode': 'kanban', 'view_id': ref('scrum_agile_framework.project_task_kanban_view_scrum')}),
+        (0, 0, {'view_mode': 'form', 'view_id': ref('scrum_agile_framework.project_task_form_view_scrum')})]"/>
+      <field name="help" type="html">
+        <p class="o_view_nocontent_smiling_face">
+          No tasks found. Let's create one!
+        </p>
+      </field>
+      <field name="search_view_id" ref="project_task_search_view_scrum"/>
+      <field name="domain">[('sprint_id', '=', active_id)]</field>
+    </record>
+
+  </data>
+</odoo>

@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record id="unique_contacts_form_view" model="ir.ui.view">
+            <field name="name">unique.contacts.form.view</field>
+            <field name="model">unique.contacts</field>
+            <field name="arch" type="xml">
+                <form string="Unique Contacts">
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="cellphone"/>
+                            <field name="birthdate"/>
+                        </group>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="unique_contacts_tree_view" model="ir.ui.view">
+            <field name="name">unique.contacts.tree.view</field>
+            <field name="model">unique.contacts</field>
+            <field name="arch" type="xml">
+                <tree string="Unique Contacts">
+                    <field name="name"/>
+                    <field name="cellphone"/>
+                    <field name="birthdate"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="unique_contacts_action" model="ir.actions.act_window">
+            <field name="name">Unique Contacts</field>
+            <field name="res_model">unique.contacts</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to add a new contact.
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

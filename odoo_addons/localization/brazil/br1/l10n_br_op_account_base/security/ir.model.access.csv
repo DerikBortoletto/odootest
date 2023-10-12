@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acces_user_br_cfop,acces.user.br.cfop,model_br_cfop,account.group_account_invoice,1,1,1,1
+acces_user_br_service_type,acces.user.br.service.type,model_br_service_type,account.group_account_invoice,1,1,1,1
+acces_user_br_ncm,acces.user.br.ncm,model_br_ncm,account.group_account_invoice,1,1,1,1
+acces_user_br_product_fiscal_category,acces.user.br.product.fiscal.category,model_br_product_fiscal_category,account.group_account_invoice,1,1,1,1
+acces_user_br_cnae,acces.user.br.cnae,model_br_cnae,account.group_account_invoice,1,1,1,1
+acces_user_br_beneficio_fiscal,acces.user.br.beneficio.fiscal,model_br_beneficio_fiscal,account.group_account_invoice,1,1,1,1
+acces_user_br_enquadramento_ipi,acces.user.br.enquadramento.ipi,model_br_enquadramento_ipi,account.group_account_invoice,1,1,1,1
+acces_user_br_tipi,acces.user.br.tipi,model_br_tipi,account.group_account_invoice,1,1,1,1
+acces_user_br_cest,acces.user.br.cest,model_br_cest,account.group_account_invoice,1,1,1,1

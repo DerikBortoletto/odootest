@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="br_pharmedic_chart_template" model="account.chart.template">
+        <field name="property_account_receivable_id" ref="ttrx_phr1_1_2_01_001" />
+        <field name="property_account_payable_id" ref="ttrx_phr2_1_1_01_001" />
+        <field name="property_account_expense_categ_id" ref="ttrx_phr3_1_2_01_001" />
+        <field name="property_account_income_categ_id" ref="ttrx_phr3_1_1_01_001" />
+        <!-- 
+        <field name="property_account_expense_id" ref="" />
+        <field name="property_account_income_id" ref="" />
+        <field name="property_stock_account_input_categ_id" ref="" />
+        <field name="property_stock_account_output_categ_id" ref="" />
+        <field name="property_stock_valuation_account_id" ref="" />
+        <field name="property_tax_payable_account_id" ref="" />
+        <field name="property_tax_receivable_account_id" ref="" />
+        <field name="property_advance_tax_payment_account_id" ref="" />
+         -->
+        <field name="income_currency_exchange_account_id" ref="ttrx_phr3_1_3_02_001" />
+        <field name="expense_currency_exchange_account_id" ref="ttrx_phr4_1_2_02_001" />
+		<field name="default_pos_receivable_account_id" ref="ttrx_phr1_1_2_01_001" />
+		<field name="short_code_sequence_id" ref="seq_short_code" />
+    </record>
+
+
+
+</odoo>

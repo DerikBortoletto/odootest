@@ -1,0 +1,3 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+access_zift_log,grupo_zift_log,ttr_accounting_zift.model_zift_log,base.group_user,1,1,1,1
+access_zift_email,grupo_zift_email,ttr_accounting_zift.model_zift_email,base.group_user,1,1,1,1

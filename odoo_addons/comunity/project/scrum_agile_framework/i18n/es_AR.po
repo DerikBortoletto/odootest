@@ -1,0 +1,771 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* scrum_agile_framework
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-17 15:08+0000\n"
+"PO-Revision-Date: 2022-02-17 15:08+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_kanban_view_scrum
+msgid "<span class=\"o_label\" style=\"color: #7c7bae\">Sprints</span>"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_kanban_view_scrum
+msgid "<span class=\"o_label\" style=\"color: #7c7bae\">User Stories</span>"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+msgid ""
+"<span class=\"o_stat_text\">\n"
+"                  Customer Satisfaction\n"
+"                </span>"
+msgstr ""
+"<span class=\"o_stat_text\">\n"
+"                  Satisfacción del cliente\n"
+"                </span>"
+
+#. module: scrum_agile_framework
+#: model:ir.model,name:scrum_agile_framework.model_scrum_agile_framework_meeting
+msgid "Allows defining routine meetings of the Scrum Team"
+msgstr "Permite definir las reuniones rutinarios de un Equipo de Scrum"
+
+#. module: scrum_agile_framework
+#: model:ir.model,name:scrum_agile_framework.model_scrum_agile_framework_team
+msgid "Allows defining the members of the Scrum Team"
+msgstr "Permite definir los miembros de un equipo Scrum"
+
+#. module: scrum_agile_framework
+#: model:ir.model,name:scrum_agile_framework.model_scrum_agile_framework_sprint
+msgid "Allows defining the sprints assigned to a project"
+msgstr "Permite definir los sprints asignados a un proyecto"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__name
+msgid "Allows to distinguish between Remaining effort and Anticipated effort "
+msgstr "Permite distinguir entre las horas pendientes y las horas previstas"
+
+#. module: scrum_agile_framework
+#: model:ir.module.category,description:scrum_agile_framework.module_category_scrum_agile_framework
+msgid "Allows to manage a project with agile methodologies"
+msgstr "Ayuda a gestionar un proyecto mediante metodologias agiles"
+
+#. module: scrum_agile_framework
+#: model:ir.model,name:scrum_agile_framework.model_scrum_agile_framework_user_story
+msgid "Allows you to manage the user stories of a project"
+msgstr "Permite gestionar las Historias de Usuario de un proyecto"
+
+#. module: scrum_agile_framework
+#: model:ir.model,name:scrum_agile_framework.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Línea analítica"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Assigned User Stories"
+msgstr "Historias de Usuario asignadas"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+msgid "Backlog"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_account_analytic_line__burn_down_chart_ids
+msgid "Burndown chart values"
+msgstr "Valores del Burndown chart"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__burn_down_chart_ids
+msgid "Burndown charts"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.actions.act_window,name:scrum_agile_framework.action_sprint_burn
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Burns"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__conclusions
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Conclusions"
+msgstr "Conclusiones"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+msgid "Conclusions :"
+msgstr "Conclusiones"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__create_uid
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__create_uid
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__create_uid
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team__create_uid
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__create_date
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__create_date
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__create_date
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team__create_date
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__scrum_agile_framework_meeting__type__daily
+msgid "Daily Scrum"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__date
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__hr_employee__role__dt
+#: model:res.groups,name:scrum_agile_framework.group_scrum_development_team
+msgid "Development Team"
+msgstr "Equipo de desarrollo"
+
+#. module: scrum_agile_framework
+#: model:res.groups,comment:scrum_agile_framework.group_scrum_development_team
+msgid "Development Team role"
+msgstr "Usuarios que actuan como Developement Team en un proyecto scrum"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_account_analytic_line__display_name
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_project__display_name
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_task__display_name
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__display_name
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__display_name
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__display_name
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team__display_name
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__project_task__scrum_stage__doing
+msgid "Doing"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__project_task__scrum_stage__done
+msgid "Done"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__duration
+msgid "Duration"
+msgstr "Duración"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+msgid "Editable:"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__effective_hours
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_task_form_view_scrum
+msgid "Effective hours"
+msgstr "Horas realizadas"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Effective hours :"
+msgstr "Horas realizadas :"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+msgid "Effective hours:"
+msgstr "Horas realizadas:"
+
+#. module: scrum_agile_framework
+#: model:ir.model,name:scrum_agile_framework.model_hr_employee
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team__employee_ids
+msgid "Employee"
+msgstr "Empleado"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.team_form_view
+msgid "Employee Name"
+msgstr "Nombre del empleado"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__date_end
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_tree
+msgid "End date"
+msgstr "Fecha fin"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "End date :"
+msgstr "Fecha fin :"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+msgid "Estimated hours:"
+msgstr "Horas estimadas:"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "General"
+msgstr "General"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__goal
+msgid "Goal"
+msgstr "Meta"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Goal :"
+msgstr "Meta :"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_account_analytic_line__id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_hr_employee__id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_project__id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_task__id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team__id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Kanban Tasks"
+msgstr "Kanban de tareas "
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_account_analytic_line____last_update
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_project____last_update
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_task____last_update
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart____last_update
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting____last_update
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint____last_update
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team____last_update
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_project__last_sprint_id
+msgid "Last Sprint"
+msgstr "Último Sprint"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+msgid "Last Sprint :"
+msgstr "Último Sprint :"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__write_uid
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__write_uid
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__write_uid
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team__write_uid
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización de"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__write_date
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__write_date
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__write_date
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team__write_date
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__write_date
+msgid "Last Updated on"
+msgstr "Última actualización en"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,help:scrum_agile_framework.field_scrum_agile_framework_meeting__duration
+msgid "Maximum meeting duration"
+msgstr "Duración máxima de la reunión"
+
+#. module: scrum_agile_framework
+#: model:ir.actions.act_window,name:scrum_agile_framework.meeting_action_window
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_project__meeting_ids
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team__meeting_ids
+#: model:ir.ui.menu,name:scrum_agile_framework.meeting_menu
+msgid "Meeting"
+msgstr "Reuniones"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.meeting_calendar_view
+msgid "Meeting Calendar"
+msgstr "Calendario de reuniones"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.meeting_form_view
+msgid "Meeting Information"
+msgstr "Información de la reunión"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.meeting_form_view
+msgid "Meeting information"
+msgstr "Información de la reunión"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__name
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.team_form_view
+msgid "Name"
+msgstr "Nombre"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+msgid "New Task name"
+msgstr "Nombre de la nueva tarea"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "New User Story name"
+msgstr "Nombre de la nueva Historia de Usuario"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.actions.act_window,help:scrum_agile_framework.action_sprint_kanban_tasks
+msgid "No tasks found. Let's create one!"
+msgstr "No se encuentran tareas. Creemos una!"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__notes
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Notes"
+msgstr "Notas"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Notes :"
+msgstr "Notas :"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__planned_hours
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.quick_create_task_form
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Planned hours"
+msgstr "Horas previstas"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Planned hours :"
+msgstr "Horas previstas:"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__priority
+msgid "Priority"
+msgstr "Prioridad"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Priority :"
+msgstr "Prioridad :"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+msgid "Priority:"
+msgstr "Prioridad:"
+
+#. module: scrum_agile_framework
+#: model:ir.actions.act_window,name:scrum_agile_framework.action_project_user_story
+msgid "Product Backlog"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__hr_employee__role__po
+#: model:res.groups,name:scrum_agile_framework.group_scrum_product_owner
+msgid "Product Owner"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__hr_employee__role__cs
+#: model:res.groups,name:scrum_agile_framework.group_scrum_customer
+msgid "Customer"
+msgstr "Interesado"
+
+#. module: scrum_agile_framework
+#: model:res.groups,comment:scrum_agile_framework.group_scrum_product_owner
+msgid "Product Owner role"
+msgstr "Usuarios que actuan como Product Owner en un proyecto scrum"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_project__user_story_ids
+msgid "Product backlog"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.actions.act_window,name:scrum_agile_framework.project_project_action_window
+#: model:ir.model,name:scrum_agile_framework.model_project_project
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_task__project_id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__project_id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__project_id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team__project_ids
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__project_id
+msgid "Project"
+msgstr "Proyecto"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+msgid "Project Name"
+msgstr "Nombre del proyecto"
+
+#. module: scrum_agile_framework
+#: model:ir.ui.menu,name:scrum_agile_framework.project_project_menu
+msgid "Projects"
+msgstr "Proyectos"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_task_form_view_scrum
+msgid ""
+"Records from this timesheet will not be used for the Burndown chart while the task\n"
+"              is in the To do state"
+msgstr ""
+"Las entradas de este parte de horas no se utilizaran para el Burndown chart mientras\n"
+"             que la tarea se encuentre en el estado To do"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_account_analytic_line__remaining_amount
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_task_form_view_scrum
+msgid "Remaining hours"
+msgstr "Horas restantes"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_hr_employee__responsibility
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.team_form_view
+msgid "Responsibility"
+msgstr "Responsabilidad"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.team_form_view
+msgid "Responsibility :"
+msgstr "Responsabilidad :"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Retrospective"
+msgstr "Retrospectiva"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.team_form_view
+msgid "Role"
+msgstr "Rol"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.team_form_view
+msgid "Role :"
+msgstr "Rol :"
+
+#. module: scrum_agile_framework
+#: model:ir.module.category,name:scrum_agile_framework.module_category_scrum_agile_framework
+msgid "Scrum"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__hr_employee__role__sm
+#: model:res.groups,name:scrum_agile_framework.group_scrum_scrum_manager
+msgid "Scrum Manager"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:res.groups,comment:scrum_agile_framework.group_scrum_scrum_manager
+msgid "Scrum Manager role"
+msgstr "Usuarios que actuan como Scrum Manager en un proyecto scrum"
+
+#. module: scrum_agile_framework
+#: model:ir.ui.menu,name:scrum_agile_framework.menu_root
+msgid "Scrum Projects"
+msgstr "Proyectos de Scrum"
+
+#. module: scrum_agile_framework
+#: model:ir.actions.act_window,name:scrum_agile_framework.team_action_window
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_project__team_id
+#: model:ir.ui.menu,name:scrum_agile_framework.team_menu
+msgid "Scrum Team"
+msgstr "Equipo Scrum"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+msgid "Scrum Team :"
+msgstr "Equipo Scrum :"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_team__name
+msgid "Scrum Team name"
+msgstr "Nombre del Equipo Scrum"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__speed
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_tree
+msgid "Speed"
+msgstr "Velocidad"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Speed :"
+msgstr "Velocidad :"
+
+#. module: scrum_agile_framework
+#: model:ir.actions.act_window,name:scrum_agile_framework.action_all_sprints
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_account_analytic_line__sprint_id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_task__sprint_id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__sprint_id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__name
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__sprint_id
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Sprint"
+msgstr "Sprint"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+msgid "Sprint :"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_project__sprint_count
+msgid "Sprint Count"
+msgstr "Numero de Sprints"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__scrum_agile_framework_meeting__type__plan
+msgid "Sprint Planning"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__scrum_agile_framework_meeting__type__retrospective
+msgid "Sprint Retrospective"
+msgstr "Retrospectiva del sprint"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__scrum_agile_framework_meeting__type__review
+msgid "Sprint Review"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Sprint name"
+msgstr "Nombre del sprint"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_project__sprint_ids
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+msgid "Sprints"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+msgid "Stage :"
+msgstr "Etapa:"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_task__scrum_stage
+msgid "Stage of the scrum task"
+msgstr "Etapa de la tarea"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__date_start
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_tree
+msgid "Start date"
+msgstr "Fecha inicio"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_project_form_view_scrum
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Start date :"
+msgstr "Fecha inicio:"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__state
+msgid "State"
+msgstr "Estado"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "State :"
+msgstr "Estado :"
+
+#. module: scrum_agile_framework
+#: model:ir.model,name:scrum_agile_framework.model_project_task
+msgid "Task"
+msgstr "Tarea"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__task_count
+msgid "Task Count"
+msgstr "Numero de tareas"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.quick_create_task_form
+msgid "Task Title"
+msgstr "Nombre de la tarea"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+msgid "Task information"
+msgstr "Información de la tarea"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__task_ids
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__task_ids
+msgid "Tasks"
+msgstr "Tareas"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_hr_employee__team_ids
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__team_id
+msgid "Team"
+msgstr "Equipo"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.team_form_view
+msgid "Team Information"
+msgstr "Información del equipo"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+msgid ""
+"The User Story cannot be edited because it belongs to a finished Sprint"
+msgstr ""
+"La historia de usuario no puede ser editada porque pertenece a un sprint que"
+" ha finalizado"
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__hours_day
+msgid "The number of hours per day"
+msgstr "Numero de horas por dia"
+
+#. module: scrum_agile_framework
+#: model:ir.model,name:scrum_agile_framework.model_scrum_agile_framework_burn_down_chart
+msgid ""
+"This class gets all the data from the timesheet to create the Burndown chart"
+" graph"
+msgstr ""
+"Esta clase coge todos los datos del parte de horas para crear el Burndown "
+"chart"
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_burn_down_chart__timesheet_id
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__account_analytic_ids
+msgid "Timesheet"
+msgstr "Parte de horas"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields.selection,name:scrum_agile_framework.selection__project_task__scrum_stage__todo
+msgid "To Do"
+msgstr ""
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_task_form_view_scrum
+msgid ""
+"To add records to the timesheet, change the status of the task to Doing"
+msgstr ""
+"Para añadir registros al parte de horas cambia el estado de la tarea a Doing"
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__total_estimated_hours
+msgid "Total estimated hours"
+msgstr "Total de horas estimadas"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "Total estimated hours :"
+msgstr "Total de horas estimadas"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_meeting__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.project_task_search_view_scrum
+msgid "User Stories"
+msgstr "Historias de Usuario"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_task__user_story_id
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "User Story"
+msgstr "Historia de Usuario"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_project_project__user_story_count
+msgid "User Story Count"
+msgstr "Numero de Historias de Usuario"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.user_story_form_view
+msgid "User Story name"
+msgstr "Nombre de la Historia de Usuario"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__user_story_ids
+msgid "User stories"
+msgstr "Historias de Usuario"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_user_story__editable
+msgid "User story editable"
+msgstr "Historia de usuario editable"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "What should we do differently next time ?"
+msgstr "¿Cuales son las acciones de mejora?"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__retro_improvement_action
+msgid "What should we do differently next time?"
+msgstr "¿Cuales son las acciones de mejora?"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "What went well ?"
+msgstr "¿Que ha ido bien en el sprint?"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__retro_well
+msgid "What went well?"
+msgstr "¿Que ha ido bien en el sprint?"
+
+#. module: scrum_agile_framework
+#: model_terms:ir.ui.view,arch_db:scrum_agile_framework.view_all_sprints_form
+msgid "What went wrong ?"
+msgstr "¿Que ha ido mal en el sprint?"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_scrum_agile_framework_sprint__retro_improvement
+msgid "What went wrong?"
+msgstr "¿Que ha ido mal en el sprint?"
+
+#. module: scrum_agile_framework
+#: model:ir.model.fields,field_description:scrum_agile_framework.field_hr_employee__role
+msgid "role"
+msgstr "rol"
+
+#. module: scrum_agile_framework
+#: model:ir.actions.act_window,name:scrum_agile_framework.action_sprint_kanban_tasks
+msgid "sprint.kanban.tasks"
+msgstr ""
+
+

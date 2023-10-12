@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="license_attachments_form_view_spt" model="ir.ui.view">
+			<field name="name">license.attachments.form.view.spt</field>
+			<field name="model">license.attachments.spt</field>
+			<field name="arch" type="xml">
+				<form>
+                    <group>
+						<group>
+							<field name="tt_id" readonly="1"/>
+							<field name="name" required="1"/>
+							<field name="license_spt_id"/>
+							<field name="attachment_id" readonly="1"/>
+						</group>
+                    </group>
+				</form>
+			</field>
+		</record>		
+
+	</data>
+</odoo>

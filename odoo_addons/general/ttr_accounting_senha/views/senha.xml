@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="view_password_form" model="ir.ui.view">
+            <field name="name">Passwords</field>
+            <field name="model">meu_modulo_senha.password</field>
+            <field name="arch" type="xml">
+                <form string="Password" edit="false" delete="false">
+                    <sheet>
+                        <group>
+                            <field name="name" string="Name"/>
+                            <field name="senha" password="True" string="Password"/>
+                            <field name="senha_confirma" password="True" string="Confirm your password"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_password_form" model="ir.actions.act_window">
+            <field name="name">Passwords</field>
+            <field name="res_model">meu_modulo_senha.password</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <record id="gerenciador_senhas" model="res.groups">
+            <field name="name">Passwords</field>
+            <field name="category_id" ref="base.module_category_hidden"/>
+        </record>
+
+        <menuitem id="menu_password" name="Passwords" sequence="100" groups="ttr_accounting_senha.gerenciador_senhas"/>
+        <menuitem id="menu_password_form" name="Passwords" parent="menu_password" sequence="1" action="action_password_form"/>
+
+
+
+    </data>
+</odoo>

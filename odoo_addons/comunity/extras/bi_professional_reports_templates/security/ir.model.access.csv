@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+acl_presentation,product.presentation default,model_product_presentation,,1,0,0,0
+acl_presentation_manager,product.presentation_manager,model_product_presentation,group_presentation_manager,1,1,1,1

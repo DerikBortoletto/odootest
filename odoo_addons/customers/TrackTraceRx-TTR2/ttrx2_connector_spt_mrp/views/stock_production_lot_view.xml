@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+
+    <record id="view_lot_ttrx" model="ir.ui.view">
+        <field name="name">stock.production.lot.ttrx.inherit.form</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form" />
+        <field name="arch" type="xml">
+	        <xpath expr="//field[@name='company_id']" position="before">
+	        	<field name="manufacturer_id"/>
+	        	<field name="serial_number" attrs="{'invisible': [('tracking','!=','serial')]}"/>
+	        </xpath>
+	        <xpath expr="//field[@name='product_id']" position="after">
+	        	<field name="tracking"/>
+	        </xpath>
+        </field>
+    </record>
+
+
+    <record id="view_lot_move_form_production" model="ir.ui.view">
+        <field name="name">lot.move.form.production</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="product_expiry.view_move_form_expiry" />
+        <field name="arch" type="xml">
+	        <xpath expr="//field[@name='use_date']" position="before">
+		        <field name="production_date" />
+	        </xpath>
+        </field>
+    </record>
+
+    <record id="view_production_lot_production_view_tree" model="ir.ui.view">
+        <field name="name">stock.production.lot.tree.inherit.production</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="serial_number"/>
+                <field name="manufacturer_id" optional="show"/>
+            </xpath>
+            <xpath expr="//field[@name='create_date']" position="after">
+                <field name="production_date" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+	
+	    <record id="pharma_view_sale_order_form_inherit" model="ir.ui.view">
+	        <field name="name">pharma.sale.order.form.inherit</field>
+	        <field name="model">sale.order</field>
+	        <field name="inherit_id" ref="sale.view_order_form" />
+	        <field name="arch" type="xml">
+				<xpath expr="//page[@name='order_lines']/field[@name='order_line']/tree/field[@name='name']" position="after">
+					<field name="generic_name" optional="hide"/>
+					<field name="manufacture_id" optional="hide"/>
+					<field name="item_class" optional="hide"/>
+					<field name="control_substance" optional="hide"/>
+					<field name="control_substance_type" optional="hide"/>
+					<field name="storage_temperature" optional="hide"/>
+					<field name="size" optional="hide"/>
+				</xpath>
+			</field>
+		</record>	
+	
+	</data>
+</odoo>

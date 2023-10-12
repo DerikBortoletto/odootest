@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+
+		<record id="view_op_production_lot_form" model="ir.ui.view">
+			<field name="name">op.stock.production.lot.form</field>
+			<field name="model">stock.production.lot</field>
+			<field name="inherit_id" ref="stock.view_production_lot_form"/>
+			<field name="arch" type="xml">
+				<xpath expr="/form/sheet/div[@class='oe_title']" position="replace">
+	                <div class="oe_title">
+	                    <label for="display_name" class="oe_edit_only"/>
+	                    <h1>
+	                        <field name="display_name"/>
+	                    </h1>
+	                </div>
+				</xpath>
+                <field name="product_id" position="before">
+                	<field name="name" string="Lot Number" placeholder="e.g. 0001"/>
+                	<field name="serial" string="Serial Number" placeholder="e.g. 0001"
+                	       attrs="{'invisible': [('tracking', '!=', 'serial')], 'required': [('tracking', '=', 'serial')]}"/>
+                </field>
+                <field name="product_id" position="after">
+                	<field name="tracking"/>
+                	<field name="format_field" groups="base.group_no_one"/>
+                </field>
+			</field>
+		</record>
+
+	    <record id="view_op_production_lot_tree" model="ir.ui.view">
+	        <field name="name">stock.production.lot.tree</field>
+	        <field name="model">stock.production.lot</field>
+	        <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+	        <field name="arch" type="xml">
+	        	<field name="name" position="before">
+	        		<field name="tracking" invisible="1"/>
+	        		<field name="display_name"/>
+	        	</field>
+	        	<field name="name" position="after">
+	        		<field name="serial" attrs="{'readonly': [('tracking', '!=', 'serial')], 'required': [('tracking', '=', 'serial')]}"/>
+	        		<field name="format_field" optional="show"/>
+	        	</field>
+	        </field>
+	    </record>
+
+
+    </data>
+</odoo>

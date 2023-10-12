@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_partner_form_inherit_1" model="ir.ui.view">
+        <field name="name">view.partner.form.inherit.1</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='company_type']" position="after">
+                <label for="fornecedor" string="Fornecedor"/>
+                <field name="fornecedor" required="1" string="Fornecedor"/>
+            </xpath>
+        </field>
+    </record>
+
+
+    <record id="email_compose_message_wizard_form" model="ir.ui.view">
+        <field name="name">mail.compose.message.form.2</field>
+        <field name="model">mail.compose.message</field>
+        <field name="inherit_id" ref="mail.email_compose_message_wizard_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//label[@for='partner_ids']" position="replace">
+                    <label for="partner_ids" string=""  attrs="{'invisible': [('is_log', '=', True)]}" groups="base.group_user"/>
+            </xpath>
+            <xpath expr="//field[@name='partner_ids']" position="replace">
+                <field name="partner_ids"  invisible="1"/>
+            </xpath>
+             <xpath expr="//span[@name='document_followers_text']" position="replace">
+                 <field name="partner_ids"  invisible="1"/>
+             </xpath>
+            <xpath expr="//footer" position="before">
+                <label for="partner_ids" string="Destinatário"/>
+                    <div groups="base.group_user" attrs="{'invisible': [('is_log', '=', True)]}">
+                        <span attrs="{'invisible': [('composition_mode', '!=', 'mass_mail')]}">
+                            <strong>Email mass mailing</strong>
+                            on
+                            <span attrs="{'invisible': [('use_active_domain', '=', True)]}">the selected records</span>
+                            <span attrs="{'invisible': [('use_active_domain', '=', False)]}">the current search
+                                filter</span>.
+                        </span>
+                        <span name="document_followers_text"
+                              attrs="{'invisible':['|', ('model', '=', False), ('composition_mode', '=', 'mass_mail')]}">
+                            Followers of the document and
+                        </span>
+                        <field name="partner_ids" placeholder="Add contacts to notify..."
+                               context="{'force_email':True, 'show_email':True}"
+                               attrs="{'invisible': [('composition_mode', '!=', 'comment')]}" />
+                    </div>
+            </xpath>
+
+        </field>
+    </record>
+
+
+
+
+</odoo>

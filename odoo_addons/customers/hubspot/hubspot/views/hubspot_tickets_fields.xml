@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="hubspot_tickets_fields_form_view" model="ir.ui.view">
+        <field name="name">hubspot.tickets.fields.form.view</field>
+        <field name="model">hubspot.ticket.fields</field>
+        <field name="arch" type="xml">
+            <form string="Hubspot Tickets Fields">
+                <group>
+                    <field name="name"/>
+                    <field name="field_type"/>
+                    <field name="technical_name"/>
+                    <field name="options"/>
+                    <field name="description"/>
+                    <field name="hubspot_compute"/>
+                    <field name="hubspot_readonly"/>
+                    <field name="hubspot_instance_id"/>
+
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="hubspot_tickets_fields_tree_view" model="ir.ui.view">
+        <field name="name">hubspot.tickets.fields.tree.view</field>
+        <field name="model">hubspot.ticket.fields</field>
+        <field name="arch" type="xml">
+            <tree string="Hubspot Tickets Fields">
+                <field name="name"/>
+                <field name="field_type"/>
+                <field name="hubspot_instance_id"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="hubspot_tickets_fields_action" model="ir.actions.act_window">
+        <field name="name">Hubspot Tickets Fields</field>
+        <field name="res_model">hubspot.ticket.fields</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="hubspot_tickets_fields_menu"
+              name="Tickets Fields"
+              action="hubspot_tickets_fields_action"
+              sequence="3" parent="hubspot_field_mapping"
+    />
+</odoo>

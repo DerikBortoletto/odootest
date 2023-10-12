@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+	<!-- br_base.view_br_base_partner_form -->
+    <record id="view_br_base_fiscal_check_partner_form" model="ir.ui.view">
+        <field name="name">br.base.fiscal.check.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[@name='button_box']" position="inside">
+                <button name="action_check_sefaz" type="object" class="oe_stat_button"
+                    icon="fa-search" string="Check Sefaz" attrs="{'invisible': [('company_type', '=', 'person')]}">
+                </button>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="freight_responsibility"/>
+            </xpath>
+            <field name="email" position="after">
+                <field name="email_nfe" widget="email" context="{'gravatar_image': True}" placeholder="Endereços dos destinatários separados por virgulas"/>
+            </field>
+        </field>
+    </record>
+
+	<!-- 
+    <record id="view_br_base_fiscal_ind_partner_form" model="ir.ui.view">
+        <field name="name">br.base.fiscal.ind.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_br_op_base.view_br_base_partner_form" />
+        <field name="arch" type="xml">
+            <field name="inscr_est" position="after">
+                <field name="indicador_ie_dest"/>
+            </field>
+        </field>
+    </record>
+    -->
+
+</odoo>

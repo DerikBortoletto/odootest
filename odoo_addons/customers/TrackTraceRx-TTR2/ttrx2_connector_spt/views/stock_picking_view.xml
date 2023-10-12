@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+	    <record id="view_ttrx_picking_form" model="ir.ui.view">
+	        <field name="inherit_id" ref="stock.view_picking_form" />
+	        <field name="model">stock.picking</field>
+	        <field name="arch" type="xml">
+            	<xpath expr="/form" position="inside">
+            		<field name="can_send_to_ttr2" invisible="1"/>
+            		<field name="storage_id" invisible="1"/>
+            		<field name="has_connector" invisible="1"/>
+            	</xpath>
+            	<xpath expr="//header" position='after'>
+	                <div attrs="{'invisible': ['|','|',('has_connector','=',False),('can_send_to_ttr2', '=', True),('no_send_to_ttr2','=',True)]}">
+	                  <div class="alert alert-warning" role="alert">
+	                    <p><strong>Ooops!</strong> This Picking will not be sent to TTRx. Indicate the storage location and shelf, if any.</p>
+	                  </div>
+	                </div>
+            	</xpath>
+	        	<xpath expr="//button[@name='action_toggle_is_locked']" position="after">
+	        		<button name="action_create_out"   string="Create in TTRx" type="object" class="oe_highlight" attrs="{'invisible':['|','|',('no_send_to_ttr2','=',True),('can_send_to_ttr2','=',False),('uuid','!=',False)]}"/>
+	        		<button name="action_approve_out"  string="Approve in TTRx" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|','|',('no_send_to_ttr2','=',True),('picking_type_code','=','incoming'),('can_send_to_ttr2','=',False),('uuid','=',False),('is_approved','=',True)]}"/>
+	        		<button name="action_picked_out"   string="Pick in TTRx" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|','|',('no_send_to_ttr2','=',True),('picking_type_code','=','incoming'),('can_send_to_ttr2','=',False),('uuid','=',False),('ttrx_state','!=','APPROVED')]}"/>
+	        		<button name="action_close_out"    string="Close TTRx" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|','|',('no_send_to_ttr2','=',True),('picking_type_code','=','incoming'),('can_send_to_ttr2','=',False),('uuid','=',False),('ttrx_state','!=','PICKED')]}"/>
+	        		<button name="action_shipped_out"  string="Shipped TTRx" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|','|',('no_send_to_ttr2','=',True),('picking_type_code','=','incoming'),('can_send_to_ttr2','=',False),('uuid','=',False),('ttrx_state','!=','PICKED_CLOSED')]}"/>
+	        		<button name="action_resend_out"   string="Resend to TTRx" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|',('no_send_to_ttr2','=',True),('picking_type_code','=','outgoing'),('can_send_to_ttr2','=',False),('uuid','=',False)]}"/>
+	        		<button name="action_received_out" string="Received TTRx" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|','|',('no_send_to_ttr2','=',True),('picking_type_code','=','outgoing'),('can_send_to_ttr2','=',False),('uuid','=',False),('ttrx_state','!=','SHIPPED')]}"/>
+	        		<button name="action_verified_out" string="Verified TTRx" type="object" class="oe_highlight" attrs="{'invisible':['|','|','|','|',('no_send_to_ttr2','=',True),('picking_type_code','=','outgoing'),('can_send_to_ttr2','=',False),('uuid','=',False),('ttrx_state','!=','RECEIVED')]}"/>
+	        		<button name="action_refresh" 	   string="Refresh from TTRx" type="object" class="oe_highlight" attrs="{'invisible':['|','|',('no_send_to_ttr2','=',True),('uuid','=',False),('state','in',['done','cancel'])]}"/>
+	        		<button name="action_refresh" 	   string="Refresh from TTRx" type="object" class="oe_highlight" groups="base.group_no_one" attrs="{'invisible':['|','|',('no_send_to_ttr2','=',True),('uuid','=',False),('state','not in',['done','cancel'])]}"/>
+	        	</xpath>
+	        	<xpath expr="//notebook/page[@name='operations']/field[@name='move_ids_without_package']/tree/field[@name='product_uom']" position="after">
+	        		<field name="uuid" optional="hide"/>
+	        	</xpath>
+	        	<xpath expr="//notebook/page[@name='operations']/field[@name='move_ids_without_package']/form/group/field[@name='product_id']" position="before">
+	        		<field name="uuid"/>
+	        	</xpath>
+   	            <xpath expr="/form/sheet/notebook" position="inside">
+   	            	<page name="ttrx" string="TrackTrace" attrs="{'invisible': [('picking_type_code','=','internal')]}">
+   	            		<group>
+   	            			<field name="no_send_to_ttr2"/>
+							<field name="connector_id"/>
+   	            		</group>
+   	            		<group string="UUID" attrs="{'invisible': [('no_send_to_ttr2', '=', True)]}">
+   	            			<h2>
+   	            				<field name="uuid"/>
+   	            			</h2>
+   	            		</group>
+   	            		<group string="Locations" attrs="{'invisible': [('no_send_to_ttr2', '=', True)]}">
+   	            			<group>
+				        		<field name="location_spt_id"/>
+				        		<field name="storage_spt_id" attrs="{'invisible': [('location_spt_id', '=', False)]}"/>
+				        		<field name="shelf_spt_id" attrs="{'invisible': ['|',('location_spt_id', '=', False),('storage_spt_id', '=', False)]}"/> <!-- ,('picking_type_code','=','incoming') -->
+   	            			</group>
+   	            		</group>
+   	            		<group attrs="{'invisible': [('no_send_to_ttr2', '=', True)]}">
+   	            			<group>
+   	            				<field name="ttrx_state"/>
+   	            			 	<field name="is_approved" attrs="{'invisible': [('picking_type_code','!=','outgoing')]}"/>
+   	            			 	<field name="is_picked" attrs="{'invisible': [('picking_type_code','!=','outgoing')]}"/>
+   	            			 	<field name="is_picked_closed" attrs="{'invisible': [('picking_type_code','!=','outgoing')]}"/>
+   	            			 	<field name="shipment_picking_uuid" attrs="{'invisible': [('picking_type_code','!=','outgoing')]}"/>
+   	            			 	<field name="is_shipped"/>
+   	            			 	<field name="is_received" attrs="{'invisible': [('picking_type_code','!=','incoming')]}"/>
+   	            			 	<field name="is_verified" attrs="{'invisible': [('picking_type_code','!=','incoming')]}"/>
+   	            			 	<field name="is_void" attrs="{'invisible': [('picking_type_code','in',('incoming','outgoing'))]}"/>
+   	            			</group>
+   	            			<group>
+   	            			 	<field name="container_serial"/>
+   	            			 	<field name="po_transaction_uuid"/>
+   	            			 	<field name="po_nbr"/>
+   	            			 	<field name="internal_reference_number"/>
+   	            			 	<field name="release_nbr"/>
+   	            			 	<field name="transaction_date"/>
+   	            			 	<field name="queue_uuid"/>
+   	            			 	<field name="queue_id" attrs="{'invisible': [('queue_uuid','=',False)]}"/>
+   	            			</group>
+   	            		</group>
+   	            		<group attrs="{'invisible': [('picking_type_code','=','incoming')]}">
+							<field name="shipment_picking_ids" nolabel="1" context="{'default_stock_picking_id': active_id}"/>
+   	            		</group>
+   	            	</page>
+   	            </xpath>
+	        </field>
+	    </record>
+
+	    <record id="view_ttrx_stock_move_operations_form" model="ir.ui.view">
+	        <field name="inherit_id" ref="stock.view_stock_move_operations" />
+	        <field name="model">stock.move</field>
+	        <field name="arch" type="xml">
+	        	<field name="product_id" position="before">
+	        		<field name="uuid" readonly="1"/>
+	        	</field>
+	        </field>
+	    </record>
+
+	    <record id="view_ttrx_stock_move_line_operation_tree" model="ir.ui.view">
+	        <field name="name">ttrx.stock.move.line.operation.tree</field>
+	        <field name="model">stock.move.line</field>
+	        <field name="inherit_id" ref="stock.view_stock_move_line_operation_tree"/>
+	        <field name="arch" type="xml">
+	        	<field name="product_id" position="before">
+	        		<field name="uuid"/>
+	        	</field>
+	        </field>
+	    </record>
+
+	</data>
+</odoo>

@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="view_shelf_spt_tree" model="ir.ui.view">
+			<field name="name">shelf.spt.tree</field>
+			<field name="model">shelf.spt</field>
+			<field name="arch" type="xml">
+                <tree string="Locations TrackTraceRx2" multi_edit="false">
+					<field name="uuid"/>
+					<field name="created_on"/>
+					<field name="last_update"/>
+					<field name="code"/>
+					<field name="name"/>
+					<field name="location_id"/>
+					<field name="parent_location_id"/>
+					<field name="posx"/>
+					<field name="posy"/>
+					<field name="posz"/>
+					<field name="active" invisible="1"/>
+					<field name="is_default"/>
+				</tree>
+			</field>
+		</record>
+	
+		<record id="shelf_spt_form_view" model="ir.ui.view">
+			<field name="name">shelf.form.view.spt</field>
+			<field name="model">shelf.spt</field>
+			<field name="arch" type="xml">
+				<form string="Shelfs">
+					<header>
+						<button name="action_test" string="testar" type="object"/>
+						<button name="action_send" string="Send To TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('uuid','!=',False)]}"/>
+						<button name="action_refresh" string="Refresh From TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('uuid','=',False)]}"/>
+					</header>
+	                <sheet>
+	                    <div class="oe_button_box" name="button_box">
+	                    </div>
+	                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+	                    <label for="name" class="oe_edit_only"/>
+	                    <h1><field name="name"/></h1>
+	                    <label for="location_id" class="oe_edit_only" attrs="{'invisible':[('location_type','=','main')]}"/>
+	                    <h2><field name="location_id" options="{'no_create': True}" domain="[('location_type','=', 'storage')]" required="1"/></h2>
+	                    <h2><field name="location_type"/></h2>
+	                    <group>
+	                        <group string="Additional Information" name="additional_info">
+	                            <field name="active" invisible="1"/>
+	                            <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}"/>
+	                            <field name="return_location"/>
+	                        </group>
+	                        <group string="Logistics" groups="stock.group_adv_location">
+	                            <field name="removal_strategy_id" options="{'no_create': True}"/>
+							    <field name="barcode"/>
+	                        </group>
+	                    </group>
+	                    <notebook>
+							<page name="detail" string="Detail">
+								<group> <!-- attrs="{'invisible':[('uuid','=',False)]}">  --> 
+									<field name="uuid"/>
+		                            <field name="code" />
+								</group>
+		                        <group>
+		                        	<group>
+			                            <field name="parent_location_id" domain="[('location_type','in',('main','sub'))]"/>
+										<field name="posx"/>
+										<field name="posy"/>
+										<field name="posz"/>
+			                            <field name="location_uuid"/>
+			                            <field name="parent_location_uuid"/>
+		                        	</group>
+		                        	<group>
+			                            <field name="is_default" />
+			                            <field name="created_on"/>
+			                            <field name="last_update"/>
+			                            <field name="active" invisible="1"/>
+		                        	</group>
+		                        </group>        
+							</page>
+						</notebook>
+	                    <field name="comment" placeholder="External note..."/>
+	                </sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_shelf_spt" model="ir.actions.act_window">
+			<field name="name">Storage Shelfs</field>
+			<field name="res_model">shelf.spt</field>
+			<field name="view_mode">tree,form</field>
+			<field name="context">{'default_location_type': 'shelf'}</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_shelf_spt_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('shelf_spt_form_view')})]"/>
+			<field name="view_id" ref="view_shelf_spt_tree"/>			
+		</record>
+
+	</data>
+</odoo>

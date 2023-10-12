@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+       <record id="view_license_types_management_filter_spt" model="ir.ui.view">
+            <field name="name">license.types.management.filter.spt</field>
+            <field name="model">license.types.management.spt</field>
+            <field name="arch" type="xml">
+                <search string="Search License Types">
+                    <field name="name" filter_domain="['|','|',('name', 'ilike', self), ('code', 'ilike', self),('lic_id','=', self)]"/>
+                    <separator/>
+                    <filter string="Always Expires" name="always_expires" domain="[('is_always_expires', '=', True)]"/>
+                    <filter string="Require Attachement" name="require_attachement" domain="[('is_require_attachement', '=', True)]"/>
+                    <filter string="Territorial" name="is_territorial" domain="[('is_territorial', '=', True)]"/>
+                </search>
+            </field>
+        </record>
+
+		<record id="license_types_management_spt_form_view" model="ir.ui.view">
+			<field name="name">license.types.management.spt.form.view.spt</field>
+			<field name="model">license.types.management.spt</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+                        <group>
+                            <group>
+                            	<field name="lic_id" readonly="1"/>
+                                <field name="name" attrs="{'readonly': [('lic_id', '!=', False)]}"/>
+                                <field name="code" attrs="{'readonly': [('lic_id', '!=', False)]}"/>
+								<field name="company_id" groups="base.group_multi_company"/>
+                                <field name="is_always_expires" />
+                                <field name="is_require_attachement" />
+                                <field name="is_territorial"/>
+                            </group>
+                        </group>   
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="license_types_spt_tree_view" model="ir.ui.view">
+			<field name="name">license.types.spt.tree.view.spt</field>
+			<!-- <field name="groups_id" eval="[(4,ref('easy_redmine_spt.group_redmine_access'))]"/>  -->
+			<field name="model">license.types.management.spt</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="lic_id" readonly="1"/>
+					<field name="name" />
+                    <field name="code" />
+					<field name="company_id" groups="base.group_multi_company"/>
+                    <field name="is_always_expires" />
+                    <field name="is_require_attachement" />
+                    <field name="is_territorial"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_license_types_spt" model="ir.actions.act_window">
+			<field name="name">License Types Management</field>
+			<field name="res_model">license.types.management.spt</field>
+			<field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_license_types_management_filter_spt"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new TrackTraceRx license type in your list of license types
+              </p><p>
+                We helps you easily create license types.
+              </p>
+            </field>
+		</record>
+		
+	</data>
+</odoo>

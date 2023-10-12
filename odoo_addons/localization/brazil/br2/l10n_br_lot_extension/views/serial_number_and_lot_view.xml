@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- <record id="product_tree" model="ir.ui.view">
+        <field name="name">serial_number_inherit</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_normal_form_view" />
+        <field name="arch" type="xml">
+        <xpath expr="//field[@name='sale_ok]" position="after">
+            <tree>
+              <field name="sn" string= 'teste serial'/>
+            </tree>
+        </field>
+       </xpath> 
+    </record> -->
+
+    <record id="product_form_1" model="ir.ui.view">
+        <field name="name">l10n_production_extension</field>
+        <field name="model">l10n_br_fiscal.document.line</field>
+        <field name="inherit_id" ref="l10n_br_fiscal.document_line_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//label[@for='discount_value']" position="after">
+                <field name="numero_de_serie"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="tecnospeed_stock_picking_form" model="ir.ui.view">
+        <field name="name">tecnospeed.stock.picking.form_2</field>
+        <field name="model">stock.picking</field>
+        <field name="inherit_id" ref="stock.view_picking_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='operations']" position="after">
+                <!-- <page name = "Transporte" string = "Transporte"> -->
+                <group name = "Transporte" string = "Transporte">
+                    <field name = "transporte_ids">
+                        <tree>
+                            <field name ="transp_nome"/>
+                            <field name ="transp_cnpj"/>
+                        </tree>
+                        <form>
+                            <group col="4">
+                                <field name="transp_nome"/>
+                                <field name="transp_cnpj"/>
+                                <field name="transp_logradouro"/>
+                                <field name="transp_descricaoCidade"/>
+                                <field name="transp_endereco_uf"/>
+                            </group >
+                            <group col="4"  string = "Dados Veículo">
+                                <field name="veiculo_placa" />
+                                <field name="veiculo_uf"/>
+                                <field name="veiculo_rntc"/>
+                            </group>
+                        </form>
+                    </field>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

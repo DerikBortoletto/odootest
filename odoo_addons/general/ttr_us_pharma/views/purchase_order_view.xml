@@ -1,0 +1,61 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+	    <record id="pharma_purchase_form_inherit" model="ir.ui.view">
+	        <field name="name">pharma.purchase.form</field>
+	        <field name="model">purchase.order</field>
+	        <field name="inherit_id" ref="purchase.purchase_order_form" />
+	        <field name="arch" type="xml">
+	        	<xpath expr="//header/button[@name='button_unlock']" position="attributes"> 
+	        		<attribute name="string">Edit Purchase Order</attribute>
+	        	</xpath>
+	        	<xpath expr="//header/button[6]" position="attributes"> 
+	        		<attribute name="string">Create Invoice</attribute>
+	        	</xpath>
+	        	<xpath expr="//header/button[12]" position="attributes"> 
+	        		<attribute name="string">Create Invoice</attribute>
+	        	</xpath>
+				<field name="partner_id" position="attributes">
+					<attribute name="string">Supplier</attribute>
+				</field>
+				<field name="partner_ref" position="replace">
+					<div class="o_td_label">
+					    <label for="partner_ref" string="Quotation Reference" attrs="{'invisible':[('state','in',('purchase','done'))]}"/>
+					    <label for="partner_ref" string="Order Reference" attrs="{'invisible':[('state','in',('draft','sent','to_approve','cancel'))]}"/>
+					</div>
+					<field name="partner_ref" nolabel="1"/>
+				</field>
+				<field name="date_order" position="attributes">
+					<attribute name="string">Quotation Deadline</attribute>
+				</field>
+				<xpath expr="//label[@for='date_planned']" position="attributes">
+				    <attribute name="string">Quotation Receipt Date</attribute>
+				</xpath>
+				<xpath expr="//page[@name='purchase_delivery_invoice']" position="attributes">
+					<attribute name="string">Delivery Information</attribute>
+				</xpath>
+				<field name="user_id" position="attributes">
+				    <attribute name="string">Name of Representative</attribute>
+				</field>
+				<field name="company_id" position="attributes">
+				    <attribute name="string">Company Name</attribute>
+				</field>
+				<field name="fiscal_position_id" position="attributes">
+					<attribute name="invisible">True</attribute>
+				</field>
+				<xpath expr="//page[@name='products']/field[@name='order_line']/tree/field[@name='name']" position="after">
+					<field name="generic_name" optional="hide"/>
+					<field name="manufacture_id" optional="hide"/>
+					<field name="item_class" optional="hide"/>
+					<field name="control_substance" optional="hide"/>
+					<field name="control_substance_type" optional="hide"/>
+					<field name="storage_temperature" optional="hide"/>
+					<field name="size" optional="hide"/>
+				</xpath>
+				
+	        </field>
+	    </record>
+
+	</data>
+</odoo>

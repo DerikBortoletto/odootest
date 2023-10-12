@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="read_points_spt_form_view" model="ir.ui.view">
+            <field name="name">read_points.form.view.spt</field>
+            <field name="model">read.points.spt</field>
+            <field name="arch" type="xml">
+                <form string="Read Point">
+					<header>
+						<button name="action_test" string="testar" type="object" groups="base.group_no_one"/>
+						<button name="action_send" string="Send To TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('uuid','!=',False)]}"/>
+						<button name="action_refresh" string="Refresh From TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('uuid','=',False)]}"/>
+					</header>
+                    <sheet>
+                        <group>
+                        	<field name="uuid"/>
+                            <field name="name"/>
+                            <field name="gs1_id"/>
+                            <field name="generate_api_key"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="read_points_tree_view" model="ir.ui.view">
+            <field name="model">read.points.spt</field>
+            <field name="arch" type="xml">
+                <tree string="Read Points">
+                    <field name="uuid" readonly="1"/>
+                    <field name="gs1_id"/>
+                    <field name="name"/>
+                    <field name="generate_api_key"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+
+		<record id="view_project_kanban_scrum_inherited" model="ir.ui.view">
+			<field name="name">project.project.scrum.kanban.inherited</field>
+			<field name="model">project.project</field>
+			<field name="inherit_id" ref="project.view_project_kanban"/>
+			<field name="arch" type="xml">
+				<field name="name" position="after">
+					<field name="scrum_is"/>
+					<field name="team_id"/>
+					<field name="user_story_count"/>
+					<field name="sprint_count"/>
+				</field>
+				<xpath expr="//kanban" position="attributes">
+					<attribute name="on_create"/>
+				</xpath>
+				<xpath expr="//t[@t-name= 'kanban-box']/div/div/div/div/div/span[2]" position="replace">
+					<span attrs="{'invisible':[('scrum_is','=',False)]}" style="color: navy">Scrum team : <strong><t t-esc="record.team_id.value"/></strong></span>
+				</xpath>
+				<xpath expr=" //t[@t-name = 'kanban-box']/div/div[2]" position="before">
+					<div class="o_project_kanban_boxes" attrs="{'invisible':[('scrum_is','=',False)]}">
+						<div>
+							<span class="o_value"><t t-esc="record.user_story_count.value"/></span>
+							<span class="o_label">User Stories</span>
+						</div>
+						<div>
+							<span class="o_value"><t t-esc="record.sprint_count.value"/></span>
+							<span class="o_label">Sprints</span>
+						</div>
+					</div>
+				</xpath>
+			</field>
+	    </record>
+		 
+	    <!-- Form View -->
+		<record id="project_project_form_view_scrum" model="ir.ui.view">
+			<field name="name">project.project.view.form_scrum</field>
+			<field name="model">project.project</field>
+			<field name="inherit_id" ref="project.edit_project"/>
+			<field name="arch" type="xml">
+				<xpath expr="//sheet/div[@name = 'button_box']" position="replace">
+					<div class="oe_button_box" name="button_box" groups="base.group_user">
+						<button class="oe_stat_button"
+						        name="%(action_project_user_story)d"
+						        type="action" icon="fa-tasks"
+						        context="{'search_default_project_id': active_id}"
+						        attrs="{'invisible':[('scrum_is','=',False)]}">
+	      						<field string="Backlog" name="user_story_count" widget="statinfo"/>
+	    				</button>
+	    				<button class="oe_stat_button" 
+	    				        name="%(action_project_sprints)d" 
+	    				        type="action" icon="fa-rotate-left"
+	    				        context="{'search_default_project_id': active_id}"
+	    				        attrs="{'invisible':[('scrum_is','=',False)]}">
+	      						<field string="Sprints" name="sprint_count" widget="statinfo"/>
+	    				</button>
+	    				<button name="action_view_all_rating" 
+	    				        type="object" 
+	    				        attrs="{'invisible': ['|','|',('scrum_is','=',False),('rating_active','=',False),('rating_percentage_satisfaction','=',-1)]}"
+	            				class="oe_stat_button oe_percent oe_read_only" icon="fa-smile-o"
+	            				groups="project.group_project_rating">
+	      						<div class="o_field_widget o_stat_info">
+	        						<span class="o_stat_value">
+	          							<field name="rating_percentage_satisfaction" nolabel="1"/>%
+	        						</span>
+	        						<span class="o_stat_text">Customer Satisfaction</span>
+	      						</div>
+	    				</button>
+	  				</div>
+				</xpath>
+				<xpath expr="//sheet/div[2]" position="replace">
+					<div class="oe_title">
+						<h1>
+							<field name="name" placeholder="Project Name"/>
+						</h1>
+		    			<div>
+							<div>
+								<label for="scrum_is" class="oe_inline" string="Scrum Method : "/>
+								<field name="scrum_is" class="oe_inline oe_input_align" required="1"/>
+							</div>
+							<div attrs="{'invisible':[('scrum_is','=',False)]}">
+								<label for="team_id" class="oe_inline" string="Scrum Team : "/>
+								<field name="team_id" class="oe_inline oe_input_align" required="1"  options="{'no_quick_create': True}"/>
+							</div>
+							<div attrs="{'invisible': ['|',('scrum_is','=',False),('last_sprint_id', '=', False)]}">
+								<label for="last_sprint_id" class="oe_inline" string="Last Sprint : "/>
+								<field name="last_sprint_id" class="oe_inline oe_input_align"  />
+							</div>
+							<div>
+								<field name="sprint_ids" 
+								       class="oe_inline oe_input_align" 
+								       context="{'form_view_ref': 'sprint.reduce_form'}" 
+								       readonly="1" style="pointer-events:none;"
+								       attrs="{'invisible':[('scrum_is','=',False)]}">
+									<tree editable="bottom">
+										<field name="name"/>
+										<field name="date_start"/>
+										<field name="date_end"/>
+										<field name="speed"/>
+										<field name="goal"/>
+									</tree>
+									<form>
+										<sheet>
+											<div class="oe_title">
+												<h1>
+													<field name="name"/>
+												</h1>
+											</div>
+											<div>
+												<label for="date_start" class="oe_inline" string="Start date : "/>
+												<field name="date_start" class="oe_inline oe_input_align"/>
+											</div>
+											<div>
+												<label for="date_end" class="oe_inline" string="End date : "/>
+												<field name="date_end" class="oe_inline oe_input_align"/>
+											</div>
+											<div>
+												<label for="speed" class="oe_inline" string="Speed : "/>
+												<field name="speed" class="oe_inline oe_input_align"/>
+											</div>
+											<label for="goal" class="oe_inline" string="Goal : "/>
+											<field name="goal" class="oe_inline oe_input_align"/>
+											<div>
+												<label for="conclusions" class="oe_inline" string="Conclusions : "/>
+												<field name="conclusions" class="oe_inline oe_input_align"/>
+											</div>
+										</sheet>
+									</form>
+								</field>
+							</div>
+						</div>
+					</div>
+				</xpath>
+			</field>
+		</record>
+
+	</data>
+</odoo>

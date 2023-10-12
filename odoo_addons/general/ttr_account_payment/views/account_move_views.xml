@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+		<record id="view_op_account_payment_move_form" model="ir.ui.view">
+		    <field name="name">Add move payment fields</field>
+		    <field name="model">account.move</field>
+		    <field name="inherit_id" ref="account.view_move_form" />
+		    <field name="arch" type="xml">
+		    	<xpath expr="//sheet/notebook/page[@id='aml_tab']" position="before">
+		    		<page id="due_tab" string="Maturities" attrs="{'invisible': [('state', '!=', 'draft')]}">
+						<group>
+							<button name="action_generate_maturities" string="Calculate Maturities" class="oe_edit_only oe_highlight" type="object" />
+						</group>
+						<group colspan="4">
+							<field name="maturities_ids" nolabel="1">
+								<tree editable="bottom" string="Maturity Items">
+									<!-- Displayed fields -->
+									<field name="move_name" invisible="1"/>
+									<field name="date"/>
+									<field name="company_id" groups="base.group_multi_company"/>
+									<field name="currency_id" groups="base.group_multi_currency"/>
+									<field name="value"/>
+									<field name="date_due"/>
+								</tree>
+								<form>
+									<sheet>
+										<group>
+											<group>
+												<field name="date"/>
+												<field name="move_name" invisible="1"/>
+												<field name="company_id" groups="base.group_multi_company"/>
+												<field name="currency_id" groups="base.group_multi_currency"/>
+											</group>
+											<group>
+												<field name="value"/>
+												<field name="date_due"/>
+											</group>
+										</group>
+									</sheet>
+								</form>
+							</field>
+						</group>
+		    		</page>
+		    	</xpath>
+		    </field>
+		</record>
+    	
+	</data>
+</odoo>

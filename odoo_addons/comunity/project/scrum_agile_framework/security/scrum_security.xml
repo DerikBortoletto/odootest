@@ -1,0 +1,35 @@
+<odoo>
+<data>
+    <record model="ir.module.category" id = "scrum_agile_framework.module_category_scrum_agile_framework">
+        <field name="name">Scrum</field>
+        <field name="description">Allows to manage a project with agile methodologies</field>
+        <field name = "sequence">100</field>
+    </record>
+
+    <record model="res.groups" id = "group_scrum_product_owner">
+        <field name="name">Product Owner</field>
+        <field name="category_id" ref="scrum_agile_framework.module_category_scrum_agile_framework"/>
+        <field name="comment">Product Owner role</field>
+    </record>
+
+    <record model="res.groups" id = "group_scrum_customer">
+        <field name="name">Customer</field>
+        <field name="category_id" ref="scrum_agile_framework.module_category_scrum_agile_framework"/>
+        <field name="comment">Customer interested of using the app</field>
+    </record>
+
+
+    <record model="res.groups" id = "group_scrum_scrum_manager">
+        <field name="name">Scrum Manager</field>
+        <field name="category_id" ref="scrum_agile_framework.module_category_scrum_agile_framework"/>
+        <field name="comment">Scrum Manager role</field>
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+
+    <record model="res.groups" id = "group_scrum_development_team">
+        <field name="name">Development Team</field>
+        <field name="category_id" ref="scrum_agile_framework.module_category_scrum_agile_framework"/>
+        <field name="comment">Development Team role</field>
+    </record>
+</data>
+</odoo>

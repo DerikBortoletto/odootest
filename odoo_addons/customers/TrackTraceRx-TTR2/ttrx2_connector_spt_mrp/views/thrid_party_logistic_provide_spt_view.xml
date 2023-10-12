@@ -1,0 +1,89 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="thrid_party_logistic_provide_spt_form_view" model="ir.ui.view">
+			<field name="name">thrid.party.logistic.provide.form.view.spt</field>
+			<field name="model">thrid.party.logistic.provide.spt</field>
+			<field name="arch" type="xml">
+				<form>
+					<sheet>
+						<group>
+						    <field name="name" required='1'/>    
+						    <field name="products_scope" widget="radio"/> 
+						    <field name="company_id" groups="base.group_multi_company"/>
+						</group>                                    
+						<group>    
+	                        <div class="o_row">
+	                         	<label for="automatic_transfer" class="oe_inline"/>
+	                            <field name="automatic_transfer" class="oe_inline"/>
+	                            <span class="oe_inline">
+								    <p><b>Note:</b> This option does only works if there is only one 3PL who handle a product, and if the 3PL have one location. Otherwise, the system wont be able to know where to transfer items to, and you will need to perform a location transfer manually</p>
+	                            </span>
+	                        </div>
+						</group>
+                        <notebook>
+                            <page string="General">
+                            	<!-- 
+                            	<label for="thrid_party_logistic_provide_ids"/>
+                            	<field name="thrid_party_logistic_provide_ids" nolabel="1"/>
+                            	 -->
+                            </page>
+                            <page string="Products Scope">
+                                <group string="Products Categories">
+                                	<!-- 
+                                    <field name="product_category_ids" nolabel="1"/>
+                                     -->
+                                </group>
+                                <group string="Products">
+                                	<!-- 
+                                    <field name="product_template_ids" nolabel="1"/>
+                                     -->
+                                </group>
+                            </page>
+                            <page string="Data Transmission">
+                                <group string="Inbound Order">
+									<field name="inbound_action"/>
+									<field name="inbound_3pl"/>
+								</group>
+								<group string="Shipment">
+									<group string="When an shipment is created in TrackTrace">
+										<field name="shipment_action"/>
+									</group>	
+									<group string="When an shipment data is received from the 3PL">
+										<field name="sales_order_exist"/>
+										<field name="sales_order_not_exist"/>
+										<field name="shipment_exist"/>
+										<field name="shipment_not_exist"/>
+									</group>
+								</group>
+                            </page>
+                        </notebook>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="thrid_party_logistic_provide_spt_tree_view" model="ir.ui.view">
+			<field name="name">thrid.party.logistic.provide.tree.view.spt</field>
+			<!-- <field name="groups_id" eval="[(4,ref('easy_redmine_spt.group_redmine_access'))]"/>  -->
+			<field name="model">thrid.party.logistic.provide.spt</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name"/>    
+                    <field name="products_scope"/>    
+                    <field name="automatic_transfer"/>   
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_thrid_party_logistic_provide_spt"
+			model="ir.actions.act_window">
+			<field name="name">Third Party Logistic</field>
+			<field name="res_model">thrid.party.logistic.provide.spt</field>
+<!--			<field name="view_type">form</field>-->
+			<field name="view_mode">tree,form</field>
+		</record>
+
+	</data>
+</odoo>

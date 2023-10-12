@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+br_zip,br.zip,model_br_zip,base.group_partner_manager,1,1,1,1
+br_zip_search,br.zip.search,model_br_zip_search,,1,1,1,1
+br_zip_result,br.zip.result,model_br_zip_result,,1,1,1,1

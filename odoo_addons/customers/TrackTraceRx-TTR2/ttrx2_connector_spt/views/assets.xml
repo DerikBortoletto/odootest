@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+
+	<record id="tracktrace_action_dashboard" model="ir.actions.client">
+	    <field name="name">Dashboard</field>
+	    <field name="tag">tracktrace_dashboard</field>
+	</record>
+
+    <template id="assets_backend" name="tracktrace assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/ttrx2_connector_spt/static/src/js/dashboard.js"></script>
+            <link rel="stylesheet" href="/ttrx2_connector_spt/static/src/css/dashboard.css"/>
+        </xpath>
+    </template>
+
+</odoo>

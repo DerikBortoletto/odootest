@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+
+	    <record model="ir.ui.view" id="scrum_agile_framework.meeting_list_view">
+	      <field name="name">scrum_agile_framework.meeting.view.tree</field>
+	      <field name="model">scrum_agile_framework.meeting</field>
+	      <field name="arch" type="xml">
+	        <tree>
+	          <field name="date"/>
+	          <field name="type"/>
+	          <field name="duration"/>
+	        </tree>
+	      </field>
+	    </record>
+
+		<record model="ir.ui.view" id="scrum_agile_framework.meeting_calendar_view">
+		  <field name="name">scrum_agile_framework.meeting.view.calendar</field>
+		  <field name="model">scrum_agile_framework.meeting</field>
+		  <field name="arch" type="xml">
+		    <calendar string="Meeting Calendar" date_start="date" color="type" mode="month" date_delay="date_delay">
+		      <field name="type"/>
+		      <field name="team_id"/>
+		      <field name="project_id"/>
+		    </calendar>
+		  </field>
+		</record>
+	
+	    <!-- Form View -->
+	    <record model="ir.ui.view" id="scrum_agile_framework.meeting_form_view">
+	      <field name="name">scrum_agile_framework.meeting.view.form</field>
+	      <field name="model">scrum_agile_framework.meeting</field>
+	      <field name="arch" type="xml">
+	        <form string="Meeting information">
+	          <sheet>
+	            <separator string="Meeting Information"/>
+	            <group>
+	              <group>
+	                <field name="date" required="True"/>
+	                <field name="type" required="True"/>
+	              </group>
+	              <group>
+	                <field name="date_delay" invisible="1"/>
+	                <field name="duration"/>
+	              </group>
+	            </group>
+	            <group>
+	              <field name="team_id"/>
+	              <field name="project_id"  domain="[('team_id.id','!=',False)]"
+	                     options="{'no_quick_create': True, 'no_create_edit' : True}" required="True"/>
+	            </group>
+	          </sheet>
+	        </form>
+	      </field>
+	    </record>
+	
+
+		<record model="ir.actions.act_window" id="scrum_agile_framework.meeting_action_window">
+		  <field name="name">Meeting</field>
+		  <field name="res_model">scrum_agile_framework.meeting</field>
+		  <field name="view_mode">tree,form,calendar</field>
+		  <field name="context">{'search_default_group_by_type':False}</field>
+		</record>
+
+	</data>
+</odoo>

@@ -1,0 +1,89 @@
+id,code_prefix_start,code_prefix_end,name,parent_id/id
+phar_gp_1,1,1,ATIVO,
+phar_gp_1_1,1.1,1.1,ATIVO CIRCULANTE,phar_gp_1
+phar_gp_1_1_1,1.1.1,1.1.1,CAIXA E EQUIVALENTES DE CAIXA,phar_gp_1_1
+phar_gp_1_1_1_01,1.1.1.01,1.1.1.01,CAIXA GERAL,phar_gp_1_1_1
+phar_gp_1_1_1_02,1.1.1.02,1.1.1.02,BANCO CONTA MOVIMENTO,phar_gp_1_1_1
+phar_gp_1_1_1_03,1.1.1.03,1.1.1.03,APLICAÇÕES DE CURTO PRAZO,phar_gp_1_1_1
+phar_gp_1_1_2,1.1.2,1.1.2,REALIZAVEL A CURTO PRAZO,phar_gp_1_1
+phar_gp_1_1_2_01,1.1.2.01,1.1.2.01,CONTAS A RECEBER,phar_gp_1_1_2
+phar_gp_1_1_2_02,1.1.2.02,1.1.2.02,OUTRAS CONTAS A RECEBER,phar_gp_1_1_2
+phar_gp_1_1_2_03,1.1.2.03,1.1.2.03,ADIANTAMENTOS,phar_gp_1_1_2
+phar_gp_1_1_2_04,1.1.2.04,1.1.2.04,OUTROS ADIANTAMENTOS,phar_gp_1_1_2
+phar_gp_1_1_2_05,1.1.2.05,1.1.2.05,ESTOQUES,phar_gp_1_1_2
+phar_gp_1_1_3,1.1.3,1.1.3,OUTROS CRÉDITOS,phar_gp_1_1
+phar_gp_1_1_3_01,1.1.3.01,1.1.3.01,IMPOSTOS A RECUPERAR,phar_gp_1_1_3
+phar_gp_1_1_3_02,1.1.3.02,1.1.3.02,IRPJ/CSSL A RECUPERAR,phar_gp_1_1_3
+phar_gp_1_2,1.2,1.2,ATIVO NÃO CIRCULANTE,phar_gp_1
+phar_gp_1_2_1,1.2.1,1.2.1,REALIZAVEL A LONGO PRAZO,phar_gp_1_2
+phar_gp_1_2_1_01,1.2.1.01,1.2.1.01,APLICAÇÕES FINANCEIRAS,phar_gp_1_2_1
+phar_gp_1_2_1_02,1.2.1.02,1.2.1.02,ADIANTAMENTOS,phar_gp_1_2_1
+phar_gp_1_2_1_03,1.2.1.03,1.2.1.03,DIREITOS A RECEBER,phar_gp_1_2_1
+phar_gp_1_2_1_04,1.2.1.04,1.2.1.04,DIREITOS A RECEBER,phar_gp_1_2_1
+phar_gp_1_2_1_05,1.2.1.05,1.2.1.05,INVESTIMENTOS A LONGO PRAZO,phar_gp_1_2_1
+phar_gp_1_2_2,1.2.2,1.2.2,ATIVO IMOBILIZADO,phar_gp_1_2
+phar_gp_1_2_2_01,1.2.2.01,1.2.2.01,IMOBILIZADO TANGÍVEL,phar_gp_1_2_2
+phar_gp_1_2_3,1.2.3,1.2.3,INTANGÍVEL,phar_gp_1_2
+phar_gp_1_2_3_01,1.2.3.01,1.2.3.01,BENS INTANGIVEIS,phar_gp_1_2_3
+phar_gp_2,2,2,PASSIVO,
+phar_gp_2_1,2.1,2.1,PASSIVO CIRCULANTE,phar_gp_2
+phar_gp_2_1_1,2.1.1,2.1.1,EXIGIVEL A CURTO PRAZO,phar_gp_2_1
+phar_gp_2_1_1_01,2.1.1.01,2.1.1.01,FORNECEDORES,phar_gp_2_1_1
+phar_gp_2_1_1_03,2.1.1.03,2.1.1.03,EMPRÉSTIMOS E FINANCIAMENTOS,phar_gp_2_1_1
+phar_gp_2_1_1_04,2.1.1.04,2.1.1.04,OBRIGAÇÕES TRABALHISTA,phar_gp_2_1_1
+phar_gp_2_1_1_05,2.1.1.05,2.1.1.05,OBRIGAÇÕES PREVIDÊNCIÁRIAS,phar_gp_2_1_1
+phar_gp_2_1_1_06,2.1.1.06,2.1.1.06,OBRIGAÇÕES FISCAIS,phar_gp_2_1_1
+phar_gp_2_1_1_07,2.1.1.07,2.1.1.07,IRPJ / CSSL A RECOLHER,phar_gp_2_1_1
+phar_gp_2_1_1_08,2.1.1.08,2.1.1.08,OUTRAS CONTAS A PAGAR,phar_gp_2_1_1
+phar_gp_2_1_2,2.1.2,2.1.2,PROVISÕES,phar_gp_2_1
+phar_gp_2_1_2_01,2.1.2.01,2.1.2.01,PROVISÃO SOBRE PESSOAL,phar_gp_2_1_2
+phar_gp_2_2,2.2,2.2,PASSIVO NÃO CIRCULANTE,phar_gp_2
+phar_gp_2_2_1,2.2.1,2.2.1,EXIGÍVEL A LONGO PRAZO,phar_gp_2_2
+phar_gp_2_2_1_01,2.2.1.01,2.2.1.01,FORNECEDORES,phar_gp_2_2_1
+phar_gp_2_3,2.3,2.3,PATRIMÔNIO LÍQUIDO,phar_gp_2
+phar_gp_2_3_1,2.3.1,2.3.1,CAPITAL SOCIAL,phar_gp_2_3
+phar_gp_2_3_1_01,2.3.1.01,2.3.1.01,CAPITAL SOCIAL,phar_gp_2_3_1
+phar_gp_2_3_2,2.3.2,2.3.2,RESERVAS,phar_gp_2_3
+phar_gp_2_3_3,2.3.3,2.3.3,PREJUÍZOS ACUMULADOS,phar_gp_2_3
+phar_gp_3,3,3,RECEITAS,
+phar_gp_3_1,3.1,3.1,RECEITAS OPERACIONAIS,phar_gp_3
+phar_gp_3_1_1,3.1.1,3.1.1,RECEITAS BRUTA,phar_gp_3_1
+phar_gp_3_1_1_01,3.1.1.01,3.1.1.01,RECEITA BRUTA DE VENDAS,phar_gp_3_1_1
+phar_gp_3_1_1_02,3.1.1.02,3.1.1.02,(-) DEDUÇÕES DA RECEITA BRUTA,phar_gp_3_1_1
+phar_gp_3_1_2,3.1.2,3.1.2,"CUSTOS DOS PRODUTOS, MERCADORIAS E SERVIÇOS VENDIDOS",phar_gp_3_1
+phar_gp_3_1_2_01,3.1.2.01,3.1.2.01,CUSTOS DOS PRODUTOS VENDIDOS - CMV,phar_gp_3_1_2
+phar_gp_3_1_2_02,3.1.2.02,3.1.2.02,CUSTOS DAS MERCADORIAS IMPORTADAS - CMI,phar_gp_3_1_2
+phar_gp_3_1_2_03,3.1.2.03,3.1.2.03,CUSTOS DOS PRODUTOS INDUSTRIALIZADOS - CPI,phar_gp_3_1_2
+phar_gp_3_1_2_04,3.1.2.04,3.1.2.04,CUSTOS DOS SERVIÇOS VENDIDOS - CSV,phar_gp_3_1_2
+phar_gp_3_1_3,3.1.3,3.1.3,OUTRAS RECEITAS OPERACIONAIS,phar_gp_3_1
+phar_gp_3_1_3_01,3.1.3.01,3.1.3.01,RECEITAS FINANCEIRAS,phar_gp_3_1_3
+phar_gp_3_1_3_02,3.1.3.02,3.1.3.02,VARIACAO CAMBIAL ATIVA,phar_gp_3_1_3
+phar_gp_3_1_4,3.1.4,3.1.4,RECEITAS NÃO OPERACIONAIS,phar_gp_3_1
+phar_gp_3_1_4_01,3.1.4.01,3.1.4.01,OUTRAS RECEITAS,phar_gp_3_1_4
+phar_gp_4,4,4,DESPESAS,
+phar_gp_4_1,4.1,4.1,DESPESAS OPERACIONAIS,phar_gp_4
+phar_gp_4_1_1,4.1.1,4.1.1,DESPESAS GERAIS,phar_gp_4_1
+phar_gp_4_1_1_01,4.1.1.01,4.1.1.01,DESPESAS C/ PESSOAL,phar_gp_4_1_1
+phar_gp_4_1_1_02,4.1.1.02,4.1.1.02,DESPESAS ADMINISTRATIVAS,phar_gp_4_1_1
+phar_gp_4_1_1_03,4.1.1.03,4.1.1.03,DESPESAS C/ COMUNICACAO,phar_gp_4_1_1
+phar_gp_4_1_1_04,4.1.1.04,4.1.1.04,DESPESAS C/ OCUPACAO,phar_gp_4_1_1
+phar_gp_4_1_1_05,4.1.1.05,4.1.1.05,DESPESAS DE ESCRITORIOS,phar_gp_4_1_1
+phar_gp_4_1_1_06,4.1.1.06,4.1.1.06,DESPESAS DE LOGISTICA,phar_gp_4_1_1
+phar_gp_4_1_1_07,4.1.1.07,4.1.1.07,DESPESAS C/ MARKETING,phar_gp_4_1_1
+phar_gp_4_1_1_08,4.1.1.08,4.1.1.08,DESPESAS EM EVENTOS/CONGRESSO,phar_gp_4_1_1
+phar_gp_4_1_1_09,4.1.1.09,4.1.1.09,DESPESAS C/ VIAGENS,phar_gp_4_1_1
+phar_gp_4_1_1_10,4.1.1.10,4.1.1.10,DEPRECIACOES / AMORTIZACOES,phar_gp_4_1_1
+phar_gp_4_1_1_11,4.1.1.11,4.1.1.11,SERVICOS PRESTADOS,phar_gp_4_1_1
+phar_gp_4_1_1_12,4.1.1.12,4.1.1.12,DESPESAS TRIBUTARIAS,phar_gp_4_1_1
+phar_gp_4_1_1_13,4.1.1.13,4.1.1.13,OUTRAS DESPESAS,phar_gp_4_1_1
+phar_gp_4_1_2,4.1.2,4.1.2,DESPESAS FINANCEIRAS,phar_gp_4_1
+phar_gp_4_1_2_01,4.1.2.01,4.1.2.01,DESPESAS FINANCEIRAS,phar_gp_4_1_2
+phar_gp_4_1_2_02,4.1.2.02,4.1.2.02,VARIACAO CAMBIAL PASSIVA,phar_gp_4_1_2
+phar_gp_4_2,4.2,4.2,OUTRAS DESPESAS OPERACIONAIS,phar_gp_4
+phar_gp_4_2_1,4.2.1,4.2.1,OUTRAS DESPESAS NAO OPERACIONAIS,phar_gp_4_2
+phar_gp_4_2_1_01,4.2.1.01,4.2.1.01,DESPESAS INDEDUTIVEIS,phar_gp_4_2_1
+phar_gp_4_2_1_02,4.2.1.02,4.2.1.02,OUTRAS DESPESAS INDEDUTIVEIS,phar_gp_4_2_1
+phar_gp_5,5,5,APURAÇÃO DO RESULTADO,
+phar_gp_5_1,5.1,5.1,APURAÇÃO DO RESULTADO,phar_gp_5
+phar_gp_5_1_1,5.1.1,5.1.1,APURAÇÃO DO RESULTADO,phar_gp_5_1
+phar_gp_5_1_1_01,5.1.1.01,5.1.1.01,APURAÇÃO DO RESULTADO,phar_gp_5_1_1

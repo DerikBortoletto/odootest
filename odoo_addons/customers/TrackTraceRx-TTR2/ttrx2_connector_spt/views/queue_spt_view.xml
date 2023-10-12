@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="view_queue_spt_tree" model="ir.ui.view">
+			<field name="name">queue.tree.view.spt</field>
+			<field name="model">queue.spt</field>
+			<field name="arch" type="xml">
+				<tree create="0" delete="0">
+					<field name="uuid"/>
+					<field name="created_on" />
+					<field name="name" />
+					<field name="status"/>
+                    <field name="eta_datetime" optional="show"/>
+					<field name="eta_seconds" optional="show"/>
+					<field name="result" optional="show"/>
+					<field name="res_model_name" optional="hide"/>
+					<field name="res_uuid" optional="hide"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="view_queue_spt_form" model="ir.ui.view">
+			<field name="name">queue.spt.form.view</field>
+			<field name="model">queue.spt</field>
+			<field name="arch" type="xml">
+				<form string="Queue" create="0" delete="0">
+					<sheet>
+						<group>
+							<group>
+								<field name="uuid"/>
+								<field name="created_on"/>
+								<field name="name"/>
+								<field name="created_on" />
+								<field name="estimated_duration"/>
+								<field name="status"/>
+							</group>
+							<group>
+								<field name="eta_datetime"/>
+								<field name="eta_seconds"/>
+								<field name="result"/>
+								<field name="res_model_id"/>
+								<field name="res_model_name" invisible="1"/>
+								<field name="res_id"/>
+								<field name="res_uuid"/>
+							</group>
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="action_queue_spt" model="ir.actions.act_window">
+			<field name="name">Queues</field>
+			<field name="res_model">queue.spt</field>
+			<field name="view_mode">tree,form</field>
+            <field name="view_ids"
+                   eval="[(5, 0, 0),
+                          (0, 0, {'view_mode': 'tree', 'view_id': ref('view_queue_spt_tree')}),
+                          (0, 0, {'view_mode': 'form', 'view_id': ref('view_queue_spt_form')})]"/>
+			<field name="view_id" ref="view_queue_spt_tree"/>			
+		</record>
+
+	</data>
+</odoo>

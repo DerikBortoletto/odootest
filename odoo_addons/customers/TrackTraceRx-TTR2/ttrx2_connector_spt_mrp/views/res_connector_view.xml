@@ -1,0 +1,190 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+       <record id="view_connector_spt_filter" model="ir.ui.view">
+            <field name="name">connector.spt.filter</field>
+            <field name="model">connector.spt</field>
+            <field name="arch" type="xml">
+                <search string="Search Connectors">
+                    <field name="name" filter_domain="[('name', 'ilike', self)]"/>
+                    <separator/>
+                    <filter string="Arquived" name="active" domain="[('active', '=', False)]"/>
+                </search>
+            </field>
+        </record>
+
+		<record id="view_connector_spt_form" model="ir.ui.view">
+			<field name="name">connector.spt.form</field>
+			<field name="model">connector.spt</field>
+			<field name="arch" type="xml">
+				<form create="false" delete="false">
+					<header>
+                        <button name="action_confirm" string="Test &amp; Confirm" class="oe_highlight"
+                                type="object" attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        <button name="action_test" string="Test Connection" 
+                                type="object" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                        <button name="action_invalidate" string="Invalidate" 
+                                type="object" attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+					</header>
+					<sheet>
+						<field name="active" invisible="1"/>
+                        <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>
+                        <div name="button_box" class="oe_button_box">
+                        </div>
+	                    <div class="oe_title">
+	                        <label class="oe_edit_only" for="name" string="Connector Name"/>
+	                        <h1>
+	                        	<field name="name" placeholder="Connector Name"/>
+	                        </h1>
+	                    </div>
+	                    <notebook>
+	                    	<page string="synchronization"  attrs="{'invisible' : [('state','=','draft')]}">
+		                        <table>
+		                            <tr>
+		                                <td style="width:150px;">
+		                                	<button name="action_impexp_partner" type="object" class="oe_highlight"  icon="fa-refresh fa-3x" width="150" height="100">
+                            					<br/>Partners
+                        					</button>
+		                                </td>
+		                                <td style="width:150px;">
+		                                	<button name="action_impexp_manufacturer" type="object" class="oe_highlight"  icon="fa-refresh fa-3x" width="150" height="100">
+                            					<br/>Manufactures
+                        					</button>
+		                                </td>
+		                                <td style="width:150px;">
+		                                	<button name="action_impexp_locations" type="object" class="oe_highlight"  icon="fa-refresh fa-3x" width="150" height="100">
+                            					<br/>Locations
+                        					</button>
+		                                </td>
+		                            </tr>
+		                            <tr>
+		                                <td style="width:150px;">
+		                                	<button name="action_impexp_product" type="object" class="oe_highlight"  icon="fa-refresh fa-3x" width="150" height="100">
+                            					<br/>Products
+                        					</button>
+		                                </td>
+		                                <td style="width:150px;">
+		                                	<button name="action_impexp_containers" type="object" class="oe_highlight"  icon="fa-refresh fa-3x" width="150" height="100">
+                            					<br/>Containers
+                        					</button>
+		                                </td>
+		                                <td style="width:150px;">
+		                                </td>
+		                            </tr>
+		                         </table>
+		                    </page>
+	                    	<page string="Configuration">
+		                        <group>
+		                            <group>
+		                                <field name="api_environment"/>
+		                                <field name="api_key"/>
+										<field name="company_id" groups="base.group_multi_company"/>
+		                            </group>
+		                            <group>
+		                            	<field name="api_url" groups="base.group_no_one"/>
+		                            	<field name="portal_url" groups="base.group_no_one"/>
+		                            </group>
+		                        </group>
+		                        <group>
+		                        	<group>
+		                            	<field name="auto_vacuum" string="Auto Vacuum Logs"/>
+		                            	<field name="auto_delete" string="Auto Delete in TTRx"/>
+		                        		<field name="auto_create_new_partner"/>
+		                        		<field name="last_update_date"/>
+		                        	</group>
+		                        </group>
+		                    </page>
+		                    <page string="Log">
+		                    	<group>
+		                    		<field name="log_ids" nolabel="1"/>
+		                    	</group>
+		                    </page>
+	                    </notebook>   
+					</sheet>
+                    <!-- Attachment preview -->
+                    <div class="o_attachment_preview"/>
+                    <!-- Chatter -->
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+				</form>
+			</field>
+		</record>
+
+        <record id="view_connector_spt_kanban" model="ir.ui.view">
+            <field name="name">connector.spt.kanban</field>
+            <field name="model">connector.spt</field>
+            <field name="arch" type="xml">
+                <kanban class="o_kanban_mobile">
+                    <field name="name"/>
+                    <field name="company_id"/>
+                    <field name="api_environment"/>
+                    <field name="api_url"/>
+                    <field name="state"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row mb4">
+                                    <div class="col-6 o_kanban_record_headings">
+                                        <strong>
+                                            <span>
+                                                <field name="name" />
+                                                <field name="company_id" groups="base.group_multi_company"/>
+                                            </span>
+                                        </strong>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span>
+                                        	<field name="api_environment"/>
+                                        	<field name="api_url"/>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <span class="float-right">
+                                            <field name="state" widget="label_selection" options="{'classes': {'draft': 'default', 'posted': 'success'}}"/>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+		<record id="view_connector_spt_tree" model="ir.ui.view">
+			<field name="name">connector.spt.tree</field>
+			<field name="model">connector.spt</field>
+			<field name="arch" type="xml">
+				<tree create="false" delete="false">
+					<field name="name" />
+					<field name="api_environment"/>
+					<field name="state"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_connector_spt" model="ir.actions.act_window">
+			<field name="name">Connector</field>
+			<field name="res_model">connector.spt</field>
+			<field name="view_mode">kanban,tree,form</field>
+            <field name="search_view_id" ref="view_connector_spt_filter"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new TrackTrace V2 Connector
+              </p><p>
+                We helps you easily create connectors
+              </p>
+            </field>
+		</record>
+		
+    </data>
+</odoo>

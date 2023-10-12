@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+
+    <record id="product_presentation_action" model="ir.actions.act_window">
+        <field name="name">Presentation</field>
+        <field name="res_model">product.presentation</field>
+        <!-- <field name="groups_id" eval="[(4,ref('base.group_user'))]"/> -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem 
+        id="product_presentation_option" 
+        name="Presentation" 
+        action="product_presentation_action"
+        parent="stock.menu_stock_inventory_control" 
+        sequence="10"
+        />
+        
+    <record id="product_presentation_view_form" model="ir.ui.view">
+        <field name="name">product.presentation.view.form</field>
+        <field name="model">product.presentation</field>
+        <field name="arch" type="xml">
+            <form string="New Presentation">
+                <sheet>
+                    <group>
+                        <field name="name" />
+                        <field name="observation" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_presentation_view_tree" model="ir.ui.view">
+        <field name="name">product.presentation.view.tree</field>
+        <field name="model">product.presentation</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+
+</odoo>

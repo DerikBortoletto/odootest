@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_br_base_fiscal_ind_partner_form" model="ir.ui.view">
+        <field name="name">br.base.fiscal.ind.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="l10n_br_op_base.view_br_base_partner_form" />
+        <field name="arch" type="xml">
+            <field name="inscr_est" position="after">
+                <field name="indicador_ie_dest"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

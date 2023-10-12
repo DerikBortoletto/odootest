@@ -1,0 +1,87 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+       <record id="view_container_spt_filter" model="ir.ui.view">
+            <field name="name">view.container.spt.filter</field>
+            <field name="model">container.spt</field>
+            <field name="arch" type="xml">
+                <search string="Search License Types">
+                    <field name="uuid" filter_domain="['|','|',('uuid', 'ilike', self), ('gs1_unique_id', 'ilike', self),('name','=', self)]"/>
+                    <separator/>
+					<filter name="container_id_type" string="Type UUID" domain="[('container_id_type', '=', 'UUID')]" />
+                    <filter name="container_id_type" string="Type Serial" domain="[('container_id_type', '=', 'SERIAL')]" />
+					<filter name="container_id_type" string="Type GS1_ID Serial" domain="[('container_id_type', '=', 'GS1_ID_SERIAL')]" />
+                </search>
+            </field>
+        </record>
+
+		<record id="view_container_spt_form" model="ir.ui.view">
+			<field name="name">container.spt.form</field>
+			<field name="model">container.spt</field>
+			<field name="arch" type="xml">
+				<form>
+					<header>
+						<button name="action_test" string="testar" type="object" groups="base.group_no_one"/>
+						<button name="action_send" string="Send To TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('uuid','!=',False)]}"/>
+						<button name="action_refresh" string="Refresh From TTRx" type="object" class="oe_highlight" attrs="{'invisible':[('uuid','=',False)]}"/>
+					</header>
+					<sheet>
+						<group>
+							<field name="name"/>
+							<field name="container_id_type"/>
+							<field name="container_identifier"/>
+							<field name="uuid"/>
+							<field name="gs1_unique_id"/>
+						</group>
+                        <group>
+                            <group>
+								<field name="container_type_id"/>
+                                <field name="parent_id"/>
+                                <field name="location_id"/>
+                                <field name="location_area_id" options="{'no_create': True}"/>
+                                <field name="storage_area_id" options="{'no_create': True}"/>
+                            </group>
+                            <group>
+								<field name="storage_shelf_id" options="{'no_create': True}"/>
+                                <field name="disposition_id" options="{'no_create': True}"/>
+                                <field name="business_step_id" options="{'no_create': True}"/>
+                            </group>
+                        </group>   
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="view_container_spt_tree" model="ir.ui.view">
+			<field name="name">container.spt.tree</field>
+			<field name="model">container.spt</field>
+			<field name="arch" type="xml">
+				<tree>
+					<field name="name"/>
+					<field name="container_id_type"/>
+					<field name="container_identifier"/>
+					<field name="uuid"/>
+					<field name="gs1_unique_id"/>
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_container_spt" model="ir.actions.act_window">
+			<field name="name">Container Management</field>
+			<field name="res_model">container.spt</field>
+			<field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="view_container_spt_filter"/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new TrackTraceRx container in your list of license types
+              </p><p>
+                We helps you easily create container types.
+              </p>
+            </field>
+		</record>
+
+
+		
+	</data>
+</odoo>

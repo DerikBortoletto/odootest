@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_br_account_search" model="ir.ui.view">
+            <field name="name">br.account.account.search</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_search"/>
+            <field name="arch" type="xml">
+            	<field name="name" position="after">
+            		<field name="short_code" string="Short Code"/>
+            	</field>
+            </field>
+        </record>
+
+
+        <record id="view_account_br_form" model="ir.ui.view">
+            <field name="name">account.account.br.form</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//div[hasclass('oe_inline')]" position="inside">
+					<label for="short_code"/>
+					<field name="short_code" placeholder="Short Code"/>
+            	</xpath>
+            	<xpath expr="//group[@name='left_main_group']" position="inside">
+            		<field name="account_type"/>
+            	</xpath>
+            </field>
+        </record>
+
+        <record id="view_account_br_list" model="ir.ui.view">
+            <field name="name">account.account.br.list</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_list"/>
+            <field name="arch" type="xml">
+            	<field name="code" position="before">
+            		<field name="short_code"/>
+            	</field>
+            	<field name="reconcile" position="before">
+            		<field name="account_type"/>
+            	</field>
+            </field>
+        </record>
+		
+        <record id="view_br_account_account_kanban" model="ir.ui.view">
+            <field name="name">br.account.account.kanban</field>
+            <field name="model">account.account</field>
+            <field name="inherit_id" ref="account.view_account_account_kanban"/>
+            <field name="arch" type="xml">
+            	<field name="code" position="after">
+            		<field name="short_code"/>
+            	</field>
+            	<xpath expr="//templates/descendant::field[@name='name']" position='before'>
+            		<field name="short_code"/>
+            	</xpath>
+            </field>
+        </record>
+
+	</data>
+</odoo>
+ 

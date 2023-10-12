@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="purchase_order_bi_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='products']" position='after'>
+                <page string='Medical'>
+                    <group>
+                        <group name="doctor_data" string="Doctor">
+                            <field name="doctor_id"/>
+                            <field name="doctor_name"/>
+                            <field name="doctor_code"/>
+                            <field name="doctor_specialty"/>
+                            <field name="doctor_phone"/>
+                            <field name="doctor_email"/>
+                            <field name="doctor_institution"/>
+                            <field name="doctor_city"/>
+                            <field name="doctor_state"/>
+                            <field name="doctor_country"/>
+                        </group>
+                        <group name="patient_data" string="Patient">
+                            <field name="patient"/>
+                            <field name="patient_name"/>
+                            <field name="patient_street"/>
+                            <field name="patient_city"/>
+                            <field name="patient_state"/>
+                            <field name="patient_country"/>
+                            <field name="patient_zip" />
+                            <field name="patient_vat" />
+                        </group>
+                        <group name="prescription" string="Prescription">
+                            <field name="prescription"/>
+                        </group>
+                        <field name="prescription_line" />
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

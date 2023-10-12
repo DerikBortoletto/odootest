@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="ttrx2_connector_spt.TTRxDashboard">
+        <div style="margin-top: 20px;">
+            <div class="container-fluid o_ttrx_dashboard">
+            </div>
+        </div>
+    </t>
+
+	<t t-name="ttrx2_connector_spt.DashboardTracktrace">
+		<div class="ttrx-dashboard-main">
+			<t t-if="widget.values['show_demo']" >
+                <div class="alert alert-warning" role="alert" style="margin-bottom:0px;">
+                    This connector is in confirmation mode, to confirm enter the values and then proceed with the environment test.
+                </div>
+	        </t>
+			<t t-if="widget.values['state'] == 'stop'" >
+                <div class="alert alert-warning" role="alert" style="margin-bottom:0px;">
+                    This connector is on pause. To start processing again, change the status to "Done".
+                </div>
+	        </t>
+			<div class="ttrx-dashboard-head">
+				<div class="ttrx-title">
+					<p class="ttrx-title" style="margin-left: 10px;"><t t-esc="widget.values['name']"/></p>
+				</div>
+			</div>
+			<div style="height: 3px"></div>
+			<div class="ttrx-dashboard-content">
+				<div>
+					<!-- 
+		            <div class="ribbon" style="
+		                position: absolute;
+		                left: 0px; top: 45px;
+		                z-index: 1;
+		                overflow: hidden;
+		                width: 105px; height: 105px;
+		                text-align: center;">
+		                <span style="
+		                    font-size: 10px;
+		                    color: #fff;
+		                    text-transform: uppercase;
+		                    text-align: center;
+		                    font-weight: bold; line-height: 30px;
+		                    transform: rotate(-45deg);
+		                    width: 150px; height: 30px; display: block;
+		                    background: red;
+		                    position: absolute;
+		                    top: 20px; right: 0px;">
+		                    Sample
+		                </span>
+		            </div>
+		             -->
+				
+					<table class="ttrx-table">
+						<tr>
+							<td style="width:290px;">
+								<table class="ttrx-table" style="width:288px;">
+									<tr>
+										<td class="ttrx-blue ttrx-blue-back ttrx-midle ttrx-center" style="height:70px; width:70px;">
+											<a href="#" title="Download Purchases from TTRx" name="ttrx2_connector_spt.view_action_purchases_ttrx">
+												<img src="/ttrx2_connector_spt/static/src/img/refresh.png" class="o_ttrx_showactions" style="width:50px; height:50px;"/>
+											</a>
+										</td>
+										<td class="ttrx-blue ttrx-top ttrx-left" style="height:70px; width:218px;">
+											<div style="margin: 5px;">
+											<p class="ttrx-subtitle ttrx-p1">Purchases</p>
+											<p class="ttrx-text ttrx-p1">last update: <t t-esc="widget.values['purchase']['last_update']"/></p>
+											</div>
+										</td>
+									</tr>
+								</table>
+								<div style="height: 3px"></div>
+								<table class="ttrx-table" style="width:288px;">
+									<tr>
+										<td class="ttrx-blue ttrx-blue-back ttrx-midle ttrx-center">
+											<table class="ttrx-table" style="width:276px;">
+												<tr>
+													<td class="ttrx-midlle ttrx-left" style="height:80px;width:198px;">
+														<p class="ttrx-text-number ttrx-p1"><t t-esc="widget.values['purchase']['todo']"/>/<t t-esc="widget.values['purchase']['itens']"/><span class="ttrx-white ttrx-p1"> Purchases</span></p>
+													</td>
+													<td class="ttrx-midle ttrx-center" style="height:80px;width:80px;">
+														<img src="/ttrx2_connector_spt/static/src/img/shopingcart.png" style="width:70px; height:70px;"/>
+													</td>
+												</tr>					
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td class="ttrx-blue ttrx-blue-back-dark ttrx-midle ttrx-center" style="height: 30px;">
+											<a href="#" title="TTRx Purchase Order" name="ttrx2_connector_spt.view_ttrx_purchase_form_action">
+												<span class="ttrx-white ttrx-p1 o_ttrx_showactions">show purchases</span>
+											</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td style="width:290px;">
+								<table class="ttrx-table" style="width:288px;">
+									<tr>
+										<td class="ttrx-yellow ttrx-yellow-back ttrx-midle ttrx-center" style="height:70px; width:70px;">
+											<a href="#" title="Download Sales from TTRx" name="ttrx2_connector_spt.view_action_sales_ttrx">
+												<img src="/ttrx2_connector_spt/static/src/img/refresh.png" class="o_ttrx_showactions" style="width:50px; height:50px;"/>
+											</a>
+										</td>
+										<td class="ttrx-yellow ttrx-top ttrx-left" style="height:70px; width:218px;">
+											<div style="margin: 5px;">
+											<p class="ttrx-subtitle ttrx-p1">Sales</p>
+											<p class="ttrx-text ttrx-p1">last update: <t t-esc="widget.values['sale']['last_update']"/></p>
+											</div>
+										</td>
+									</tr>
+								</table>
+								<div style="height: 3px"></div>
+								<table class="ttrx-table" style="width:288px;">
+									<tr>
+										<td class="ttrx-yellow ttrx-yellow-back ttrx-midle ttrx-center">
+											<table class="ttrx-table" style="width:276px;">
+												<tr>
+													<td class="ttrx-midlle ttrx-left" style="height:80px;width:198px;">
+														<p class="ttrx-text-number ttrx-p1"><t t-esc="widget.values['sale']['todo']"/>/<t t-esc="widget.values['sale']['itens']"/><span class="ttrx-white ttrx-p1"> Sales</span></p>														
+													</td>
+													<td class="ttrx-midle ttrx-center" style="height:80px;width:80px;">
+														<img src="/ttrx2_connector_spt/static/src/img/sales.png" style="width:70px; height:70px;"/>
+													</td>
+												</tr>					
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td class="ttrx-yellow ttrx-yellow-back-dark ttrx-midle ttrx-center" style="height: 30px;">
+											<a href="#" title="TTRx Sale Order" name="ttrx2_connector_spt.view_action_orders_ttrx">
+												<span class="ttrx-white ttrx-p1 o_ttrx_showactions">show sales</span>
+											</a>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td style="width:290px;">
+								<table class="ttrx-table" style="width:288px;">
+									<tr>
+										<td class="ttrx-red ttrx-red-back ttrx-midle ttrx-center" style="height: 70px; width:70px;">
+											<a href="#" title="Download the list of picking receipts from TTRx" name="ttrx2_connector_spt.view_action_receipts_ttrx">
+												<img src="/ttrx2_connector_spt/static/src/img/refresh.png" class="o_ttrx_showactions" style="width:50px; height:50px;"/>
+											</a>
+										</td>
+										<td class="ttrx-red ttrx-top ttrx-left" style="height: 70px; width:218px;">
+											<div style="margin: 5px;">
+											<p class="ttrx-subtitle ttrx-p1">Receipts</p>
+											<p class="ttrx-text ttrx-p1">last update: <t t-esc="widget.values['pickin']['last_update']"/></p>
+											</div>
+										</td>
+									</tr>
+								</table>
+								<div style="height: 3px"></div>
+								<table class="ttrx-table" style="width:288px;">
+									<tr>
+										<td class="ttrx-red ttrx-red-back ttrx-midle ttrx-center">
+											<table class="ttrx-table" style="width:276px;">
+												<tr>
+													<td class="ttrx-midlle ttrx-left" style="height:80px;width:198px;">
+														<p class="ttrx-text-number ttrx-p1"><t t-esc="widget.values['pickin']['todo']"/>/<t t-esc="widget.values['pickin']['itens']"/><span class="ttrx-white ttrx-p1"> Receipts</span></p>														
+													</td>
+													<td class="ttrx-midle ttrx-center" style="height:80px;width:80px;">
+														<img src="/ttrx2_connector_spt/static/src/img/collect.png" style="width: 70px; height: 70px;"/>
+													</td>
+												</tr>					
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td class="ttrx-red ttrx-red-back-dark ttrx-midle ttrx-center" style="height: 30px;">
+											<p class="ttrx-white ttrx-p1">show picking (in)</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+							<td style="width:290px;">
+								<table class="ttrx-table" style="width:288px;">
+									<tr>
+										<td class="ttrx-green ttrx-green-back ttrx-midle ttrx-center" style="height: 70px; width:70px;">
+											<a href="#" title="Download the list of delivery receipts from TTRx" name="ttrx2_connector_spt.view_action_delivery_ttrx">
+												<img src="/ttrx2_connector_spt/static/src/img/refresh.png" class="o_ttrx_showactions" style="width:50px; height:50px;"/>
+											</a>
+										</td>
+										<td class="ttrx-green ttrx-top ttrx-left" style="height: 70px; width:218px;">
+											<div style="margin: 5px;">
+											<p class="ttrx-subtitle ttrx-p1">Deliveries</p>
+											<p class="ttrx-text ttrx-p1">last update: <t t-esc="widget.values['pickout']['last_update']"/></p>
+											</div>
+										</td>
+									</tr>
+								</table>
+								<div style="height: 3px"></div>
+								<table class="ttrx-table" style="width:288px;">
+									<tr>
+										<td class="ttrx-green ttrx-green-back ttrx-midle ttrx-center">
+											<table class="ttrx-table" style="width:276px;">
+												<tr>
+													<td class="ttrx-midlle ttrx-left" style="height:80px;width:198px;">
+														<p class="ttrx-text-number ttrx-p1"><t t-esc="widget.values['pickout']['todo']"/>/<t t-esc="widget.values['pickout']['itens']"/><span class="ttrx-white ttrx-p1"> Deliveries</span></p>														
+													</td>
+													<td class="ttrx-midle ttrx-center" style="height:80px;width:80px;">
+														<img src="/ttrx2_connector_spt/static/src/img/delivery.png" style="width: 70px; height: 70px;"/>
+													</td>
+												</tr>					
+											</table>
+										</td>
+									</tr>
+									<tr>
+										<td class="ttrx-green ttrx-green-back-dark ttrx-midle ttrx-center" style="height: 30px;">
+											<p class="ttrx-white ttrx-p1">show picking (out)</p>
+										</td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+				</div>
+				<div style="margin_top: 3px;">
+					<table class="ttrx-table" style="width:1158px;">
+						<tr>
+							<td style="width: 230px; height: 120px; background-color: #01579b;">
+								<a href="#" title="Sync Partners" name="ttrx2_connector_spt.view_action_partners_ttrx">
+								<table class="ttrx-table o_ttrx_showactions">
+									<tr>
+										<td style="width:100px; text-align: center;">
+											<img src="/ttrx2_connector_spt/static/src/img/refresh.png" style="width: 50px; height: 50px;"/>
+										</td>
+										<td style="width:130px; text-align: center;">
+											<span class="ttrx-white">Partners</span>
+										</td>
+									</tr>
+								</table>
+								</a>
+							</td>
+							<td style="width:2px;"></td>
+							<td style="width: 230px; height: 120px; background-color: #01579b;">
+								<a href="#" title="Sync Manufactures" name="ttrx2_connector_spt.view_action_manufactures_ttrx">
+								<table class="ttrx-table o_ttrx_showactions">
+									<tr>
+										<td style="width:80px; text-align: center;">
+											<img src="/ttrx2_connector_spt/static/src/img/refresh.png" style="width: 50px; height: 50px;"/>
+										</td>
+										<td style="width:150px; text-align: center;">
+											<span class="ttrx-white">Manufactures</span>
+										</td>
+									</tr>
+								</table>
+								</a>
+							</td>
+							<td style="width:2px;"></td>
+							<td style="width: 230px; height: 120px; background-color: #01579b;">
+								<a href="#" title="Sync Locations" name="ttrx2_connector_spt.view_action_locations_ttrx">
+								<table class="ttrx-table o_ttrx_showactions">
+									<tr>
+										<td style="width:80px; text-align: center;">
+											<img src="/ttrx2_connector_spt/static/src/img/refresh.png" style="width: 50px; height: 50px;"/>
+										</td>
+										<td style="width:150px; text-align: center;">
+											<span class="ttrx-white">Locations</span>
+										</td>
+									</tr>
+								</table>
+								</a>
+							</td>
+							<td style="width:2px;"></td>
+							<td style="width: 230px; height: 120px; background-color: #01579b;">
+								<a href="#" title="Sync Products" name="ttrx2_connector_spt.view_action_products_ttrx">
+								<table class="ttrx-table o_ttrx_showactions">
+									<tr>
+										<td style="width:80px; text-align: center;">
+											<img src="/ttrx2_connector_spt/static/src/img/refresh.png" style="width: 50px; height: 50px;"/>
+										</td>
+										<td style="width:150px; text-align: center;">
+											<span class="ttrx-white">Products</span>
+										</td>
+									</tr>
+								</table>
+								</a>
+							</td>
+							<td style="width:2px;"></td>
+							<td style="width: 230px; height: 120px; background-color: #01579b;">
+								<a href="#" title="Sync Containers" name="ttrx2_connector_spt.view_action_containers_ttrx">
+								<table class="ttrx-table o_ttrx_showactions">
+									<tr>
+										<td style="width:80px; text-align: center;">
+											<img src="/ttrx2_connector_spt/static/src/img/refresh.png" style="width: 50px; height: 50px;"/>
+										</td>
+										<td style="width:150px; text-align: center;">
+											<span class="ttrx-white">Containers</span>
+										</td>
+									</tr>
+								</table>
+								</a>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</t>
+	
+</templates>

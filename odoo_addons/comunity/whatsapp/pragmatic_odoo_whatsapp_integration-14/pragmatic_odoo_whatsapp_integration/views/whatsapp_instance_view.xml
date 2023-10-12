@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_whatsapp_instance_inherit_form" model="ir.ui.view">
+        <field name="name">view.whatsapp.instance.inherit.form</field>
+        <field name="model">whatsapp.instance</field>
+        <field name="inherit_id" ref="pragtech_whatsapp_base.view_whatsapp_instance_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='message_configuration']" position="inside">
+                <h4>Sale Order</h4>
+                <group col="4" String="Sale Order">
+                    <field name="sale_order_add_signature" string="Add signature?"/>
+                    <field name="sale_order_add_order_product_details" string="Add product details in message?"/>
+                    <field name="sale_order_add_order_info_msg" string="Add information in message?"/>
+                    <field name="sale_order_add_message_in_chatter" string="Add chatter message?"/>
+                </group>
+
+                <h4>Account Invoice</h4>
+                <group col="4" String="Account Invoice">
+                    <field name="account_invoice_add_signature" string="Add signature?"/>
+                    <field name="account_invoice_add_invoice_product_details" string="Add product details in message?"/>
+                    <field name="account_invoice_add_invoice_info_msg" string="Add information in message?"/>
+                    <field name="account_invoice_add_message_in_chatter" string="Add chatter message?"/>
+                    <field name="account_payment_details" string="Add Payment Details"/>
+                </group>
+
+                <h4>Delivery Order</h4>
+                <group col="4" String="Delivery Order">
+                    <field name="delivery_order_add_signature" string="Add signature?"/>
+                    <field name="delivery_order_add_order_product_details" string="Add product details in message?"/>
+                    <field name="delivery_order_add_order_info_msg" string="Add information in message?"/>
+                    <field name="delivery_order_add_message_in_chatter" string="Add chatter message?"/>
+                </group>
+
+                <h4>Purchase Order</h4>
+                <group col="4" String="Purchase Order">
+                    <field name="purchase_order_add_signature" string="Add signature?"/>
+                    <field name="purchase_order_add_order_product_details" string="Add product details in message?"/>
+                    <field name="purchase_order_add_order_info_msg" string="Add information in message?"/>
+                    <field name="purchase_order_add_message_in_chatter" string="Add chatter message?"/>
+                </group>
+
+                <h4>CRM Lead</h4>
+                <group col="4" String="Purchase Order">
+                    <field name="crm_lead_add_signature" string="Add signature?"/>
+                    <field name="crm_lead_add_message_in_chatter" string="Add chatter message?"/>
+                </group>
+
+                <h4>Project Task</h4>
+                <group col="4" String="Project Task">
+                    <field name="project_task_add_signature" string="Add signature?"/>
+                    <field name="project_task_add_message_in_chatter" string="Add chatter message?"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

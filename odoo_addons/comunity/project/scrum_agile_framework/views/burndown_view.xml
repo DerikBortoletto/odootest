@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+
+	    <record id="sprint_analytic_graph_view" model="ir.ui.view" >
+	      <field name="model">scrum_agile_framework.burn_down_chart</field>
+	      <field name="arch" type="xml">
+	        <graph type="line" >
+	          <field name="date" type="row" interval="day"/>
+	          <field name="name" type="col"/>
+	          <field name="hours_day" type="measure"/>
+	        </graph>
+	      </field>
+	    </record>
+	
+
+	    <!-- Action to show the burndown chart of a sprint -->
+	    <record id='action_sprint_burn' model='ir.actions.act_window'>
+			<field name="name">Burns</field>
+			<field name="res_model">scrum_agile_framework.burn_down_chart</field>
+			<field name="view_mode">graph</field>
+			<field name="view_id" ref="sprint_analytic_graph_view"/>
+			<field name="search_view_id" ref="project_task_search_view_scrum"/>
+			<field name="domain">[('sprint_id', '=', active_id)]</field>
+	    </record>
+
+	</data>
+</odoo>

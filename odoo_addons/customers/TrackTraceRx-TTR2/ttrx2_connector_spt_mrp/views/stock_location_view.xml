@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+        <record id="inherit_stock_location_for_tracktrace" model="ir.ui.view">
+            <field name="name">inherit stock location for tracktrace</field>
+            <field name="model">stock.location</field>
+            <field name="inherit_id" ref="op_location_management.view_stock_location_management_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="properties" attrs="{'invisible':[('location_type','in',('storage','shelf'))]}"/>
+                </xpath>
+                <xpath expr="//notebook/page[@name='sublocation']" position="before">
+					<page name="detail" string="Detail">
+					    <group>
+					        <field name="gs1_id"/>
+					        <field name="location_detail"/>
+					        <field name="manufacturing_location_id"/>
+					        <field name="is_unselectable"/>
+					        <!-- field name="address_partner" widget="many2many_tags"/ -->
+					        <field name="uuid" attrs="{'invisible':[('location_type','in',('storage','shelf'))]}" readonly="1"/>
+					        <field name="storage_uuid" attrs="{'invisible':[('location_type','!=','storage')]}" readonly="1"/>
+					        <field name="shelf_uuid" attrs="{'invisible':[('location_type','!=','shelf')]}" readonly="1"/>
+					    </group>
+					</page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

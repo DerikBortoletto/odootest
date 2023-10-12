@@ -1,0 +1,243 @@
+id,short_code,code,name,user_type_id/id,reconcile,account_type,group_id/id,chart_template_id:id
+ttrx_phr1_1_1_01_001,1,1.1.1.01.001,Dinheiro,account.data_account_type_liquidity,0,,phar_gp_1_1_1_01,br_pharmedic_chart_template
+ttrx_phr1_1_1_02_001,3,1.1.1.02.001,Banco Bradesco SA,account.data_account_type_liquidity,0,,phar_gp_1_1_1_02,br_pharmedic_chart_template
+ttrx_phr1_1_1_02_002,5,1.1.1.02.002,Banco Do Brasil,account.data_account_type_liquidity,0,,phar_gp_1_1_1_02,br_pharmedic_chart_template
+ttrx_phr1_1_1_02_003,7,1.1.1.02.003,Banco Caixa Economica Federal,account.data_account_type_liquidity,0,,phar_gp_1_1_1_02,br_pharmedic_chart_template
+ttrx_phr1_1_1_02_004,9,1.1.1.02.004,Banco Citibank,account.data_account_type_liquidity,0,,phar_gp_1_1_1_02,br_pharmedic_chart_template
+ttrx_phr1_1_1_02_005,11,1.1.1.02.005,Banco Itau SA,account.data_account_type_liquidity,0,,phar_gp_1_1_1_02,br_pharmedic_chart_template
+ttrx_phr1_1_1_02_006,13,1.1.1.02.006,Banco Santander SA,account.data_account_type_liquidity,0,,phar_gp_1_1_1_02,br_pharmedic_chart_template
+ttrx_phr1_1_1_02_999,15,1.1.1.02.999,Transferência de Saldo,account.data_account_type_liquidity,0,,phar_gp_1_1_1_02,br_pharmedic_chart_template
+ttrx_phr1_1_1_03_001,17,1.1.1.03.001,Conta Aplicação,account.data_account_type_liquidity,0,,phar_gp_1_1_1_03,br_pharmedic_chart_template
+ttrx_phr1_1_2_01_001,19,1.1.2.01.001,Clientes (A Receber),account.data_account_type_receivable,1,,phar_gp_1_1_2_01,br_pharmedic_chart_template
+ttrx_phr1_1_2_01_002,21,1.1.2.01.002,(-) Duplicatas Descontadas,account.data_account_type_receivable,1,,phar_gp_1_1_2_01,br_pharmedic_chart_template
+ttrx_phr1_1_2_02_001,23,1.1.2.02.001,Outras Contas (A Receber),account.data_account_type_receivable,1,,phar_gp_1_1_2_02,br_pharmedic_chart_template
+ttrx_phr1_1_2_02_002,25,1.1.2.02.002,Cartão Crédito/Débito (A Receber),account.data_account_type_credit_card,1,,phar_gp_1_1_2_02,br_pharmedic_chart_template
+ttrx_phr1_1_2_03_001,27,1.1.2.03.001,Adiantamento de Salários,account.data_account_type_prepayments,1,,phar_gp_1_1_2_03,br_pharmedic_chart_template
+ttrx_phr1_1_2_03_002,29,1.1.2.03.002,Adiantamentos de Férias,account.data_account_type_prepayments,1,,phar_gp_1_1_2_03,br_pharmedic_chart_template
+ttrx_phr1_1_2_03_003,31,1.1.2.03.003,Adiantamentos de 13. Salário,account.data_account_type_prepayments,1,,phar_gp_1_1_2_03,br_pharmedic_chart_template
+ttrx_phr1_1_2_03_004,33,1.1.2.03.004,Empréstimos Consignados,account.data_account_type_prepayments,1,,phar_gp_1_1_2_03,br_pharmedic_chart_template
+ttrx_phr1_1_2_03_005,35,1.1.2.03.005,Empréstimos a Funcionários,account.data_account_type_prepayments,1,,phar_gp_1_1_2_03,br_pharmedic_chart_template
+ttrx_phr1_1_2_04_001,37,1.1.2.04.001,Adiantamento Fornecedor Nacional,account.data_account_type_prepayments,1,,phar_gp_1_1_2_04,br_pharmedic_chart_template
+ttrx_phr1_1_2_04_002,39,1.1.2.04.002,Adiantamento Fornecedor Exterior,account.data_account_type_prepayments,1,,phar_gp_1_1_2_04,br_pharmedic_chart_template
+ttrx_phr1_1_2_04_003,41,1.1.2.04.003,Adiantamento Viagens,account.data_account_type_prepayments,1,,phar_gp_1_1_2_04,br_pharmedic_chart_template
+ttrx_phr1_1_2_04_004,43,1.1.2.04.004,Adiantamentos A Consórcio De Bens,account.data_account_type_prepayments,1,,phar_gp_1_1_2_04,br_pharmedic_chart_template
+ttrx_phr1_1_2_05_001,45,1.1.2.05.001,Mercadorias Revenda,account.data_account_type_current_assets,0,,phar_gp_1_1_2_05,br_pharmedic_chart_template
+ttrx_phr1_1_2_05_002,47,1.1.2.05.002,Produtos Acabados,account.data_account_type_current_assets,0,,phar_gp_1_1_2_05,br_pharmedic_chart_template
+ttrx_phr1_1_2_05_003,49,1.1.2.05.003,Produtos Em Elaboração,account.data_account_type_current_assets,0,,phar_gp_1_1_2_05,br_pharmedic_chart_template
+ttrx_phr1_1_2_05_004,51,1.1.2.05.004,Matérias Primas,account.data_account_type_current_assets,0,,phar_gp_1_1_2_05,br_pharmedic_chart_template
+ttrx_phr1_1_2_05_005,53,1.1.2.05.005,Material de Consumo,account.data_account_type_current_assets,0,,phar_gp_1_1_2_05,br_pharmedic_chart_template
+ttrx_phr1_1_2_05_006,55,1.1.2.05.006,Material de Embalagens,account.data_account_type_current_assets,0,,phar_gp_1_1_2_05,br_pharmedic_chart_template
+ttrx_phr1_1_2_05_007,57,1.1.2.05.007,Mercadoria em Consignação,account.data_account_type_current_assets,0,,phar_gp_1_1_2_05,br_pharmedic_chart_template
+ttrx_phr1_1_2_05_008,59,1.1.2.05.008,Estoques de Terceiros,account.data_account_type_current_assets,0,,phar_gp_1_1_2_05,br_pharmedic_chart_template
+ttrx_phr1_1_2_05_999,61,1.1.2.05.999,Estoque em Trânsito,account.data_account_type_current_assets,0,,phar_gp_1_1_2_05,br_pharmedic_chart_template
+ttrx_phr1_1_3_01_001,63,1.1.3.01.001,ICMS a Recuperar,account.data_account_type_current_assets,0,,phar_gp_1_1_3_01,br_pharmedic_chart_template
+ttrx_phr1_1_3_01_002,65,1.1.3.01.002,IPI a Recuperar,account.data_account_type_current_assets,0,,phar_gp_1_1_3_01,br_pharmedic_chart_template
+ttrx_phr1_1_3_01_003,67,1.1.3.01.003,COFINS a Recuperar,account.data_account_type_current_assets,0,,phar_gp_1_1_3_01,br_pharmedic_chart_template
+ttrx_phr1_1_3_01_004,69,1.1.3.01.004,PIS a Recuperar,account.data_account_type_current_assets,0,,phar_gp_1_1_3_01,br_pharmedic_chart_template
+ttrx_phr1_1_3_01_005,71,1.1.3.01.005,ISS a Recuperar,account.data_account_type_current_assets,0,,phar_gp_1_1_3_01,br_pharmedic_chart_template
+ttrx_phr1_1_3_01_006,73,1.1.3.01.006,CSL a Recuperar,account.data_account_type_current_assets,0,,phar_gp_1_1_3_01,br_pharmedic_chart_template
+ttrx_phr1_1_3_01_007,75,1.1.3.01.007,INSS a Recuperar,account.data_account_type_current_assets,0,,phar_gp_1_1_3_01,br_pharmedic_chart_template
+ttrx_phr1_1_3_01_008,77,1.1.3.01.008,IRRF a Recuperar,account.data_account_type_current_assets,0,,phar_gp_1_1_3_01,br_pharmedic_chart_template
+ttrx_phr1_1_3_01_009,79,1.1.3.01.009,CSSL Retido a Recuperar,account.data_account_type_current_assets,0,,phar_gp_1_1_3_01,br_pharmedic_chart_template
+ttrx_phr1_1_3_01_010,81,1.1.3.01.010,Pgtos Indevidos / A Maior,account.data_account_type_current_assets,0,,phar_gp_1_1_3_01,br_pharmedic_chart_template
+ttrx_phr1_1_3_02_001,83,1.1.3.02.001,IRPJ estimativa mensal,account.data_account_type_current_assets,0,,phar_gp_1_1_3_02,br_pharmedic_chart_template
+ttrx_phr1_1_3_02_002,85,1.1.3.02.002,CSSL estimativa mensal,account.data_account_type_current_assets,0,,phar_gp_1_1_3_02,br_pharmedic_chart_template
+ttrx_phr1_2_1_03_001,87,1.2.1.03.001,Deposito Judicial,account.data_account_type_receivable,1,,phar_gp_1_2_1_03,br_pharmedic_chart_template
+ttrx_phr1_2_1_03_002,89,1.2.1.03.002,Causa Trabalhista,account.data_account_type_receivable,1,,phar_gp_1_2_1_03,br_pharmedic_chart_template
+ttrx_phr1_2_1_04_001,91,1.2.1.04.001,Empréstimos A Sócios/Acionistas,account.data_account_type_receivable,1,,phar_gp_1_2_1_04,br_pharmedic_chart_template
+ttrx_phr1_2_1_04_002,93,1.2.1.04.002,Empréstimos A Empresas Controladas/Coligadas,account.data_account_type_receivable,1,,phar_gp_1_2_1_04,br_pharmedic_chart_template
+ttrx_phr1_2_1_05_001,95,1.2.1.05.001,Participações Em Controladas/Coligadas,account.data_account_type_current_assets,0,,phar_gp_1_2_1_05,br_pharmedic_chart_template
+ttrx_phr1_2_1_05_002,97,1.2.1.05.002,Participações Em Outras Empresas,account.data_account_type_current_assets,0,,phar_gp_1_2_1_05,br_pharmedic_chart_template
+ttrx_phr1_2_2_01_001,99,1.2.2.01.001,"Imóveis, Terrenos E Instalações",account.data_account_type_fixed_assets,0,,phar_gp_1_2_2_01,br_pharmedic_chart_template
+ttrx_phr1_2_2_01_002,101,1.2.2.01.002,"Veículos, Máquinas E Equipamentos",account.data_account_type_fixed_assets,0,,phar_gp_1_2_2_01,br_pharmedic_chart_template
+ttrx_phr1_2_2_01_003,103,1.2.2.01.003,"Ferramentas, Móveis, Aparelhos E Utensílios",account.data_account_type_fixed_assets,0,,phar_gp_1_2_2_01,br_pharmedic_chart_template
+ttrx_phr1_2_2_01_004,105,1.2.2.01.004,Equipamentos de Informática,account.data_account_type_fixed_assets,0,,phar_gp_1_2_2_01,br_pharmedic_chart_template
+ttrx_phr1_2_2_01_005,107,1.2.2.01.005,Software,account.data_account_type_fixed_assets,0,,phar_gp_1_2_2_01,br_pharmedic_chart_template
+ttrx_phr1_2_2_01_999,109,1.2.2.01.999,(-) Amortização/Depreciação Acumulada,account.data_account_type_depreciation,0,,phar_gp_1_2_2_01,br_pharmedic_chart_template
+ttrx_phr1_2_3_01_001,111,1.2.3.01.001,Marcas e Patentes,account.data_account_type_fixed_assets,0,,phar_gp_1_2_3_01,br_pharmedic_chart_template
+ttrx_phr2_1_1_01_001,113,2.1.1.01.001,Fornecedores (a Pagar),account.data_account_type_payable,1,,phar_gp_2_1_1_01,br_pharmedic_chart_template
+ttrx_phr2_1_1_03_001,115,2.1.1.03.001,Empréstimos E Financiamentos,account.data_account_type_payable,1,,phar_gp_2_1_1_03,br_pharmedic_chart_template
+ttrx_phr2_1_1_04_001,117,2.1.1.04.001,Ordenados e Salários a Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_04,br_pharmedic_chart_template
+ttrx_phr2_1_1_04_002,119,2.1.1.04.002,Pro labore a Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_04,br_pharmedic_chart_template
+ttrx_phr2_1_1_04_003,121,2.1.1.04.003,Férias a Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_04,br_pharmedic_chart_template
+ttrx_phr2_1_1_04_004,123,2.1.1.04.004,13 Salário a Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_04,br_pharmedic_chart_template
+ttrx_phr2_1_1_04_005,125,2.1.1.04.005,Pensao Alimenticia A Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_04,br_pharmedic_chart_template
+ttrx_phr2_1_1_04_006,127,2.1.1.04.006,Autonomos A Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_04,br_pharmedic_chart_template
+ttrx_phr2_1_1_04_007,129,2.1.1.04.007,Indenizacoes Trabalhistas A Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_04,br_pharmedic_chart_template
+ttrx_phr2_1_1_04_008,131,2.1.1.04.008,Contribuição Assistencial A Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_04,br_pharmedic_chart_template
+ttrx_phr2_1_1_04_009,133,2.1.1.04.009,Contribuição Confederativa A Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_04,br_pharmedic_chart_template
+ttrx_phr2_1_1_04_010,135,2.1.1.04.010,Contribuição Sindical A Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_04,br_pharmedic_chart_template
+ttrx_phr2_1_1_05_001,137,2.1.1.05.001,INSS a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_05,br_pharmedic_chart_template
+ttrx_phr2_1_1_05_002,139,2.1.1.05.002,FGTS a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_05,br_pharmedic_chart_template
+ttrx_phr2_1_1_05_003,141,2.1.1.05.003,IRFONTE a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_05,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_001,143,2.1.1.06.001,ICMS a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_002,145,2.1.1.06.002,IPI a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_003,147,2.1.1.06.003,COFINS a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_004,149,2.1.1.06.004,PIS a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_005,151,2.1.1.06.005,ISS a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_006,153,2.1.1.06.006,CSL a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_007,155,2.1.1.06.007,ICMS SUBSTITUÍÇÃO TRIBUTÁRIA a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_008,157,2.1.1.06.008,Simples a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_009,159,2.1.1.06.009,INSS PF a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_010,161,2.1.1.06.010,INSS PJ a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_011,163,2.1.1.06.011,IRRF PF a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_012,165,2.1.1.06.012,IRRF PJ a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_06_013,167,2.1.1.06.013,CSRF a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_06,br_pharmedic_chart_template
+ttrx_phr2_1_1_07_001,169,2.1.1.07.001,IRPJ a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_07,br_pharmedic_chart_template
+ttrx_phr2_1_1_07_002,171,2.1.1.07.002,CSSL a Recolher,account.data_account_type_payable,1,,phar_gp_2_1_1_07,br_pharmedic_chart_template
+ttrx_phr2_1_1_08_001,173,2.1.1.08.001,Comissoes a Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_08,br_pharmedic_chart_template
+ttrx_phr2_1_1_08_002,175,2.1.1.08.002,Fretes a Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_08,br_pharmedic_chart_template
+ttrx_phr2_1_1_08_003,177,2.1.1.08.003,Alugueis a Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_08,br_pharmedic_chart_template
+ttrx_phr2_1_1_08_004,179,2.1.1.08.004,Leasing a Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_08,br_pharmedic_chart_template
+ttrx_phr2_1_1_08_005,181,2.1.1.08.005,Outras Contas A Pagar,account.data_account_type_payable,1,,phar_gp_2_1_1_08,br_pharmedic_chart_template
+ttrx_phr2_1_1_08_006,183,2.1.1.08.006,Adiantamento de Clientes,account.data_account_type_prepayments,1,,phar_gp_2_1_1_08,br_pharmedic_chart_template
+ttrx_phr2_1_2_01_001,185,2.1.2.01.001,Provisão Férias,account.data_account_type_current_liabilities,0,,phar_gp_2_1_2_01,br_pharmedic_chart_template
+ttrx_phr2_1_2_01_002,187,2.1.2.01.002,Provisão 13. Salário,account.data_account_type_current_liabilities,0,,phar_gp_2_1_2_01,br_pharmedic_chart_template
+ttrx_phr2_3_1_01_001,189,2.3.1.01.001,Capital Social Subscrito,account.data_account_type_non_current_liabilities,0,,phar_gp_2_3_1_01,br_pharmedic_chart_template
+ttrx_phr3_1_1_01_001,191,3.1.1.01.001,Venda De Mercadorias Mercado Interno,account.data_account_type_revenue,0,income,phar_gp_3_1_1_01,br_pharmedic_chart_template
+ttrx_phr3_1_1_01_002,193,3.1.1.01.002,Venda De Mercadorias Exportação,account.data_account_type_revenue,0,income,phar_gp_3_1_1_01,br_pharmedic_chart_template
+ttrx_phr3_1_1_01_003,195,3.1.1.01.003,Venda De Serviços,account.data_account_type_revenue,0,income,phar_gp_3_1_1_01,br_pharmedic_chart_template
+ttrx_phr3_1_1_01_004,197,3.1.1.01.004,Venda De Sucatas,account.data_account_type_revenue,0,income,phar_gp_3_1_1_01,br_pharmedic_chart_template
+ttrx_phr3_1_1_01_005,199,3.1.1.01.005,Receita com Industrializações,account.data_account_type_revenue,0,income,phar_gp_3_1_1_01,br_pharmedic_chart_template
+ttrx_phr3_1_1_02_001,201,3.1.1.02.001,Devolução de Vendas,account.data_account_type_revenue,0,income,phar_gp_3_1_1_02,br_pharmedic_chart_template
+ttrx_phr3_1_1_02_002,203,3.1.1.02.002,Descontos Concedidos,account.data_account_type_revenue,0,income,phar_gp_3_1_1_02,br_pharmedic_chart_template
+ttrx_phr3_1_1_02_003,205,3.1.1.02.003,SIMPLES Sobre Faturamento,account.data_account_type_revenue,0,tax,phar_gp_3_1_1_02,br_pharmedic_chart_template
+ttrx_phr3_1_1_02_004,207,3.1.1.02.004,ICMS Sobre Vendas,account.data_account_type_revenue,0,tax,phar_gp_3_1_1_02,br_pharmedic_chart_template
+ttrx_phr3_1_1_02_005,209,3.1.1.02.005,ICMS Substituíção Tributária Sobre Vendas,account.data_account_type_revenue,0,tax,phar_gp_3_1_1_02,br_pharmedic_chart_template
+ttrx_phr3_1_1_02_006,211,3.1.1.02.006,ISS Sobre Serviços,account.data_account_type_revenue,0,tax,phar_gp_3_1_1_02,br_pharmedic_chart_template
+ttrx_phr3_1_1_02_007,213,3.1.1.02.007,COFINS Sobre Vendas,account.data_account_type_revenue,0,tax,phar_gp_3_1_1_02,br_pharmedic_chart_template
+ttrx_phr3_1_1_02_008,215,3.1.1.02.008,PIS Sobre Vendas,account.data_account_type_revenue,0,tax,phar_gp_3_1_1_02,br_pharmedic_chart_template
+ttrx_phr3_1_1_02_009,217,3.1.1.02.009,IPI Sobre Vendas,account.data_account_type_revenue,0,tax,phar_gp_3_1_1_02,br_pharmedic_chart_template
+ttrx_phr3_1_1_02_010,219,3.1.1.02.010,IRRF Sobre Vendas,account.data_account_type_revenue,0,tax,phar_gp_3_1_1_02,br_pharmedic_chart_template
+ttrx_phr3_1_2_01_001,221,3.1.2.01.001,Mercadoria Comprada Revenda,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_01,br_pharmedic_chart_template
+ttrx_phr3_1_2_01_002,223,3.1.2.01.002,Fretes Sobre Mercadoria Comprada,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_01,br_pharmedic_chart_template
+ttrx_phr3_1_2_01_003,225,3.1.2.01.003,(-) ICMS Sobre Compras,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_01,br_pharmedic_chart_template
+ttrx_phr3_1_2_01_004,227,3.1.2.01.004,(-) IPI Sobre Compras,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_01,br_pharmedic_chart_template
+ttrx_phr3_1_2_01_005,229,3.1.2.01.005,(-) PIS S/ Compras,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_01,br_pharmedic_chart_template
+ttrx_phr3_1_2_01_006,231,3.1.2.01.006,(-) COFINS S/ Compras,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_01,br_pharmedic_chart_template
+ttrx_phr3_1_2_01_007,233,3.1.2.01.007,Embalagens,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_01,br_pharmedic_chart_template
+ttrx_phr3_1_2_01_008,235,3.1.2.01.008,Bulas,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_01,br_pharmedic_chart_template
+ttrx_phr3_1_2_02_001,237,3.1.2.02.001,Compra Mercadoria Importada,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_02,br_pharmedic_chart_template
+ttrx_phr3_1_2_02_002,239,3.1.2.02.002,Fretes Internacional Importação,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_02,br_pharmedic_chart_template
+ttrx_phr3_1_2_02_003,241,3.1.2.02.003,(-) ICMS Sobre Importação,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_02,br_pharmedic_chart_template
+ttrx_phr3_1_2_02_004,243,3.1.2.02.004,(-) IPI Sobre Importação,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_02,br_pharmedic_chart_template
+ttrx_phr3_1_2_02_005,245,3.1.2.02.005,(-) PIS Sobre importação,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_02,br_pharmedic_chart_template
+ttrx_phr3_1_2_02_006,247,3.1.2.02.006,(-) COFINS Sobre Importação,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_02,br_pharmedic_chart_template
+ttrx_phr3_1_2_02_007,249,3.1.2.02.007,(-) II Imposto Sobre Importação,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_02,br_pharmedic_chart_template
+ttrx_phr3_1_2_02_008,251,3.1.2.02.008,Despachante Importação,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_02,br_pharmedic_chart_template
+ttrx_phr3_1_2_02_009,253,3.1.2.02.009,Taxas Sobre Importação,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_02,br_pharmedic_chart_template
+ttrx_phr3_1_2_03_001,255,3.1.2.03.001,Compra de Insumos,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_03,br_pharmedic_chart_template
+ttrx_phr3_1_2_03_002,257,3.1.2.03.002,Fretes Sobre Insumos,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_03,br_pharmedic_chart_template
+ttrx_phr3_1_2_03_003,259,3.1.2.03.003,(-) ICMS Sobre Insumos,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_03,br_pharmedic_chart_template
+ttrx_phr3_1_2_03_004,261,3.1.2.03.004,(-) IPI Sobre Insumos,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_03,br_pharmedic_chart_template
+ttrx_phr3_1_2_03_005,263,3.1.2.03.005,(-) PIS S/ Insumos,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_03,br_pharmedic_chart_template
+ttrx_phr3_1_2_03_006,265,3.1.2.03.006,(-) COFINS S/ Insumos,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_03,br_pharmedic_chart_template
+ttrx_phr3_1_2_04_001,267,3.1.2.04.001,Custos dos Serviços Vendidos,account.data_account_type_direct_costs,0,expense,phar_gp_3_1_2_04,br_pharmedic_chart_template
+ttrx_phr3_1_3_01_001,269,3.1.3.01.001,Rendimentos Aplicações Financeiras,account.data_account_type_other_income,0,income,phar_gp_3_1_3_01,br_pharmedic_chart_template
+ttrx_phr3_1_3_01_002,271,3.1.3.01.002,Desconto Obtidos,account.data_account_type_other_income,0,income,phar_gp_3_1_3_01,br_pharmedic_chart_template
+ttrx_phr3_1_3_01_003,273,3.1.3.01.003,Juros Multas Recebidas,account.data_account_type_other_income,0,income,phar_gp_3_1_3_01,br_pharmedic_chart_template
+ttrx_phr3_1_3_02_001,275,3.1.3.02.001,Variacao Cambial Ativa,account.data_account_type_other_income,0,income,phar_gp_3_1_3_02,br_pharmedic_chart_template
+ttrx_phr3_1_4_01_001,279,3.1.4.01.001,Receitas de Venda de Ativo Fixo,account.data_account_type_other_income,0,income,phar_gp_3_1_4_01,br_pharmedic_chart_template
+ttrx_phr3_1_4_01_002,281,3.1.4.01.002,Custo do Ativo Fixo,account.data_account_type_other_income,0,income,phar_gp_3_1_4_01,br_pharmedic_chart_template
+ttrx_phr3_1_4_01_003,283,3.1.4.01.003,(-) Baixa de Depreciação do Ativo Fixo,account.data_account_type_other_income,0,income,phar_gp_3_1_4_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_001,285,4.1.1.01.001,account_template_3010101010200,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_002,287,4.1.1.01.002,Ferias,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_003,289,4.1.1.01.003,13 Salario,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_004,291,4.1.1.01.004,Pro Labore,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_005,293,4.1.1.01.005,Estagio,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_006,295,4.1.1.01.006,Gratificacoes,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_007,297,4.1.1.01.007,Plr - Participacao Nos Lucros,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_008,299,4.1.1.01.008,Bolsa - Cursos E Treinamentos,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_009,301,4.1.1.01.009,Rescisoes Trabalhistas,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_010,303,4.1.1.01.010,Ajuda De Custos,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_011,305,4.1.1.01.011,Vale Refeicao,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_012,307,4.1.1.01.012,Vale Transporte,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_013,309,4.1.1.01.013,Uniformes,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_014,311,4.1.1.01.014,Assistencia Medica,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_015,313,4.1.1.01.015,Assistencia Odontologica,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_016,315,4.1.1.01.016,Despesas C/ Pcmso,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_017,317,4.1.1.01.017,Inss,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_018,319,4.1.1.01.018,Fgts S/ Salarios,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_01_019,321,4.1.1.01.019,Horas Extras,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_01,br_pharmedic_chart_template
+ttrx_phr4_1_1_02_001,323,4.1.1.02.001,Despesas C/ Cartorios,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_02,br_pharmedic_chart_template
+ttrx_phr4_1_1_02_002,325,4.1.1.02.002,Estacionamento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_02,br_pharmedic_chart_template
+ttrx_phr4_1_1_02_003,327,4.1.1.02.003,Combustível,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_02,br_pharmedic_chart_template
+ttrx_phr4_1_1_02_004,329,4.1.1.02.004,Coffe Break / Cafe / Almoço,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_02,br_pharmedic_chart_template
+ttrx_phr4_1_1_02_005,331,4.1.1.02.005,Táxi / Ulber / 99,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_02,br_pharmedic_chart_template
+ttrx_phr4_1_1_03_001,333,4.1.1.03.001,Telefonia Fixa,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_03,br_pharmedic_chart_template
+ttrx_phr4_1_1_03_002,335,4.1.1.03.002,Telefonia Movel,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_03,br_pharmedic_chart_template
+ttrx_phr4_1_1_03_003,337,4.1.1.03.003,Desp. C/ Internet,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_03,br_pharmedic_chart_template
+ttrx_phr4_1_1_04_001,339,4.1.1.04.001,Agua / Esgoto,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_04,br_pharmedic_chart_template
+ttrx_phr4_1_1_04_002,341,4.1.1.04.002,Energia Eletrica,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_04,br_pharmedic_chart_template
+ttrx_phr4_1_1_04_003,343,4.1.1.04.003,Alugueis,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_04,br_pharmedic_chart_template
+ttrx_phr4_1_1_04_004,345,4.1.1.04.004,Condominio,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_04,br_pharmedic_chart_template
+ttrx_phr4_1_1_04_005,347,4.1.1.04.005,Manutencao / Reparos / Conservação Predial,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_04,br_pharmedic_chart_template
+ttrx_phr4_1_1_04_006,349,4.1.1.04.006,IPTU,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_04,br_pharmedic_chart_template
+ttrx_phr4_1_1_04_007,351,4.1.1.04.007,Limpeza Escritório,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_04,br_pharmedic_chart_template
+ttrx_phr4_1_1_05_001,353,4.1.1.05.001,Material De Escritorio,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_05,br_pharmedic_chart_template
+ttrx_phr4_1_1_05_002,355,4.1.1.05.002,Material De Higiene E Limpeza,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_05,br_pharmedic_chart_template
+ttrx_phr4_1_1_05_003,357,4.1.1.05.003,Suprimentos De Informatica,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_05,br_pharmedic_chart_template
+ttrx_phr4_1_1_05_004,359,4.1.1.05.004,Despesas C/ Copa & Cozinha,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_05,br_pharmedic_chart_template
+ttrx_phr4_1_1_06_001,361,4.1.1.06.001,Correios / Malotes / Aereo,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_06,br_pharmedic_chart_template
+ttrx_phr4_1_1_06_002,363,4.1.1.06.002,Fretes E Carretos,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_06,br_pharmedic_chart_template
+ttrx_phr4_1_1_06_003,365,4.1.1.06.003,Servicos De Motoboy,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_06,br_pharmedic_chart_template
+ttrx_phr4_1_1_07_001,367,4.1.1.07.001,Brindes,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_07,br_pharmedic_chart_template
+ttrx_phr4_1_1_07_002,369,4.1.1.07.002,Bonificacoes,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_07,br_pharmedic_chart_template
+ttrx_phr4_1_1_07_003,371,4.1.1.07.003,Criacao De Materiais / Midias,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_07,br_pharmedic_chart_template
+ttrx_phr4_1_1_07_004,373,4.1.1.07.004,Patrocinio,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_07,br_pharmedic_chart_template
+ttrx_phr4_1_1_07_005,375,4.1.1.07.005,Gerenciamento De Midia Social,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_07,br_pharmedic_chart_template
+ttrx_phr4_1_1_07_006,377,4.1.1.07.006,Outras Despesas De Marketing,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_07,br_pharmedic_chart_template
+ttrx_phr4_1_1_07_007,379,4.1.1.07.007,Grafica,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_07,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_001,381,4.1.1.08.001,Patrocinio Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_002,383,4.1.1.08.002,Stand Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_003,385,4.1.1.08.003,Banner Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_004,387,4.1.1.08.004,Coffe Break Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_005,389,4.1.1.08.005,Brindes Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_006,391,4.1.1.08.006,Grafica Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_007,393,4.1.1.08.007,Segurança Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_008,395,4.1.1.08.008,Modelos Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_009,397,4.1.1.08.009,Garçon Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_010,399,4.1.1.08.010,Aluguel De Equipamentos Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_011,401,4.1.1.08.011,Passagem Aerea Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_012,403,4.1.1.08.012,Estadia Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_013,405,4.1.1.08.013,Transporte Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_014,407,4.1.1.08.014,Premio Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_08_015,409,4.1.1.08.015,Producao De Evento,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_08,br_pharmedic_chart_template
+ttrx_phr4_1_1_09_001,411,4.1.1.09.001,Locacao De Veiculos Viagem,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_09,br_pharmedic_chart_template
+ttrx_phr4_1_1_09_002,413,4.1.1.09.002,Hospedagem Viagem,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_09,br_pharmedic_chart_template
+ttrx_phr4_1_1_09_003,415,4.1.1.09.003,Passagens Viagem,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_09,br_pharmedic_chart_template
+ttrx_phr4_1_1_09_004,417,4.1.1.09.004,Pedagios Viagem,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_09,br_pharmedic_chart_template
+ttrx_phr4_1_1_09_005,419,4.1.1.09.005,Lanches / Refeicoes Viagem,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_09,br_pharmedic_chart_template
+ttrx_phr4_1_1_09_006,421,4.1.1.09.006,Taxi Viagem,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_09,br_pharmedic_chart_template
+ttrx_phr4_1_1_09_007,423,4.1.1.09.007,Locomoção Viagem,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_09,br_pharmedic_chart_template
+ttrx_phr4_1_1_09_008,425,4.1.1.09.008,Reembolso De Combustivel Viagem,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_09,br_pharmedic_chart_template
+ttrx_phr4_1_1_09_009,427,4.1.1.09.009,Viagens E Estadias Viagem,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_09,br_pharmedic_chart_template
+ttrx_phr4_1_1_09_010,429,4.1.1.09.010,Estacionamento Viagem,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_09,br_pharmedic_chart_template
+ttrx_phr4_1_1_10_001,431,4.1.1.10.001,Despesas C/ Depreciacoes,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_10,br_pharmedic_chart_template
+ttrx_phr4_1_1_10_002,433,4.1.1.10.002,Despesas C/ Amortizacoes,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_10,br_pharmedic_chart_template
+ttrx_phr4_1_1_11_001,435,4.1.1.11.001,Assessoria Contabil,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_11,br_pharmedic_chart_template
+ttrx_phr4_1_1_11_002,437,4.1.1.11.002,Assessoria Juridica,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_11,br_pharmedic_chart_template
+ttrx_phr4_1_1_11_003,439,4.1.1.11.003,Consultorias,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_11,br_pharmedic_chart_template
+ttrx_phr4_1_1_11_004,441,4.1.1.11.004,Servicos de Limpeza,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_11,br_pharmedic_chart_template
+ttrx_phr4_1_1_11_005,443,4.1.1.11.005,Servicos de Vigilancia,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_11,br_pharmedic_chart_template
+ttrx_phr4_1_1_11_006,445,4.1.1.11.006,Servicos de Informatica,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_11,br_pharmedic_chart_template
+ttrx_phr4_1_1_11_007,447,4.1.1.11.007,Serviço de Chaveiro,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_11,br_pharmedic_chart_template
+ttrx_phr4_1_1_12_001,449,4.1.1.12.001,Associacao De Classes,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_12,br_pharmedic_chart_template
+ttrx_phr4_1_1_12_002,451,4.1.1.12.002,Taxas Federais,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_12,br_pharmedic_chart_template
+ttrx_phr4_1_1_12_003,453,4.1.1.12.003,Taxas Estaduais,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_12,br_pharmedic_chart_template
+ttrx_phr4_1_1_12_004,455,4.1.1.12.004,Taxas Municipais,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_12,br_pharmedic_chart_template
+ttrx_phr4_1_1_12_005,457,4.1.1.12.005,Taxas Sindicais,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_12,br_pharmedic_chart_template
+ttrx_phr4_1_1_13_001,459,4.1.1.13.001,Festas Aniversário,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_13,br_pharmedic_chart_template
+ttrx_phr4_1_1_13_002,461,4.1.1.13.002,Farmácia / Remédio,account.data_account_type_expenses,0,expense,phar_gp_4_1_1_13,br_pharmedic_chart_template
+ttrx_phr4_1_2_01_001,463,4.1.2.01.001,Despesas / Taxas Bancarias,account.data_account_type_expenses,0,expense,phar_gp_4_1_2_01,br_pharmedic_chart_template
+ttrx_phr4_1_2_01_002,465,4.1.2.01.002,IOF / IOC,account.data_account_type_expenses,0,expense,phar_gp_4_1_2_01,br_pharmedic_chart_template
+ttrx_phr4_1_2_01_003,467,4.1.2.01.003,Juros Passivos,account.data_account_type_expenses,0,expense,phar_gp_4_1_2_01,br_pharmedic_chart_template
+ttrx_phr4_1_2_01_004,469,4.1.2.01.004,Desconto Concedidos,account.data_account_type_expenses,0,expense,phar_gp_4_1_2_01,br_pharmedic_chart_template
+ttrx_phr4_1_2_01_005,471,4.1.2.01.005,Tarifas De Cambio,account.data_account_type_expenses,0,expense,phar_gp_4_1_2_01,br_pharmedic_chart_template
+ttrx_phr4_1_2_02_001,473,4.1.2.02.001,Variacao Cambial Passiva,account.data_account_type_expenses,0,expense,phar_gp_4_1_2_02,br_pharmedic_chart_template
+ttrx_phr4_2_1_01_001,477,4.2.1.01.001,Multas Federais,account.data_account_type_expenses,0,expense,phar_gp_4_2_1_01,br_pharmedic_chart_template
+ttrx_phr4_2_1_01_002,479,4.2.1.01.002,Multas Estaduais,account.data_account_type_expenses,0,expense,phar_gp_4_2_1_01,br_pharmedic_chart_template
+ttrx_phr4_2_1_01_003,481,4.2.1.01.003,Multas Municipais,account.data_account_type_expenses,0,expense,phar_gp_4_2_1_01,br_pharmedic_chart_template
+ttrx_phr4_2_1_01_004,483,4.2.1.01.004,Multas De Transito,account.data_account_type_expenses,0,expense,phar_gp_4_2_1_01,br_pharmedic_chart_template
+ttrx_phr4_2_1_02_001,485,4.2.1.02.001,Doacoes,account.data_account_type_expenses,0,expense,phar_gp_4_2_1_02,br_pharmedic_chart_template
+ttrx_phr5_1_1_01_001,487,5.1.1.01.001,Apuração Do Resultado,account.data_unaffected_earnings,0,,phar_gp_5_1_1_01,br_pharmedic_chart_template

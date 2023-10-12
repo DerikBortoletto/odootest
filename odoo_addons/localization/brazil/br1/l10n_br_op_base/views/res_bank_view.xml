@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_br_view_res_bank_tree" model="ir.ui.view">
+        <field name="name">view.br.base.res.bank.tree.form</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_tree" />
+        <field name="arch" type="xml">
+			<field name="name" position="before">
+				<field name="code_bc"/>
+				<field name="short_name"/>
+			</field>
+			<field name="bic" position="after">
+				<field name="ispb_number" optional="show"/>
+				<field name="compe_member" optional="show"/>
+			</field>
+        </field>
+    </record>
+	
+
+    <record id="view_br_base_res_bank_form" model="ir.ui.view">
+        <field name="name">view_br_base.res.bank.form</field>
+        <field name="model">res.bank</field>
+        <field name="inherit_id" ref="base.view_res_bank_form" />
+        <field name="arch" type="xml">
+			<field name="name" position="before">
+				<field name="code_bc"/>
+				<field name="short_name"/>
+			</field>
+			<field name="bic" position="after">
+				<field name="ispb_number"/>
+				<field name="compe_member"/>
+			</field>
+            <field name="street2" position="replace"/>
+               <field name="zip" position="replace"/>
+               <field name="street" position="replace">
+                   <field name="zip" placeholder="Zip Code" style="width:50%" />
+                   <field name="street" placeholder="Street" />
+                   <field name="number" placeholder="Number"/>
+                   <field name="street2" placeholder="Complement"/>
+                   <field name="district" placeholder="District"/>
+                   <field name="country_id" placeholder="Country" options="{'no_create': True, 'no_create_edit': True}" />
+                   <field name="state_id" placeholder="State" options="{'no_create': True, 'no_create_edit': True}" />
+                   <field name="city_id" placeholder="City" options="{'no_create': True, 'no_create_edit': True}" />
+               </field>
+               <field name="state_id" position="attributes">
+                   <attribute name="domain">[('country_id','=',country_id)]</attribute>
+                   <attribute name="style">width:100%</attribute>
+               </field>
+               <field name="country" position="replace">
+                   <field name="country" invisible="1"/>
+               </field>
+               <field name="state" position="replace">
+                   <field name="state" invisible="1"/>
+               </field>
+               <field name="city" position="replace">
+                   <field name="city" invisible="1"/>
+               </field>
+               <group position="after">
+                   <group string="Configuration">
+                       <field name="acc_number_format" placeholder="OFX Account Number Format"/>
+                   </group>
+               </group>
+        </field>
+    </record>
+
+</odoo>

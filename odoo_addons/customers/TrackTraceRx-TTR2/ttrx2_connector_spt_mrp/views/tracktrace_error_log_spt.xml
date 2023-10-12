@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+       <record id="view_tracktrace_log_filter_spt" model="ir.ui.view">
+            <field name="name">tracktrace.log.filter.spt</field>
+            <field name="model">tracktrace.log.spt</field>
+            <field name="arch" type="xml">
+                <search string="Search License Types">
+                    <field name="model" filter_domain="['|','|',('model', 'ilike', self),('method', 'ilike', self),('message','ilike', self)]"/>
+                    <separator/>
+                    <group expand="0" name="group_by" string="Group By">
+                        <filter name="group_type" string="Type" context="{'group_by': 'type'}"/>
+                        <filter name="group_method" string="Method" context="{'group_by': 'method'}"/>
+                        <filter name="group_model" string="Model" context="{'group_by': 'model'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+		<record id="tracktrace_log_spt_form_view" model="ir.ui.view">
+			<field name="name">tracktrace.log.form.view.spt</field>
+			<field name="model">tracktrace.log.spt</field>
+			<field name="arch" type="xml">
+				<form string="Log" create="false" delete="false">
+					<sheet>
+						<group>
+							<field name="create_date" />
+							<field name="type"/>
+							<field name="model"/>
+							<field name="method"/>
+							<field name="message" />
+						</group>
+					</sheet>
+				</form>
+			</field>
+		</record>
+
+		<record id="tracktrace_log_spt_tree_view" model="ir.ui.view">
+			<field name="name">tracktrace.log.tree.view.spt</field>
+			<!-- <field name="groups_id" eval="[(4,ref('easy_redmine_spt.group_redmine_access'))]"/> -->
+			<field name="model">tracktrace.log.spt</field>
+			<field name="arch" type="xml">
+				<tree create="false" delete="false">
+					<field name="create_date" />
+					<field name="type"/>
+					<field name="model"/>
+					<field name="method"/>
+					<field name="message" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="action_tracktrace_log_spt" model="ir.actions.act_window">
+			<field name="name">TrackTraceRx Log</field>
+			<field name="res_model">tracktrace.log.spt</field>
+			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_tracktrace_log_filter_spt"/>
+		</record>
+
+	</data>
+</odoo>

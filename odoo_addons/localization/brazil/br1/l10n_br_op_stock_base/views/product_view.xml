@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+
+	    <record id="view_br_product_template_form_inherit" model="ir.ui.view">
+	        <field name="model">product.template</field>
+	        <field name="inherit_id" ref="l10n_br_op_account_base.view_br_product_template_form"/>
+	        <field name="arch" type="xml">
+				<field name="origin" position="attributes">
+					<attribute name="attrs">{'invisible': [('type', '=', 'service')], 'required': [('type','=','product')]}</attribute>
+				</field>
+				<field name="ncm_id" position="attributes">
+					<attribute name="attrs">{'invisible': [('type', '=', 'service')], 'required': [('type','=','product')]}</attribute>
+				</field>
+				<field name="service_type_id" position="attributes">
+					<attribute name="attrs">{'invisible': [('type', '!=', 'service')], 'required': [('type','=','service')]}</attribute>
+				</field>
+	        </field>
+	    </record>
+	
+	</data>
+</odoo>

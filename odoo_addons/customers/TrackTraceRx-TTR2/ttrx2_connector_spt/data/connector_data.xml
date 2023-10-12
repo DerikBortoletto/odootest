@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo> <!-- noupdate="1"> --> 
+
+	<!-- Add API URL prod default configuration parameter -->
+	<record id="default_tracktracerx_endpoint_prod" model="ir.config_parameter">
+	    <field name="key">tracktrace.endpoint.prod</field>
+	    <field name="value">https://api.tracktraceweb.com/2.0</field>
+	</record>
+
+		<!-- Add API URL test default configuration parameter -->
+	<record id="default_tracktracerx_endpoint_test" model="ir.config_parameter">
+	    <field name="key">tracktrace.endpoint.test</field>
+	    <field name="value">https://api.test.tracktraceweb.com/2.0</field>
+	</record>
+
+	<record id="connector_tracktracerx" model="connector.spt">
+		<field name="name">Connector</field>
+	</record>
+
+	<record model="res.config.settings" id="ttrx_connector_settings">
+		<field name="group_uom" eval="1"/>
+		<field name="group_product_variant" eval="1"/>
+		<field name="group_stock_packaging" eval="1"/>
+		<field name="group_stock_tracking_lot" eval="1"/>
+		<field name="group_stock_multi_locations" eval="1"/>
+		<field name="group_stock_adv_location" eval="1"/>
+		<field name="group_stock_production_lot" eval="1"/>
+	</record>
+	
+	<function model="res.config.settings" name="execute">
+		<value eval="[ref('ttrx_connector_settings')]"/>
+	</function>
+	
+</odoo>

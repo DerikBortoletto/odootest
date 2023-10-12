@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+	<data>
+	    <record id="view_ttrx_picking_form" model="ir.ui.view">
+	        <field name="inherit_id" ref="stock.view_picking_form" />
+	        <field name="model">stock.picking</field>
+	        <field name="arch" type="xml">
+	            <xpath expr="//field[@name='owner_id']" position="after">
+	            	<field name="inbound_shipment_id"/>
+	            	<field name="outbound_shipment_id"/>
+	            </xpath>
+   	            <xpath expr="/form/sheet/notebook" position="inside">
+   	            	<page name="ttrx" string="TrackTrace">
+   	            		<group>
+   	            			<group>
+   	            			 	<field name="po_nbr"/>
+   	            			 	<field name="internal_reference_number"/>
+   	            			 	<field name="release_nbr"/>
+   	            			 	<field name="transaction_date"/>
+   	            			 	<field name="shipment_picking_uuid"/>
+   	            			</group>
+   	            			<group>
+   	            			 	<field name="container_serial"/>
+   	            			 	<field name="is_received"/>
+   	            			 	<field name="is_closed"/>
+   	            			 	<field name="po_transaction_uuid"/>
+   	            			</group>
+   	            		</group>
+   	            	</page>
+   	            </xpath>
+	        </field>
+	    </record>
+	</data>
+</odoo>

@@ -1,0 +1,106 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+    	<record id="product_product_form_view_inherit_spt" model="ir.ui.view">
+            <field name="name">product.product.form.view.inherit.spt</field>
+            <field name="model">product.product</field>
+			<field name="groups_id" eval="[(4,ref('ttrx2_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//sheet/notebook/page[@name='general_information']/group/group" position="inside">
+					<field name="tracktrace_is"/>
+				</xpath>
+				<!-- 
+                <xpath expr="//sheet/notebook/page[last()]" position="after">
+                    <page string="TrackTraceRx2">
+                        <notebook>
+                            <page string="General">
+                                <group>
+                                    <group>
+                                        <field name="product_type"/>
+                                        <field name="long_name"/>
+                                        <field name="ttr_uuid" readonly="0"/>
+                                        <field name="pack_size"/>
+                                        <field name="pack_size_type_id"/>
+                                    </group>
+                                    <group>
+                                        <field name="manufacturers_id"/>
+                                        <field name="status"/>
+                                        <field name="composition"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Identifiers">
+                                <group>
+                                    <group>
+                                        <field name="upc"/>
+                                    </group>
+                                    <group>
+                                        <field name="gs1_company_prefix"/>
+                                        <field name="gs1_id"/>
+                                    </group>
+                                </group>
+                                <field name="product_identifier_ids"/>
+                            </page>
+                            <page string="Requirements">
+                                <group>
+                                    <group string="Pharmaceutical Properties" attrs="{'invisible':[('product_type','!=','Pharmaceutical')]}">
+                                        <field name="generic_name"/>
+                                        <field name="strength"/>
+                                        <field name="dosage_form"/>
+                                    </group>
+                                    <group string="Shoe Properties" attrs="{'invisible':[('product_type','!=','Shoe')]}">
+                                        <field name="us_size"/>
+                                        <field name="gender"/>
+                                    </group>
+                                </group>
+                                <field name="product_requirement_ids"/>
+                            </page>
+                            <page string="Packaging">
+                                <field name="product_packaging_ids">
+                                    <tree>
+                                        <field name="ttr_uuid"/>
+                                        <field name="name"/>
+                                        <field name="active"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="ttr_uuid"/>
+                                                <field name="name"/>
+                                            </group>
+                                            <group>
+                                                <field name="active"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </page>
+                </xpath>
+                 -->
+            </field>
+        </record>
+
+		<!-- 
+		<record id="action_product_product_spt" model="ir.actions.act_window">
+			<field name="name">Products</field>
+            <field name="type">ir.actions.act_window</field>
+			<field name="res_model">product.product</field>
+			<field name="view_mode">kanban,tree,form</field>
+            <field name="domain">[('is_tracktrace','=', True)]</field>
+			<field name="context">{'default_is_tracktrace': True}</field>
+			<field name="search_view_id" ref=""/>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new product of TrackTraceRx in your products list
+              </p><p>
+                We helps you easily track all activities related to a products.
+              </p>
+            </field>
+		</record>
+		-->
+	</data>
+</odoo>

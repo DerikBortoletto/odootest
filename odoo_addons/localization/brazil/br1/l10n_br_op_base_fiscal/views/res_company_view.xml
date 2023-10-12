@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_fiscal_company_form_inherited" model="ir.ui.view">
+        <field name="name">view.fiscal.company.form.inherited</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook[1]">
+                <page name="certificate" string="Certificados">
+	                <group string="Digital Certificate">
+	                    <field name="nfe_a1_file" />
+	                    <field name="nfe_a1_password" password="True" />
+	                    <field name="cert_state" />
+	                    <field name="cert_expire_date" />
+	                    <field name="cert_information" />
+	                </group>
+	                <group>
+	                	<field name="ibpt_api_token" />
+	                </group>
+	            </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_fiscal_company_tree_inherited" model="ir.ui.view">
+        <field name="name">fiscal.res.company.tree.inherited</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_tree"/>
+        <field name="field_parent">child_ids</field>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="cert_state"/>
+            </field>
+        </field>
+    </record>
+    
+</odoo>

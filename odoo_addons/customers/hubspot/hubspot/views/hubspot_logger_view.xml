@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hubspot_logger_form_view" model="ir.ui.view">
+            <field name="name">hubspot.logger.form.view</field>
+            <field name="model">hubspot.logger</field>
+            <field name="arch" type="xml">
+                <form string="Hubspot Logger" create="false" delete="false" edit="false">
+                    <group>
+                        <field name="hubspot_datetime"/>
+                        <field name="hubspot_user_id"/>
+                        <field name="hubspot_operation"/>
+                        <field name="hubspot_description"/>
+
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="hubspot_logger_tree_view" model="ir.ui.view">
+            <field name="name">hubspot.logger.tree.view</field>
+            <field name="model">hubspot.logger</field>
+            <field name="arch" type="xml">
+                <tree string="Hubspot Logger" create="false" delete="false" edit="false">
+                    <field name="hubspot_datetime"/>
+                    <field name="hubspot_user_id"/>
+                    <field name="hubspot_operation"/>
+                    <field name="hubspot_description"/>
+                </tree>
+            </field>
+        </record>
+
+         <record id="hubspot_logger_action" model="ir.actions.act_window">
+            <field name="name">Hubspot Logger</field>
+            <field name="res_model">hubspot.logger</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="hubspot_logger_menu"
+        name="Hubspot Logger"
+        action="hubspot_logger_action"
+        sequence="2" parent="hubspot_instance_menu"
+        />
+    </data>
+</odoo>

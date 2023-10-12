@@ -1,0 +1,9 @@
+<odoo>
+    <data>
+        <template id="middleware_rest_controller.assets_backend" name="default assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/middleware_rest_controller/static/src/js/default.js"></script>
+            </xpath>
+        </template>
+    </data>
+</odoo>

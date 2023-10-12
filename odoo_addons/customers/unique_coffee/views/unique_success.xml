@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="contact_success_template" name="Contact Success">
+        <t t-call="website.layout">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-8 mx-auto">
+                        <div class="card">
+                            <div class="card-body">
+                                <h3 class="card-title text-center">Contatos
+                                    Cadastrados
+                                </h3>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Birthdate</th>
+                                            <th>Cellphone</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <t t-foreach="contacts" t-as="contact">
+                                            <tr>
+                                                <td>
+                                                    <t t-esc="contact.name"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="contact.birthdate.strftime('%d-%m-%Y')"/>
+                                                </td>
+                                                <td>
+                                                    <t t-esc="contact.cellphone"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </tbody>
+                                </table>
+                                <div class="text-center">
+                                    <a class="btn btn-primary" href="/register">
+                                        Voltar
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

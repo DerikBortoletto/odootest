@@ -1,0 +1,68 @@
+<?xml version="1.0" ?>
+<odoo>
+    <data>
+    
+		<!-- 
+        <record id="res_company_tree_form_view_inherit_spt" model="ir.ui.view">
+            <field name="name">res.company.tree.form.view.inherit.spt</field>
+            <field name="model">res.company</field>
+            <field name="groups_id" eval="[(4,ref('tracktrace2_odoo_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="base.view_company_tree"/>
+            <field name="arch" type="xml">
+            	<field name="partner_id" position="after">
+            		<field name="error_message" invisible="1"/>
+            		<field name="ttrx_api_tested" invisible="1"/>
+            	</field>
+            </field>
+       </record>
+     	-->
+    	<!-- 
+        <record id="res_company_form_view_inherit_spt" model="ir.ui.view">
+            <field name="name">res.company.form.view.inherit.spt</field>
+            <field name="model">res.company</field>
+            <field name="groups_id" eval="[(4,ref('tracktrace2_odoo_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="base.view_company_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                	
+                    <page string="Connector TTrx2">
+                        <field name="error_message" nolabel="1" style="color:green;" attrs="{'invisible':[('ttrx_api_tested','!=',True)]}"/>
+                        <field name="error_message" nolabel="1" style="color:red;" attrs="{'invisible':[('ttrx_api_tested','=',True)]}"/>
+                        <group>
+                            <group>
+                                <field name="is_connected" invisible='1' />
+                                <field name="api_environment" />
+                                <field name="api_key" />
+                                <field name="auto_vacuum"/>
+                                <field name="ttrx_portal_url" groups="base.group_no_one"/>
+                                <field name="ttrx_api_url" groups="base.group_no_one"/>
+                                <field name="ttrx_api_tested" groups="base.group_no_one"/>
+                            </group>
+                        </group>
+                        <br/>
+                        <button name="test_connection" type="object" class="oe_highlight" string="Test Connection" attrs="{'invisible':[('ttrx_api_tested','=',True)]}"/><br/><br/>
+                        <button name="import_export" attrs="{'invisible':[('ttrx_api_tested','!=',True)]}" type="object" class="oe_highlight"  icon="fa-refresh fa-3x" width="150" height="100">
+                            <br/>Connector Operation
+                        </button>
+                    </page>
+                     
+                    <page string="Company Settings / Policies">
+                        <group string="Inventory">
+                            <field name="lot_number" />
+                            <field name="serial_number" />
+                            <field name="strict_inventory_policies" />
+                        </group>
+                        <p>Enable or disable strict edition policies, like no edition allowed on an inbound transaction if an approved outbound is issued.</p>
+                        <group string="Orders Reception">
+                            <field name="edi_source" />
+                            <field name="epcis_source" />
+                            <field name="other_source" />
+                            <field name="unknown_products" />
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+        -->
+    </data>
+</odoo>

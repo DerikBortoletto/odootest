@@ -1,0 +1,216 @@
+<?xml version="1.0" ?>
+<odoo>
+	<data>
+
+		<record id="inherit_purchase_order_view_form" model="ir.ui.view">
+            <field name="name">inherit.purchase.order.view.form</field>
+            <field name="model">purchase.order</field>
+			<field name="groups_id" eval="[(4,ref('ttrx2_connector_spt.group_ttr2_access'))]"/>
+            <field name="inherit_id" ref="purchase.purchase_order_form"/>
+            <field name="arch" type="xml">
+            	<xpath expr="/form" position="inside">
+            		<field name="can_send_to_ttr2" invisible="1"/>
+            		<field name="has_connector" invisible="1"/>
+            		<field name="location_id" invisible="1"/>
+            		<field name="storage_id" invisible="1"/>
+					<field name="status_delete_portal" readonly='1'/>
+            	</xpath>
+            	<xpath expr="//header" position='after'>
+	                <div attrs="{'invisible': ['|','|',('has_connector','=',False),('can_send_to_ttr2', '=', True),('no_send_to_ttr2', '=', True)]}">
+	                  <div class="alert alert-warning" role="alert">
+	                    <p><strong>Ooops</strong> This P.O. will not be sent to TTRx. You have not indicated a location that is contained in the TTRx portal.</p>
+	                  </div>
+	                </div>
+            	</xpath>
+            	<xpath expr="//button[@name='button_unlock']" position="after">
+            		<button name="action_refresh" type="object" groups="base.group_no_one" string="Refresh From TTRx" attrs="{'invisible':['|',('uuid','=',False),('state','in',('done','cancel'))]}"/>
+            		<button name="action_recompute" type="object" string="Recompute" groups="base.group_no_one"/>
+            	</xpath>
+
+            	<field name="picking_type_id" position="after">
+            		<field name="location_spt_id"/>
+            		<field name="storage_spt_id" attrs="{'invisible': [('location_spt_id', '=', False)]}"/>
+            		<field name="shelf_spt_id"  attrs="{'invisible': ['|',('location_spt_id', '=', False),('storage_spt_id', '=', False)]}"/>
+            	</field>
+                <xpath expr="//page[@name='purchase_delivery_invoice']" position="after">
+                    <page string="TrackTrace2">
+                    	<group>
+                    		<field name="no_send_to_ttr2" />
+                    	</group>
+						<group attrs="{'invisible': [('no_send_to_ttr2', '=', True)]}">
+							<field name="uuid"/>
+							<field name="is_editable" readonly="1"/>
+							<field name="connector_id" readonly="1" />
+						</group>
+                    </page>
+                </xpath>
+	            <xpath expr="//field[@name='order_line']/form//field[@name='analytic_tag_ids']" position="after">
+	                <field name="uuid"/>
+	            </xpath>
+				<xpath expr="//field[@name='name']" position="after">
+					<widget name="web_ribbon" title="DELETED FROM THE PORTAL" bg_color="bg-danger"
+							attrs="{'invisible': [('status_delete_portal', '!=', True)]}"/>
+				</xpath>
+            </field>
+        </record>
+        
+        <record id="view_ttrx_purchase_form_action" model="ir.actions.act_window">
+            <field name="name">Purchase Orders TTRx</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+            <field name="search_view_id" ref="purchase.purchase_order_view_search"/>
+            <field name="view_id" ref="purchase.purchase_order_view_tree"/>
+            <field name="context">{}</field>
+            <field name="domain">[('uuid','!=',False)]</field>
+            <field name="help" type="html">
+				<p class="o_view_nocontent_smiling_face">
+				  No purchase order found. Let's create one!
+				</p><p>
+				  Once you ordered your products to your supplier, confirm your request for quotation and it will turn into a purchase order.
+				</p>
+            </field>
+        </record>
+
+		<record id="view_purchase_order_filter_ttrx" model="ir.ui.view">
+            <field name="name">request.quotation.ttrx.select</field>
+            <field name="model">purchase.order</field>
+            <field name="arch" type="xml">
+                <search string="Search Purchase Order">
+                    <field name="name" string="Order"
+                        filter_domain="['|', '|', ('name', 'ilike', self), ('partner_ref', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="user_id"/>
+                    <field name="product_id"/>
+                    <filter name="my_purchases" string="My Purchases" domain="[('user_id', '=', uid)]"/>
+                    <filter string="Starred" name="starred" domain="[('priority', '=', '1')]"/>
+                    <separator/>
+                    <filter name="draft" string="RFQs" domain="[('state', 'in', ('draft', 'sent', 'to approve'))]"/>
+                    <separator/>
+                    <filter name="approved" string="Purchase Orders" domain="[('state', 'in', ('purchase', 'done'))]"/>
+                    <filter name="to_approve" string="To Approve" domain="[('state', '=', 'to approve')]"/>
+                    <separator/>
+                    <filter name="order_date" string="Order Date" date="date_order"/>
+                    <filter name="draft_rfqs" string="Draft RFQs" domain="[('state', '=', 'draft')]"/>
+                    <filter name="waiting_rfqs" string="Waiting RFQs" domain="[('state', '=', 'sent'), ('date_order', '&gt;=', datetime.datetime.now())]"/>
+                    <filter name="late_rfqs" string="Late RFQs" domain="[('state', 'in', ['draft', 'sent', 'to approve']),('date_order', '&lt;', datetime.datetime.now())]"/>
+                    <separator/>
+					<filter string="PO" name="status_delete_portal"
+							domain="[('status_delete_portal', '!=', True)]"/>
+                    <filter invisible="1" string="Late Activities" name="activities_overdue"
+                        domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                        help="Show all records which has next action date is before today"/>
+                    <filter invisible="1" string="Today Activities" name="activities_today"
+                        domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter invisible="1" string="Future Activities" name="activities_upcoming_all"
+                        domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
+                    <separator/>
+                    <filter string="Warnings" name="activities_exception"
+                        domain="[('activity_exception_decoration', '!=', False)]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Vendor" name="vendor" domain="[]" context="{'group_by': 'partner_id'}"/>
+                        <filter string="Purchase Representative" name="representative" domain="[]" context="{'group_by': 'user_id'}"/>
+                        <filter string="Order Date" name="order_date" domain="[]" context="{'group_by': 'date_order'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+		<record id="purchase.purchase_rfq" model="ir.actions.act_window">
+            <field name="name">Requests for Quotation</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">purchase.order</field>
+            <field name="view_mode">tree,kanban,form,pivot,graph,calendar,activity</field>
+            <field name="view_id" ref="purchase.purchase_order_kpis_tree"/>
+            <field name="domain">[]</field>
+            <field name="search_view_id" ref="view_purchase_order_filter_ttrx"/>
+            <field name="context">{'quotation_only': True, 'search_default_status_delete_portal': True}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                No request for quotation found. Let's create one!
+              </p><p>
+                Requests for quotation are documents that will be sent to your suppliers to request prices for different products you consider buying.
+                Once an agreement has been found with the supplier, they will be confirmed and turned into purchase orders.
+              </p>
+            </field>
+        </record>
+
+        <record id="view_sales_order_filter_filter" model="ir.ui.view">
+            <field name="name">sale.order.list.select.filter</field>
+            <field name="model">sale.order</field>
+            <field name="priority" eval="15"/>
+            <field name="arch" type="xml">
+                <search string="Search Sales Order">
+                    <field name="name" string="Order" filter_domain="['|', '|', ('name', 'ilike', self), ('client_order_ref', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+                    <field name="partner_id" operator="child_of"/>
+                    <field name="user_id"/>
+                    <field name="team_id" string="Sales Team"/>
+                    <field name="order_line" string="Product" filter_domain="[('order_line.product_id', 'ilike', self)]"/>
+                    <field name="analytic_account_id" groups="analytic.group_analytic_accounting"/>
+                    <!-- We only allow to search on the following sale order line fields (product, name) because the other fields, such as price, quantity, ...
+                        will not be searched as often, and if they need to be searched it's usually in the context of products
+                        and then they can be searched from the page listing the sale order lines related to a product (from the product itself).
+                    -->
+                    <filter string="My Orders" domain="[('user_id', '=', uid)]" name="my_sale_orders_filter"/>
+                    <filter invisible="1" string="Late Activities" name="activities_overdue"
+                        domain="[('my_activity_date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                        help="Show all records which has next action date is before today"/>
+                    <filter invisible="1" string="Today Activities" name="activities_today"
+                        domain="[('my_activity_date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                    <filter invisible="1" string="Future Activities" name="activities_upcoming_all"
+                        domain="[('my_activity_date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))]"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Salesperson" name="salesperson" domain="[]" context="{'group_by': 'user_id'}"/>
+                        <filter name="customer" string="Customer" domain="[]" context="{'group_by': 'partner_id'}"/>
+                        <filter string="Order Date" name="order_month" domain="[]" context="{'group_by': 'date_order'}"/>
+                    </group>
+               </search>
+            </field>
+        </record>
+
+         <record id="sale_order_view_search_inherit_quotation_ir" model="ir.ui.view">
+            <field name="name">sale.order.search.inherit.quotation.ir</field>
+            <field name="model">sale.order</field>
+            <field name="mode">primary</field>
+            <field name="inherit_id" ref="ttrx2_connector_spt.view_sales_order_filter_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='my_sale_orders_filter']" position="replace">
+                    <field name="campaign_id"/>
+                    <separator/>
+                    <filter string="My Quotations" name="my_quotation" domain="[('user_id', '=', uid)]"/>
+                    <separator/>
+                    <filter string="Quotations" name="draft" domain="[('state','in',('draft', 'sent'))]"/>
+                    <filter string="Sales Orders" name="sales" domain="[('state','in',('sale','done'))]"/>
+                    <filter string="SO" name="status_delete_portal"
+                            domain="[('status_delete_portal', '!=', True)]"/>
+                    <separator/>
+                    <filter string="Create Date" name="filter_create_date" date="create_date"/>
+                </xpath>
+            </field>
+        </record>
+
+
+
+
+        <record id="sale.action_quotations_with_onboarding" model="ir.actions.act_window">
+            <field name="name">Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+            <field name="search_view_id" ref="sale_order_view_search_inherit_quotation_ir"/>
+            <field name="context">{'search_default_my_quotation': 1, 'search_default_status_delete_portal': True}</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new quotation, the first step of a new sale!
+                </p>
+                <p>
+                    Once the quotation is confirmed by the customer, it becomes a sales order.
+                    <br/>
+                    You will be able to create an invoice and collect the payment.
+                </p>
+            </field>
+        </record>
+        
+    </data>
+</odoo>
